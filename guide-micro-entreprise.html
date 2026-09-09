@@ -1,281 +1,1251 @@
 <!DOCTYPE html>
 
-<html lang="fr"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Guide de la micro-entreprise — MicroClair</title> <meta name="description" content="Le guide MicroClair pour comprendre simplement la micro-entreprise, la facturation, les recettes, les cotisations et les principales obligations."> <meta name="theme-color" content="#173F3A">
+  <title>Guide de la micro-entreprise — MicroClair</title>
 
-<style> :root { --green:#173F3A; --green-2:#245C55; --mint:#DCEDE9; --soft:#F3F8F7; --cream:#FAF9F5; --text:#17302D; --muted:#667875; --white:#fff; --border:#DCE6E3; --shadow:0 18px 45px rgba(23,63,58,.10); } * { box-sizing:border-box; margin:0; padding:0; } body { font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; background:var(--cream); color:var(--text); line-height:1.6; } a { color:inherit; text-decoration:none; } .container { width:min(1050px,calc(100% - 32px)); margin:auto; } header { position:sticky; top:0; z-index:10; background:rgba(250,249,245,.96); border-bottom:1px solid var(--border); backdrop-filter:blur(10px); } .nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:20px; } .logo { display:flex; align-items:center; gap:9px; color:var(--green); font-size:20px; font-weight:800; } .logo-mark { width:33px; height:33px; border-radius:10px; background:var(--green); color:white; display:grid; place-items:center; font-size:15px; } .back { color:var(--muted); font-size:13px; font-weight:700; } .back:hover { color:var(--green); } .hero { padding:75px 0 55px; text-align:center; } .tag { display:inline-block; padding:7px 11px; margin-bottom:20px; border-radius:999px; background:var(--mint); color:var(--green); font-size:11px; font-weight:800; letter-spacing:.5px; } h1 { font-size:clamp(38px,6vw,58px); line-height:1.05; letter-spacing:-2px; margin-bottom:18px; } .hero p { max-width:680px; margin:auto; color:var(--muted); font-size:17px; } .intro { max-width:820px; margin:0 auto 45px; padding:28px; background:white; border:1px solid var(--border); border-radius:20px; box-shadow:var(--shadow); } .intro p { color:var(--muted); font-size:14px; } .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; max-width:900px; margin:0 auto 70px; } .card { padding:25px; background:white; border:1px solid var(--border); border-radius:18px; transition:.2s ease; } .card:hover { border-color:#B9CEC9; transform:translateY(-2px); } .number { display:inline-grid; place-items:center; width:32px; height:32px; margin-bottom:15px; border-radius:10px; background:var(--mint); color:var(--green); font-size:12px; font-weight:900; } .card h2 { font-size:20px; margin-bottom:8px; } .card p { color:var(--muted); font-size:13px; margin-bottom:15px; } .card a { color:var(--green); font-size:12px; font-weight:800; } .section { max-width:900px; margin:0 auto 70px; } .section h2 { font-size:28px; margin-bottom:10px; } .section > p { color:var(--muted); font-size:14px; margin-bottom:25px; } .steps { display:grid; gap:12px; } .step { display:flex; gap:16px; padding:18px; background:var(--soft); border-radius:14px; } .step strong { display:block; margin-bottom:3px; font-size:14px; } .step span { color:var(--muted); font-size:13px; } .info { max-width:900px; margin:0 auto 80px; padding:28px; background:var(--mint); border-radius:18px; } .info h2 { font-size:22px; margin-bottom:9px; } .info p { color:var(--green); font-size:13px; } .sources { max-width:900px; margin:0 auto 80px; padding:25px; background:white; border:1px solid var(--border); border-radius:18px; } .sources h2 { font-size:20px; margin-bottom:12px; } .sources p { color:var(--muted); font-size:13px; margin-bottom:14px; } .sources a { display:block; color:var(--green); font-size:13px; font-weight:700; margin-bottom:8px; } .sources a:hover { text-decoration:underline; } footer { background:#102F2B; color:#AFC6C1; padding:40px 0 25px; } .footer-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; padding-bottom:30px; } footer .logo { color:white; margin-bottom:12px; } footer .logo-mark { background:white; color:var(--green); } .footer-description { max-width:350px; font-size:12px; } .footer-column h3 { color:white; font-size:13px; margin-bottom:12px; } .footer-column a { display:block; font-size:12px; margin-bottom:7px; } .footer-column a:hover { color:white; } .copyright { border-top:1px solid rgba(255,255,255,.12); padding-top:20px; font-size:11px; } @media(max-width:700px) { .grid { grid-template-columns:1fr; } } @media(max-width:600px) { .hero { padding:55px 0 40px; } .intro, .card, .info, .sources { padding:20px; } .footer-grid { grid-template-columns:1fr; } } </style>
+<meta
+name="description"
+content="Le guide MicroClair pour comprendre simplement la micro-entreprise, la facturation, les recettes, les cotisations et les principales obligations."
+
+>
+
+  <meta name="theme-color" content="#173F3A">
+
+  <style>
+    :root {
+      --green: #173F3A;
+      --green-2: #245C55;
+      --mint: #DCEDE9;
+      --soft: #F3F8F7;
+      --cream: #FAF9F5;
+      --text: #17302D;
+      --muted: #667875;
+      --white: #FFFFFF;
+      --border: #DCE6E3;
+
+      --shadow-small: 0 8px 30px rgba(23, 63, 58, 0.06);
+      --shadow-medium: 0 18px 45px rgba(23, 63, 58, 0.10);
+      --shadow-large: 0 25px 70px rgba(23, 63, 58, 0.13);
+
+      --radius: 18px;
+      --radius-large: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    :focus-visible {
+      outline: 3px solid #7BB9AF;
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 1000;
+      padding: 10px 14px;
+      background: var(--green);
+      color: white;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      transform: translateY(-150%);
+      transition: transform 0.2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 249, 245, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(220, 230, 227, 0.8);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      color: var(--green);
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--green);
+      color: white;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 8px 12px;
+      color: var(--muted);
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 750;
+      transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .back:hover {
+      color: var(--green);
+      background: var(--soft);
+      transform: translateX(-2px);
+    }
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .hero {
+      padding: 86px 0 60px;
+      background: white;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      margin-bottom: 20px;
+      border-radius: 999px;
+      background: var(--mint);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .tag::before {
+      content: "•";
+      color: var(--green-2);
+      font-size: 14px;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0 auto 18px;
+      font-size: clamp(3rem, 6vw, 4.7rem);
+      line-height: 0.99;
+      letter-spacing: -0.075em;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       INTRO
+       ========================= */
+
+    .intro-section {
+      padding: 55px 0 0;
+    }
+
+    .intro {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 30px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow-medium);
+    }
+
+    .intro-label {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--green-2);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .intro p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    /* =========================
+       MAIN GUIDE
+       ========================= */
+
+    .guide {
+      padding: 55px 0 90px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 28px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-small);
+      transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #C7DDD9;
+      box-shadow: var(--shadow-medium);
+    }
+
+    .number {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 17px;
+      border-radius: 11px;
+      background: var(--mint);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .card h2 {
+      font-size: 20px;
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+    }
+
+    .card p {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin-top: auto;
+      padding-top: 19px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .card-link:hover {
+      color: var(--green-2);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* =========================
+       GOOD HABITS
+       ========================= */
+
+    .section {
+      max-width: 920px;
+      margin: 85px auto 0;
+    }
+
+    .section-header {
+      max-width: 680px;
+      margin-bottom: 25px;
+    }
+
+    .section-label {
+      color: var(--green-2);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .section h2 {
+      margin-top: 8px;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+    }
+
+    .section > .section-header > p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .steps {
+      display: grid;
+      gap: 12px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 19px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    .step .number {
+      width: 34px;
+      height: 34px;
+      margin: 0;
+      border-radius: 50%;
+      font-size: 11px;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .step span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       INFORMATION
+       ========================= */
+
+    .info {
+      max-width: 920px;
+      margin: 75px auto 0;
+      padding: 30px;
+      background: var(--mint);
+      border-radius: 20px;
+    }
+
+    .info h2 {
+      max-width: 700px;
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+    }
+
+    .info p {
+      max-width: 800px;
+      margin-top: 10px;
+      color: var(--green);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       SOURCES
+       ========================= */
+
+    .sources {
+      max-width: 920px;
+      margin: 55px auto 0;
+      padding: 28px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow-small);
+    }
+
+    .sources h2 {
+      font-size: 20px;
+      line-height: 1.3;
+    }
+
+    .sources p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .source-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .sources a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 11px 13px;
+      background: var(--soft);
+      border: 1px solid transparent;
+      border-radius: 10px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 750;
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .sources a::after {
+      content: "↗";
+      flex-shrink: 0;
+      font-size: 14px;
+    }
+
+    .sources a:hover {
+      background: white;
+      border-color: var(--border);
+      transform: translateX(2px);
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      padding: 55px 0 30px;
+      background: #102F2B;
+      color: #D5E4E1;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 50px;
+      padding-bottom: 45px;
+    }
+
+    footer .logo {
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    footer .logo-mark {
+      background: white;
+      color: var(--green);
+    }
+
+    .footer-description {
+      max-width: 360px;
+      color: #AFC6C1;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .footer-column h3 {
+      margin-bottom: 15px;
+      color: white;
+      font-size: 13px;
+    }
+
+    .footer-column a {
+      display: block;
+      margin-bottom: 9px;
+      color: #AFC6C1;
+      font-size: 13px;
+    }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
+    .copyright {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      color: #8EA9A4;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       RESPONSIVE
+       ========================= */
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .hero {
+        padding: 65px 0 50px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav {
+        min-height: 68px;
+      }
+
+      .logo {
+        font-size: 19px;
+      }
+
+      .logo-mark {
+        width: 32px;
+        height: 32px;
+      }
+
+      .back {
+        padding: 7px 9px;
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: 2.85rem;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .intro-section {
+        padding-top: 35px;
+      }
+
+      .intro,
+      .card,
+      .info,
+      .sources {
+        padding: 22px;
+      }
+
+      .guide {
+        padding-bottom: 65px;
+      }
+
+      .section {
+        margin-top: 65px;
+      }
+
+      .step {
+        grid-template-columns: 34px 1fr;
+        gap: 12px;
+        padding: 16px;
+      }
+
+      .step .number {
+        width: 32px;
+        height: 32px;
+      }
+
+      .copyright {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
 
 </head>
 
 <body>
 
-<header> <div class="container nav">
+  <a href="#contenu" class="skip-link">
+    Aller au contenu
+  </a>
 
-<a href="index.html" class="logo">
-  <span class="logo-mark">M</span>
-  MicroClair
-</a>
+  <!-- =========================
+       HEADER
+       ========================= -->
 
-<a href="ressources.html" class="back">
-  ← Retour aux ressources
-</a>
+  <header>
+    <div class="container nav">
 
-</div> </header>
+```
+  <a
+    href="index.html"
+    class="logo"
+    aria-label="MicroClair — Accueil"
+  >
+    <span
+      class="logo-mark"
+      aria-hidden="true"
+    >
+      M
+    </span>
+    MicroClair
+  </a>
 
-<main>
-
-<section class="hero"> <div class="container">
-
-  <span class="tag">GUIDE MICROCLAIR</span>
-
-  <h1>Comprendre la micro-entreprise<br>sans se perdre.</h1>
-
-  <p>
-    Les bases essentielles pour démarrer, facturer,
-    suivre son activité et rester organisé.
-  </p>
+  <a
+    href="ressources.html"
+    class="back"
+  >
+    ← Retour aux ressources
+  </a>
 
 </div>
+```
+
+  </header>
+
+  <main id="contenu">
+
+```
+<!-- =========================
+     HERO
+     ========================= -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <span class="tag">
+      GUIDE MICROCLAIR
+    </span>
+
+    <h1>
+      Comprendre la micro-entreprise
+      sans se perdre.
+    </h1>
+
+    <p>
+      Les bases essentielles pour démarrer,
+      facturer, suivre son activité et rester organisé.
+    </p>
+
+  </div>
 
 </section>
 
-<section> <div class="container">
 
-  <div class="intro">
-    <p>
-      La micro-entreprise est un régime simplifié qui permet
-      d'exercer une activité professionnelle avec des formalités
-      administratives allégées. Cela ne signifie pas qu'il n'y a
-      aucune obligation : facturation, déclaration du chiffre
-      d'affaires, suivi des recettes et certaines obligations
-      fiscales doivent être suivis régulièrement.
-    </p>
-  </div>
+<!-- =========================
+     INTRO
+     ========================= -->
 
-  <div class="grid">
+<section class="intro-section">
 
-    <article class="card">
-      <span class="number">01</span>
-      <h2>Créer son activité</h2>
+  <div class="container">
+
+    <div class="intro">
+
+      <span class="intro-label">
+        L'essentiel à retenir
+      </span>
+
       <p>
-        Comprendre les premières démarches, choisir son activité
-        et savoir quelles informations préparer avant de commencer.
+        La micro-entreprise est un régime simplifié qui permet
+        d'exercer une activité professionnelle avec des formalités
+        administratives allégées. Cela ne signifie pas qu'il n'y a
+        aucune obligation : facturation, déclaration du chiffre
+        d'affaires, suivi des recettes et certaines obligations
+        fiscales doivent être suivis régulièrement.
       </p>
-      <a href="demarrer.html">Voir comment démarrer →</a>
-    </article>
 
-    <article class="card">
-      <span class="number">02</span>
-      <h2>Facturer correctement</h2>
-      <p>
-        Une facture doit respecter certaines règles. Vérifiez
-        les principaux éléments avant de l'envoyer à votre client.
-      </p>
-      <a href="verifier-facture.html">Vérifier une facture →</a>
-    </article>
-
-    <article class="card">
-      <span class="number">03</span>
-      <h2>Suivre ses recettes</h2>
-      <p>
-        Gardez une vision claire des sommes encaissées et
-        organisez votre suivi au fil de votre activité.
-      </p>
-      <a href="suivi-recettes.html">Suivre ses recettes →</a>
-    </article>
-
-    <article class="card">
-      <span class="number">04</span>
-      <h2>Comprendre ses cotisations</h2>
-      <p>
-        Les cotisations sociales sont liées au chiffre d'affaires
-        déclaré. Leur montant dépend notamment de la nature de votre activité.
-      </p>
-      <a href="ressources.html">Voir les ressources →</a>
-    </article>
-
-    <article class="card">
-      <span class="number">05</span>
-      <h2>Anticiper ses échéances</h2>
-      <p>
-        Déclarations, paiements et obligations fiscales doivent
-        être suivis régulièrement pour éviter les oublis.
-      </p>
-      <a href="checklist-90-jours.html">Voir la checklist →</a>
-    </article>
-
-    <article class="card">
-      <span class="number">06</span>
-      <h2>Comprendre la TVA</h2>
-      <p>
-        La franchise en base de TVA peut s'appliquer sous certaines
-        conditions. Les seuils dépendent notamment de l'activité.
-      </p>
-      <a href="ressources.html">Explorer les ressources →</a>
-    </article>
+    </div>
 
   </div>
 
-  <div class="section">
+</section>
 
-    <h2>Les bons réflexes dès le début</h2>
 
-    <p>
-      Une organisation simple permet d'éviter beaucoup de stress
-      administratif. Voici les habitudes les plus utiles à mettre
-      en place dès le lancement.
-    </p>
+<!-- =========================
+     GUIDE
+     ========================= -->
 
-    <div class="steps">
+<section
+  class="guide"
+  aria-label="Les principaux sujets du guide"
+>
 
-      <div class="step">
-        <div class="number">1</div>
-        <div>
-          <strong>Séparer clairement vos documents professionnels</strong>
-          <span>
-            Conservez vos factures, justificatifs et informations
-            utiles dans un espace facilement accessible.
-          </span>
-        </div>
+  <div class="container">
+
+    <div class="grid">
+
+      <article class="card">
+
+        <span
+          class="number"
+          aria-hidden="true"
+        >
+          01
+        </span>
+
+        <h2>
+          Créer son activité
+        </h2>
+
+        <p>
+          Comprendre les premières démarches, choisir son activité
+          et savoir quelles informations préparer avant de commencer.
+        </p>
+
+        <a
+          href="demarrer.html"
+          class="card-link"
+        >
+          Voir comment démarrer →
+        </a>
+
+      </article>
+
+
+      <article class="card">
+
+        <span
+          class="number"
+          aria-hidden="true"
+        >
+          02
+        </span>
+
+        <h2>
+          Facturer correctement
+        </h2>
+
+        <p>
+          Une facture doit respecter certaines règles. Vérifiez
+          les principaux éléments avant de l'envoyer à votre client.
+        </p>
+
+        <a
+          href="verifier-facture.html"
+          class="card-link"
+        >
+          Vérifier une facture →
+        </a>
+
+      </article>
+
+
+      <article class="card">
+
+        <span
+          class="number"
+          aria-hidden="true"
+        >
+          03
+        </span>
+
+        <h2>
+          Suivre ses recettes
+        </h2>
+
+        <p>
+          Gardez une vision claire des sommes encaissées et
+          organisez votre suivi au fil de votre activité.
+        </p>
+
+        <a
+          href="suivi-recettes.html"
+          class="card-link"
+        >
+          Suivre ses recettes →
+        </a>
+
+      </article>
+
+
+      <article class="card">
+
+        <span
+          class="number"
+          aria-hidden="true"
+        >
+          04
+        </span>
+
+        <h2>
+          Comprendre ses cotisations
+        </h2>
+
+        <p>
+          Les cotisations sociales sont liées au chiffre d'affaires
+          déclaré. Leur montant dépend notamment de la nature
+          de votre activité.
+        </p>
+
+        <a
+          href="cotisations.html"
+          class="card-link"
+        >
+          Comprendre les cotisations →
+        </a>
+
+      </article>
+
+
+      <article class="card">
+
+        <span
+          class="number"
+          aria-hidden="true"
+        >
+          05
+        </span>
+
+        <h2>
+          Anticiper ses échéances
+        </h2>
+
+        <p>
+          Déclarations, paiements et obligations fiscales doivent
+          être suivis régulièrement pour éviter les oublis.
+        </p>
+
+        <a
+          href="calendrier.html"
+          class="card-link"
+        >
+          Voir le calendrier →
+        </a>
+
+      </article>
+
+
+      <article class="card">
+
+        <span
+          class="number"
+          aria-hidden="true"
+        >
+          06
+        </span>
+
+        <h2>
+          Comprendre la TVA
+        </h2>
+
+        <p>
+          La franchise en base de TVA peut s'appliquer sous certaines
+          conditions. Les règles et seuils dépendent notamment
+          de l'activité et de la situation concernée.
+        </p>
+
+        <a
+          href="tva.html"
+          class="card-link"
+        >
+          Comprendre la TVA →
+        </a>
+
+      </article>
+
+    </div>
+
+
+    <!-- =========================
+         BONS REFLEXES
+         ========================= -->
+
+    <div class="section">
+
+      <div class="section-header">
+
+        <span class="section-label">
+          Organisation
+        </span>
+
+        <h2>
+          Les bons réflexes dès le début
+        </h2>
+
+        <p>
+          Une organisation simple permet d'éviter beaucoup de stress
+          administratif. Voici les habitudes les plus utiles à mettre
+          en place dès le lancement.
+        </p>
+
       </div>
 
-      <div class="step">
-        <div class="number">2</div>
-        <div>
-          <strong>Suivre vos recettes au fur et à mesure</strong>
-          <span>
-            N'attendez pas la dernière minute pour reconstituer
-            votre chiffre d'affaires encaissé.
-          </span>
+
+      <div class="steps">
+
+        <div class="step">
+
+          <div
+            class="number"
+            aria-hidden="true"
+          >
+            1
+          </div>
+
+          <div>
+            <strong>
+              Séparer clairement vos documents professionnels
+            </strong>
+
+            <span>
+              Conservez vos factures, justificatifs et informations
+              utiles dans un espace facilement accessible.
+            </span>
+          </div>
+
         </div>
+
+
+        <div class="step">
+
+          <div
+            class="number"
+            aria-hidden="true"
+          >
+            2
+          </div>
+
+          <div>
+            <strong>
+              Suivre vos recettes au fur et à mesure
+            </strong>
+
+            <span>
+              N'attendez pas la dernière minute pour reconstituer
+              votre chiffre d'affaires encaissé.
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div
+            class="number"
+            aria-hidden="true"
+          >
+            3
+          </div>
+
+          <div>
+            <strong>
+              Numéroter vos factures correctement
+            </strong>
+
+            <span>
+              Utilisez une numérotation unique et cohérente pour
+              faciliter votre suivi administratif.
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div
+            class="number"
+            aria-hidden="true"
+          >
+            4
+          </div>
+
+          <div>
+            <strong>
+              Vérifier régulièrement vos échéances
+            </strong>
+
+            <span>
+              Gardez un calendrier simple des déclarations et
+              paiements qui concernent votre activité.
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div
+            class="number"
+            aria-hidden="true"
+          >
+            5
+          </div>
+
+          <div>
+            <strong>
+              Vérifier les règles qui correspondent à votre activité
+            </strong>
+
+            <span>
+              Les obligations et seuils peuvent varier selon la
+              nature de l'activité et la situation de l'entreprise.
+            </span>
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="step">
-        <div class="number">3</div>
-        <div>
-          <strong>Numéroter vos factures correctement</strong>
-          <span>
-            Utilisez une numérotation unique et cohérente pour
-            faciliter votre suivi administratif.
-          </span>
-        </div>
-      </div>
+    </div>
 
-      <div class="step">
-        <div class="number">4</div>
-        <div>
-          <strong>Vérifier régulièrement vos échéances</strong>
-          <span>
-            Gardez un calendrier simple des déclarations et
-            paiements qui concernent votre activité.
-          </span>
-        </div>
-      </div>
 
-      <div class="step">
-        <div class="number">5</div>
-        <div>
-          <strong>Vérifier les règles qui correspondent à votre activité</strong>
-          <span>
-            Les obligations et seuils peuvent varier selon la
-            nature de l'activité et la situation de l'entreprise.
-          </span>
-        </div>
+    <!-- =========================
+         INFORMATION
+         ========================= -->
+
+    <div class="info">
+
+      <h2>
+        Un guide pour comprendre, pas pour remplacer
+        les sources officielles
+      </h2>
+
+      <p>
+        MicroClair simplifie les notions administratives pour les rendre
+        plus faciles à comprendre. Les règles peuvent évoluer et certaines
+        obligations dépendent de votre situation. Avant de prendre une
+        décision importante, vérifiez toujours les informations applicables
+        auprès d'une source officielle ou d'un professionnel compétent.
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         SOURCES
+         ========================= -->
+
+    <div class="sources">
+
+      <h2>
+        Sources officielles utiles
+      </h2>
+
+      <p>
+        Pour vérifier une règle, un seuil ou une obligation,
+        privilégiez les informations publiées par les organismes officiels.
+      </p>
+
+      <div class="source-list">
+
+        <a
+          href="https://entreprendre.service-public.fr/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Service Public Entreprendre
+        </a>
+
+        <a
+          href="https://www.economie.gouv.fr/entreprises/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Bercy — Informations pour les entreprises
+        </a>
+
+        <a
+          href="https://www.urssaf.fr/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Urssaf
+        </a>
+
       </div>
 
     </div>
 
   </div>
 
-  <div class="info">
-
-    <h2>Un guide pour comprendre, pas pour remplacer les sources officielles</h2>
-
-    <p>
-      MicroClair simplifie les notions administratives pour les rendre
-      plus faciles à comprendre. Les règles peuvent évoluer et certaines
-      obligations dépendent de votre situation. Avant de prendre une
-      décision importante, vérifiez toujours les informations applicables
-      auprès d'une source officielle ou d'un professionnel compétent.
-    </p>
-
-  </div>
-
-  <div class="sources">
-
-    <h2>Sources officielles utiles</h2>
-
-    <p>
-      Pour vérifier une règle, un seuil ou une obligation, privilégiez
-      les informations publiées par les organismes officiels.
-    </p>
-
-    <a
-      href="https://entreprendre.service-public.fr/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Service Public Entreprendre →
-    </a>
-
-    <a
-      href="https://www.economie.gouv.fr/entreprises/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Bercy — Informations pour les entreprises →
-    </a>
-
-    <a
-      href="https://www.urssaf.fr/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Urssaf →
-    </a>
-
-  </div>
-
-</div>
-
 </section>
+```
 
-</main>
+  </main>
 
-<footer> <div class="container">
+  <!-- =========================
+       FOOTER
+       ========================= -->
 
-<div class="footer-grid">
+  <footer>
 
-  <div>
-    <a href="index.html" class="logo">
-      <span class="logo-mark">M</span>
-      MicroClair
-    </a>
+```
+<div class="container">
 
-    <p class="footer-description">
-      Des outils simples pour aider les micro-entrepreneurs
-      et freelances à mieux organiser leur activité.
-    </p>
+  <div class="footer-grid">
+
+    <div>
+
+      <a
+        href="index.html"
+        class="logo"
+        aria-label="MicroClair — Accueil"
+      >
+        <span
+          class="logo-mark"
+          aria-hidden="true"
+        >
+          M
+        </span>
+        MicroClair
+      </a>
+
+      <p class="footer-description">
+        Des outils simples pour aider les
+        micro-entrepreneurs et freelances
+        à mieux organiser leur activité.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Informations
+      </h3>
+
+      <a href="a-propos.html">
+        À propos
+      </a>
+
+      <a href="demarrer.html">
+        Démarrer
+      </a>
+
+      <a href="ressources.html">
+        Ressources
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+      <a href="mentions-legales.html">
+        Mentions légales
+      </a>
+
+      <a href="confidentialite.html">
+        Confidentialité
+      </a>
+
+      <a href="cookies.html">
+        Cookies
+      </a>
+
+    </div>
+
   </div>
 
-  <div class="footer-column">
-    <h3>Informations</h3>
-    <a href="a-propos.html">À propos</a>
-    <a href="demarrer.html">Démarrer</a>
-    <a href="ressources.html">Ressources</a>
-    <a href="contact.html">Contact</a>
-    <a href="mentions-legales.html">Mentions légales</a>
-    <a href="confidentialite.html">Confidentialité</a>
-    <a href="cookies.html">Cookies</a>
+
+  <div class="copyright">
+
+    <span>
+      © 2026 MicroClair — Axel Penarrubia
+    </span>
+
+    <span>
+      Simplement. Clairement. Utilement.
+    </span>
+
   </div>
 
 </div>
+```
 
-<div class="copyright">
-  © 2026 MicroClair — Axel Penarrubia
-</div>
+  </footer>
 
-</div> </footer>
-
-</body> </html>
+</body>
+</html>
