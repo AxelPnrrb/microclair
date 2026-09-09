@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Démarrez votre activité de micro-entrepreneur avec les premières étapes essentielles, simplement et sans jargon.">
+  <meta name="theme-color" content="#0F766E">
+
+  <title>Démarrer son activité — MicroClair</title>
+
+  <style>
+    :root {
+      --green: #0F766E;
+      --green-dark: #115E59;
+      --text: #17332F;
+      --muted: #667773;
+      --soft: #F3F8F7;
+      --white: #FFFFFF;
+      --border: #DCE8E5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.96);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .back {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .back:hover {
+      color: var(--green);
+    }
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 75px 20px;
+    }
+
+    .hero {
+      max-width: 760px;
+      margin-bottom: 60px;
+    }
+
+    .label {
+      display: inline-block;
+      color: var(--green);
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 7vw, 64px);
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 19px;
+      max-width: 680px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 18px;
+      margin-bottom: 65px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--white);
+    }
+
+    .number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--soft);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .step h2 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+    }
+
+    .tip {
+      background: var(--text);
+      color: white;
+      border-radius: 25px;
+      padding: 40px;
+      margin-bottom: 65px;
+    }
+
+    .tip h2 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .tip p {
+      color: #DCE8E5;
+      max-width: 760px;
+    }
+
+    .links {
+      background: var(--soft);
+      border-radius: 25px;
+      padding: 40px;
+    }
+
+    .links h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .link-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .resource {
+      display: block;
+      text-decoration: none;
+      color: var(--text);
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 18px 20px;
+      font-weight: 700;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .resource:hover {
+      transform: translateY(-2px);
+      border-color: var(--green);
+    }
+
+    .resource span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 400;
+      margin-top: 4px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      background: var(--green);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 14px 22px;
+      border-radius: 12px;
+    }
+
+    .button:hover {
+      background: var(--green-dark);
+    }
+
+    footer {
+      background: var(--soft);
+      padding: 35px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-links {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      margin: 0 8px;
+      text-decoration: none;
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    @media (max-width: 650px) {
+      .nav {
+        padding: 16px;
+      }
+
+      main {
+        padding: 55px 18px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+        padding: 24px;
+      }
+
+      .tip,
+      .links {
+        padding: 28px 22px;
+      }
+
+      .footer-links a {
+        display: inline-block;
+        margin: 4px 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="index.html">MicroClair</a>
+    <a class="back" href="index.html">← Retour à l’accueil</a>
+  </nav>
+</header>
+
+<main>
+
+  <div class="hero">
+    <span class="label">Bien démarrer</span>
+
+    <h1>Les premières étapes pour lancer votre activité.</h1>
+
+    <p>
+      Vous venez de créer votre micro-entreprise ou vous êtes sur le point
+      de vous lancer ? Voici les principales choses à mettre en place pour
+      partir sur de bonnes bases.
+    </p>
+  </div>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="number">1</div>
+      <div>
+        <h2>Comprendre votre situation</h2>
+        <p>
+          Prenez quelques minutes pour identifier votre activité,
+          votre régime et les principales obligations qui peuvent
+          s'appliquer à votre situation.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="number">2</div>
+      <div>
+        <h2>Organiser vos documents</h2>
+        <p>
+          Créez un espace simple pour conserver vos factures,
+          justificatifs, déclarations et autres documents importants.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="number">3</div>
+      <div>
+        <h2>Préparer votre facturation</h2>
+        <p>
+          Utilisez une méthode claire pour créer vos factures et
+          suivre les paiements de vos clients.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="number">4</div>
+      <div>
+        <h2>Suivre vos recettes</h2>
+        <p>
+          Notez régulièrement les sommes encaissées afin de garder
+          une vision claire de votre activité.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="number">5</div>
+      <div>
+        <h2>Anticiper vos échéances</h2>
+        <p>
+          Identifiez les principales déclarations et échéances qui
+          concernent votre activité afin d'éviter les oublis.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="number">6</div>
+      <div>
+        <h2>Créer une routine</h2>
+        <p>
+          Réservez un petit moment chaque semaine ou chaque mois pour
+          mettre à jour votre suivi administratif.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tip">
+
+    <h2>Ne cherchez pas à tout faire en une journée.</h2>
+
+    <p>
+      Le plus important au début est de mettre en place une organisation
+      simple et régulière. Quelques minutes chaque semaine peuvent
+      largement faciliter le suivi de votre activité.
+    </p>
+
+  </div>
+
+  <div class="links">
+
+    <h2>Pour aller plus loin</h2>
+
+    <div class="link-list">
+
+      <a class="resource" href="checklist-90-jours.html">
+        Checklist des 90 premiers jours
+        <span>Avancez étape par étape avec 12 actions essentielles.</span>
+      </a>
+
+      <a class="resource" href="10-choses-apres-creation-micro-entreprise.html">
+        10 choses à faire après la création
+        <span>Un guide pratique pour ne pas oublier les premières démarches.</span>
+      </a>
+
+      <a class="resource" href="suivi-recettes.html">
+        Suivre vos recettes
+        <span>Gardez une vision simple de vos encaissements.</span>
+      </a>
+
+      <a class="resource" href="verifier-facture.html">
+        Vérifier une facture
+        <span>Une checklist rapide avant d'envoyer votre facture.</span>
+      </a>
+
+    </div>
+
+    <a class="button" href="ressources.html">
+      Voir toutes les ressources
+    </a>
+
+  </div>
+
+</main>
+
+<footer>
+
+  <div class="footer-links">
+    <a href="index.html">Accueil</a>
+    <a href="ressources.html">Ressources</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="cookies.html">Cookies</a>
+  </div>
+
+  © 2026 MicroClair — Tous droits réservés.
+
+</footer>
+
+</body>
+</html>
+```
