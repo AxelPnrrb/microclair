@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Guides, checklists et outils pratiques pour aider les micro-entrepreneurs à mieux organiser leur activité, sans jargon."
+    content="Guides, checklists et outils pratiques pour aider les micro-entrepreneurs et freelances à mieux organiser leur activité, sans jargon."
   >
 
   <meta name="theme-color" content="#173F3A">
@@ -24,10 +24,11 @@
       --muted: #667875;
       --white: #FFFFFF;
       --border: #DCE6E3;
-      --yellow: #F4C95D;
+
       --shadow-small: 0 8px 30px rgba(23, 63, 58, 0.06);
       --shadow-medium: 0 18px 45px rgba(23, 63, 58, 0.10);
       --shadow-large: 0 25px 70px rgba(23, 63, 58, 0.13);
+
       --radius: 18px;
       --radius-large: 28px;
     }
@@ -59,22 +60,22 @@
 
     a {
       color: inherit;
-    }
-
-    button,
-    input {
-      font: inherit;
+      text-decoration: none;
     }
 
     :focus-visible {
-      outline: 3px solid var(--yellow);
-      outline-offset: 4px;
+      outline: 3px solid #7BB9AF;
+      outline-offset: 3px;
     }
 
     .container {
       width: min(1120px, calc(100% - 40px));
       margin: 0 auto;
     }
+
+    /* =========================
+       LABEL
+       ========================= */
 
     .eyebrow {
       display: inline-flex;
@@ -108,7 +109,7 @@
       border-bottom: 1px solid rgba(220, 230, 227, 0.8);
     }
 
-    nav {
+    .nav {
       min-height: 76px;
       display: flex;
       align-items: center;
@@ -121,7 +122,6 @@
       align-items: center;
       gap: 10px;
       color: var(--green);
-      text-decoration: none;
       font-size: 21px;
       font-weight: 800;
       letter-spacing: -0.5px;
@@ -149,7 +149,6 @@
 
     nav a {
       color: var(--muted);
-      text-decoration: none;
       font-size: 14px;
       font-weight: 650;
       transition: color 0.2s ease, transform 0.2s ease;
@@ -218,7 +217,6 @@
       min-height: 48px;
       padding: 0 20px;
       border-radius: 11px;
-      text-decoration: none;
       font-size: 14px;
       font-weight: 800;
       transition:
@@ -307,8 +305,8 @@
 
     .free-badge {
       padding: 6px 10px;
-      background: rgba(244, 201, 93, 0.15);
-      color: var(--yellow);
+      background: rgba(255, 255, 255, 0.10);
+      color: #DCEDE9;
       border-radius: 999px;
       font-size: 0.68rem;
     }
@@ -355,7 +353,7 @@
       place-items: center;
       flex-shrink: 0;
       background: var(--green-2);
-      border: 1px solid rgba(255,255,255,0.18);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       border-radius: 50%;
       font-size: 0.65rem;
       font-weight: 900;
@@ -367,6 +365,7 @@
 
     .resources {
       padding: 90px 0;
+      scroll-margin-top: 76px;
     }
 
     .section-heading {
@@ -485,7 +484,6 @@
       color: var(--green);
       font-size: 0.86rem;
       font-weight: 900;
-      text-decoration: none;
     }
 
     .resource-link:hover {
@@ -580,7 +578,7 @@
     }
 
     .trust-box .eyebrow {
-      color: var(--yellow);
+      color: #B8DCD5;
     }
 
     .trust-box h2 {
@@ -615,7 +613,7 @@
 
     .trust-list li::before {
       content: "✓";
-      color: var(--yellow);
+      color: #B8DCD5;
       font-weight: 900;
     }
 
@@ -697,7 +695,6 @@
       color: #AFC6C1;
       font-size: 13px;
       margin-bottom: 9px;
-      text-decoration: none;
     }
 
     .footer-column a:hover {
@@ -768,7 +765,7 @@
         width: min(100% - 28px, 1120px);
       }
 
-      nav {
+      .nav {
         min-height: 68px;
       }
 
@@ -849,7 +846,7 @@
 <body>
 
 <header>
-  <nav class="container" aria-label="Navigation principale">
+  <nav class="container nav" aria-label="Navigation principale">
 
     <a
       href="index.html"
@@ -862,27 +859,19 @@
 
     <ul>
       <li>
-        <a href="a-propos.html">
-          À propos
-        </a>
+        <a href="a-propos.html">À propos</a>
       </li>
 
       <li>
-        <a href="demarrer.html">
-          Démarrer
-        </a>
+        <a href="demarrer.html">Démarrer</a>
       </li>
 
       <li>
-        <a href="ressources.html">
-          Ressources
-        </a>
+        <a href="ressources.html" aria-current="page">Ressources</a>
       </li>
 
       <li>
-        <a href="contact.html">
-          Contact
-        </a>
+        <a href="contact.html">Contact</a>
       </li>
 
       <li>
@@ -941,7 +930,7 @@
 
         </div>
 
-        <div class="hero-trust">
+        <div class="hero-trust" aria-label="Points forts">
           <span>Gratuit pour commencer</span>
           <span>Sans jargon</span>
           <span>À votre rythme</span>
@@ -949,7 +938,10 @@
 
       </div>
 
-      <div class="hero-card">
+      <div
+        class="hero-card"
+        aria-label="Présentation de la checklist des 90 premiers jours"
+      >
 
         <div class="hero-card-top">
           <span>MICROCLAIR</span>
@@ -1404,7 +1396,7 @@
           Démarrer
         </a>
 
-        <a href="ressources.html">
+        <a href="ressources.html" aria-current="page">
           Ressources
         </a>
 
