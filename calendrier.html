@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Calendrier administratif micro-entreprise — MicroClair</title>
-  <meta name="description" content="Le calendrier administratif MicroClair pour ne plus oublier ses déclarations, paiements, factures et principales échéances en micro-entreprise.">
+  <meta name="description" content="Le calendrier administratif MicroClair pour organiser vos déclarations, factures, recettes et principales échéances en micro-entreprise.">
   <meta name="theme-color" content="#173F3A">
 
   <style>
@@ -18,9 +18,16 @@
       --cream:#FAF9F5;
       --text:#17302D;
       --muted:#667875;
-      --white:#fff;
+      --white:#FFFFFF;
       --border:#DCE6E3;
-      --shadow:0 18px 45px rgba(23,63,58,.10);
+      --warning-bg:#FFF8E9;
+      --warning-border:#F1E3BD;
+      --warning-text:#675B3D;
+      --shadow-small:0 8px 22px rgba(23,63,58,.06);
+      --shadow-medium:0 16px 38px rgba(23,63,58,.09);
+      --shadow-large:0 22px 55px rgba(23,63,58,.12);
+      --radius:16px;
+      --radius-large:22px;
     }
 
     * {
@@ -29,11 +36,17 @@
       padding:0;
     }
 
+    html {
+      scroll-behavior:smooth;
+    }
+
     body {
+      min-height:100vh;
       font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
       background:var(--cream);
       color:var(--text);
       line-height:1.6;
+      -webkit-font-smoothing:antialiased;
     }
 
     a {
@@ -41,15 +54,40 @@
       text-decoration:none;
     }
 
+    a:focus-visible,
+    button:focus-visible {
+      outline:3px solid var(--green-2);
+      outline-offset:4px;
+      border-radius:6px;
+    }
+
     .container {
       width:min(1050px,calc(100% - 32px));
-      margin:auto;
+      margin-inline:auto;
+    }
+
+    .skip-link {
+      position:absolute;
+      top:-60px;
+      left:16px;
+      z-index:100;
+      padding:10px 14px;
+      background:var(--green);
+      color:var(--white);
+      border-radius:9px;
+      font-size:13px;
+      font-weight:800;
+      transition:top .2s ease;
+    }
+
+    .skip-link:focus {
+      top:16px;
     }
 
     header {
       position:sticky;
       top:0;
-      z-index:10;
+      z-index:20;
       background:rgba(250,249,245,.96);
       border-bottom:1px solid var(--border);
       backdrop-filter:blur(10px);
@@ -64,29 +102,33 @@
     }
 
     .logo {
-      display:flex;
+      display:inline-flex;
       align-items:center;
       gap:9px;
       color:var(--green);
       font-size:20px;
       font-weight:800;
+      letter-spacing:-.4px;
     }
 
     .logo-mark {
       width:33px;
       height:33px;
-      border-radius:10px;
-      background:var(--green);
-      color:white;
       display:grid;
       place-items:center;
+      flex:0 0 33px;
+      border-radius:10px;
+      background:var(--green);
+      color:var(--white);
       font-size:15px;
+      font-weight:900;
     }
 
     .back {
       color:var(--muted);
       font-size:13px;
       font-weight:700;
+      transition:color .2s ease;
     }
 
     .back:hover {
@@ -94,50 +136,62 @@
     }
 
     .hero {
-      padding:75px 0 55px;
+      padding:78px 0 58px;
       text-align:center;
     }
 
     .tag {
       display:inline-block;
-      padding:7px 11px;
       margin-bottom:20px;
+      padding:7px 11px;
       border-radius:999px;
       background:var(--mint);
       color:var(--green);
       font-size:11px;
       font-weight:800;
-      letter-spacing:.5px;
+      letter-spacing:.6px;
     }
 
     h1 {
+      max-width:850px;
+      margin:0 auto 18px;
       font-size:clamp(38px,6vw,58px);
       line-height:1.05;
-      letter-spacing:-2px;
-      margin-bottom:18px;
+      letter-spacing:-2.4px;
     }
 
     .hero p {
       max-width:680px;
-      margin:auto;
+      margin-inline:auto;
       color:var(--muted);
       font-size:17px;
     }
 
     .intro {
       max-width:850px;
-      margin:0 auto 50px;
-      padding:28px;
-      background:white;
+      margin:0 auto 58px;
+      padding:30px;
+      background:var(--white);
       border:1px solid var(--border);
-      border-radius:20px;
-      box-shadow:var(--shadow);
+      border-radius:var(--radius-large);
+      box-shadow:var(--shadow-medium);
+    }
+
+    .intro-label {
+      display:block;
+      margin-bottom:8px;
+      color:var(--green-2);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.7px;
+      text-transform:uppercase;
     }
 
     .intro strong {
       display:block;
-      font-size:18px;
       margin-bottom:8px;
+      font-size:19px;
+      line-height:1.35;
     }
 
     .intro p {
@@ -147,19 +201,20 @@
 
     .section {
       max-width:900px;
-      margin:0 auto 65px;
+      margin:0 auto 68px;
     }
 
     .section h2 {
+      margin-bottom:10px;
       font-size:29px;
       line-height:1.2;
-      margin-bottom:10px;
+      letter-spacing:-.7px;
     }
 
     .section > p {
+      margin-bottom:26px;
       color:var(--muted);
       font-size:14px;
-      margin-bottom:25px;
     }
 
     .calendar {
@@ -169,25 +224,34 @@
 
     .month {
       display:grid;
-      grid-template-columns:150px 1fr;
-      gap:20px;
+      grid-template-columns:165px 1fr;
+      gap:24px;
       align-items:start;
-      padding:22px;
-      background:white;
+      padding:24px;
+      background:var(--white);
       border:1px solid var(--border);
-      border-radius:17px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-small);
+      transition:transform .2s ease,box-shadow .2s ease;
+    }
+
+    .month:hover {
+      transform:translateY(-2px);
+      box-shadow:var(--shadow-medium);
     }
 
     .month-name {
+      color:var(--green);
       font-size:18px;
       font-weight:900;
-      color:var(--green);
+      line-height:1.25;
     }
 
     .month-sub {
+      margin-top:4px;
       color:var(--muted);
       font-size:11px;
-      margin-top:3px;
+      font-weight:600;
     }
 
     .tasks {
@@ -196,20 +260,24 @@
     }
 
     .task {
-      padding:12px 14px;
+      padding:13px 15px;
       background:var(--soft);
+      border:1px solid rgba(220,230,227,.7);
       border-radius:11px;
     }
 
     .task strong {
       display:block;
-      font-size:13px;
       margin-bottom:2px;
+      font-size:13px;
+      line-height:1.4;
     }
 
     .task span {
+      display:block;
       color:var(--muted);
       font-size:12px;
+      line-height:1.5;
     }
 
     .routine {
@@ -219,18 +287,19 @@
     }
 
     .routine-card {
-      padding:22px;
-      background:white;
+      padding:24px;
+      background:var(--white);
       border:1px solid var(--border);
-      border-radius:17px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-small);
     }
 
     .number {
       display:inline-grid;
       place-items:center;
-      width:31px;
-      height:31px;
-      margin-bottom:14px;
+      width:32px;
+      height:32px;
+      margin-bottom:15px;
       border-radius:9px;
       background:var(--mint);
       color:var(--green);
@@ -239,70 +308,99 @@
     }
 
     .routine-card h3 {
-      font-size:16px;
       margin-bottom:7px;
+      font-size:16px;
+      line-height:1.3;
     }
 
     .routine-card p {
       color:var(--muted);
       font-size:12px;
+      line-height:1.6;
     }
 
     .warning {
       max-width:900px;
-      margin:0 auto 65px;
-      padding:26px;
-      background:#FFF8E9;
-      border:1px solid #F1E3BD;
-      border-radius:18px;
+      margin:0 auto 68px;
+      padding:28px;
+      background:var(--warning-bg);
+      border:1px solid var(--warning-border);
+      border-radius:var(--radius);
+    }
+
+    .warning-title {
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      margin-bottom:9px;
+    }
+
+    .warning-icon {
+      flex:0 0 auto;
+      font-size:18px;
+      line-height:1.3;
     }
 
     .warning h2 {
       font-size:21px;
-      margin-bottom:8px;
+      line-height:1.3;
+      letter-spacing:-.3px;
     }
 
     .warning p {
-      color:#675B3D;
+      color:var(--warning-text);
       font-size:13px;
+      line-height:1.65;
     }
 
     .cta {
       max-width:900px;
-      margin:0 auto 80px;
-      padding:35px;
+      margin:0 auto 82px;
+      padding:38px 30px;
       background:var(--green);
-      color:white;
-      border-radius:22px;
+      color:var(--white);
+      border-radius:var(--radius-large);
       text-align:center;
+      box-shadow:var(--shadow-large);
     }
 
     .cta h2 {
-      font-size:28px;
       margin-bottom:10px;
+      font-size:28px;
+      line-height:1.2;
+      letter-spacing:-.6px;
     }
 
     .cta p {
       max-width:600px;
-      margin:0 auto 22px;
+      margin:0 auto 23px;
       color:#C9DBD7;
       font-size:13px;
     }
 
     .button {
-      display:inline-block;
-      padding:12px 18px;
-      background:white;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:44px;
+      padding:12px 19px;
+      background:var(--white);
       color:var(--green);
       border-radius:10px;
       font-size:13px;
       font-weight:800;
+      transition:transform .2s ease,background .2s ease;
+    }
+
+    .button:hover {
+      background:#F1F6F5;
+      transform:translateY(-1px);
     }
 
     footer {
       background:#102F2B;
       color:#AFC6C1;
-      padding:40px 0 25px;
+      padding:42px 0 25px;
     }
 
     .footer-grid {
@@ -313,56 +411,90 @@
     }
 
     footer .logo {
-      color:white;
-      margin-bottom:12px;
+      margin-bottom:13px;
+      color:var(--white);
     }
 
     footer .logo-mark {
-      background:white;
+      background:var(--white);
       color:var(--green);
     }
 
     .footer-description {
-      max-width:350px;
+      max-width:360px;
       font-size:12px;
+      line-height:1.65;
     }
 
     .footer-column h3 {
-      color:white;
-      font-size:13px;
       margin-bottom:12px;
+      color:var(--white);
+      font-size:13px;
     }
 
     .footer-column a {
       display:block;
-      font-size:12px;
+      width:max-content;
+      max-width:100%;
       margin-bottom:7px;
+      font-size:12px;
+      transition:color .2s ease;
     }
 
     .footer-column a:hover {
-      color:white;
+      color:var(--white);
     }
 
     .copyright {
-      border-top:1px solid rgba(255,255,255,.12);
       padding-top:20px;
+      border-top:1px solid rgba(255,255,255,.12);
       font-size:11px;
     }
 
-    @media(max-width:750px) {
+    @media (max-width:750px) {
       .routine {
         grid-template-columns:1fr;
       }
 
       .month {
         grid-template-columns:1fr;
-        gap:13px;
+        gap:14px;
       }
     }
 
-    @media(max-width:600px) {
+    @media (max-width:600px) {
+      .container {
+        width:min(100% - 24px,1050px);
+      }
+
+      .nav {
+        min-height:66px;
+      }
+
+      .logo {
+        font-size:18px;
+      }
+
+      .logo-mark {
+        width:31px;
+        height:31px;
+        flex-basis:31px;
+      }
+
+      .back {
+        font-size:12px;
+      }
+
       .hero {
-        padding:55px 0 40px;
+        padding:58px 0 42px;
+      }
+
+      h1 {
+        letter-spacing:-1.7px;
+      }
+
+      .hero p {
+        font-size:15px;
       }
 
       .intro,
@@ -373,8 +505,38 @@
         padding:21px;
       }
 
+      .section {
+        margin-bottom:55px;
+      }
+
+      .section h2 {
+        font-size:25px;
+      }
+
       .footer-grid {
         grid-template-columns:1fr;
+        gap:30px;
+      }
+
+      .cta {
+        margin-bottom:60px;
+      }
+
+      .cta h2 {
+        font-size:25px;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior:auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition:none !important;
+        animation:none !important;
       }
     }
   </style>
@@ -383,13 +545,15 @@
 
 <body>
 
+<a href="#contenu" class="skip-link">Aller au contenu</a>
+
 <header>
   <div class="container nav">
 
 ```
-<a href="index.html" class="logo">
-  <span class="logo-mark">M</span>
-  MicroClair
+<a href="index.html" class="logo" aria-label="MicroClair — accueil">
+  <span class="logo-mark" aria-hidden="true">M</span>
+  <span>MicroClair</span>
 </a>
 
 <a href="ressources.html" class="back">
@@ -400,7 +564,7 @@
   </div>
 </header>
 
-<main>
+<main id="contenu">
 
   <section class="hero">
     <div class="container">
@@ -420,11 +584,12 @@
 
   </section>
 
-  <section>
+  <section aria-labelledby="routine-annuelle">
     <div class="container">
 
 ```
   <div class="intro">
+    <span class="intro-label">L'essentiel</span>
 
     <strong>Le secret : ne pas tout faire en même temps.</strong>
 
@@ -434,12 +599,11 @@
       régulièrement, tandis que d'autres ne concernent votre
       activité que dans certaines situations.
     </p>
-
   </div>
 
   <div class="section">
 
-    <h2>Votre routine annuelle</h2>
+    <h2 id="routine-annuelle">Votre routine annuelle</h2>
 
     <p>
       Ce calendrier est volontairement général : les échéances
@@ -449,8 +613,7 @@
 
     <div class="calendar">
 
-      <div class="month">
-
+      <article class="month">
         <div>
           <div class="month-name">Chaque mois</div>
           <div class="month-sub">Routine rapide</div>
@@ -480,11 +643,9 @@
           </div>
 
         </div>
+      </article>
 
-      </div>
-
-      <div class="month">
-
+      <article class="month">
         <div>
           <div class="month-name">À chaque échéance</div>
           <div class="month-sub">Déclaration</div>
@@ -507,11 +668,9 @@
           </div>
 
         </div>
+      </article>
 
-      </div>
-
-      <div class="month">
-
+      <article class="month">
         <div>
           <div class="month-name">Tous les 3 mois</div>
           <div class="month-sub">Point d'étape</div>
@@ -534,11 +693,9 @@
           </div>
 
         </div>
+      </article>
 
-      </div>
-
-      <div class="month">
-
+      <article class="month">
         <div>
           <div class="month-name">Une fois par an</div>
           <div class="month-sub">Grand nettoyage</div>
@@ -570,16 +727,14 @@
           </div>
 
         </div>
-
-      </div>
+      </article>
 
     </div>
-
   </div>
 
-  <div class="section">
+  <div class="section" aria-labelledby="routine-15-minutes">
 
-    <h2>La routine MicroClair en 15 minutes</h2>
+    <h2 id="routine-15-minutes">La routine MicroClair en 15 minutes</h2>
 
     <p>
       Vous n'avez pas besoin de consacrer une journée entière
@@ -590,7 +745,7 @@
     <div class="routine">
 
       <article class="routine-card">
-        <span class="number">01</span>
+        <span class="number" aria-hidden="true">01</span>
         <h3>Regarder</h3>
         <p>
           Vérifiez les recettes encaissées, les factures en attente
@@ -599,7 +754,7 @@
       </article>
 
       <article class="routine-card">
-        <span class="number">02</span>
+        <span class="number" aria-hidden="true">02</span>
         <h3>Mettre à jour</h3>
         <p>
           Ajoutez les nouvelles recettes et rangez les nouveaux
@@ -608,7 +763,7 @@
       </article>
 
       <article class="routine-card">
-        <span class="number">03</span>
+        <span class="number" aria-hidden="true">03</span>
         <h3>Anticiper</h3>
         <p>
           Notez la prochaine démarche importante pour ne pas
@@ -617,26 +772,30 @@
       </article>
 
     </div>
-
   </div>
 
-  <div class="warning">
+  <aside class="warning" aria-labelledby="attention-dates">
 
-    <h2>⚠️ Les dates exactes peuvent changer selon votre situation</h2>
+    <div class="warning-title">
+      <span class="warning-icon" aria-hidden="true">⚠️</span>
+      <h2 id="attention-dates">
+        Les dates exactes peuvent changer selon votre situation
+      </h2>
+    </div>
 
     <p>
       La fréquence de certaines déclarations, les échéances fiscales,
       les règles de TVA et d'autres obligations peuvent dépendre de
       votre activité et de votre situation. Utilisez ce calendrier
-      comme une organisation personnelle, puis vérifiez toujours
+      comme un outil d'organisation personnelle, puis vérifiez toujours
       les dates officielles qui vous concernent.
     </p>
 
-  </div>
+  </aside>
 
-  <div class="section">
+  <div class="section" aria-labelledby="tout-noter">
 
-    <h2>Le meilleur réflexe : tout noter</h2>
+    <h2 id="tout-noter">Le meilleur réflexe : tout noter</h2>
 
     <p>
       Choisissez un seul endroit pour vos rappels : calendrier,
@@ -646,7 +805,7 @@
 
     <div class="calendar">
 
-      <div class="month">
+      <article class="month">
 
         <div>
           <div class="month-name">À retenir</div>
@@ -677,15 +836,14 @@
 
         </div>
 
-      </div>
+      </article>
 
     </div>
-
   </div>
 
-  <div class="cta">
+  <section class="cta" aria-labelledby="cta-title">
 
-    <h2>Vous démarrez votre activité ?</h2>
+    <h2 id="cta-title">Vous démarrez votre activité ?</h2>
 
     <p>
       La checklist MicroClair vous accompagne pendant les
@@ -696,7 +854,7 @@
       Ouvrir la checklist 90 jours →
     </a>
 
-  </div>
+  </section>
 
 </div>
 ```
@@ -712,9 +870,9 @@
 <div class="footer-grid">
 
   <div>
-    <a href="index.html" class="logo">
-      <span class="logo-mark">M</span>
-      MicroClair
+    <a href="index.html" class="logo" aria-label="MicroClair — accueil">
+      <span class="logo-mark" aria-hidden="true">M</span>
+      <span>MicroClair</span>
     </a>
 
     <p class="footer-description">
@@ -723,7 +881,7 @@
     </p>
   </div>
 
-  <div class="footer-column">
+  <nav class="footer-column" aria-label="Informations">
     <h3>Informations</h3>
     <a href="a-propos.html">À propos</a>
     <a href="demarrer.html">Démarrer</a>
@@ -732,7 +890,7 @@
     <a href="mentions-legales.html">Mentions légales</a>
     <a href="confidentialite.html">Confidentialité</a>
     <a href="cookies.html">Cookies</a>
-  </div>
+  </nav>
 
 </div>
 
