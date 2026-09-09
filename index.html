@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>MicroClair — Votre micro-entreprise, enfin claire</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <meta name="description" content="MicroClair aide les freelances débutants à organiser simplement leur micro-entreprise grâce à des guides, checklists et modèles pratiques.">
+  <title>
+    MicroClair — Votre micro-entreprise, enfin claire
+  </title>
 
-  <meta name="theme-color" content="#102F38">
+  <meta
+    name="description"
+    content="MicroClair aide les freelances et micro-entrepreneurs à comprendre et organiser simplement leur activité grâce à des guides, checklists et outils pratiques."
+  >
+
+  <meta
+    name="theme-color"
+    content="#102F38"
+  >
 
   <style>
 
@@ -17,13 +30,17 @@
        ===================================================== */
 
     :root {
+
       --navy: #102F38;
       --navy-light: #183F49;
+
       --teal: #2A9D8F;
       --teal-light: #E8F5F2;
+
       --yellow: #F4C95D;
 
       --cream: #F8FAF8;
+      --soft: #F3F8F7;
       --white: #FFFFFF;
 
       --text: #183238;
@@ -31,8 +48,11 @@
 
       --border: #E1E9E7;
 
-      --shadow-small: 0 8px 30px rgba(16,47,56,0.06);
-      --shadow-large: 0 25px 70px rgba(16,47,56,0.12);
+      --shadow-small:
+        0 8px 30px rgba(16,47,56,0.06);
+
+      --shadow-large:
+        0 25px 70px rgba(16,47,56,0.12);
 
       --radius: 18px;
       --radius-large: 28px;
@@ -54,6 +74,7 @@
     }
 
     body {
+
       font-family:
         Inter,
         -apple-system,
@@ -86,6 +107,7 @@
     a:focus-visible,
     button:focus-visible,
     input:focus-visible {
+
       outline: 3px solid var(--yellow);
       outline-offset: 4px;
     }
@@ -96,11 +118,13 @@
        ===================================================== */
 
     .container {
+
       width: min(1160px, 92%);
       margin: auto;
     }
 
     .eyebrow {
+
       display: inline-flex;
       align-items: center;
       gap: 9px;
@@ -115,6 +139,7 @@
     }
 
     .eyebrow::before {
+
       content: "";
 
       width: 28px;
@@ -124,6 +149,7 @@
     }
 
     .section-title {
+
       font-size: clamp(2.2rem, 4vw, 3.5rem);
 
       line-height: 1.06;
@@ -134,6 +160,7 @@
     }
 
     .section-intro {
+
       max-width: 690px;
 
       margin-top: 16px;
@@ -149,6 +176,7 @@
        ===================================================== */
 
     header {
+
       position: sticky;
       top: 0;
 
@@ -162,6 +190,7 @@
     }
 
     nav {
+
       height: 74px;
 
       display: flex;
@@ -174,6 +203,7 @@
     }
 
     .logo {
+
       text-decoration: none;
 
       font-size: 1.38rem;
@@ -188,6 +218,7 @@
     }
 
     nav ul {
+
       list-style: none;
 
       display: flex;
@@ -198,6 +229,7 @@
     }
 
     nav a {
+
       text-decoration: none;
 
       font-size: 0.92rem;
@@ -212,6 +244,7 @@
     }
 
     .nav-button {
+
       padding: 10px 17px;
 
       border: 1px solid var(--navy);
@@ -222,8 +255,8 @@
     }
 
     .nav-button:hover {
-      background: var(--navy);
 
+      background: var(--navy);
       color: white;
     }
 
@@ -233,6 +266,7 @@
        ===================================================== */
 
     .hero {
+
       background: var(--white);
 
       padding: 105px 0 90px;
@@ -241,6 +275,7 @@
     }
 
     .hero-grid {
+
       display: grid;
 
       grid-template-columns: 1.08fr 0.92fr;
@@ -251,6 +286,7 @@
     }
 
     h1 {
+
       max-width: 780px;
 
       margin-top: 18px;
@@ -263,6 +299,7 @@
     }
 
     .hero-description {
+
       max-width: 650px;
 
       margin-top: 27px;
@@ -273,6 +310,7 @@
     }
 
     .hero-actions {
+
       display: flex;
 
       flex-wrap: wrap;
@@ -283,6 +321,7 @@
     }
 
     .button {
+
       display: inline-flex;
 
       align-items: center;
@@ -304,20 +343,25 @@
     }
 
     .button-primary {
+
       background: var(--navy);
 
       color: white;
 
-      box-shadow: 0 10px 25px rgba(16,47,56,0.15);
+      box-shadow:
+        0 10px 25px rgba(16,47,56,0.15);
     }
 
     .button-primary:hover {
+
       transform: translateY(-2px);
 
-      box-shadow: 0 15px 32px rgba(16,47,56,0.2);
+      box-shadow:
+        0 15px 32px rgba(16,47,56,0.2);
     }
 
     .button-secondary {
+
       background: white;
 
       border: 1px solid var(--border);
@@ -326,12 +370,14 @@
     }
 
     .button-secondary:hover {
+
       border-color: var(--teal);
 
       color: var(--teal);
     }
 
     .hero-trust {
+
       display: flex;
 
       flex-wrap: wrap;
@@ -346,6 +392,7 @@
     }
 
     .hero-trust span::before {
+
       content: "✓";
 
       margin-right: 7px;
@@ -365,6 +412,7 @@
     }
 
     .hero-visual::before {
+
       content: "";
 
       position: absolute;
@@ -381,6 +429,7 @@
     }
 
     .dashboard {
+
       position: relative;
 
       background: var(--navy);
@@ -397,6 +446,7 @@
     }
 
     .dashboard-top {
+
       display: flex;
 
       align-items: center;
@@ -411,6 +461,7 @@
     }
 
     .dashboard-status {
+
       background: rgba(42,157,143,0.2);
 
       color: #80D6CA;
@@ -421,6 +472,7 @@
     }
 
     .dashboard h2 {
+
       margin-top: 27px;
 
       max-width: 400px;
@@ -433,6 +485,7 @@
     }
 
     .dashboard-description {
+
       margin-top: 8px;
 
       color: #B9C9CC;
@@ -441,6 +494,7 @@
     }
 
     .progress-bar {
+
       height: 8px;
 
       margin: 25px 0 20px;
@@ -453,6 +507,7 @@
     }
 
     .progress-bar span {
+
       display: block;
 
       width: 68%;
@@ -465,6 +520,7 @@
     }
 
     .task {
+
       display: flex;
 
       align-items: center;
@@ -483,6 +539,7 @@
     }
 
     .task-check {
+
       width: 22px;
       height: 22px;
 
@@ -510,6 +567,7 @@
     }
 
     .dashboard-note {
+
       margin-top: 18px;
 
       color: #8EA5A9;
@@ -523,6 +581,7 @@
        ===================================================== */
 
     .trust-bar {
+
       padding: 23px 0;
 
       background: var(--soft);
@@ -533,6 +592,7 @@
     }
 
     .trust-items {
+
       display: flex;
 
       justify-content: center;
@@ -549,6 +609,7 @@
     }
 
     .trust-items span::before {
+
       content: "•";
 
       margin-right: 9px;
@@ -558,14 +619,20 @@
 
 
     /* =====================================================
-       METHOD
+       SECTIONS
        ===================================================== */
 
     section {
       padding: 90px 0;
     }
 
+
+    /* =====================================================
+       METHOD
+       ===================================================== */
+
     .cards {
+
       display: grid;
 
       grid-template-columns: repeat(3,1fr);
@@ -576,6 +643,7 @@
     }
 
     .card {
+
       padding: 29px;
 
       background: white;
@@ -585,9 +653,22 @@
       border-radius: var(--radius);
 
       box-shadow: var(--shadow-small);
+
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+    }
+
+    .card:hover {
+
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 14px 38px rgba(16,47,56,0.09);
     }
 
     .card-number {
+
       width: 43px;
       height: 43px;
 
@@ -605,12 +686,14 @@
     }
 
     .card h3 {
+
       margin-top: 20px;
 
       font-size: 1.2rem;
     }
 
     .card p {
+
       margin-top: 8px;
 
       color: var(--muted);
@@ -626,6 +709,7 @@
     }
 
     .resource-grid {
+
       display: grid;
 
       grid-template-columns: repeat(3,1fr);
@@ -636,6 +720,11 @@
     }
 
     .resource {
+
+      display: flex;
+
+      flex-direction: column;
+
       padding: 29px;
 
       background: var(--cream);
@@ -650,12 +739,14 @@
     }
 
     .resource:hover {
+
       transform: translateY(-5px);
 
       box-shadow: var(--shadow-small);
     }
 
     .resource-tag {
+
       color: var(--teal);
 
       font-size: 0.72rem;
@@ -666,6 +757,7 @@
     }
 
     .resource h3 {
+
       margin-top: 13px;
 
       font-size: 1.38rem;
@@ -676,15 +768,18 @@
     }
 
     .resource p {
+
       margin-top: 9px;
 
       color: var(--muted);
     }
 
     .resource-link {
+
       display: inline-block;
 
-      margin-top: 21px;
+      margin-top: auto;
+      padding-top: 21px;
 
       color: var(--navy);
 
@@ -697,12 +792,20 @@
       color: var(--teal);
     }
 
+    .resources-more {
+
+      margin-top: 32px;
+
+      text-align: center;
+    }
+
 
     /* =====================================================
        DIFFERENCE
        ===================================================== */
 
     .difference {
+
       display: grid;
 
       grid-template-columns: 0.8fr 1.2fr;
@@ -713,6 +816,7 @@
     }
 
     .difference-box {
+
       padding: 40px;
 
       background: var(--navy);
@@ -725,6 +829,7 @@
     }
 
     .difference-number {
+
       color: var(--yellow);
 
       font-size: 5rem;
@@ -737,6 +842,7 @@
     }
 
     .difference-box h3 {
+
       margin-top: 24px;
 
       font-size: 1.4rem;
@@ -745,12 +851,14 @@
     }
 
     .difference-box p {
+
       margin-top: 10px;
 
       color: #C3D0D2;
     }
 
     .check-list {
+
       list-style: none;
 
       display: grid;
@@ -761,12 +869,14 @@
     }
 
     .check-list li {
+
       display: flex;
 
       gap: 11px;
     }
 
     .check-list li::before {
+
       content: "✓";
 
       color: var(--teal);
@@ -776,7 +886,7 @@
 
 
     /* =====================================================
-       TESTIMONIAL / SOCIAL PROOF PLACEHOLDER
+       QUOTE
        ===================================================== */
 
     .quote-section {
@@ -784,6 +894,7 @@
     }
 
     .quote {
+
       max-width: 850px;
 
       margin: auto;
@@ -792,6 +903,7 @@
     }
 
     .quote-mark {
+
       color: var(--teal);
 
       font-size: 4rem;
@@ -800,6 +912,7 @@
     }
 
     .quote-text {
+
       margin-top: 20px;
 
       font-size: clamp(1.7rem,3vw,2.5rem);
@@ -812,6 +925,7 @@
     }
 
     .quote-note {
+
       margin-top: 18px;
 
       color: var(--muted);
@@ -829,6 +943,7 @@
     }
 
     .faq details {
+
       margin-top: 11px;
 
       padding: 19px 21px;
@@ -838,15 +953,28 @@
       border: 1px solid var(--border);
 
       border-radius: 15px;
+
+      transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+    }
+
+    .faq details[open] {
+
+      border-color: #C8DEDA;
+
+      box-shadow: var(--shadow-small);
     }
 
     .faq summary {
+
       cursor: pointer;
 
       font-weight: 850;
     }
 
     .faq details p {
+
       margin-top: 13px;
 
       color: var(--muted);
@@ -854,7 +982,7 @@
 
 
     /* =====================================================
-       NEWSLETTER CTA
+       NEWSLETTER
        ===================================================== */
 
     .newsletter-section {
@@ -862,6 +990,7 @@
     }
 
     .newsletter {
+
       padding: 58px;
 
       background: var(--navy);
@@ -872,6 +1001,7 @@
     }
 
     .newsletter-grid {
+
       display: grid;
 
       grid-template-columns: 1fr 0.85fr;
@@ -882,6 +1012,7 @@
     }
 
     .newsletter h2 {
+
       margin-top: 12px;
 
       font-size: clamp(2rem,4vw,3rem);
@@ -892,12 +1023,14 @@
     }
 
     .newsletter-description {
+
       margin-top: 13px;
 
       color: #C5D1D3;
     }
 
-    .newsletter form {
+    .newsletter-form {
+
       display: flex;
 
       flex-wrap: wrap;
@@ -906,6 +1039,7 @@
     }
 
     .newsletter input {
+
       flex: 1;
 
       min-width: 210px;
@@ -922,6 +1056,7 @@
     }
 
     .newsletter button {
+
       padding: 15px 21px;
 
       border: 0;
@@ -942,6 +1077,7 @@
     }
 
     .newsletter-small {
+
       margin-top: 12px;
 
       color: #94AAAE;
@@ -955,6 +1091,7 @@
        ===================================================== */
 
     footer {
+
       margin-top: 70px;
 
       padding: 40px 0;
@@ -965,6 +1102,7 @@
     }
 
     .footer-content {
+
       display: flex;
 
       justify-content: space-between;
@@ -977,6 +1115,7 @@
     }
 
     .footer-brand strong {
+
       color: white;
 
       font-size: 1.05rem;
@@ -987,6 +1126,7 @@
     }
 
     .footer-links {
+
       display: flex;
 
       flex-wrap: wrap;
@@ -997,6 +1137,7 @@
     }
 
     .footer-links a {
+
       color: white;
 
       text-decoration: none;
@@ -1022,13 +1163,16 @@
       }
 
       .hero-grid {
+
         grid-template-columns: 1fr;
 
         gap: 50px;
       }
 
       h1 {
-        font-size: clamp(2.9rem,12vw,4.3rem);
+
+        font-size:
+          clamp(2.9rem,12vw,4.3rem);
       }
 
       .hero-description {
@@ -1037,11 +1181,13 @@
 
       .cards,
       .resource-grid {
+
         grid-template-columns: 1fr;
       }
 
       .difference,
       .newsletter-grid {
+
         grid-template-columns: 1fr;
 
         gap: 40px;
@@ -1057,6 +1203,57 @@
 
       .dashboard {
         padding: 25px;
+      }
+
+      .difference-box {
+        padding: 30px;
+      }
+
+      .trust-items {
+        gap: 12px 22px;
+        justify-content: flex-start;
+      }
+    }
+
+
+    /* =====================================================
+       VERY SMALL PHONES
+       ===================================================== */
+
+    @media (max-width: 430px) {
+
+      nav {
+        height: 66px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .dashboard {
+        padding: 21px;
+      }
+
+      .task {
+        font-size: 0.8rem;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .newsletter input,
+      .newsletter button {
+        width: 100%;
+      }
+
+      .footer-content {
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
 
@@ -1075,26 +1272,40 @@
 
   <nav class="container">
 
-    <a href="/" class="logo">
+    <a
+      href="index.html"
+      class="logo"
+      aria-label="MicroClair — Accueil"
+    >
       Micro<span>Clair</span>
     </a>
+
 
     <ul>
 
       <li>
-        <a href="#methode">La méthode</a>
+        <a href="#methode">
+          La méthode
+        </a>
       </li>
 
       <li>
-        <a href="#ressources">Ressources</a>
+        <a href="ressources.html">
+          Ressources
+        </a>
       </li>
 
       <li>
-        <a href="#faq">FAQ</a>
+        <a href="#faq">
+          FAQ
+        </a>
       </li>
 
       <li>
-        <a href="#newsletter" class="nav-button">
+        <a
+          href="checklist-90-jours.html"
+          class="nav-button"
+        >
           Commencer gratuitement
         </a>
       </li>
@@ -1136,15 +1347,16 @@
         MicroClair vous aide à savoir quoi faire,
         quand le faire et comment vous organiser —
         avec des guides courts, des checklists et
-        des modèles simples.
+        des outils simples.
 
       </p>
 
 
       <div class="hero-actions">
 
+
         <a
-          href="#ressources"
+          href="checklist-90-jours.html"
           class="button button-primary"
         >
           Commencer gratuitement →
@@ -1158,16 +1370,23 @@
           Découvrir MicroClair
         </a>
 
+
       </div>
 
 
       <div class="hero-trust">
 
-        <span>Sans jargon</span>
+        <span>
+          Sans jargon
+        </span>
 
-        <span>Concret et pratique</span>
+        <span>
+          Concret et pratique
+        </span>
 
-        <span>Transparent</span>
+        <span>
+          Transparent
+        </span>
 
       </div>
 
@@ -1175,7 +1394,9 @@
 
 
 
-    <!-- DASHBOARD -->
+    <!-- =================================================
+         DASHBOARD
+         ================================================= -->
 
     <div class="hero-visual">
 
@@ -1196,13 +1417,14 @@
 
 
         <h2>
-          Mon démarrage,
-          sans rien garder en tête.
+          Mon activité,
+          enfin sous contrôle.
         </h2>
 
 
         <p class="dashboard-description">
-          Une structure simple pour avancer sereinement.
+          Une méthode simple pour savoir quoi faire,
+          quoi vérifier et quelle est la prochaine étape.
         </p>
 
 
@@ -1262,6 +1484,7 @@
 
         </p>
 
+
       </div>
 
     </div>
@@ -1280,13 +1503,21 @@
 
   <div class="container trust-items">
 
-    <span>Guides gratuits</span>
+    <span>
+      Guides gratuits
+    </span>
 
-    <span>Checklists pratiques</span>
+    <span>
+      Checklists pratiques
+    </span>
 
-    <span>Modèles faciles à adapter</span>
+    <span>
+      Outils faciles à utiliser
+    </span>
 
-    <span>Sources officielles à vérifier</span>
+    <span>
+      Sources officielles à vérifier
+    </span>
 
   </div>
 
@@ -1359,7 +1590,7 @@
 
         <p>
           Une checklist, un exemple ou un
-          modèle pour passer immédiatement
+          outil pour passer immédiatement
           de la théorie à l’action.
         </p>
 
@@ -1429,6 +1660,8 @@
     <div class="resource-grid">
 
 
+      <!-- CHECKLIST -->
+
       <article class="resource">
 
         <div class="resource-tag">
@@ -1440,67 +1673,93 @@
         </h3>
 
         <p>
-          Un parcours simple pour structurer
-          votre lancement et éviter les oublis
-          d’organisation.
+          Un parcours interactif pour structurer
+          votre lancement, suivre votre progression
+          et éviter les oublis.
         </p>
 
-        <a href="#" class="resource-link">
-          Télécharger gratuitement →
+        <a
+          href="checklist-90-jours.html"
+          class="resource-link"
+        >
+          Commencer la checklist →
         </a>
 
       </article>
 
 
 
-      <article class="resource">
-
-        <div class="resource-tag">
-          02 · ORGANISATION
-        </div>
-
-        <h3>
-          Suivre ses recettes
-        </h3>
-
-        <p>
-          Les colonnes utiles pour suivre
-          factures, paiements et relances
-          dans un tableau simple.
-        </p>
-
-        <a href="#" class="resource-link">
-          Voir le modèle →
-        </a>
-
-      </article>
-
-
+      <!-- GUIDE -->
 
       <article class="resource">
 
         <div class="resource-tag">
-          03 · FACTURATION
+          02 · GUIDE
         </div>
 
         <h3>
-          Vérifier une facture
+          Les 10 choses à faire après sa création
         </h3>
 
         <p>
-          Une méthode de contrôle avant
-          l’envoi : identité, numéro,
-          prestation, montant et paiement.
+          Vous venez de créer votre activité ?
+          Découvrez les premières étapes pour
+          partir sur de bonnes bases.
         </p>
 
-        <a href="#" class="resource-link">
+        <a
+          href="10-choses-apres-creation-micro-entreprise.html"
+          class="resource-link"
+        >
           Lire le guide →
         </a>
 
       </article>
 
 
+
+      <!-- BIBLIOTHÈQUE -->
+
+      <article class="resource">
+
+        <div class="resource-tag">
+          03 · RESSOURCES
+        </div>
+
+        <h3>
+          Toute la bibliothèque MicroClair
+        </h3>
+
+        <p>
+          Retrouvez les guides, checklists et
+          ressources pratiques disponibles
+          pour votre micro-entreprise.
+        </p>
+
+        <a
+          href="ressources.html"
+          class="resource-link"
+        >
+          Voir toutes les ressources →
+        </a>
+
+      </article>
+
+
     </div>
+
+
+    <div class="resources-more">
+
+      <a
+        href="ressources.html"
+        class="button button-secondary"
+      >
+        Explorer toute la bibliothèque →
+      </a>
+
+    </div>
+
 
   </div>
 
@@ -1593,7 +1852,7 @@
 
 
 <!-- =====================================================
-     POSITIONNEMENT / CONFIANCE
+     POSITIONNEMENT
      ===================================================== -->
 
 <section class="quote-section">
@@ -1759,9 +2018,9 @@
 
           <p class="newsletter-description">
 
-            Au maximum deux e-mails par mois
-            avec les nouveaux guides, checklists
-            et modèles utiles.
+            Nous préparerons progressivement
+            de nouveaux guides, checklists et
+            outils utiles.
 
           </p>
 
@@ -1771,40 +2030,36 @@
 
         <div>
 
-          <!--
-            IMPORTANT :
-            Ce formulaire doit être connecté
-            à Brevo, Buttondown ou un autre service
-            avant utilisation réelle.
-          -->
-
-          <form
-            action="#"
-            method="post"
+          <p
+            class="newsletter-description"
+            style="margin-top:0"
           >
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Votre adresse e-mail"
-              aria-label="Votre adresse e-mail"
-              required
-            >
+            La newsletter arrivera bientôt.
+            En attendant, découvrez gratuitement
+            les ressources déjà disponibles.
 
-            <button type="submit">
-              Je m’inscris
-            </button>
+          </p>
 
-          </form>
+
+          <a
+            href="ressources.html"
+            class="button"
+            style="
+              margin-top:20px;
+              background:#F4C95D;
+              color:#102F38;
+            "
+          >
+            Découvrir les ressources →
+          </a>
 
 
           <p class="newsletter-small">
 
-            Votre adresse doit être utilisée uniquement
-            dans le cadre expliqué sur la politique
-            de confidentialité.
-
-            Désinscription possible à tout moment.
+            Pas de formulaire inutile tant que
+            le système d’inscription n’est pas
+            réellement en place.
 
           </p>
 
@@ -1851,19 +2106,19 @@
 
     <div class="footer-links">
 
-      <a href="/mentions-legales.html">
+      <a href="mentions-legales.html">
         Mentions légales
       </a>
 
-      <a href="/confidentialite.html">
+      <a href="confidentialite.html">
         Confidentialité
       </a>
 
-      <a href="/cookies.html">
+      <a href="cookies.html">
         Cookies
       </a>
 
-      <a href="/contact.html">
+      <a href="contact.html">
         Contact
       </a>
 
