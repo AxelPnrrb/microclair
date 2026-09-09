@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checklist 90 jours — MicroClair</title>
+
+<meta
+name="description"
+content="La checklist MicroClair pour structurer ses 90 premiers jours en micro-entreprise."
+>
+
+<meta name="theme-color" content="#102F38">
+
+
+<style>
+
+:root{
+--navy:#102F38;
+--navy-light:#183F49;
+--teal:#2A9D8F;
+--teal-light:#E8F5F2;
+--yellow:#F4C95D;
+--cream:#F8FAF8;
+--white:#FFFFFF;
+--text:#183238;
+--muted:#65777C;
+--border:#E1E9E7;
+--shadow:0 15px 45px rgba(16,47,56,.08);
+--radius:18px;
+}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:
+Inter,
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Arial,
+sans-serif;
+
+background:var(--cream);
+color:var(--text);
+
+line-height:1.6;
+
+-webkit-font-smoothing:antialiased;
+}
+
+a{
+color:inherit;
+}
+
+button{
+font:inherit;
+}
+
+.container{
+width:min(1080px,92%);
+margin:auto;
+}
+
+
+/* =========================
+HEADER
+========================= */
+
+header{
+position:sticky;
+top:0;
+z-index:100;
+
+background:rgba(248,250,248,.95);
+
+backdrop-filter:blur(15px);
+
+border-bottom:1px solid var(--border);
+}
+
+nav{
+height:74px;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+font-size:1.38rem;
+font-weight:900;
+letter-spacing:-.05em;
+text-decoration:none;
+}
+
+.logo span{
+color:var(--teal);
+}
+
+.back{
+font-size:.88rem;
+font-weight:800;
+text-decoration:none;
+color:var(--navy);
+}
+
+.back:hover{
+color:var(--teal);
+}
+
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+background:var(--white);
+padding:80px 0 65px;
+}
+
+.hero-content{
+max-width:820px;
+}
+
+.eyebrow{
+display:inline-flex;
+align-items:center;
+gap:9px;
+
+color:var(--teal);
+
+font-size:.76rem;
+font-weight:900;
+
+letter-spacing:.12em;
+text-transform:uppercase;
+}
+
+.eyebrow:before{
+content:"";
+
+width:28px;
+height:2px;
+
+background:var(--teal);
+}
+
+h1{
+margin-top:18px;
+
+font-size:clamp(3rem,6vw,5.2rem);
+
+line-height:.98;
+
+letter-spacing:-.07em;
+}
+
+.hero-text{
+max-width:700px;
+
+margin-top:22px;
+
+font-size:1.13rem;
+
+color:var(--muted);
+}
+
+.hero-meta{
+display:flex;
+flex-wrap:wrap;
+
+gap:10px;
+
+margin-top:25px;
+}
+
+.hero-meta span{
+padding:7px 11px;
+
+background:var(--cream);
+
+border:1px solid var(--border);
+
+border-radius:999px;
+
+font-size:.76rem;
+
+font-weight:800;
+
+color:var(--navy);
+}
+
+
+/* =========================
+PROGRESS
+========================= */
+
+.progress-wrapper{
+padding:22px 0;
+
+background:white;
+
+border-top:1px solid var(--border);
+border-bottom:1px solid var(--border);
+
+position:sticky;
+top:74px;
+z-index:50;
+}
+
+.progress-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:9px;
+
+font-size:.78rem;
+font-weight:850;
+}
+
+.progress-number{
+color:var(--teal);
+}
+
+.progress-bar{
+height:8px;
+
+background:#E6ECEB;
+
+border-radius:999px;
+
+overflow:hidden;
+}
+
+.progress-fill{
+width:0%;
+
+height:100%;
+
+background:var(--teal);
+
+border-radius:999px;
+
+transition:width .3s ease;
+}
+
+
+/* =========================
+INTRO
+========================= */
+
+.intro{
+padding:65px 0 30px;
+}
+
+.intro-box{
+padding:28px;
+
+background:var(--teal-light);
+
+border:1px solid #D5EBE7;
+
+border-radius:var(--radius);
+}
+
+.intro-box strong{
+display:block;
+
+font-size:1.05rem;
+}
+
+.intro-box p{
+margin-top:7px;
+
+color:var(--muted);
+
+font-size:.93rem;
+}
+
+
+/* =========================
+WEEKS
+========================= */
+
+.checklist{
+padding:25px 0 80px;
+}
+
+.week{
+margin-top:35px;
+
+background:white;
+
+border:1px solid var(--border);
+
+border-radius:22px;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+}
+
+.week:first-child{
+margin-top:0;
+}
+
+.week-header{
+padding:27px 30px;
+
+background:var(--navy);
+
+color:white;
+}
+
+.week-number{
+color:var(--yellow);
+
+font-size:.73rem;
+
+font-weight:900;
+
+letter-spacing:.12em;
+
+text-transform:uppercase;
+}
+
+.week-title{
+margin-top:6px;
+
+font-size:1.65rem;
+
+line-height:1.15;
+
+letter-spacing:-.035em;
+}
+
+.week-description{
+margin-top:6px;
+
+color:#B9C9CC;
+
+font-size:.9rem;
+}
+
+.tasks{
+padding:8px 0;
+}
+
+.task{
+display:flex;
+
+align-items:flex-start;
+
+gap:16px;
+
+padding:19px 30px;
+
+border-bottom:1px solid var(--border);
+
+cursor:pointer;
+
+transition:background .2s;
+}
+
+.task:last-child{
+border-bottom:0;
+}
+
+.task:hover{
+background:#FBFCFC;
+}
+
+.task input{
+position:absolute;
+
+opacity:0;
+
+pointer-events:none;
+}
+
+.checkbox{
+width:23px;
+height:23px;
+
+flex-shrink:0;
+
+margin-top:2px;
+
+display:grid;
+place-items:center;
+
+border:2px solid #C9D6D4;
+
+border-radius:7px;
+
+color:white;
+
+font-size:.72rem;
+
+font-weight:900;
+
+transition:.2s;
+}
+
+.task-content{
+flex:1;
+}
+
+.task-title{
+font-weight:850;
+
+line-height:1.35;
+}
+
+.task-description{
+margin-top:4px;
+
+color:var(--muted);
+
+font-size:.82rem;
+}
+
+.task input:checked + .checkbox{
+background:var(--teal);
+
+border-color:var(--teal);
+}
+
+.task input:checked + .checkbox:after{
+content:"✓";
+}
+
+.task input:checked ~ .task-content .task-title{
+color:#789095;
+
+text-decoration:line-through;
+}
+
+
+/* =========================
+FINAL
+========================= */
+
+.finish{
+padding:20px 0 90px;
+}
+
+.finish-box{
+padding:45px;
+
+background:var(--navy);
+
+color:white;
+
+border-radius:25px;
+
+text-align:center;
+}
+
+.finish-box h2{
+font-size:clamp(2rem,4vw,3rem);
+
+line-height:1.05;
+
+letter-spacing:-.05em;
+}
+
+.finish-box p{
+max-width:650px;
+
+margin:14px auto 0;
+
+color:#C5D1D3;
+}
+
+.finish-button{
+display:inline-flex;
+
+margin-top:25px;
+
+padding:13px 20px;
+
+background:var(--yellow);
+
+color:var(--navy);
+
+border-radius:999px;
+
+font-weight:900;
+
+text-decoration:none;
+}
+
+.finish-button:hover{
+filter:brightness(.96);
+}
+
+
+/* =========================
+NOTE
+========================= */
+
+.note{
+padding:35px 0;
+
+color:var(--muted);
+
+font-size:.78rem;
+
+text-align:center;
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+padding:38px 0;
+
+background:#0C272E;
+
+color:#D9E4E5;
+}
+
+.footer-content{
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+}
+
+.footer-brand strong{
+color:white;
+}
+
+.footer-brand small{
+color:#91A7AA;
+}
+
+.footer-links{
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+}
+
+.footer-links a{
+color:white;
+
+font-size:.78rem;
+
+text-decoration:none;
+}
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:700px){
+
+nav{
+height:66px;
+}
+
+.progress-wrapper{
+top:66px;
+}
+
+.hero{
+padding:58px 0 50px;
+}
+
+h1{
+font-size:clamp(2.8rem,13vw,4rem);
+}
+
+.hero-text{
+font-size:1rem;
+}
+
+.week-header{
+padding:23px 20px;
+}
+
+.task{
+padding:17px 20px;
+gap:13px;
+}
+
+.finish-box{
+padding:32px 22px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<nav class="container">
+
+<a
+href="index.html"
+class="logo"
+>
+Micro<span>Clair</span>
+</a>
+
+<a
+href="ressources.html"
+class="back"
+>
+← Toutes les ressources
+</a>
+
+</nav>
+
+</header>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<div class="eyebrow">
+Checklist gratuite
+</div>
+
+<h1>
+Mes 90 premiers jours.
+</h1>
+
+<p class="hero-text">
+
+Une feuille de route simple pour mettre
+de l'ordre dans votre activité, créer de
+bonnes habitudes et savoir quoi vérifier
+au fil des semaines.
+
+</p>
+
+<div class="hero-meta">
+
+<span>✓ Gratuit</span>
+
+<span>✓ À votre rythme</span>
+
+<span>✓ Débutant</span>
+
+<span>✓ Sans jargon</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PROGRESS -->
+
+<div class="progress-wrapper">
+
+<div class="container">
+
+<div class="progress-top">
+
+<span>
+Votre progression
+</span>
+
+<span
+class="progress-number"
+id="progressText"
+>
+0 / 24
+</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div
+class="progress-fill"
+id="progressFill"
+></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+<div class="container">
+
+<div class="intro-box">
+
+<strong>
+💡 Comment utiliser cette checklist ?
+</strong>
+
+<p>
+
+Ne cherchez pas à tout faire en une journée.
+Avancez étape par étape et cochez les actions
+que vous avez réellement réalisées. Certaines
+dépendent de votre situation : lorsqu'une
+vérification est nécessaire, utilisez les sources
+officielles ou demandez conseil à un professionnel.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CHECKLIST -->
+
+<section class="checklist">
+
+<div class="container">
+
+
+<!-- =========================
+SEMAINE 1
+========================= -->
+
+<div class="week">
+
+<div class="week-header">
+
+<div class="week-number">
+Semaine 1 · Poser les bases
+</div>
+
+<div class="week-title">
+Comprendre et organiser
+</div>
+
+<div class="week-description">
+Commencez par créer un environnement simple et propre.
+</div>
+
+</div>
+
+
+<div class="tasks">
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Créer un espace dédié à son activité
+</span>
+
+<span class="task-description">
+Un dossier numérique ou physique pour regrouper
+les documents liés à votre activité.
+</span>
+
+</span>
+
+</label>
+
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Créer une structure de classement
+</span>
+
+<span class="task-description">
+Par exemple : création, factures, recettes,
+dépenses, contrats et documents importants.
+</span>
+
+</span>
+
+</label>
+
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Identifier les informations importantes de son activité
+</span>
+
+<span class="task-description">
+Gardez au même endroit les informations
+nécessaires à vos démarches et à votre organisation.
+</span>
+
+</span>
+
+</label>
+
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Choisir un endroit pour suivre ses recettes
+</span>
+
+<span class="task-description">
+Un tableau simple peut suffire au départ pour
+conserver une vision claire de votre activité.
+</span>
+
+</span>
+
+</label>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =========================
+SEMAINE 2
+========================= -->
+
+<div class="week">
+
+<div class="week-header">
+
+<div class="week-number">
+Semaine 2 · Facturation
+</div>
+
+<div class="week-title">
+Préparer son système de facturation
+</div>
+
+<div class="week-description">
+L'objectif : ne plus improviser lorsqu'un client doit être facturé.
+</div>
+
+</div>
+
+
+<div class="tasks">
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Créer un modèle de facture
+</span>
+
+<span class="task-description">
+Préparez un modèle que vous pourrez adapter
+à chaque prestation.
+</span>
+
+</span>
+
+</label>
+
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Définir une logique de numérotation
+</span>
+
+<span class="task-description">
+Utilisez une méthode cohérente pour retrouver
+facilement vos factures.
+</span>
+
+</span>
+
+</label>
+
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Créer un suivi des factures envoyées
+</span>
+
+<span class="task-description">
+Notez au minimum la facture, le client,
+la date, le montant et le statut.
+</span>
+
+</span>
+
+</label>
+
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Définir une routine de suivi des paiements
+</span>
+
+<span class="task-description">
+Choisissez un moment régulier pour vérifier
+les factures en attente.
+</span>
+
+</span>
+
+</label>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =========================
+SEMAINES 3-4
+========================= -->
+
+<div class="week">
+
+<div class="week-header">
+
+<div class="week-number">
+Semaines 3–4 · Organisation
+</div>
+
+<div class="week-title">
+Construire une routine
+</div>
+
+<div class="week-description">
+Une bonne organisation doit être facile à maintenir.
+</div>
+
+</div>
+
+
+<div class="tasks">
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Choisir un créneau administratif chaque semaine
+</span>
+
+<span class="task-description">
+Même 20 à 30 minutes peuvent servir à mettre
+à jour votre suivi et vos documents.
+</span>
+
+</span>
+
+</label>
+
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Mettre à jour son suivi des recettes
+</span>
+
+<span class="task-description">
+Évitez de laisser plusieurs semaines
+s'accumuler avant de mettre vos informations à jour.
+</span>
+
+</span>
+
+</label>
+
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Classer les documents reçus
+</span>
+
+<span class="task-description">
+Archivez régulièrement les documents importants
+au lieu de les laisser dans votre boîte mail.
+</span>
+
+</span>
+
+</label>
+
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Créer une liste de questions à vérifier
+</span>
+
+<span class="task-description">
+Notez les points dont vous n'êtes pas certain
+afin de les vérifier plus tard au bon endroit.
+</span>
+
+</span>
+
+</label>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =========================
+MOIS 2
+========================= -->
+
+<div class="week">
+
+<div class="week-header">
+
+<div class="week-number">
+Jours 31–60 · Consolider
+</div>
+
+<div class="week-title">
+Prendre de bonnes habitudes
+</div>
+
+<div class="week-description">
+Vous avez maintenant une base. Il faut la rendre durable.
+</div>
+
+</div>
+
+
+<div class="tasks">
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Vérifier que toutes les factures sont suivies
+</span>
+
+<span class="task-description">
+Comparez votre activité récente avec votre tableau
+de suivi pour repérer les oublis.
+</span>
+
+</span>
+
+</label>
+
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Identifier les paiements en attente
+</span>
+
+<span class="task-description">
+Préparez les relances nécessaires lorsque c'est pertinent.
+</span>
+
+</span>
+
+</label>
+
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Faire un point sur son organisation
+</span>
+
+<span class="task-description">
+Supprimez les étapes inutiles et simplifiez
+ce qui vous prend trop de temps.
+</span>
+
+</span>
+
+</label>
+
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Vérifier les informations officielles applicables
+</span>
+
+<span class="task-description">
+Certaines obligations dépendent de votre situation
+et peuvent évoluer. Vérifiez les sources officielles.
+</span>
+
+</span>
+
+</label>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =========================
+MOIS 3
+========================= -->
+
+<div class="week">
+
+<div class="week-header">
+
+<div class="week-number">
+Jours 61–90 · Stabiliser
+</div>
+
+<div class="week-title">
+Transformer l'organisation en système
+</div>
+
+<div class="week-description">
+Le but n'est plus de commencer : c'est de tenir dans la durée.
+</div>
+
+</div>
+
+
+<div class="tasks">
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Faire un bilan des 90 premiers jours
+</span>
+
+<span class="task-description">
+Notez ce qui fonctionne, ce qui vous fait perdre
+du temps et ce qui doit être amélioré.
+</span>
+
+</span>
+
+</label>
+
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Mettre à jour son classement documentaire
+</span>
+
+<span class="task-description">
+Une dernière remise à plat permet de repartir
+sur une organisation propre.
+</span>
+
+</span>
+
+</label>
+
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Programmer ses prochains points de vérification
+</span>
+
+<span class="task-description">
+Ajoutez dans votre agenda les moments où vous
+devrez refaire le point sur votre organisation.
+</span>
+
+</span>
+
+</label>
+
+
+
+<label class="task">
+
+<input type="checkbox">
+
+<span class="checkbox"></span>
+
+<span class="task-content">
+
+<span class="task-title">
+Conserver une routine simple et réaliste
+</span>
+
+<span class="task-description">
+Une organisation imparfaite mais régulière vaut
+mieux qu'un système compliqué que vous abandonnez.
+</span>
+
+</span>
+
+</label>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- FIN -->
+
+<section class="finish">
+
+<div class="container">
+
+<div class="finish-box">
+
+<h2>
+90 jours.
+Une base solide.
+</h2>
+
+<p>
+
+Vous n'avez pas besoin que tout soit parfait.
+L'objectif est d'avoir une organisation suffisamment
+claire pour savoir où vous en êtes et quelle est
+la prochaine étape.
+
+</p>
+
+<a
+href="ressources.html"
+class="finish-button"
+>
+← Retour aux ressources
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- NOTE -->
+
+<div class="note">
+
+<div class="container">
+
+<strong>À retenir :</strong>
+cette checklist est un outil pédagogique
+d'organisation. Elle ne constitue pas un conseil
+juridique, fiscal ou comptable. Les obligations
+applicables dépendent de votre situation et peuvent
+évoluer : vérifiez les informations auprès des
+organismes officiels lorsque nécessaire.
+
+</div>
+
+</div>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container footer-content">
+
+<div class="footer-brand">
+
+<strong>
+MicroClair
+</strong>
+
+<br>
+
+<small>
+Moins de flou. Plus d'organisation.
+</small>
+
+</div>
+
+
+<div class="footer-links">
+
+<a href="index.html">
+Accueil
+</a>
+
+<a href="ressources.html">
+Ressources
+</a>
+
+<a href="mentions-legales.html">
+Mentions légales
+</a>
+
+<a href="confidentialite.html">
+Confidentialité
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+/* =====================================================
+   PROGRESSION AUTOMATIQUE
+   ===================================================== */
+
+const tasks =
+document.querySelectorAll(
+'.task input'
+);
+
+const progressText =
+document.getElementById(
+'progressText'
+);
+
+const progressFill =
+document.getElementById(
+'progressFill'
+);
+
+
+/* Sauvegarde locale */
+
+function saveProgress(){
+
+const checked = [];
+
+tasks.forEach(
+(task,index)=>{
+
+checked[index] =
+task.checked;
+
+}
+);
+
+localStorage.setItem(
+'microclair90jours',
+JSON.stringify(checked)
+);
+
+}
+
+
+/* Chargement */
+
+function loadProgress(){
+
+const saved =
+localStorage.getItem(
+'microclair90jours'
+);
+
+if(!saved) return;
+
+try{
+
+const checked =
+JSON.parse(saved);
+
+tasks.forEach(
+(task,index)=>{
+
+if(checked[index]){
+task.checked=true;
+}
+
+});
+
+}catch(error){
+
+console.log(
+"Impossible de charger la progression."
+);
+
+}
+
+}
+
+
+/* Mise à jour */
+
+function updateProgress(){
+
+let completed=0;
+
+tasks.forEach(
+task=>{
+
+if(task.checked){
+completed++;
+}
+
+});
+
+const total =
+tasks.length;
+
+const percentage =
+(total === 0)
+? 0
+: (completed / total) * 100;
+
+progressText.textContent =
+completed + " / " + total;
+
+progressFill.style.width =
+percentage + "%";
+
+saveProgress();
+
+}
+
+
+/* Écoute des cases */
+
+tasks.forEach(
+task=>{
+
+task.addEventListener(
+'change',
+updateProgress
+);
+
+});
+
+
+loadProgress();
+
+updateProgress();
+
+</script>
+
+
+</body>
+</html>
+```
