@@ -1,296 +1,1881 @@
-<!doctype html>
+```html
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MicroClair — Organiser sa micro-entreprise simplement</title>
-  <meta name="description" content="Guides, checklists et modèles simples pour les freelances débutants en micro-entreprise.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MicroClair — Votre micro-entreprise, enfin claire</title>
+
+  <meta name="description" content="MicroClair aide les freelances débutants à organiser simplement leur micro-entreprise grâce à des guides, checklists et modèles pratiques.">
+
+  <meta name="theme-color" content="#102F38">
 
   <style>
+
+    /* =====================================================
+       MICROCLAIR — DESIGN SYSTEM
+       ===================================================== */
+
     :root {
-      --bleu: #123c4a;
-      --turquoise: #2a9d8f;
-      --jaune: #f4c95d;
-      --fond: #fafaf7;
-      --texte: #202124;
+      --navy: #102F38;
+      --navy-light: #183F49;
+      --teal: #2A9D8F;
+      --teal-light: #E8F5F2;
+      --yellow: #F4C95D;
+
+      --cream: #F8FAF8;
+      --white: #FFFFFF;
+
+      --text: #183238;
+      --muted: #65777C;
+
+      --border: #E1E9E7;
+
+      --shadow-small: 0 8px 30px rgba(16,47,56,0.06);
+      --shadow-large: 0 25px 70px rgba(16,47,56,0.12);
+
+      --radius: 18px;
+      --radius-large: 28px;
     }
+
+
+    /* =====================================================
+       RESET
+       ===================================================== */
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: var(--texte);
-      background: var(--fond);
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      background: var(--cream);
+      color: var(--text);
+
       line-height: 1.6;
+
+      -webkit-font-smoothing: antialiased;
     }
+
+    img {
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 3px solid var(--yellow);
+      outline-offset: 4px;
+    }
+
+
+    /* =====================================================
+       GLOBAL
+       ===================================================== */
+
+    .container {
+      width: min(1160px, 92%);
+      margin: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      color: var(--teal);
+
+      font-size: 0.78rem;
+      font-weight: 900;
+
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+
+      width: 28px;
+      height: 2px;
+
+      background: var(--teal);
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+
+      line-height: 1.06;
+
+      letter-spacing: -0.055em;
+
+      margin-top: 12px;
+    }
+
+    .section-intro {
+      max-width: 690px;
+
+      margin-top: 16px;
+
+      color: var(--muted);
+
+      font-size: 1.08rem;
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
 
     header {
-      background: white;
-      border-bottom: 1px solid #ddd;
-    }
+      position: sticky;
+      top: 0;
 
-    nav,
-    section,
-    footer {
-      width: min(1100px, 92%);
-      margin: auto;
+      z-index: 100;
+
+      background: rgba(248,250,248,0.94);
+
+      backdrop-filter: blur(16px);
+
+      border-bottom: 1px solid rgba(225,233,231,0.9);
     }
 
     nav {
-      min-height: 70px;
+      height: 74px;
+
       display: flex;
-      justify-content: space-between;
+
       align-items: center;
-      gap: 20px;
+
+      justify-content: space-between;
+
+      gap: 30px;
     }
 
     .logo {
-      color: var(--bleu);
-      font-size: 1.4rem;
-      font-weight: bold;
       text-decoration: none;
+
+      font-size: 1.38rem;
+
+      font-weight: 900;
+
+      letter-spacing: -0.05em;
+    }
+
+    .logo span {
+      color: var(--teal);
     }
 
     nav ul {
-      display: flex;
-      gap: 18px;
       list-style: none;
-      padding: 0;
-      margin: 0;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 28px;
     }
 
     nav a {
-      color: var(--bleu);
       text-decoration: none;
+
+      font-size: 0.92rem;
+
+      font-weight: 750;
+
+      color: var(--navy-light);
     }
+
+    nav a:hover {
+      color: var(--teal);
+    }
+
+    .nav-button {
+      padding: 10px 17px;
+
+      border: 1px solid var(--navy);
+
+      border-radius: 999px;
+
+      transition: 0.2s;
+    }
+
+    .nav-button:hover {
+      background: var(--navy);
+
+      color: white;
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
 
     .hero {
-      width: 100%;
-      background: var(--bleu);
-      color: white;
-      padding: 90px 4%;
+      background: var(--white);
+
+      padding: 105px 0 90px;
+
+      overflow: hidden;
     }
 
-    .hero-content {
-      width: min(1100px, 92%);
-      margin: auto;
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns: 1.08fr 0.92fr;
+
+      gap: 80px;
+
+      align-items: center;
     }
 
     h1 {
-      max-width: 760px;
-      font-size: clamp(2.3rem, 6vw, 4rem);
-      line-height: 1.1;
-      margin: 0 0 20px;
+      max-width: 780px;
+
+      margin-top: 18px;
+
+      font-size: clamp(3rem, 6.5vw, 5.7rem);
+
+      line-height: 0.98;
+
+      letter-spacing: -0.07em;
     }
 
-    h2 {
-      color: var(--bleu);
-      font-size: 2rem;
-    }
+    .hero-description {
+      max-width: 650px;
 
-    .hero p {
-      max-width: 700px;
+      margin-top: 27px;
+
+      color: var(--muted);
+
       font-size: 1.2rem;
     }
 
-    .bouton {
-      display: inline-block;
+    .hero-actions {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 14px 21px;
+
+      border-radius: 999px;
+
+      text-decoration: none;
+
+      font-weight: 850;
+
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
+    }
+
+    .button-primary {
+      background: var(--navy);
+
+      color: white;
+
+      box-shadow: 0 10px 25px rgba(16,47,56,0.15);
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+
+      box-shadow: 0 15px 32px rgba(16,47,56,0.2);
+    }
+
+    .button-secondary {
+      background: white;
+
+      border: 1px solid var(--border);
+
+      color: var(--navy);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--teal);
+
+      color: var(--teal);
+    }
+
+    .hero-trust {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 22px;
+
+      margin-top: 30px;
+
+      color: var(--muted);
+
+      font-size: 0.87rem;
+    }
+
+    .hero-trust span::before {
+      content: "✓";
+
+      margin-right: 7px;
+
+      color: var(--teal);
+
+      font-weight: 900;
+    }
+
+
+    /* =====================================================
+       HERO DASHBOARD
+       ===================================================== */
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-visual::before {
+      content: "";
+
+      position: absolute;
+
+      width: 300px;
+      height: 300px;
+
+      right: -80px;
+      top: -90px;
+
+      background: var(--teal-light);
+
+      border-radius: 50%;
+    }
+
+    .dashboard {
+      position: relative;
+
+      background: var(--navy);
+
+      color: white;
+
+      padding: 31px;
+
+      border-radius: var(--radius-large);
+
+      box-shadow: var(--shadow-large);
+
+      z-index: 2;
+    }
+
+    .dashboard-top {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      color: #9DB3B7;
+
+      font-size: 0.75rem;
+
+      font-weight: 850;
+    }
+
+    .dashboard-status {
+      background: rgba(42,157,143,0.2);
+
+      color: #80D6CA;
+
+      padding: 6px 10px;
+
+      border-radius: 999px;
+    }
+
+    .dashboard h2 {
+      margin-top: 27px;
+
+      max-width: 400px;
+
+      font-size: 1.75rem;
+
+      line-height: 1.15;
+
+      letter-spacing: -0.035em;
+    }
+
+    .dashboard-description {
+      margin-top: 8px;
+
+      color: #B9C9CC;
+
+      font-size: 0.9rem;
+    }
+
+    .progress-bar {
+      height: 8px;
+
+      margin: 25px 0 20px;
+
+      background: #38565D;
+
+      border-radius: 999px;
+
+      overflow: hidden;
+    }
+
+    .progress-bar span {
+      display: block;
+
+      width: 68%;
+
+      height: 100%;
+
+      background: var(--yellow);
+
+      border-radius: 999px;
+    }
+
+    .task {
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      margin-top: 9px;
+
+      padding: 13px;
+
+      background: rgba(255,255,255,0.07);
+
+      border-radius: 13px;
+
+      font-size: 0.88rem;
+    }
+
+    .task-check {
+      width: 22px;
+      height: 22px;
+
+      display: grid;
+
+      place-items: center;
+
+      flex-shrink: 0;
+
+      background: var(--teal);
+
+      border-radius: 50%;
+
+      font-size: 0.7rem;
+
+      font-weight: 900;
+    }
+
+    .task.pending {
+      opacity: 0.52;
+    }
+
+    .task.pending .task-check {
+      background: #536A70;
+    }
+
+    .dashboard-note {
+      margin-top: 18px;
+
+      color: #8EA5A9;
+
+      font-size: 0.72rem;
+    }
+
+
+    /* =====================================================
+       TRUST BAR
+       ===================================================== */
+
+    .trust-bar {
+      padding: 23px 0;
+
+      background: var(--soft);
+
+      border-top: 1px solid var(--border);
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .trust-items {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 30px;
+
+      color: var(--navy-light);
+
+      font-size: 0.88rem;
+
+      font-weight: 750;
+    }
+
+    .trust-items span::before {
+      content: "•";
+
+      margin-right: 9px;
+
+      color: var(--teal);
+    }
+
+
+    /* =====================================================
+       METHOD
+       ===================================================== */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .cards {
+      display: grid;
+
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 18px;
+
+      margin-top: 40px;
+    }
+
+    .card {
+      padding: 29px;
+
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      box-shadow: var(--shadow-small);
+    }
+
+    .card-number {
+      width: 43px;
+      height: 43px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: var(--teal-light);
+
+      color: var(--teal);
+
+      font-weight: 900;
+    }
+
+    .card h3 {
       margin-top: 20px;
-      padding: 13px 18px;
-      border-radius: 8px;
-      background: var(--jaune);
-      color: var(--texte);
-      font-weight: bold;
+
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      margin-top: 8px;
+
+      color: var(--muted);
+    }
+
+
+    /* =====================================================
+       RESOURCES
+       ===================================================== */
+
+    .resources {
+      background: white;
+    }
+
+    .resource-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 18px;
+
+      margin-top: 40px;
+    }
+
+    .resource {
+      padding: 29px;
+
+      background: var(--cream);
+
+      border: 1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+    }
+
+    .resource:hover {
+      transform: translateY(-5px);
+
+      box-shadow: var(--shadow-small);
+    }
+
+    .resource-tag {
+      color: var(--teal);
+
+      font-size: 0.72rem;
+
+      font-weight: 900;
+
+      letter-spacing: 0.1em;
+    }
+
+    .resource h3 {
+      margin-top: 13px;
+
+      font-size: 1.38rem;
+
+      line-height: 1.18;
+
+      letter-spacing: -0.025em;
+    }
+
+    .resource p {
+      margin-top: 9px;
+
+      color: var(--muted);
+    }
+
+    .resource-link {
+      display: inline-block;
+
+      margin-top: 21px;
+
+      color: var(--navy);
+
+      font-weight: 850;
+
       text-decoration: none;
     }
 
-    section {
-      padding: 65px 0;
+    .resource-link:hover {
+      color: var(--teal);
     }
 
-    .cartes {
+
+    /* =====================================================
+       DIFFERENCE
+       ===================================================== */
+
+    .difference {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+
+      grid-template-columns: 0.8fr 1.2fr;
+
+      gap: 70px;
+
+      align-items: center;
     }
 
-    .carte {
-      padding: 24px;
-      background: white;
-      border: 1px solid #dce4e3;
-      border-radius: 12px;
+    .difference-box {
+      padding: 40px;
+
+      background: var(--navy);
+
+      color: white;
+
+      border-radius: 30px;
+
+      box-shadow: var(--shadow-large);
     }
 
-    .carte h3 {
-      color: var(--bleu);
+    .difference-number {
+      color: var(--yellow);
+
+      font-size: 5rem;
+
+      line-height: 0.9;
+
+      font-weight: 900;
+
+      letter-spacing: -0.08em;
     }
 
-    .avertissement {
+    .difference-box h3 {
+      margin-top: 24px;
+
+      font-size: 1.4rem;
+
+      line-height: 1.2;
+    }
+
+    .difference-box p {
+      margin-top: 10px;
+
+      color: #C3D0D2;
+    }
+
+    .check-list {
+      list-style: none;
+
+      display: grid;
+
+      gap: 13px;
+
       margin-top: 25px;
-      padding: 18px;
-      border-left: 5px solid var(--jaune);
-      background: #fff8df;
     }
+
+    .check-list li {
+      display: flex;
+
+      gap: 11px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+
+      color: var(--teal);
+
+      font-weight: 900;
+    }
+
+
+    /* =====================================================
+       TESTIMONIAL / SOCIAL PROOF PLACEHOLDER
+       ===================================================== */
+
+    .quote-section {
+      background: var(--soft);
+    }
+
+    .quote {
+      max-width: 850px;
+
+      margin: auto;
+
+      text-align: center;
+    }
+
+    .quote-mark {
+      color: var(--teal);
+
+      font-size: 4rem;
+
+      line-height: 0.7;
+    }
+
+    .quote-text {
+      margin-top: 20px;
+
+      font-size: clamp(1.7rem,3vw,2.5rem);
+
+      line-height: 1.2;
+
+      letter-spacing: -0.04em;
+
+      font-weight: 750;
+    }
+
+    .quote-note {
+      margin-top: 18px;
+
+      color: var(--muted);
+
+      font-size: 0.88rem;
+    }
+
+
+    /* =====================================================
+       FAQ
+       ===================================================== */
+
+    .faq {
+      max-width: 850px;
+    }
+
+    .faq details {
+      margin-top: 11px;
+
+      padding: 19px 21px;
+
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 15px;
+    }
+
+    .faq summary {
+      cursor: pointer;
+
+      font-weight: 850;
+    }
+
+    .faq details p {
+      margin-top: 13px;
+
+      color: var(--muted);
+    }
+
+
+    /* =====================================================
+       NEWSLETTER CTA
+       ===================================================== */
+
+    .newsletter-section {
+      padding-top: 25px;
+    }
+
+    .newsletter {
+      padding: 58px;
+
+      background: var(--navy);
+
+      color: white;
+
+      border-radius: 32px;
+    }
+
+    .newsletter-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 0.85fr;
+
+      gap: 55px;
+
+      align-items: center;
+    }
+
+    .newsletter h2 {
+      margin-top: 12px;
+
+      font-size: clamp(2rem,4vw,3rem);
+
+      line-height: 1.08;
+
+      letter-spacing: -0.05em;
+    }
+
+    .newsletter-description {
+      margin-top: 13px;
+
+      color: #C5D1D3;
+    }
+
+    .newsletter form {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 9px;
+    }
+
+    .newsletter input {
+      flex: 1;
+
+      min-width: 210px;
+
+      padding: 15px 18px;
+
+      border: 0;
+
+      border-radius: 999px;
+
+      background: white;
+
+      color: var(--text);
+    }
+
+    .newsletter button {
+      padding: 15px 21px;
+
+      border: 0;
+
+      border-radius: 999px;
+
+      background: var(--yellow);
+
+      color: var(--navy);
+
+      font-weight: 900;
+
+      cursor: pointer;
+    }
+
+    .newsletter button:hover {
+      filter: brightness(0.96);
+    }
+
+    .newsletter-small {
+      margin-top: 12px;
+
+      color: #94AAAE;
+
+      font-size: 0.72rem;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
 
     footer {
-      width: 100%;
-      padding: 30px 4%;
-      background: var(--bleu);
-      color: white;
+      margin-top: 70px;
+
+      padding: 40px 0;
+
+      background: #0C272E;
+
+      color: #D9E4E5;
     }
 
-    footer a {
-      color: white;
+    .footer-content {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 25px;
     }
 
-    @media (max-width: 700px) {
-      nav {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 16px 0;
-      }
+    .footer-brand strong {
+      color: white;
+
+      font-size: 1.05rem;
+    }
+
+    .footer-brand small {
+      color: #91A7AA;
+    }
+
+    .footer-links {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 15px;
+
+      font-size: 0.83rem;
+    }
+
+    .footer-links a {
+      color: white;
+
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 850px) {
 
       nav ul {
-        flex-wrap: wrap;
-      }
-
-      .cartes {
-        grid-template-columns: 1fr;
+        display: none;
       }
 
       .hero {
-        padding: 65px 4%;
+        padding: 65px 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+      }
+
+      h1 {
+        font-size: clamp(2.9rem,12vw,4.3rem);
+      }
+
+      .hero-description {
+        font-size: 1.08rem;
+      }
+
+      .cards,
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .difference,
+      .newsletter-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .newsletter {
+        padding: 34px 25px;
+      }
+
+      .dashboard {
+        padding: 25px;
       }
     }
+
   </style>
 </head>
 
+
 <body>
-  <header>
-    <nav aria-label="Navigation principale">
-      <a class="logo" href="index.html">MicroClair</a>
 
-      <ul>
-        <li><a href="#methode">Méthode</a></li>
-        <li><a href="#ressources">Ressources</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <p>Ressources pratiques pour freelances débutants</p>
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
 
-        <h1>Votre micro-entreprise, plus simple à organiser</h1>
+<header>
 
-        <p>
-          Des guides courts, des checklists et des modèles pour savoir quoi faire,
-          quand le faire et comment suivre votre activité.
-        </p>
+  <nav class="container">
 
-        <a class="bouton" href="#ressources">
-          Découvrir les ressources
+    <a href="/" class="logo">
+      Micro<span>Clair</span>
+    </a>
+
+    <ul>
+
+      <li>
+        <a href="#methode">La méthode</a>
+      </li>
+
+      <li>
+        <a href="#ressources">Ressources</a>
+      </li>
+
+      <li>
+        <a href="#faq">FAQ</a>
+      </li>
+
+      <li>
+        <a href="#newsletter" class="nav-button">
+          Commencer gratuitement
         </a>
-      </div>
-    </section>
+      </li>
 
-    <section id="methode">
-      <h2>Une méthode en trois étapes</h2>
+    </ul>
 
-      <div class="cartes">
-        <article class="carte">
-          <h3>1. Comprendre</h3>
-          <p>
-            Des explications simples pour mieux comprendre les démarches et
-            l’organisation quotidienne.
-          </p>
-        </article>
+  </nav>
 
-        <article class="carte">
-          <h3>2. Agir</h3>
-          <p>
-            Des checklists et des modèles faciles à adapter à votre activité.
-          </p>
-        </article>
+</header>
 
-        <article class="carte">
-          <h3>3. Vérifier</h3>
-          <p>
-            Des liens vers les sources officielles à consulter avant toute décision.
-          </p>
-        </article>
-      </div>
-    </section>
 
-    <section id="ressources">
-      <h2>Commencez gratuitement</h2>
 
-      <div class="cartes">
-        <article class="carte">
-          <h3>Mes 90 premiers jours</h3>
-          <p>
-            Une checklist pour structurer votre lancement et éviter les oublis.
-          </p>
-          <a href="#">Bientôt disponible</a>
-        </article>
+<!-- =====================================================
+     HERO
+     ===================================================== -->
 
-        <article class="carte">
-          <h3>Suivre ses recettes</h3>
-          <p>
-            Un tableau simple à reproduire dans Google Sheets.
-          </p>
-          <a href="#">Bientôt disponible</a>
-        </article>
+<main>
 
-        <article class="carte">
-          <h3>Préparer une facture</h3>
-          <p>
-            Les éléments à vérifier avant d’envoyer une facture à un client.
-          </p>
-          <a href="#">Bientôt disponible</a>
-        </article>
+<section class="hero">
+
+  <div class="container hero-grid">
+
+
+    <div>
+
+      <div class="eyebrow">
+        Pour les freelances qui débutent
       </div>
 
-      <div class="avertissement">
-        Les contenus de MicroClair sont pédagogiques. Ils ne remplacent pas
-        les informations officielles ni les conseils d’un professionnel.
+
+      <h1>
+        L’administratif freelance,
+        enfin compréhensible.
+      </h1>
+
+
+      <p class="hero-description">
+
+        MicroClair vous aide à savoir quoi faire,
+        quand le faire et comment vous organiser —
+        avec des guides courts, des checklists et
+        des modèles simples.
+
+      </p>
+
+
+      <div class="hero-actions">
+
+        <a
+          href="#ressources"
+          class="button button-primary"
+        >
+          Commencer gratuitement →
+        </a>
+
+
+        <a
+          href="#methode"
+          class="button button-secondary"
+        >
+          Découvrir MicroClair
+        </a>
+
       </div>
-    </section>
 
-    <section id="faq">
-      <h2>Questions fréquentes</h2>
 
-      <details class="carte">
-        <summary><strong>MicroClair donne-t-il des conseils juridiques ?</strong></summary>
-        <p>
-          Non. MicroClair propose des ressources générales d’organisation.
-          Les obligations doivent être vérifiées selon votre situation.
+      <div class="hero-trust">
+
+        <span>Sans jargon</span>
+
+        <span>Concret et pratique</span>
+
+        <span>Transparent</span>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- DASHBOARD -->
+
+    <div class="hero-visual">
+
+      <div class="dashboard">
+
+
+        <div class="dashboard-top">
+
+          <span>
+            MICROCLAIR · 90 JOURS
+          </span>
+
+          <span class="dashboard-status">
+            En cours
+          </span>
+
+        </div>
+
+
+        <h2>
+          Mon démarrage,
+          sans rien garder en tête.
+        </h2>
+
+
+        <p class="dashboard-description">
+          Une structure simple pour avancer sereinement.
         </p>
-      </details>
+
+
+        <div class="progress-bar">
+          <span></span>
+        </div>
+
+
+        <div class="task">
+
+          <span class="task-check">
+            ✓
+          </span>
+
+          Documents de création organisés
+
+        </div>
+
+
+        <div class="task">
+
+          <span class="task-check">
+            ✓
+          </span>
+
+          Suivi des recettes préparé
+
+        </div>
+
+
+        <div class="task">
+
+          <span class="task-check">
+            ✓
+          </span>
+
+          Routine hebdomadaire définie
+
+        </div>
+
+
+        <div class="task pending">
+
+          <span class="task-check">
+            •
+          </span>
+
+          Prochaines échéances à vérifier
+
+        </div>
+
+
+        <p class="dashboard-note">
+
+          Les ressources MicroClair sont pédagogiques
+          et doivent être adaptées à votre situation.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TRUST BAR
+     ===================================================== -->
+
+<div class="trust-bar">
+
+  <div class="container trust-items">
+
+    <span>Guides gratuits</span>
+
+    <span>Checklists pratiques</span>
+
+    <span>Modèles faciles à adapter</span>
+
+    <span>Sources officielles à vérifier</span>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     METHODE
+     ===================================================== -->
+
+<section id="methode">
+
+  <div class="container">
+
+
+    <div class="eyebrow">
+      La méthode MicroClair
+    </div>
+
+
+    <h2 class="section-title">
+      Pas besoin de tout comprendre d’un coup.
+    </h2>
+
+
+    <p class="section-intro">
+
+      On transforme les sujets administratifs
+      en petites actions concrètes.
+      Vous avancez à votre rythme avec
+      uniquement les informations essentielles.
+
+    </p>
+
+
+
+    <div class="cards">
+
+
+      <article class="card">
+
+        <div class="card-number">
+          01
+        </div>
+
+        <h3>
+          Comprendre
+        </h3>
+
+        <p>
+          Une explication claire pour savoir
+          ce qui compte vraiment, sans vous
+          noyer dans le jargon.
+        </p>
+
+      </article>
+
+
+
+      <article class="card">
+
+        <div class="card-number">
+          02
+        </div>
+
+        <h3>
+          Agir
+        </h3>
+
+        <p>
+          Une checklist, un exemple ou un
+          modèle pour passer immédiatement
+          de la théorie à l’action.
+        </p>
+
+      </article>
+
+
+
+      <article class="card">
+
+        <div class="card-number">
+          03
+        </div>
+
+        <h3>
+          Vérifier
+        </h3>
+
+        <p>
+          Les règles peuvent évoluer.
+          Nous vous indiquons quand revenir
+          aux sources officielles.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RESOURCES
+     ===================================================== -->
+
+<section
+  id="ressources"
+  class="resources"
+>
+
+  <div class="container">
+
+
+    <div class="eyebrow">
+      La bibliothèque MicroClair
+    </div>
+
+
+    <h2 class="section-title">
+      Les ressources dont vous avez besoin,
+      au bon moment.
+    </h2>
+
+
+    <p class="section-intro">
+
+      Pas besoin de tout apprendre d’un coup.
+      Choisissez un sujet et avancez étape par étape.
+
+    </p>
+
+
+
+    <div class="resource-grid">
+
+
+      <article class="resource">
+
+        <div class="resource-tag">
+          01 · CHECKLIST
+        </div>
+
+        <h3>
+          Mes 90 premiers jours
+        </h3>
+
+        <p>
+          Un parcours simple pour structurer
+          votre lancement et éviter les oublis
+          d’organisation.
+        </p>
+
+        <a href="#" class="resource-link">
+          Télécharger gratuitement →
+        </a>
+
+      </article>
+
+
+
+      <article class="resource">
+
+        <div class="resource-tag">
+          02 · ORGANISATION
+        </div>
+
+        <h3>
+          Suivre ses recettes
+        </h3>
+
+        <p>
+          Les colonnes utiles pour suivre
+          factures, paiements et relances
+          dans un tableau simple.
+        </p>
+
+        <a href="#" class="resource-link">
+          Voir le modèle →
+        </a>
+
+      </article>
+
+
+
+      <article class="resource">
+
+        <div class="resource-tag">
+          03 · FACTURATION
+        </div>
+
+        <h3>
+          Vérifier une facture
+        </h3>
+
+        <p>
+          Une méthode de contrôle avant
+          l’envoi : identité, numéro,
+          prestation, montant et paiement.
+        </p>
+
+        <a href="#" class="resource-link">
+          Lire le guide →
+        </a>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DIFFERENCE
+     ===================================================== -->
+
+<section>
+
+  <div class="container difference">
+
+
+    <div class="difference-box">
+
+      <div class="difference-number">
+        30'
+      </div>
+
+      <h3>
+        Une petite routine vaut mieux
+        qu’un grand rattrapage.
+      </h3>
+
+      <p>
+        Une routine administrative régulière
+        peut vous aider à garder une vue claire
+        sur votre activité, selon votre situation.
+      </p>
+
+    </div>
+
+
+
+    <div>
+
+      <div class="eyebrow">
+        Notre philosophie
+      </div>
+
+
+      <h2 class="section-title">
+        Vous aider à vous organiser,
+        pas vous faire peur.
+      </h2>
+
+
+      <p class="section-intro">
+
+        MicroClair est pensé pour les personnes
+        qui connaissent leur métier mais ne veulent
+        pas devenir expertes de l’administratif.
+
+        Le site explique, structure et donne
+        des bases pratiques.
+
+      </p>
+
+
+      <ul class="check-list">
+
+        <li>
+          Classer vos documents avec une logique simple
+        </li>
+
+        <li>
+          Suivre vos factures et paiements
+        </li>
+
+        <li>
+          Préparer vos questions avant de demander conseil
+        </li>
+
+        <li>
+          Construire une routine que vous pouvez tenir
+        </li>
+
+      </ul>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     POSITIONNEMENT / CONFIANCE
+     ===================================================== -->
+
+<section class="quote-section">
+
+  <div class="container quote">
+
+
+    <div class="quote-mark">
+      “
+    </div>
+
+
+    <div class="quote-text">
+
+      Vous n’avez pas besoin
+      de devenir expert en administratif.
+      Vous avez besoin de savoir
+      quelle est la prochaine étape.
+
+    </div>
+
+
+    <p class="quote-note">
+
+      C’est exactement le rôle que MicroClair
+      cherche à jouer.
+
+    </p>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FAQ
+     ===================================================== -->
+
+<section id="faq">
+
+  <div class="container faq">
+
+
+    <div class="eyebrow">
+      Confiance & transparence
+    </div>
+
+
+    <h2 class="section-title">
+      On préfère être clair.
+    </h2>
+
+
+    <p class="section-intro">
+
+      MicroClair ne promet pas de remplacer
+      les professionnels ni les organismes officiels.
+
+    </p>
+
+
+
+    <details>
+
+      <summary>
+        MicroClair donne-t-il des conseils juridiques,
+        fiscaux ou comptables ?
+      </summary>
+
+      <p>
+
+        Non. Les ressources sont pédagogiques
+        et générales. Les règles peuvent évoluer :
+        vérifiez les informations auprès des organismes
+        officiels ou demandez conseil à un professionnel
+        lorsque nécessaire.
+
+      </p>
+
+    </details>
+
+
+
+    <details>
+
+      <summary>
+        Les modèles sont-ils garantis conformes
+        à ma situation ?
+      </summary>
+
+      <p>
+
+        Non. Ils constituent des supports
+        d’organisation à adapter à votre activité
+        et à votre situation.
+
+      </p>
+
+    </details>
+
+
+
+    <details>
+
+      <summary>
+        Pourquoi certaines ressources
+        pourraient-elles être payantes ?
+      </summary>
+
+      <p>
+
+        Les guides essentiels restent gratuits.
+        Des modèles plus complets pourront être
+        proposés à petit prix pour contribuer
+        au financement et à la maintenance du site.
+
+      </p>
+
+    </details>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     NEWSLETTER
+     ===================================================== -->
+
+<section
+  id="newsletter"
+  class="newsletter-section"
+>
+
+  <div class="container">
+
+
+    <div class="newsletter">
+
+
+      <div class="newsletter-grid">
+
+
+        <div>
+
+          <div
+            class="eyebrow"
+            style="color:#F4C95D"
+          >
+            Rester informé
+          </div>
+
+
+          <h2>
+            De nouvelles ressources.
+            Pas de bruit.
+          </h2>
+
+
+          <p class="newsletter-description">
+
+            Au maximum deux e-mails par mois
+            avec les nouveaux guides, checklists
+            et modèles utiles.
+
+          </p>
+
+        </div>
+
+
+
+        <div>
+
+          <!--
+            IMPORTANT :
+            Ce formulaire doit être connecté
+            à Brevo, Buttondown ou un autre service
+            avant utilisation réelle.
+          -->
+
+          <form
+            action="#"
+            method="post"
+          >
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Votre adresse e-mail"
+              aria-label="Votre adresse e-mail"
+              required
+            >
+
+            <button type="submit">
+              Je m’inscris
+            </button>
+
+          </form>
+
+
+          <p class="newsletter-small">
+
+            Votre adresse doit être utilisée uniquement
+            dans le cadre expliqué sur la politique
+            de confidentialité.
+
+            Désinscription possible à tout moment.
+
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+  <div class="container footer-content">
+
+
+    <div class="footer-brand">
+
+      <strong>
+        MicroClair
+      </strong>
 
       <br>
 
-      <details class="carte">
-        <summary><strong>Le site est-il gratuit ?</strong></summary>
-        <p>
-          Les premiers guides et modèles seront gratuits. Des ressources plus
-          complètes pourront être proposées ultérieurement.
-        </p>
-      </details>
-    </section>
-  </main>
+      <small>
+        Moins de flou. Plus d’organisation.
+      </small>
 
-  <footer>
-    <p>© 2025 MicroClair — Ressources pratiques pour indépendants.</p>
-    <p>
-      Les informations publiées sont générales et doivent être vérifiées
-      auprès des sources officielles.
-    </p>
-  </footer>
+    </div>
+
+
+
+    <div class="footer-links">
+
+      <a href="/mentions-legales.html">
+        Mentions légales
+      </a>
+
+      <a href="/confidentialite.html">
+        Confidentialité
+      </a>
+
+      <a href="/cookies.html">
+        Cookies
+      </a>
+
+      <a href="/contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+  </div>
+
+</footer>
+
+
 </body>
 </html>
+```
