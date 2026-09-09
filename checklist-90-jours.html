@@ -2,618 +2,1148 @@
 <html lang="fr">
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Checklist 90 jours — MicroClair</title>
-
-<meta
-name="description"
-content="La checklist MicroClair pour structurer ses 90 premiers jours en micro-entreprise."
->
-
-<meta name="theme-color" content="#102F38">
-
-
-<style>
-
-:root{
---navy:#102F38;
---navy-light:#183F49;
---teal:#2A9D8F;
---teal-light:#E8F5F2;
---yellow:#F4C95D;
---cream:#F8FAF8;
---white:#FFFFFF;
---text:#183238;
---muted:#65777C;
---border:#E1E9E7;
---shadow:0 15px 45px rgba(16,47,56,.08);
---radius:18px;
-}
-
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:
-Inter,
--apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
-Arial,
-sans-serif;
+  <meta charset="UTF-8">
 
-background:var(--cream);
-color:var(--text);
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-line-height:1.6;
-
--webkit-font-smoothing:antialiased;
-}
+  <title>
+    Checklist des 90 premiers jours — MicroClair
+  </title>
 
-a{
-color:inherit;
-}
+  <meta
+    name="description"
+    content="La checklist MicroClair pour organiser les 90 premiers jours de votre micro-entreprise, étape par étape."
+  >
 
-button{
-font:inherit;
-}
+  <meta
+    name="theme-color"
+    content="#102F38"
+  >
 
-.container{
-width:min(1080px,92%);
-margin:auto;
-}
+  <style>
 
+    /* =====================================================
+       MICROCLAIR — CHECKLIST 90 JOURS
+       ===================================================== */
 
-/* =========================
-HEADER
-========================= */
+    :root {
 
-header{
-position:sticky;
-top:0;
-z-index:100;
+      --navy: #102F38;
+      --navy-light: #183F49;
 
-background:rgba(248,250,248,.95);
+      --teal: #2A9D8F;
+      --teal-light: #E8F5F2;
 
-backdrop-filter:blur(15px);
+      --yellow: #F4C95D;
 
-border-bottom:1px solid var(--border);
-}
+      --cream: #F8FAF8;
+      --soft: #F3F8F7;
+      --white: #FFFFFF;
 
-nav{
-height:74px;
+      --text: #183238;
+      --muted: #65777C;
 
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
+      --border: #E1E9E7;
 
-.logo{
-font-size:1.38rem;
-font-weight:900;
-letter-spacing:-.05em;
-text-decoration:none;
-}
+      --shadow-small:
+        0 8px 30px rgba(16,47,56,0.06);
 
-.logo span{
-color:var(--teal);
-}
+      --shadow-large:
+        0 25px 70px rgba(16,47,56,0.12);
 
-.back{
-font-size:.88rem;
-font-weight:800;
-text-decoration:none;
-color:var(--navy);
-}
+      --radius: 18px;
+      --radius-large: 28px;
+    }
 
-.back:hover{
-color:var(--teal);
-}
 
+    /* =====================================================
+       RESET
+       ===================================================== */
 
-/* =========================
-HERO
-========================= */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-.hero{
-background:var(--white);
-padding:80px 0 65px;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.hero-content{
-max-width:820px;
-}
+    body {
 
-.eyebrow{
-display:inline-flex;
-align-items:center;
-gap:9px;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
 
-color:var(--teal);
+      background: var(--cream);
 
-font-size:.76rem;
-font-weight:900;
+      color: var(--text);
 
-letter-spacing:.12em;
-text-transform:uppercase;
-}
+      line-height: 1.6;
 
-.eyebrow:before{
-content:"";
+      -webkit-font-smoothing: antialiased;
+    }
 
-width:28px;
-height:2px;
+    a {
+      color: inherit;
+    }
 
-background:var(--teal);
-}
+    button,
+    input {
+      font: inherit;
+    }
 
-h1{
-margin-top:18px;
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
 
-font-size:clamp(3rem,6vw,5.2rem);
+      outline: 3px solid var(--yellow);
 
-line-height:.98;
+      outline-offset: 4px;
+    }
 
-letter-spacing:-.07em;
-}
 
-.hero-text{
-max-width:700px;
+    /* =====================================================
+       GLOBAL
+       ===================================================== */
 
-margin-top:22px;
+    .container {
 
-font-size:1.13rem;
+      width: min(1120px, 92%);
 
-color:var(--muted);
-}
+      margin: auto;
+    }
 
-.hero-meta{
-display:flex;
-flex-wrap:wrap;
+    .eyebrow {
 
-gap:10px;
+      display: inline-flex;
 
-margin-top:25px;
-}
+      align-items: center;
 
-.hero-meta span{
-padding:7px 11px;
+      gap: 9px;
 
-background:var(--cream);
+      color: var(--teal);
 
-border:1px solid var(--border);
+      font-size: 0.78rem;
 
-border-radius:999px;
+      font-weight: 900;
 
-font-size:.76rem;
+      letter-spacing: 0.12em;
 
-font-weight:800;
+      text-transform: uppercase;
+    }
 
-color:var(--navy);
-}
+    .eyebrow::before {
 
+      content: "";
 
-/* =========================
-PROGRESS
-========================= */
+      width: 28px;
 
-.progress-wrapper{
-padding:22px 0;
+      height: 2px;
 
-background:white;
+      background: var(--teal);
+    }
 
-border-top:1px solid var(--border);
-border-bottom:1px solid var(--border);
 
-position:sticky;
-top:74px;
-z-index:50;
-}
+    /* =====================================================
+       HEADER
+       ===================================================== */
 
-.progress-top{
-display:flex;
-justify-content:space-between;
-align-items:center;
+    header {
 
-margin-bottom:9px;
+      position: sticky;
 
-font-size:.78rem;
-font-weight:850;
-}
+      top: 0;
 
-.progress-number{
-color:var(--teal);
-}
+      z-index: 100;
 
-.progress-bar{
-height:8px;
+      background:
+        rgba(248,250,248,0.94);
 
-background:#E6ECEB;
+      backdrop-filter: blur(16px);
 
-border-radius:999px;
+      border-bottom:
+        1px solid rgba(225,233,231,0.9);
+    }
 
-overflow:hidden;
-}
+    nav {
 
-.progress-fill{
-width:0%;
+      height: 74px;
 
-height:100%;
+      display: flex;
 
-background:var(--teal);
+      align-items: center;
 
-border-radius:999px;
+      justify-content: space-between;
 
-transition:width .3s ease;
-}
+      gap: 25px;
+    }
 
+    .logo {
 
-/* =========================
-INTRO
-========================= */
+      text-decoration: none;
 
-.intro{
-padding:65px 0 30px;
-}
+      font-size: 1.38rem;
 
-.intro-box{
-padding:28px;
+      font-weight: 900;
 
-background:var(--teal-light);
+      letter-spacing: -0.05em;
+    }
 
-border:1px solid #D5EBE7;
+    .logo span {
+      color: var(--teal);
+    }
 
-border-radius:var(--radius);
-}
+    nav ul {
 
-.intro-box strong{
-display:block;
+      display: flex;
 
-font-size:1.05rem;
-}
+      align-items: center;
 
-.intro-box p{
-margin-top:7px;
+      gap: 27px;
 
-color:var(--muted);
+      list-style: none;
+    }
 
-font-size:.93rem;
-}
+    nav a {
 
+      text-decoration: none;
 
-/* =========================
-WEEKS
-========================= */
+      color: var(--navy-light);
 
-.checklist{
-padding:25px 0 80px;
-}
+      font-size: 0.91rem;
 
-.week{
-margin-top:35px;
+      font-weight: 750;
+    }
 
-background:white;
+    nav a:hover {
+      color: var(--teal);
+    }
 
-border:1px solid var(--border);
+    .nav-button {
 
-border-radius:22px;
+      padding: 10px 17px;
 
-overflow:hidden;
+      border: 1px solid var(--navy);
 
-box-shadow:var(--shadow);
-}
+      border-radius: 999px;
+    }
 
-.week:first-child{
-margin-top:0;
-}
+    .nav-button:hover {
 
-.week-header{
-padding:27px 30px;
+      background: var(--navy);
 
-background:var(--navy);
+      color: white;
+    }
 
-color:white;
-}
 
-.week-number{
-color:var(--yellow);
+    /* =====================================================
+       HERO
+       ===================================================== */
 
-font-size:.73rem;
+    .hero {
 
-font-weight:900;
+      padding: 90px 0 75px;
 
-letter-spacing:.12em;
+      background: white;
 
-text-transform:uppercase;
-}
+      border-bottom:
+        1px solid var(--border);
+    }
 
-.week-title{
-margin-top:6px;
+    .hero-grid {
 
-font-size:1.65rem;
+      display: grid;
 
-line-height:1.15;
+      grid-template-columns:
+        1fr 0.75fr;
 
-letter-spacing:-.035em;
-}
+      gap: 70px;
 
-.week-description{
-margin-top:6px;
+      align-items: center;
+    }
 
-color:#B9C9CC;
+    h1 {
 
-font-size:.9rem;
-}
+      max-width: 750px;
 
-.tasks{
-padding:8px 0;
-}
+      margin-top: 16px;
 
-.task{
-display:flex;
+      font-size:
+        clamp(2.9rem, 6vw, 5rem);
 
-align-items:flex-start;
+      line-height: 0.99;
 
-gap:16px;
+      letter-spacing: -0.07em;
+    }
 
-padding:19px 30px;
+    .hero-description {
 
-border-bottom:1px solid var(--border);
+      max-width: 660px;
 
-cursor:pointer;
+      margin-top: 24px;
 
-transition:background .2s;
-}
+      color: var(--muted);
 
-.task:last-child{
-border-bottom:0;
-}
+      font-size: 1.15rem;
+    }
 
-.task:hover{
-background:#FBFCFC;
-}
+    .hero-actions {
 
-.task input{
-position:absolute;
+      display: flex;
 
-opacity:0;
+      flex-wrap: wrap;
 
-pointer-events:none;
-}
+      gap: 11px;
 
-.checkbox{
-width:23px;
-height:23px;
+      margin-top: 30px;
+    }
 
-flex-shrink:0;
+    .button {
 
-margin-top:2px;
+      display: inline-flex;
 
-display:grid;
-place-items:center;
+      align-items: center;
 
-border:2px solid #C9D6D4;
+      justify-content: center;
 
-border-radius:7px;
+      padding: 14px 21px;
 
-color:white;
+      border-radius: 999px;
 
-font-size:.72rem;
+      text-decoration: none;
 
-font-weight:900;
+      font-weight: 850;
 
-transition:.2s;
-}
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
+    }
 
-.task-content{
-flex:1;
-}
+    .button-primary {
 
-.task-title{
-font-weight:850;
+      background: var(--navy);
 
-line-height:1.35;
-}
+      color: white;
 
-.task-description{
-margin-top:4px;
+      box-shadow:
+        0 10px 25px rgba(16,47,56,0.15);
+    }
 
-color:var(--muted);
+    .button-primary:hover {
 
-font-size:.82rem;
-}
+      transform: translateY(-2px);
 
-.task input:checked + .checkbox{
-background:var(--teal);
+      box-shadow:
+        0 15px 32px rgba(16,47,56,0.2);
+    }
 
-border-color:var(--teal);
-}
+    .button-secondary {
 
-.task input:checked + .checkbox:after{
-content:"✓";
-}
+      background: white;
 
-.task input:checked ~ .task-content .task-title{
-color:#789095;
+      border:
+        1px solid var(--border);
 
-text-decoration:line-through;
-}
+      color: var(--navy);
+    }
 
+    .button-secondary:hover {
 
-/* =========================
-FINAL
-========================= */
+      border-color: var(--teal);
 
-.finish{
-padding:20px 0 90px;
-}
+      color: var(--teal);
+    }
 
-.finish-box{
-padding:45px;
+    .hero-note {
 
-background:var(--navy);
+      display: flex;
 
-color:white;
+      flex-wrap: wrap;
 
-border-radius:25px;
+      gap: 17px;
 
-text-align:center;
-}
+      margin-top: 22px;
 
-.finish-box h2{
-font-size:clamp(2rem,4vw,3rem);
+      color: var(--muted);
 
-line-height:1.05;
+      font-size: 0.8rem;
 
-letter-spacing:-.05em;
-}
+      font-weight: 700;
+    }
 
-.finish-box p{
-max-width:650px;
+    .hero-note span::before {
 
-margin:14px auto 0;
+      content: "✓";
 
-color:#C5D1D3;
-}
+      margin-right: 6px;
 
-.finish-button{
-display:inline-flex;
+      color: var(--teal);
 
-margin-top:25px;
+      font-weight: 900;
+    }
 
-padding:13px 20px;
 
-background:var(--yellow);
+    /* =====================================================
+       HERO PREVIEW
+       ===================================================== */
 
-color:var(--navy);
+    .preview {
 
-border-radius:999px;
+      padding: 28px;
 
-font-weight:900;
+      background: var(--navy);
 
-text-decoration:none;
-}
+      color: white;
 
-.finish-button:hover{
-filter:brightness(.96);
-}
+      border-radius: 28px;
 
+      box-shadow: var(--shadow-large);
+    }
 
-/* =========================
-NOTE
-========================= */
+    .preview-top {
 
-.note{
-padding:35px 0;
+      display: flex;
 
-color:var(--muted);
+      justify-content: space-between;
 
-font-size:.78rem;
+      align-items: center;
 
-text-align:center;
-}
+      color: #9DB3B7;
 
+      font-size: 0.7rem;
 
-/* =========================
-FOOTER
-========================= */
+      font-weight: 850;
+    }
 
-footer{
-padding:38px 0;
+    .preview-status {
 
-background:#0C272E;
+      padding: 5px 9px;
 
-color:#D9E4E5;
-}
+      background:
+        rgba(42,157,143,0.2);
 
-.footer-content{
-display:flex;
+      color: #80D6CA;
 
-justify-content:space-between;
+      border-radius: 999px;
+    }
 
-align-items:center;
+    .preview h2 {
 
-gap:20px;
+      margin-top: 24px;
 
-flex-wrap:wrap;
-}
+      font-size: 1.65rem;
 
-.footer-brand strong{
-color:white;
-}
+      line-height: 1.12;
 
-.footer-brand small{
-color:#91A7AA;
-}
+      letter-spacing: -0.04em;
+    }
 
-.footer-links{
-display:flex;
+    .preview p {
 
-gap:15px;
+      margin-top: 9px;
 
-flex-wrap:wrap;
-}
+      color: #B9C9CC;
 
-.footer-links a{
-color:white;
+      font-size: 0.86rem;
+    }
 
-font-size:.78rem;
+    .progress {
 
-text-decoration:none;
-}
+      height: 8px;
 
+      margin: 22px 0 18px;
 
-/* =========================
-MOBILE
-========================= */
+      background: #38565D;
 
-@media(max-width:700px){
+      border-radius: 999px;
 
-nav{
-height:66px;
-}
+      overflow: hidden;
+    }
 
-.progress-wrapper{
-top:66px;
-}
+    .progress span {
 
-.hero{
-padding:58px 0 50px;
-}
+      display: block;
 
-h1{
-font-size:clamp(2.8rem,13vw,4rem);
-}
+      width: 33%;
 
-.hero-text{
-font-size:1rem;
-}
+      height: 100%;
 
-.week-header{
-padding:23px 20px;
-}
+      background: var(--yellow);
 
-.task{
-padding:17px 20px;
-gap:13px;
-}
+      border-radius: 999px;
+    }
 
-.finish-box{
-padding:32px 22px;
-}
+    .preview-item {
 
-}
+      display: flex;
 
-</style>
+      align-items: center;
+
+      gap: 10px;
+
+      margin-top: 9px;
+
+      padding: 11px;
+
+      background:
+        rgba(255,255,255,0.07);
+
+      border-radius: 11px;
+
+      font-size: 0.78rem;
+    }
+
+    .preview-check {
+
+      width: 20px;
+
+      height: 20px;
+
+      display: grid;
+
+      place-items: center;
+
+      flex-shrink: 0;
+
+      border-radius: 50%;
+
+      background: var(--teal);
+
+      font-size: 0.65rem;
+
+      font-weight: 900;
+    }
+
+
+    /* =====================================================
+       INTRO
+       ===================================================== */
+
+    .intro {
+
+      padding: 75px 0 25px;
+    }
+
+    .intro-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        0.8fr 1.2fr;
+
+      gap: 70px;
+
+      align-items: start;
+    }
+
+    .intro h2 {
+
+      margin-top: 12px;
+
+      font-size:
+        clamp(2rem,4vw,3rem);
+
+      line-height: 1.05;
+
+      letter-spacing: -0.055em;
+    }
+
+    .intro-text {
+
+      color: var(--muted);
+
+      font-size: 1rem;
+    }
+
+    .intro-text p + p {
+      margin-top: 14px;
+    }
+
+
+    /* =====================================================
+       CHECKLIST
+       ===================================================== */
+
+    .checklist-section {
+
+      padding: 60px 0 90px;
+    }
+
+    .section-heading h2 {
+
+      margin-top: 10px;
+
+      font-size:
+        clamp(2rem,4vw,3.2rem);
+
+      line-height: 1.05;
+
+      letter-spacing: -0.055em;
+    }
+
+    .section-heading p {
+
+      max-width: 690px;
+
+      margin-top: 13px;
+
+      color: var(--muted);
+    }
+
+
+    /* =====================================================
+       PHASES
+       ===================================================== */
+
+    .phase {
+
+      margin-top: 28px;
+
+      padding: 31px;
+
+      background: white;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      box-shadow: var(--shadow-small);
+    }
+
+    .phase-header {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: flex-start;
+
+      gap: 20px;
+    }
+
+    .phase-number {
+
+      color: var(--teal);
+
+      font-size: 0.7rem;
+
+      font-weight: 900;
+
+      letter-spacing: 0.12em;
+    }
+
+    .phase h3 {
+
+      margin-top: 6px;
+
+      font-size: 1.45rem;
+
+      line-height: 1.15;
+
+      letter-spacing: -0.03em;
+    }
+
+    .phase-description {
+
+      margin-top: 6px;
+
+      color: var(--muted);
+
+      font-size: 0.88rem;
+    }
+
+    .phase-days {
+
+      flex-shrink: 0;
+
+      padding: 7px 11px;
+
+      background: var(--teal-light);
+
+      color: var(--teal);
+
+      border-radius: 999px;
+
+      font-size: 0.7rem;
+
+      font-weight: 900;
+    }
+
+
+    /* =====================================================
+       CHECK ITEMS
+       ===================================================== */
+
+    .tasks {
+
+      display: grid;
+
+      gap: 9px;
+
+      margin-top: 25px;
+    }
+
+    .task {
+
+      position: relative;
+
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 13px;
+
+      padding: 15px;
+
+      background: var(--cream);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 13px;
+
+      cursor: pointer;
+
+      transition:
+        background 0.2s,
+        border-color 0.2s;
+    }
+
+    .task:hover {
+
+      border-color: #C6DDD8;
+
+      background: #F7FBFA;
+    }
+
+    .task input {
+
+      position: absolute;
+
+      opacity: 0;
+
+      pointer-events: none;
+    }
+
+    .custom-check {
+
+      width: 23px;
+
+      height: 23px;
+
+      flex-shrink: 0;
+
+      margin-top: 1px;
+
+      border:
+        2px solid #B9C9C7;
+
+      border-radius: 7px;
+
+      background: white;
+
+      transition:
+        background 0.2s,
+        border-color 0.2s;
+    }
+
+    .task-content strong {
+
+      display: block;
+
+      font-size: 0.92rem;
+
+      line-height: 1.35;
+    }
+
+    .task-content span {
+
+      display: block;
+
+      margin-top: 3px;
+
+      color: var(--muted);
+
+      font-size: 0.79rem;
+    }
+
+    .task input:checked + .custom-check {
+
+      background: var(--teal);
+
+      border-color: var(--teal);
+    }
+
+    .task input:checked + .custom-check::after {
+
+      content: "✓";
+
+      display: block;
+
+      color: white;
+
+      text-align: center;
+
+      font-size: 0.75rem;
+
+      line-height: 19px;
+
+      font-weight: 900;
+    }
+
+    .task:has(input:checked) {
+
+      border-color: #BBDCD6;
+
+      background: var(--teal-light);
+    }
+
+
+    /* =====================================================
+       REMINDER
+       ===================================================== */
+
+    .reminder {
+
+      margin-top: 24px;
+
+      padding: 20px;
+
+      background: #FFF9E8;
+
+      border:
+        1px solid #F2E2A8;
+
+      border-radius: 15px;
+
+      color: #685621;
+
+      font-size: 0.83rem;
+    }
+
+    .reminder strong {
+      color: #4D3F16;
+    }
+
+
+    /* =====================================================
+       PROGRESS CARD
+       ===================================================== */
+
+    .progress-card {
+
+      position: sticky;
+
+      bottom: 18px;
+
+      z-index: 20;
+
+      margin-top: 35px;
+
+      padding: 17px 20px;
+
+      background:
+        rgba(16,47,56,0.97);
+
+      color: white;
+
+      border-radius: 17px;
+
+      box-shadow:
+        0 18px 45px rgba(16,47,56,0.2);
+
+      backdrop-filter: blur(10px);
+    }
+
+    .progress-card-top {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      font-size: 0.8rem;
+
+      font-weight: 800;
+    }
+
+    .progress-card-bar {
+
+      height: 6px;
+
+      margin-top: 10px;
+
+      background: #38565D;
+
+      border-radius: 999px;
+
+      overflow: hidden;
+    }
+
+    .progress-card-bar span {
+
+      display: block;
+
+      width: 0%;
+
+      height: 100%;
+
+      background: var(--yellow);
+
+      border-radius: 999px;
+
+      transition: width 0.3s;
+    }
+
+
+    /* =====================================================
+       TRANSPARENCY
+       ===================================================== */
+
+    .transparency {
+
+      padding: 0 0 90px;
+    }
+
+    .transparency-box {
+
+      padding: 35px;
+
+      background: var(--soft);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 24px;
+    }
+
+    .transparency-box h2 {
+
+      margin-top: 10px;
+
+      font-size: 1.65rem;
+
+      letter-spacing: -0.035em;
+    }
+
+    .transparency-box p {
+
+      max-width: 850px;
+
+      margin-top: 10px;
+
+      color: var(--muted);
+
+      font-size: 0.88rem;
+    }
+
+
+    /* =====================================================
+       CTA
+       ===================================================== */
+
+    .cta-section {
+
+      padding: 0 0 90px;
+    }
+
+    .cta {
+
+      padding: 52px 35px;
+
+      background: var(--navy);
+
+      color: white;
+
+      border-radius: 30px;
+
+      text-align: center;
+
+      box-shadow: var(--shadow-large);
+    }
+
+    .cta h2 {
+
+      margin-top: 12px;
+
+      font-size:
+        clamp(2rem,4vw,3.1rem);
+
+      line-height: 1.05;
+
+      letter-spacing: -0.055em;
+    }
+
+    .cta p {
+
+      max-width: 620px;
+
+      margin: 13px auto 0;
+
+      color: #C5D1D3;
+    }
+
+    .cta .button {
+
+      margin-top: 24px;
+
+      background: var(--yellow);
+
+      color: var(--navy);
+
+      box-shadow: none;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer {
+
+      padding: 40px 0;
+
+      background: #0C272E;
+
+      color: #D9E4E5;
+    }
+
+    .footer-content {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 25px;
+    }
+
+    .footer-brand strong {
+
+      color: white;
+
+      font-size: 1.05rem;
+    }
+
+    .footer-brand small {
+      color: #91A7AA;
+    }
+
+    .footer-links {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 15px;
+
+      font-size: 0.83rem;
+    }
+
+    .footer-links a {
+
+      color: white;
+
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 850px) {
+
+      nav ul {
+        display: none;
+      }
+
+      .hero {
+
+        padding: 65px 0;
+      }
+
+      .hero-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+      }
+
+      .intro-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+      }
+
+      .phase-header {
+
+        flex-direction: column;
+      }
+
+      .phase-days {
+
+        align-self: flex-start;
+      }
+
+      .progress-card {
+
+        bottom: 10px;
+      }
+    }
+
+
+    @media (max-width: 500px) {
+
+      h1 {
+        font-size: 2.85rem;
+      }
+
+      .hero-actions {
+
+        flex-direction: column;
+      }
+
+      .hero-actions .button {
+
+        width: 100%;
+      }
+
+      .phase {
+
+        padding: 23px;
+      }
+
+      .task {
+        padding: 13px;
+      }
+
+      .cta {
+        padding: 38px 22px;
+      }
+    }
+
+  </style>
 
 </head>
 
@@ -621,1005 +1151,1034 @@ padding:32px 22px;
 <body>
 
 
-<!-- HEADER -->
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
 
 <header>
 
-<nav class="container">
+  <nav class="container">
 
-<a
-href="index.html"
-class="logo"
->
-Micro<span>Clair</span>
-</a>
 
-<a
-href="ressources.html"
-class="back"
->
-← Toutes les ressources
-</a>
+    <a
+      href="index.html"
+      class="logo"
+      aria-label="MicroClair — Accueil"
+    >
+      Micro<span>Clair</span>
+    </a>
 
-</nav>
+
+    <ul>
+
+      <li>
+        <a href="index.html#methode">
+          La méthode
+        </a>
+      </li>
+
+      <li>
+        <a href="ressources.html">
+          Ressources
+        </a>
+      </li>
+
+      <li>
+        <a href="index.html#faq">
+          FAQ
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#checklist"
+          class="nav-button"
+        >
+          Ma checklist
+        </a>
+      </li>
+
+    </ul>
+
+
+  </nav>
 
 </header>
 
 
 
-<!-- HERO -->
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<main>
+
 
 <section class="hero">
 
-<div class="container hero-content">
+  <div class="container hero-grid">
 
-<div class="eyebrow">
-Checklist gratuite
-</div>
 
-<h1>
-Mes 90 premiers jours.
-</h1>
+    <div>
 
-<p class="hero-text">
 
-Une feuille de route simple pour mettre
-de l'ordre dans votre activité, créer de
-bonnes habitudes et savoir quoi vérifier
-au fil des semaines.
+      <div class="eyebrow">
+        Checklist MicroClair
+      </div>
 
-</p>
 
-<div class="hero-meta">
+      <h1>
+        Vos 90 premiers jours,
+        sans le flou.
+      </h1>
 
-<span>✓ Gratuit</span>
 
-<span>✓ À votre rythme</span>
+      <p class="hero-description">
 
-<span>✓ Débutant</span>
+        Une checklist simple pour structurer
+        votre début d’activité, garder le contrôle
+        et savoir quoi vérifier au bon moment.
 
-<span>✓ Sans jargon</span>
+      </p>
 
-</div>
 
-</div>
+      <div class="hero-actions">
+
+        <a
+          href="#checklist"
+          class="button button-primary"
+        >
+          Commencer ma checklist →
+        </a>
+
+        <a
+          href="ressources.html"
+          class="button button-secondary"
+        >
+          ← Toutes les ressources
+        </a>
+
+      </div>
+
+
+      <div class="hero-note">
+
+        <span>Gratuit</span>
+
+        <span>Sans inscription</span>
+
+        <span>À votre rythme</span>
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- PREVIEW -->
+
+    <div class="preview">
+
+
+      <div class="preview-top">
+
+        <span>
+          MICROCLAIR · 90 JOURS
+        </span>
+
+        <span class="preview-status">
+          En cours
+        </span>
+
+      </div>
+
+
+      <h2>
+        Votre activité,
+        étape par étape.
+      </h2>
+
+
+      <p>
+        Cochez les actions au fur et à mesure.
+      </p>
+
+
+      <div class="progress">
+        <span></span>
+      </div>
+
+
+      <div class="preview-item">
+
+        <span class="preview-check">
+          ✓
+        </span>
+
+        Organiser ses documents
+
+      </div>
+
+
+      <div class="preview-item">
+
+        <span class="preview-check">
+          ✓
+        </span>
+
+        Mettre en place son suivi
+
+      </div>
+
+
+      <div class="preview-item">
+
+        <span
+          class="preview-check"
+          style="background:#536A70"
+        >
+          •
+        </span>
+
+        Vérifier les prochaines échéances
+
+      </div>
+
+
+    </div>
+
+
+  </div>
 
 </section>
 
 
 
-<!-- PROGRESS -->
-
-<div class="progress-wrapper">
-
-<div class="container">
-
-<div class="progress-top">
-
-<span>
-Votre progression
-</span>
-
-<span
-class="progress-number"
-id="progressText"
->
-0 / 24
-</span>
-
-</div>
-
-<div class="progress-bar">
-
-<div
-class="progress-fill"
-id="progressFill"
-></div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- INTRO -->
+<!-- =====================================================
+     INTRO
+     ===================================================== -->
 
 <section class="intro">
 
-<div class="container">
+  <div class="container intro-grid">
 
-<div class="intro-box">
 
-<strong>
-💡 Comment utiliser cette checklist ?
-</strong>
+    <div>
 
-<p>
+      <div class="eyebrow">
+        Avant de commencer
+      </div>
 
-Ne cherchez pas à tout faire en une journée.
-Avancez étape par étape et cochez les actions
-que vous avez réellement réalisées. Certaines
-dépendent de votre situation : lorsqu'une
-vérification est nécessaire, utilisez les sources
-officielles ou demandez conseil à un professionnel.
+      <h2>
+        Le but n’est pas
+        de tout faire aujourd’hui.
+      </h2>
 
-</p>
+    </div>
 
-</div>
 
-</div>
+    <div class="intro-text">
+
+      <p>
+
+        Quand on démarre une micro-entreprise,
+        il est facile de se retrouver avec une
+        dizaine de questions en tête.
+
+      </p>
+
+      <p>
+
+        Cette checklist transforme ces questions
+        en petites actions. Vous pouvez avancer
+        progressivement et revenir ici lorsque
+        vous en avez besoin.
+
+      </p>
+
+    </div>
+
+
+  </div>
 
 </section>
 
 
 
-<!-- CHECKLIST -->
-
-<section class="checklist">
-
-<div class="container">
-
-
-<!-- =========================
-SEMAINE 1
-========================= -->
-
-<div class="week">
-
-<div class="week-header">
-
-<div class="week-number">
-Semaine 1 · Poser les bases
-</div>
-
-<div class="week-title">
-Comprendre et organiser
-</div>
-
-<div class="week-description">
-Commencez par créer un environnement simple et propre.
-</div>
-
-</div>
-
-
-<div class="tasks">
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Créer un espace dédié à son activité
-</span>
-
-<span class="task-description">
-Un dossier numérique ou physique pour regrouper
-les documents liés à votre activité.
-</span>
-
-</span>
-
-</label>
-
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Créer une structure de classement
-</span>
-
-<span class="task-description">
-Par exemple : création, factures, recettes,
-dépenses, contrats et documents importants.
-</span>
-
-</span>
-
-</label>
-
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Identifier les informations importantes de son activité
-</span>
-
-<span class="task-description">
-Gardez au même endroit les informations
-nécessaires à vos démarches et à votre organisation.
-</span>
-
-</span>
-
-</label>
-
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Choisir un endroit pour suivre ses recettes
-</span>
-
-<span class="task-description">
-Un tableau simple peut suffire au départ pour
-conserver une vision claire de votre activité.
-</span>
-
-</span>
-
-</label>
-
-
-</div>
-
-</div>
-
-
-
-<!-- =========================
-SEMAINE 2
-========================= -->
-
-<div class="week">
-
-<div class="week-header">
-
-<div class="week-number">
-Semaine 2 · Facturation
-</div>
-
-<div class="week-title">
-Préparer son système de facturation
-</div>
-
-<div class="week-description">
-L'objectif : ne plus improviser lorsqu'un client doit être facturé.
-</div>
-
-</div>
-
-
-<div class="tasks">
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Créer un modèle de facture
-</span>
-
-<span class="task-description">
-Préparez un modèle que vous pourrez adapter
-à chaque prestation.
-</span>
-
-</span>
-
-</label>
-
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Définir une logique de numérotation
-</span>
-
-<span class="task-description">
-Utilisez une méthode cohérente pour retrouver
-facilement vos factures.
-</span>
-
-</span>
-
-</label>
-
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Créer un suivi des factures envoyées
-</span>
-
-<span class="task-description">
-Notez au minimum la facture, le client,
-la date, le montant et le statut.
-</span>
-
-</span>
-
-</label>
-
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Définir une routine de suivi des paiements
-</span>
-
-<span class="task-description">
-Choisissez un moment régulier pour vérifier
-les factures en attente.
-</span>
-
-</span>
-
-</label>
-
-
-</div>
-
-</div>
-
-
-
-<!-- =========================
-SEMAINES 3-4
-========================= -->
-
-<div class="week">
-
-<div class="week-header">
-
-<div class="week-number">
-Semaines 3–4 · Organisation
-</div>
-
-<div class="week-title">
-Construire une routine
-</div>
-
-<div class="week-description">
-Une bonne organisation doit être facile à maintenir.
-</div>
-
-</div>
-
-
-<div class="tasks">
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Choisir un créneau administratif chaque semaine
-</span>
-
-<span class="task-description">
-Même 20 à 30 minutes peuvent servir à mettre
-à jour votre suivi et vos documents.
-</span>
-
-</span>
-
-</label>
-
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Mettre à jour son suivi des recettes
-</span>
-
-<span class="task-description">
-Évitez de laisser plusieurs semaines
-s'accumuler avant de mettre vos informations à jour.
-</span>
-
-</span>
-
-</label>
-
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Classer les documents reçus
-</span>
-
-<span class="task-description">
-Archivez régulièrement les documents importants
-au lieu de les laisser dans votre boîte mail.
-</span>
-
-</span>
-
-</label>
-
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Créer une liste de questions à vérifier
-</span>
-
-<span class="task-description">
-Notez les points dont vous n'êtes pas certain
-afin de les vérifier plus tard au bon endroit.
-</span>
-
-</span>
-
-</label>
-
-
-</div>
-
-</div>
-
-
-
-<!-- =========================
-MOIS 2
-========================= -->
-
-<div class="week">
-
-<div class="week-header">
-
-<div class="week-number">
-Jours 31–60 · Consolider
-</div>
-
-<div class="week-title">
-Prendre de bonnes habitudes
-</div>
-
-<div class="week-description">
-Vous avez maintenant une base. Il faut la rendre durable.
-</div>
-
-</div>
-
-
-<div class="tasks">
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Vérifier que toutes les factures sont suivies
-</span>
-
-<span class="task-description">
-Comparez votre activité récente avec votre tableau
-de suivi pour repérer les oublis.
-</span>
-
-</span>
-
-</label>
-
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Identifier les paiements en attente
-</span>
-
-<span class="task-description">
-Préparez les relances nécessaires lorsque c'est pertinent.
-</span>
-
-</span>
-
-</label>
-
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Faire un point sur son organisation
-</span>
-
-<span class="task-description">
-Supprimez les étapes inutiles et simplifiez
-ce qui vous prend trop de temps.
-</span>
-
-</span>
-
-</label>
-
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Vérifier les informations officielles applicables
-</span>
-
-<span class="task-description">
-Certaines obligations dépendent de votre situation
-et peuvent évoluer. Vérifiez les sources officielles.
-</span>
-
-</span>
-
-</label>
-
-
-</div>
-
-</div>
-
-
-
-<!-- =========================
-MOIS 3
-========================= -->
-
-<div class="week">
-
-<div class="week-header">
-
-<div class="week-number">
-Jours 61–90 · Stabiliser
-</div>
-
-<div class="week-title">
-Transformer l'organisation en système
-</div>
-
-<div class="week-description">
-Le but n'est plus de commencer : c'est de tenir dans la durée.
-</div>
-
-</div>
-
-
-<div class="tasks">
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Faire un bilan des 90 premiers jours
-</span>
-
-<span class="task-description">
-Notez ce qui fonctionne, ce qui vous fait perdre
-du temps et ce qui doit être amélioré.
-</span>
-
-</span>
-
-</label>
-
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Mettre à jour son classement documentaire
-</span>
-
-<span class="task-description">
-Une dernière remise à plat permet de repartir
-sur une organisation propre.
-</span>
-
-</span>
-
-</label>
-
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Programmer ses prochains points de vérification
-</span>
-
-<span class="task-description">
-Ajoutez dans votre agenda les moments où vous
-devrez refaire le point sur votre organisation.
-</span>
-
-</span>
-
-</label>
-
-
-
-<label class="task">
-
-<input type="checkbox">
-
-<span class="checkbox"></span>
-
-<span class="task-content">
-
-<span class="task-title">
-Conserver une routine simple et réaliste
-</span>
-
-<span class="task-description">
-Une organisation imparfaite mais régulière vaut
-mieux qu'un système compliqué que vous abandonnez.
-</span>
-
-</span>
-
-</label>
-
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- FIN -->
-
-<section class="finish">
-
-<div class="container">
-
-<div class="finish-box">
-
-<h2>
-90 jours.
-Une base solide.
-</h2>
-
-<p>
-
-Vous n'avez pas besoin que tout soit parfait.
-L'objectif est d'avoir une organisation suffisamment
-claire pour savoir où vous en êtes et quelle est
-la prochaine étape.
-
-</p>
-
-<a
-href="ressources.html"
-class="finish-button"
+<!-- =====================================================
+     CHECKLIST
+     ===================================================== -->
+
+<section
+  id="checklist"
+  class="checklist-section"
 >
-← Retour aux ressources
-</a>
 
-</div>
+  <div class="container">
 
-</div>
+
+    <div class="section-heading">
+
+      <div class="eyebrow">
+        Votre parcours
+      </div>
+
+
+      <h2>
+        Les 90 premiers jours.
+      </h2>
+
+
+      <p>
+
+        Cochez ce que vous avez déjà fait.
+        La progression est calculée automatiquement
+        sur cette page.
+
+      </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PHASE 1
+         ================================================= -->
+
+    <article class="phase">
+
+
+      <div class="phase-header">
+
+
+        <div>
+
+          <div class="phase-number">
+            ÉTAPE 01
+          </div>
+
+          <h3>
+            Poser des bases propres
+          </h3>
+
+          <p class="phase-description">
+            Les premières semaines : mettre
+            de l’ordre et savoir où vous en êtes.
+          </p>
+
+        </div>
+
+
+        <div class="phase-days">
+          Jours 1–30
+        </div>
+
+
+      </div>
+
+
+
+      <div class="tasks">
+
+
+        <label class="task">
+
+          <input type="checkbox">
+
+          <span class="custom-check"></span>
+
+          <span class="task-content">
+
+            <strong>
+              Créer un espace pour vos documents
+            </strong>
+
+            <span>
+              Regroupez vos documents importants
+              dans un emplacement facile à retrouver.
+            </span>
+
+          </span>
+
+        </label>
+
+
+
+        <label class="task">
+
+          <input type="checkbox">
+
+          <span class="custom-check"></span>
+
+          <span class="task-content">
+
+            <strong>
+              Mettre en place un suivi de vos recettes
+            </strong>
+
+            <span>
+              Notez vos prestations, factures et
+              paiements de façon régulière.
+            </span>
+
+          </span>
+
+        </label>
+
+
+
+        <label class="task">
+
+          <input type="checkbox">
+
+          <span class="custom-check"></span>
+
+          <span class="task-content">
+
+            <strong>
+              Créer une logique de classement
+            </strong>
+
+            <span>
+              Utilisez une structure simple que
+              vous pourrez conserver dans le temps.
+            </span>
+
+          </span>
+
+        </label>
+
+
+
+        <label class="task">
+
+          <input type="checkbox">
+
+          <span class="custom-check"></span>
+
+          <span class="task-content">
+
+            <strong>
+              Identifier vos prochaines échéances
+            </strong>
+
+            <span>
+              Notez les dates importantes à vérifier
+              selon votre situation.
+            </span>
+
+          </span>
+
+        </label>
+
+
+      </div>
+
+
+      <div class="reminder">
+
+        <strong>À retenir :</strong>
+        ne cherchez pas la perfection.
+        L’objectif est de construire une organisation
+        que vous pourrez réellement tenir.
+
+      </div>
+
+
+    </article>
+
+
+
+    <!-- =================================================
+         PHASE 2
+         ================================================= -->
+
+    <article class="phase">
+
+
+      <div class="phase-header">
+
+
+        <div>
+
+          <div class="phase-number">
+            ÉTAPE 02
+          </div>
+
+          <h3>
+            Installer une routine
+          </h3>
+
+          <p class="phase-description">
+            Entretenir votre organisation sans
+            y consacrer une quantité de temps inutile.
+          </p>
+
+        </div>
+
+
+        <div class="phase-days">
+          Jours 31–60
+        </div>
+
+
+      </div>
+
+
+
+      <div class="tasks">
+
+
+        <label class="task">
+
+          <input type="checkbox">
+
+          <span class="custom-check"></span>
+
+          <span class="task-content">
+
+            <strong>
+              Vérifier régulièrement vos factures
+            </strong>
+
+            <span>
+              Assurez-vous de savoir quelles factures
+              sont envoyées, payées ou encore à relancer.
+            </span>
+
+          </span>
+
+        </label>
+
+
+
+        <label class="task">
+
+          <input type="checkbox">
+
+          <span class="custom-check"></span>
+
+          <span class="task-content">
+
+            <strong>
+              Prévoir un moment administratif régulier
+            </strong>
+
+            <span>
+              Bloquez un créneau réaliste dans votre
+              semaine ou votre mois.
+            </span>
+
+          </span>
+
+        </label>
+
+
+
+        <label class="task">
+
+          <input type="checkbox">
+
+          <span class="custom-check"></span>
+
+          <span class="task-content">
+
+            <strong>
+              Vérifier vos informations auprès des sources officielles
+            </strong>
+
+            <span>
+              Les règles peuvent évoluer : vérifiez
+              les informations importantes au bon endroit.
+            </span>
+
+          </span>
+
+        </label>
+
+
+
+        <label class="task">
+
+          <input type="checkbox">
+
+          <span class="custom-check"></span>
+
+          <span class="task-content">
+
+            <strong>
+              Faire un premier point sur votre organisation
+            </strong>
+
+            <span>
+              Gardez ce qui fonctionne et simplifiez
+              ce qui vous fait perdre du temps.
+            </span>
+
+          </span>
+
+        </label>
+
+
+      </div>
+
+
+    </article>
+
+
+
+    <!-- =================================================
+         PHASE 3
+         ================================================= -->
+
+    <article class="phase">
+
+
+      <div class="phase-header">
+
+
+        <div>
+
+          <div class="phase-number">
+            ÉTAPE 03
+          </div>
+
+          <h3>
+            Prendre de la hauteur
+          </h3>
+
+          <p class="phase-description">
+            Faire le point et préparer la suite
+            avec une organisation durable.
+          </p>
+
+        </div>
+
+
+        <div class="phase-days">
+          Jours 61–90
+        </div>
+
+
+      </div>
+
+
+
+      <div class="tasks">
+
+
+        <label class="task">
+
+          <input type="checkbox">
+
+          <span class="custom-check"></span>
+
+          <span class="task-content">
+
+            <strong>
+              Faire le point sur vos recettes
+            </strong>
+
+            <span>
+              Regardez vos chiffres et votre suivi
+              pour avoir une vision claire de votre activité.
+            </span>
+
+          </span>
+
+        </label>
+
+
+
+        <label class="task">
+
+          <input type="checkbox">
+
+          <span class="custom-check"></span>
+
+          <span class="task-content">
+
+            <strong>
+              Vérifier les démarches et échéances à venir
+            </strong>
+
+            <span>
+              Identifiez ce qui doit être vérifié
+              prochainement selon votre situation.
+            </span>
+
+          </span>
+
+        </label>
+
+
+
+        <label class="task">
+
+          <input type="checkbox">
+
+          <span class="custom-check"></span>
+
+          <span class="task-content">
+
+            <strong>
+              Nettoyer et mettre à jour vos documents
+            </strong>
+
+            <span>
+              Supprimez les doublons et gardez
+              une organisation simple.
+            </span>
+
+          </span>
+
+        </label>
+
+
+
+        <label class="task">
+
+          <input type="checkbox">
+
+          <span class="custom-check"></span>
+
+          <span class="task-content">
+
+            <strong>
+              Définir votre routine pour les prochains mois
+            </strong>
+
+            <span>
+              Décidez de ce que vous allez vérifier
+              régulièrement pour rester organisé.
+            </span>
+
+          </span>
+
+        </label>
+
+
+      </div>
+
+
+    </article>
+
+
+
+    <!-- PROGRESS -->
+
+    <div class="progress-card">
+
+      <div class="progress-card-top">
+
+        <span>
+          Votre progression
+        </span>
+
+        <span id="progressText">
+          0 / 12
+        </span>
+
+      </div>
+
+
+      <div class="progress-card-bar">
+
+        <span id="progressBar"></span>
+
+      </div>
+
+    </div>
+
+
+  </div>
 
 </section>
 
 
 
-<!-- NOTE -->
+<!-- =====================================================
+     TRANSPARENCE
+     ===================================================== -->
 
-<div class="note">
+<section class="transparency">
 
-<div class="container">
-
-<strong>À retenir :</strong>
-cette checklist est un outil pédagogique
-d'organisation. Elle ne constitue pas un conseil
-juridique, fiscal ou comptable. Les obligations
-applicables dépendent de votre situation et peuvent
-évoluer : vérifiez les informations auprès des
-organismes officiels lorsque nécessaire.
-
-</div>
-
-</div>
+  <div class="container">
 
 
+    <div class="transparency-box">
 
-<!-- FOOTER -->
+
+      <div class="eyebrow">
+        Important
+      </div>
+
+
+      <h2>
+        Une checklist d’organisation,
+        pas une promesse juridique.
+      </h2>
+
+
+      <p>
+
+        Cette checklist est un outil pédagogique
+        général destiné à vous aider à structurer
+        votre organisation.
+
+        Elle ne remplace pas les informations
+        des organismes officiels, ni les conseils
+        d’un professionnel.
+
+        Les obligations peuvent dépendre de votre
+        situation et évoluer dans le temps.
+
+      </p>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+     ===================================================== -->
+
+<section class="cta-section">
+
+  <div class="container">
+
+
+    <div class="cta">
+
+
+      <div class="eyebrow"
+           style="color:#F4C95D">
+
+        MicroClair
+
+      </div>
+
+
+      <h2>
+        Une étape à la fois.
+      </h2>
+
+
+      <p>
+
+        Vous n’avez pas besoin de tout maîtriser.
+        Vous avez surtout besoin de savoir
+        quelle est la prochaine étape.
+
+      </p>
+
+
+      <a
+        href="ressources.html"
+        class="button"
+      >
+        Découvrir les autres ressources →
+
+      </a>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
 
 <footer>
 
-<div class="container footer-content">
-
-<div class="footer-brand">
-
-<strong>
-MicroClair
-</strong>
-
-<br>
-
-<small>
-Moins de flou. Plus d'organisation.
-</small>
-
-</div>
+  <div class="container footer-content">
 
 
-<div class="footer-links">
+    <div class="footer-brand">
 
-<a href="index.html">
-Accueil
-</a>
+      <strong>
+        MicroClair
+      </strong>
 
-<a href="ressources.html">
-Ressources
-</a>
+      <br>
 
-<a href="mentions-legales.html">
-Mentions légales
-</a>
+      <small>
+        Moins de flou. Plus d’organisation.
+      </small>
 
-<a href="confidentialite.html">
-Confidentialité
-</a>
+    </div>
 
-<a href="contact.html">
-Contact
-</a>
 
-</div>
+    <div class="footer-links">
 
-</div>
+      <a href="mentions-legales.html">
+        Mentions légales
+      </a>
+
+      <a href="confidentialite.html">
+        Confidentialité
+      </a>
+
+      <a href="cookies.html">
+        Cookies
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+  </div>
 
 </footer>
 
 
 
+<!-- =====================================================
+     JAVASCRIPT — PROGRESSION
+     ===================================================== -->
+
 <script>
 
-/* =====================================================
-   PROGRESSION AUTOMATIQUE
-   ===================================================== */
+  const tasks =
+    document.querySelectorAll(
+      '.task input[type="checkbox"]'
+    );
 
-const tasks =
-document.querySelectorAll(
-'.task input'
-);
+  const progressBar =
+    document.getElementById(
+      'progressBar'
+    );
 
-const progressText =
-document.getElementById(
-'progressText'
-);
-
-const progressFill =
-document.getElementById(
-'progressFill'
-);
+  const progressText =
+    document.getElementById(
+      'progressText'
+    );
 
 
-/* Sauvegarde locale */
+  function updateProgress() {
 
-function saveProgress(){
+    const total =
+      tasks.length;
 
-const checked = [];
-
-tasks.forEach(
-(task,index)=>{
-
-checked[index] =
-task.checked;
-
-}
-);
-
-localStorage.setItem(
-'microclair90jours',
-JSON.stringify(checked)
-);
-
-}
+    const completed =
+      document.querySelectorAll(
+        '.task input[type="checkbox"]:checked'
+      ).length;
 
 
-/* Chargement */
-
-function loadProgress(){
-
-const saved =
-localStorage.getItem(
-'microclair90jours'
-);
-
-if(!saved) return;
-
-try{
-
-const checked =
-JSON.parse(saved);
-
-tasks.forEach(
-(task,index)=>{
-
-if(checked[index]){
-task.checked=true;
-}
-
-});
-
-}catch(error){
-
-console.log(
-"Impossible de charger la progression."
-);
-
-}
-
-}
+    const percentage =
+      total === 0
+        ? 0
+        : Math.round(
+            (completed / total) * 100
+          );
 
 
-/* Mise à jour */
-
-function updateProgress(){
-
-let completed=0;
-
-tasks.forEach(
-task=>{
-
-if(task.checked){
-completed++;
-}
-
-});
-
-const total =
-tasks.length;
-
-const percentage =
-(total === 0)
-? 0
-: (completed / total) * 100;
-
-progressText.textContent =
-completed + " / " + total;
-
-progressFill.style.width =
-percentage + "%";
-
-saveProgress();
-
-}
+    progressBar.style.width =
+      percentage + '%';
 
 
-/* Écoute des cases */
-
-tasks.forEach(
-task=>{
-
-task.addEventListener(
-'change',
-updateProgress
-);
-
-});
+    progressText.textContent =
+      completed +
+      ' / ' +
+      total +
+      ' · ' +
+      percentage +
+      '%';
 
 
-loadProgress();
+    /*
+      Sauvegarde locale :
+      la progression reste présente
+      si l'utilisateur revient sur la page.
+    */
 
-updateProgress();
+    const state =
+      Array.from(tasks).map(
+        checkbox => checkbox.checked
+      );
+
+    localStorage.setItem(
+      'microclairChecklist90',
+      JSON.stringify(state)
+    );
+  }
+
+
+  /*
+    Récupération de la progression
+    précédente.
+  */
+
+  try {
+
+    const saved =
+      JSON.parse(
+        localStorage.getItem(
+          'microclairChecklist90'
+        )
+      );
+
+
+    if (
+      Array.isArray(saved) &&
+      saved.length === tasks.length
+    ) {
+
+      tasks.forEach(
+        (checkbox, index) => {
+
+          checkbox.checked =
+            saved[index];
+
+        }
+      );
+
+    }
+
+  } catch (error) {
+
+    /*
+      Si le navigateur bloque
+      localStorage, la checklist
+      continue simplement de fonctionner.
+    */
+
+  }
+
+
+  tasks.forEach(
+    checkbox => {
+
+      checkbox.addEventListener(
+        'change',
+        updateProgress
+      );
+
+    }
+  );
+
+
+  updateProgress();
 
 </script>
 
