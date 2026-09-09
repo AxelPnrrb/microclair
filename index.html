@@ -9,7 +9,7 @@
 
 <meta
 name="description"
-content="MicroClair aide les micro-entrepreneurs et freelances à organiser simplement leur administratif grâce à des guides, checklists et outils pratiques."
+content="MicroClair aide les micro-entrepreneurs et freelances à comprendre et organiser leur administratif avec des guides, checklists et outils simples."
 
 >
 
@@ -26,8 +26,9 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
       --muted: #667875;
       --white: #FFFFFF;
       --border: #DCE6E3;
-      --shadow: 0 18px 45px rgba(23, 63, 58, 0.10);
       --focus: #7BB9AF;
+      --shadow: 0 18px 45px rgba(23, 63, 58, 0.10);
+      --shadow-hover: 0 22px 50px rgba(23, 63, 58, 0.14);
     }
 
     * {
@@ -52,6 +53,14 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
       background: var(--cream);
       color: var(--text);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body,
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
     }
 
     a {
@@ -71,10 +80,31 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
       outline-offset: 3px;
     }
 
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 1000;
+      padding: 10px 14px;
+      border-radius: 9px;
+      background: var(--green);
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      transform: translateY(-150%);
+      transition: transform 0.2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
     .container {
       width: min(1120px, calc(100% - 40px));
       margin: 0 auto;
     }
+
+    /* HEADER */
 
     header {
       position: sticky;
@@ -98,21 +128,21 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
       display: inline-flex;
       align-items: center;
       gap: 10px;
+      color: var(--green);
       font-size: 21px;
       font-weight: 800;
       letter-spacing: -0.5px;
-      color: var(--green);
       flex-shrink: 0;
     }
 
     .logo-mark {
       width: 34px;
       height: 34px;
+      display: grid;
+      place-items: center;
       border-radius: 10px;
       background: var(--green);
       color: white;
-      display: grid;
-      place-items: center;
       font-size: 16px;
       font-weight: 800;
     }
@@ -120,21 +150,17 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
     .main-nav {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: 25px;
     }
 
     .main-nav a {
       color: var(--muted);
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 650;
       transition: color 0.2s ease, transform 0.2s ease;
     }
 
     .main-nav a:hover {
-      color: var(--green);
-    }
-
-    .main-nav a[aria-current="page"] {
       color: var(--green);
     }
 
@@ -143,12 +169,16 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
       border-radius: 10px;
       background: var(--green);
       color: white !important;
+      box-shadow: 0 8px 20px rgba(23, 63, 58, 0.12);
     }
 
     .nav-cta:hover {
       color: white !important;
       transform: translateY(-1px);
+      box-shadow: 0 11px 24px rgba(23, 63, 58, 0.17);
     }
+
+    /* HERO */
 
     .hero {
       padding: 88px 0 80px;
@@ -167,13 +197,13 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
       align-items: center;
       gap: 8px;
       padding: 7px 11px;
+      margin-bottom: 22px;
       border-radius: 999px;
       background: var(--mint);
       color: var(--green);
       font-size: 12px;
       font-weight: 800;
       letter-spacing: 0.3px;
-      margin-bottom: 22px;
     }
 
     .eyebrow::before {
@@ -182,19 +212,19 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
     }
 
     h1 {
+      max-width: 700px;
+      margin-bottom: 24px;
       font-size: clamp(42px, 6vw, 68px);
       line-height: 1.02;
       letter-spacing: -2.8px;
-      max-width: 700px;
-      margin-bottom: 24px;
     }
 
     .hero-text {
       max-width: 590px;
+      margin-bottom: 32px;
       color: var(--muted);
       font-size: 18px;
       line-height: 1.7;
-      margin-bottom: 32px;
     }
 
     .buttons {
@@ -214,7 +244,8 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
       font-weight: 750;
       transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        background 0.2s ease;
     }
 
     .btn:hover {
@@ -241,28 +272,30 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
       box-shadow: 0 10px 25px rgba(23, 63, 58, 0.08);
     }
 
+    /* DASHBOARD */
+
     .dashboard {
       position: relative;
+      padding: 24px;
       background: white;
       border: 1px solid var(--border);
       border-radius: 24px;
-      padding: 24px;
       box-shadow: var(--shadow);
     }
 
     .dashboard-top {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 15px;
       margin-bottom: 24px;
     }
 
     .dashboard-title {
+      color: var(--muted);
       font-size: 12px;
       font-weight: 800;
       letter-spacing: 1px;
-      color: var(--muted);
     }
 
     .status {
@@ -276,9 +309,9 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
     }
 
     .dashboard-main {
+      padding: 22px;
       background: var(--soft);
       border-radius: 17px;
-      padding: 22px;
     }
 
     .dashboard-main small {
@@ -288,17 +321,18 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
     }
 
     .dashboard-main h2 {
-      font-size: 29px;
-      letter-spacing: -1px;
       margin: 4px 0 18px;
+      font-size: 29px;
+      line-height: 1.2;
+      letter-spacing: -1px;
     }
 
     .progress {
       height: 9px;
+      margin-bottom: 20px;
+      overflow: hidden;
       border-radius: 999px;
       background: #DCE5E2;
-      overflow: hidden;
-      margin-bottom: 20px;
     }
 
     .progress span {
@@ -318,9 +352,9 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
       display: flex;
       align-items: center;
       gap: 11px;
+      padding: 12px;
       background: white;
       border-radius: 12px;
-      padding: 12px;
       font-size: 12px;
       font-weight: 650;
     }
@@ -343,6 +377,8 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
       border: 1px solid var(--border);
       color: transparent;
     }
+
+    /* TRUST */
 
     .trust {
       padding: 22px 0;
@@ -370,6 +406,8 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
       color: var(--green);
     }
 
+    /* GENERAL SECTIONS */
+
     section {
       padding: 95px 0;
     }
@@ -380,25 +418,27 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
     }
 
     .section-label {
+      margin-bottom: 12px;
       color: var(--green-2);
       font-size: 12px;
       font-weight: 850;
-      text-transform: uppercase;
       letter-spacing: 1.5px;
-      margin-bottom: 12px;
+      text-transform: uppercase;
     }
 
     h2 {
+      margin-bottom: 15px;
       font-size: clamp(32px, 4vw, 46px);
       line-height: 1.1;
       letter-spacing: -1.8px;
-      margin-bottom: 15px;
     }
 
     .section-head p {
       color: var(--muted);
       font-size: 16px;
     }
+
+    /* METHOD */
 
     .method {
       background: var(--soft);
@@ -411,10 +451,10 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
     }
 
     .method-card {
+      padding: 28px;
       background: white;
       border: 1px solid var(--border);
       border-radius: 18px;
-      padding: 28px;
     }
 
     .number {
@@ -422,22 +462,24 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
       height: 40px;
       display: grid;
       place-items: center;
+      margin-bottom: 20px;
       border-radius: 12px;
       background: var(--mint);
       color: var(--green);
       font-weight: 850;
-      margin-bottom: 20px;
     }
 
     .method-card h3 {
-      font-size: 19px;
       margin-bottom: 9px;
+      font-size: 19px;
     }
 
     .method-card p {
       color: var(--muted);
       font-size: 14px;
     }
+
+    /* RESOURCES */
 
     .resources-grid {
       display: grid;
@@ -448,42 +490,44 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
     .resource-card {
       display: flex;
       flex-direction: column;
+      min-height: 250px;
+      padding: 26px;
       background: white;
       border: 1px solid var(--border);
       border-radius: 18px;
-      padding: 26px;
-      min-height: 250px;
       transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .resource-card:hover {
       transform: translateY(-4px);
-      box-shadow: var(--shadow);
+      border-color: #CBDDD9;
+      box-shadow: var(--shadow-hover);
     }
 
     .resource-tag {
       align-self: flex-start;
       padding: 6px 9px;
+      margin-bottom: 20px;
       border-radius: 999px;
       background: var(--soft);
       color: var(--green-2);
       font-size: 10px;
       font-weight: 850;
-      margin-bottom: 20px;
     }
 
     .resource-card h3 {
+      margin-bottom: 10px;
       font-size: 21px;
       line-height: 1.2;
-      margin-bottom: 10px;
     }
 
     .resource-card p {
+      margin-bottom: 25px;
       color: var(--muted);
       font-size: 14px;
-      margin-bottom: 25px;
     }
 
     .resource-link {
@@ -492,6 +536,8 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
       font-size: 13px;
       font-weight: 800;
     }
+
+    /* DIFFERENCE */
 
     .difference {
       background: var(--green);
@@ -520,9 +566,9 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
     }
 
     .principle {
+      padding: 22px;
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 15px;
-      padding: 22px;
     }
 
     .principle strong {
@@ -535,9 +581,11 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
       font-size: 13px;
     }
 
+    /* QUOTE */
+
     .quote {
-      text-align: center;
       padding: 110px 0;
+      text-align: center;
     }
 
     .quote p {
@@ -557,6 +605,8 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
       font-weight: 650;
     }
 
+    /* FAQ */
+
     .faq {
       background: var(--soft);
     }
@@ -568,16 +618,16 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
     }
 
     details {
+      padding: 20px 22px;
       background: white;
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 20px 22px;
     }
 
     summary {
       cursor: pointer;
-      font-weight: 750;
       list-style: none;
+      font-weight: 750;
     }
 
     summary::-webkit-details-marker {
@@ -597,42 +647,46 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
     }
 
     details p {
+      padding-right: 20px;
+      margin-top: 12px;
       color: var(--muted);
       font-size: 14px;
-      margin-top: 12px;
-      padding-right: 20px;
     }
+
+    /* NEWSLETTER */
 
     .newsletter {
       padding: 90px 0;
     }
 
     .newsletter-box {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 48px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 30px;
+      padding: 48px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
     }
 
     .newsletter-box h2 {
-      font-size: 32px;
       margin-bottom: 8px;
+      font-size: 32px;
     }
 
     .newsletter-box p {
-      color: var(--muted);
       max-width: 600px;
+      color: var(--muted);
       font-size: 14px;
     }
 
+    /* FOOTER */
+
     footer {
+      padding: 55px 0 30px;
       background: #102F2B;
       color: #D5E4E1;
-      padding: 55px 0 30px;
     }
 
     .footer-grid {
@@ -643,8 +697,8 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
     }
 
     footer .logo {
-      color: white;
       margin-bottom: 15px;
+      color: white;
     }
 
     footer .logo-mark {
@@ -659,16 +713,16 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
     }
 
     .footer-column h3 {
+      margin-bottom: 15px;
       color: white;
       font-size: 13px;
-      margin-bottom: 15px;
     }
 
     .footer-column a {
       display: block;
+      margin-bottom: 9px;
       color: #AFC6C1;
       font-size: 13px;
-      margin-bottom: 9px;
     }
 
     .footer-column a:hover {
@@ -676,15 +730,17 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
     }
 
     .copyright {
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-      padding-top: 22px;
-      color: #8EA9A4;
-      font-size: 11px;
       display: flex;
       justify-content: space-between;
-      gap: 20px;
       flex-wrap: wrap;
+      gap: 20px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      color: #8EA9A4;
+      font-size: 11px;
     }
+
+    /* RESPONSIVE */
 
     @media (max-width: 850px) {
       .hero-grid {
@@ -779,8 +835,8 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
       }
 
       .trust-inner {
-        gap: 14px 22px;
         justify-content: flex-start;
+        gap: 14px 22px;
       }
 
       .newsletter-box {
@@ -820,601 +876,663 @@ content="MicroClair aide les micro-entrepreneurs et freelances à organiser simp
 
 <body>
 
-<header>
-  <div class="container nav">
-
-```
-<a
-  href="index.html"
-  class="logo"
-  aria-label="MicroClair — Accueil"
->
-  <span class="logo-mark" aria-hidden="true">M</span>
-  MicroClair
-</a>
-
-<nav class="main-nav" aria-label="Navigation principale">
-  <a href="a-propos.html">À propos</a>
-  <a href="demarrer.html">Démarrer</a>
-  <a href="ressources.html">Ressources</a>
-  <a href="contact.html">Contact</a>
-
-  <a
-    href="demarrer.html"
-    class="nav-cta"
-  >
-    Commencer
+  <a href="#contenu" class="skip-link">
+    Aller au contenu
   </a>
-</nav>
-```
 
-  </div>
-</header>
-
-<main>
-
-  <section class="hero">
-    <div class="container hero-grid">
+  <header>
+    <div class="container nav">
 
 ```
-  <div>
-
-    <div class="eyebrow">
-      POUR MICRO-ENTREPRENEURS & FREELANCES
-    </div>
-
-    <h1>
-      L’administratif freelance, enfin compréhensible.
-    </h1>
-
-    <p class="hero-text">
-      MicroClair vous aide à organiser votre activité simplement,
-      avec des guides, des checklists et des outils pensés pour
-      avancer sans vous perdre dans les démarches.
-    </p>
-
-    <div class="buttons">
-      <a
-        href="demarrer.html"
-        class="btn btn-primary"
-      >
-        Bien démarrer →
-      </a>
-
-      <a
-        href="ressources.html"
-        class="btn btn-secondary"
-      >
-        Voir les ressources
-      </a>
-    </div>
-
-  </div>
-
-  <div
-    class="dashboard"
-    role="group"
-    aria-label="Aperçu de la checklist MicroClair"
+  <a
+    href="index.html"
+    class="logo"
+    aria-label="MicroClair — Accueil"
   >
-
-    <div class="dashboard-top">
-
-      <div class="dashboard-title">
-        MICROCLAIR · 90 JOURS
-      </div>
-
-      <div class="status">
-        EN BONNE VOIE
-      </div>
-
-    </div>
-
-    <div class="dashboard-main">
-
-      <small>Votre progression</small>
-
-      <h2>8 étapes sur 12</h2>
-
-      <div
-        class="progress"
-        role="progressbar"
-        aria-label="Progression de la checklist"
-        aria-valuemin="0"
-        aria-valuemax="12"
-        aria-valuenow="8"
-        aria-valuetext="8 étapes sur 12"
-      >
-        <span aria-hidden="true"></span>
-      </div>
-
-      <div class="dashboard-list">
-
-        <div class="dashboard-item">
-          <span class="check" aria-hidden="true">✓</span>
-          <span>Organiser ses documents</span>
-        </div>
-
-        <div class="dashboard-item">
-          <span class="check" aria-hidden="true">✓</span>
-          <span>Préparer ses factures</span>
-        </div>
-
-        <div class="dashboard-item">
-          <span class="check" aria-hidden="true">✓</span>
-          <span>Suivre ses recettes</span>
-        </div>
-
-        <div class="dashboard-item">
-          <span class="check pending" aria-hidden="true">✓</span>
-          <span>Anticiper les prochaines échéances</span>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-```
-
-  </section>
-
-  <div class="trust">
-    <div class="container trust-inner">
-
-```
-  <div class="trust-item">
-    <span aria-hidden="true">✓</span>
-    <span><strong>Simple</strong> à comprendre</span>
-  </div>
-
-  <div class="trust-item">
-    <span aria-hidden="true">✓</span>
-    <span><strong>Pratique</strong> à utiliser</span>
-  </div>
-
-  <div class="trust-item">
-    <span aria-hidden="true">✓</span>
-    <span><strong>Sans jargon</strong> inutile</span>
-  </div>
-
-  <div class="trust-item">
-    <span aria-hidden="true">✓</span>
-    <span><strong>Accessible</strong> gratuitement</span>
-  </div>
-
-</div>
-```
-
-  </div>
-
-  <section class="method" id="methode">
-    <div class="container">
-
-```
-  <div class="section-head">
-
-    <div class="section-label">
-      La méthode MicroClair
-    </div>
-
-    <h2>
-      Comprendre. Agir. Vérifier.
-    </h2>
-
-    <p>
-      Pas besoin de devenir expert en administratif.
-      L’objectif est simplement de savoir quoi faire,
-      dans quel ordre et où vérifier l’information.
-    </p>
-
-  </div>
-
-  <div class="method-grid">
-
-    <article class="method-card">
-      <div class="number" aria-hidden="true">01</div>
-
-      <h3>Comprendre</h3>
-
-      <p>
-        Des explications claires pour comprendre les démarches
-        et savoir ce qui est réellement important.
-      </p>
-    </article>
-
-    <article class="method-card">
-      <div class="number" aria-hidden="true">02</div>
-
-      <h3>Agir</h3>
-
-      <p>
-        Des étapes concrètes, des checklists et des outils
-        pour passer rapidement de la théorie à l’action.
-      </p>
-    </article>
-
-    <article class="method-card">
-      <div class="number" aria-hidden="true">03</div>
-
-      <h3>Vérifier</h3>
-
-      <p>
-        Des points de contrôle pour éviter les oublis
-        et garder une activité organisée dans le temps.
-      </p>
-    </article>
-
-  </div>
-
-</div>
-```
-
-  </section>
-
-  <section>
-    <div class="container">
-
-```
-  <div class="section-head">
-
-    <div class="section-label">
-      Les essentiels
-    </div>
-
-    <h2>
-      Les bons outils, au bon moment.
-    </h2>
-
-    <p>
-      Commencez par l’outil qui correspond à votre situation.
-      Pas besoin de tout faire en même temps.
-    </p>
-
-  </div>
-
-  <div
-    class="resources-grid"
-    aria-label="Ressources principales"
-  >
-
-    <a
-      href="checklist-90-jours.html"
-      class="resource-card"
-    >
-      <span class="resource-tag">
-        CHECKLIST
-      </span>
-
-      <h3>
-        Vos 90 premiers jours
-      </h3>
-
-      <p>
-        Les étapes essentielles pour organiser votre début
-        d’activité sans vous disperser.
-      </p>
-
-      <span class="resource-link" aria-hidden="true">
-        Commencer la checklist →
-      </span>
-    </a>
-
-    <a
-      href="suivi-recettes.html"
-      class="resource-card"
-    >
-      <span class="resource-tag">
-        OUTIL
-      </span>
-
-      <h3>
-        Suivre vos recettes
-      </h3>
-
-      <p>
-        Un outil simple pour garder une vision claire
-        de vos factures et de vos encaissements.
-      </p>
-
-      <span class="resource-link" aria-hidden="true">
-        Ouvrir l’outil →
-      </span>
-    </a>
-
-    <a
-      href="verifier-facture.html"
-      class="resource-card"
-    >
-      <span class="resource-tag">
-        VÉRIFICATION
-      </span>
-
-      <h3>
-        Vérifier une facture
-      </h3>
-
-      <p>
-        Passez en revue les principaux éléments d’une facture
-        avant de l’envoyer à votre client.
-      </p>
-
-      <span class="resource-link" aria-hidden="true">
-        Vérifier une facture →
-      </span>
-    </a>
-
-  </div>
-
-</div>
-```
-
-  </section>
-
-  <section class="difference">
-    <div class="container">
-
-```
-  <div class="section-label">
-    Notre philosophie
-  </div>
-
-  <h2>
-    Moins de charge mentale.<br>
-    Plus de visibilité.
-  </h2>
-
-  <p class="difference-text">
-    Quand on lance son activité, l’administratif peut vite devenir
-    une source de stress. MicroClair est pensé pour transformer
-    cette complexité en petites actions simples et compréhensibles.
-  </p>
-
-  <div class="principles">
-
-    <div class="principle">
-      <strong>Pas de jargon</strong>
-      <span>
-        On explique les choses avec des mots simples.
-      </span>
-    </div>
-
-    <div class="principle">
-      <strong>Pas de surcharge</strong>
-      <span>
-        On se concentre sur ce qui est utile maintenant.
-      </span>
-    </div>
-
-    <div class="principle">
-      <strong>Pas de fausses certitudes</strong>
-      <span>
-        Les informations importantes doivent être vérifiées.
-      </span>
-    </div>
-
-  </div>
-
-</div>
-```
-
-  </section>
-
-  <section class="quote">
-
-```
-<div class="container">
-
-  <p>
-    « Vous n’avez pas besoin de tout connaître.
-    Vous avez surtout besoin de savoir quoi faire ensuite. »
-  </p>
-
-  <span>
-    La philosophie MicroClair
-  </span>
-
-</div>
-```
-
-  </section>
-
-  <section class="faq" id="faq">
-    <div class="container">
-
-```
-  <div class="section-head">
-
-    <div class="section-label">
-      Questions fréquentes
-    </div>
-
-    <h2>
-      Avant de commencer
-    </h2>
-
-  </div>
-
-  <div class="faq-list">
-
-    <details>
-      <summary>
-        MicroClair est-il réservé aux débutants ?
-      </summary>
-
-      <p>
-        MicroClair est particulièrement pensé pour les personnes
-        qui démarrent leur activité ou souhaitent remettre de
-        l’ordre dans leur administratif.
-      </p>
-    </details>
-
-    <details>
-      <summary>
-        Est-ce que MicroClair remplace un professionnel ?
-      </summary>
-
-      <p>
-        Non. Les contenus sont pédagogiques et ne remplacent pas
-        les conseils personnalisés d’un professionnel ou les
-        informations officielles applicables à votre situation.
-      </p>
-    </details>
-
-    <details>
-      <summary>
-        Les outils sont-ils gratuits ?
-      </summary>
-
-      <p>
-        Les ressources actuellement proposées sur MicroClair sont
-        accessibles gratuitement.
-      </p>
-    </details>
-
-    <details>
-      <summary>
-        Où vérifier les informations importantes ?
-      </summary>
-
-      <p>
-        Pour les sujets administratifs, fiscaux ou juridiques,
-        vérifiez toujours les informations auprès des sources
-        officielles correspondant à votre situation.
-      </p>
-    </details>
-
-  </div>
-
-</div>
-```
-
-  </section>
-
-  <section class="newsletter">
-    <div class="container">
-
-```
-  <div class="newsletter-box">
-
-    <div>
-
-      <div class="section-label">
-        Bientôt
-      </div>
-
-      <h2>
-        Recevez les prochains outils MicroClair.
-      </h2>
-
-      <p>
-        La newsletter MicroClair arrivera bientôt.
-        En attendant, retrouvez directement les ressources
-        disponibles sur le site.
-      </p>
-
-    </div>
-
-    <a
-      href="ressources.html"
-      class="btn btn-primary"
-    >
-      Voir les ressources →
-    </a>
-
-  </div>
-
-</div>
-```
-
-  </section>
-
-</main>
-
-<footer>
-  <div class="container">
-
-```
-<div class="footer-grid">
-
-  <div>
-
-    <a
-      href="index.html"
-      class="logo"
-      aria-label="MicroClair — Accueil"
-    >
-      <span class="logo-mark" aria-hidden="true">M</span>
-      MicroClair
-    </a>
-
-    <p class="footer-description">
-      Des outils simples pour aider les micro-entrepreneurs
-      et freelances à mieux organiser leur activité.
-    </p>
-
-  </div>
-
-  <div class="footer-column">
-
-    <h3>MicroClair</h3>
-
-    <a href="index.html">Accueil</a>
+    <span class="logo-mark" aria-hidden="true">M</span>
+    MicroClair
+  </a>
+
+  <nav class="main-nav" aria-label="Navigation principale">
     <a href="a-propos.html">À propos</a>
     <a href="demarrer.html">Démarrer</a>
     <a href="ressources.html">Ressources</a>
     <a href="contact.html">Contact</a>
 
-  </div>
-
-  <div class="footer-column">
-
-    <h3>Outils & informations</h3>
-
-    <a href="checklist-90-jours.html">
-      Checklist 90 jours
+    <a
+      href="demarrer.html"
+      class="nav-cta"
+    >
+      Commencer
     </a>
-
-    <a href="suivi-recettes.html">
-      Suivi des recettes
-    </a>
-
-    <a href="verifier-facture.html">
-      Vérifier une facture
-    </a>
-
-    <a href="mentions-legales.html">
-      Mentions légales
-    </a>
-
-    <a href="confidentialite.html">
-      Confidentialité
-    </a>
-
-    <a href="cookies.html">
-      Cookies
-    </a>
-
-  </div>
-
-</div>
-
-<div class="copyright">
-
-  <span>
-    © 2026 MicroClair — Axel Penarrubia
-  </span>
-
-  <span>
-    Simplement. Clairement. Utilement.
-  </span>
+  </nav>
 
 </div>
 ```
 
+  </header>
+
+  <main id="contenu">
+
+```
+<!-- HERO -->
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div>
+
+      <div class="eyebrow">
+        POUR MICRO-ENTREPRENEURS & FREELANCES
+      </div>
+
+      <h1>
+        L’administratif freelance, enfin compréhensible.
+      </h1>
+
+      <p class="hero-text">
+        MicroClair vous aide à comprendre et organiser votre activité
+        simplement, avec des guides, des checklists et des outils
+        conçus pour savoir quoi faire, sans vous perdre dans les démarches.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          href="demarrer.html"
+          class="btn btn-primary"
+        >
+          Bien démarrer →
+        </a>
+
+        <a
+          href="ressources.html"
+          class="btn btn-secondary"
+        >
+          Explorer les ressources
+        </a>
+
+      </div>
+
+    </div>
+
+    <div
+      class="dashboard"
+      role="group"
+      aria-label="Aperçu de la checklist MicroClair"
+    >
+
+      <div class="dashboard-top">
+
+        <div class="dashboard-title">
+          MICROCLAIR · 90 JOURS
+        </div>
+
+        <div class="status">
+          EN BONNE VOIE
+        </div>
+
+      </div>
+
+      <div class="dashboard-main">
+
+        <small>Votre progression</small>
+
+        <h2>
+          8 étapes sur 12
+        </h2>
+
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Progression de la checklist"
+          aria-valuemin="0"
+          aria-valuemax="12"
+          aria-valuenow="8"
+          aria-valuetext="8 étapes sur 12"
+        >
+          <span aria-hidden="true"></span>
+        </div>
+
+        <div class="dashboard-list">
+
+          <div class="dashboard-item">
+            <span class="check" aria-hidden="true">✓</span>
+            <span>Organiser ses documents</span>
+          </div>
+
+          <div class="dashboard-item">
+            <span class="check" aria-hidden="true">✓</span>
+            <span>Préparer ses factures</span>
+          </div>
+
+          <div class="dashboard-item">
+            <span class="check" aria-hidden="true">✓</span>
+            <span>Suivre ses recettes</span>
+          </div>
+
+          <div class="dashboard-item">
+            <span class="check pending" aria-hidden="true">✓</span>
+            <span>Anticiper les prochaines échéances</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
-</footer>
+</section>
+
+<!-- TRUST -->
+
+<div class="trust">
+  <div class="container trust-inner">
+
+    <div class="trust-item">
+      <span aria-hidden="true">✓</span>
+      <span><strong>Simple</strong> à comprendre</span>
+    </div>
+
+    <div class="trust-item">
+      <span aria-hidden="true">✓</span>
+      <span><strong>Pratique</strong> à utiliser</span>
+    </div>
+
+    <div class="trust-item">
+      <span aria-hidden="true">✓</span>
+      <span><strong>Sans jargon</strong> inutile</span>
+    </div>
+
+    <div class="trust-item">
+      <span aria-hidden="true">✓</span>
+      <span><strong>Accessible</strong> gratuitement</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- METHOD -->
+
+<section class="method" id="methode">
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-label">
+        La méthode MicroClair
+      </div>
+
+      <h2>
+        Comprendre. Agir. Vérifier.
+      </h2>
+
+      <p>
+        Pas besoin de devenir expert en administratif.
+        L’objectif est de savoir quoi faire, dans quel ordre
+        et où vérifier l’information.
+      </p>
+
+    </div>
+
+    <div class="method-grid">
+
+      <article class="method-card">
+
+        <div class="number" aria-hidden="true">
+          01
+        </div>
+
+        <h3>
+          Comprendre
+        </h3>
+
+        <p>
+          Des explications claires pour comprendre les démarches
+          et distinguer ce qui est important de ce qui ne l’est pas.
+        </p>
+
+      </article>
+
+      <article class="method-card">
+
+        <div class="number" aria-hidden="true">
+          02
+        </div>
+
+        <h3>
+          Agir
+        </h3>
+
+        <p>
+          Des étapes concrètes, des checklists et des outils
+          pour passer rapidement de la théorie à l’action.
+        </p>
+
+      </article>
+
+      <article class="method-card">
+
+        <div class="number" aria-hidden="true">
+          03
+        </div>
+
+        <h3>
+          Vérifier
+        </h3>
+
+        <p>
+          Des points de contrôle pour éviter les oublis
+          et garder une activité organisée dans le temps.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ESSENTIALS -->
+
+<section>
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-label">
+        Les essentiels
+      </div>
+
+      <h2>
+        Les bons outils, au bon moment.
+      </h2>
+
+      <p>
+        Commencez par l’outil qui correspond à votre situation.
+        Pas besoin de tout faire en même temps.
+      </p>
+
+    </div>
+
+    <div
+      class="resources-grid"
+      aria-label="Ressources principales"
+    >
+
+      <a
+        href="checklist-90-jours.html"
+        class="resource-card"
+      >
+
+        <span class="resource-tag">
+          CHECKLIST
+        </span>
+
+        <h3>
+          Vos 90 premiers jours
+        </h3>
+
+        <p>
+          Les étapes essentielles pour organiser votre début
+          d’activité sans vous disperser.
+        </p>
+
+        <span class="resource-link">
+          Commencer la checklist →
+        </span>
+
+      </a>
+
+      <a
+        href="suivi-recettes.html"
+        class="resource-card"
+      >
+
+        <span class="resource-tag">
+          OUTIL
+        </span>
+
+        <h3>
+          Suivre vos recettes
+        </h3>
+
+        <p>
+          Un outil simple pour garder une vision claire
+          de vos factures et de vos encaissements.
+        </p>
+
+        <span class="resource-link">
+          Ouvrir l’outil →
+        </span>
+
+      </a>
+
+      <a
+        href="verifier-facture.html"
+        class="resource-card"
+      >
+
+        <span class="resource-tag">
+          VÉRIFICATION
+        </span>
+
+        <h3>
+          Vérifier une facture
+        </h3>
+
+        <p>
+          Passez en revue les principaux éléments d’une facture
+          avant de l’envoyer à votre client.
+        </p>
+
+        <span class="resource-link">
+          Vérifier une facture →
+        </span>
+
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- DIFFERENCE -->
+
+<section class="difference">
+  <div class="container">
+
+    <div class="section-label">
+      Notre philosophie
+    </div>
+
+    <h2>
+      Moins de charge mentale.<br>
+      Plus de visibilité.
+    </h2>
+
+    <p class="difference-text">
+      Quand on lance son activité, l’administratif peut vite devenir
+      une source de stress. MicroClair est pensé pour transformer
+      cette complexité en petites actions simples et compréhensibles.
+    </p>
+
+    <div class="principles">
+
+      <div class="principle">
+
+        <strong>
+          Pas de jargon
+        </strong>
+
+        <span>
+          On explique les choses avec des mots simples.
+        </span>
+
+      </div>
+
+      <div class="principle">
+
+        <strong>
+          Pas de surcharge
+        </strong>
+
+        <span>
+          On se concentre sur ce qui est utile maintenant.
+        </span>
+
+      </div>
+
+      <div class="principle">
+
+        <strong>
+          Pas de fausses certitudes
+        </strong>
+
+        <span>
+          Les informations importantes doivent être vérifiées.
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- QUOTE -->
+
+<section class="quote">
+  <div class="container">
+
+    <p>
+      « Vous n’avez pas besoin de tout connaître.
+      Vous avez surtout besoin de savoir quoi faire ensuite. »
+    </p>
+
+    <span>
+      La philosophie MicroClair
+    </span>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+
+<section class="faq" id="faq">
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-label">
+        Questions fréquentes
+      </div>
+
+      <h2>
+        Avant de commencer
+      </h2>
+
+    </div>
+
+    <div class="faq-list">
+
+      <details>
+        <summary>
+          MicroClair est-il réservé aux débutants ?
+        </summary>
+
+        <p>
+          MicroClair est particulièrement pensé pour les personnes
+          qui démarrent leur activité ou souhaitent remettre de
+          l’ordre dans leur administratif.
+        </p>
+      </details>
+
+      <details>
+        <summary>
+          Est-ce que MicroClair remplace un professionnel ?
+        </summary>
+
+        <p>
+          Non. Les contenus sont pédagogiques et ne remplacent pas
+          les conseils personnalisés d’un professionnel ni les
+          informations officielles applicables à votre situation.
+        </p>
+      </details>
+
+      <details>
+        <summary>
+          Les outils sont-ils gratuits ?
+        </summary>
+
+        <p>
+          Les ressources actuellement proposées sur MicroClair sont
+          accessibles gratuitement.
+        </p>
+      </details>
+
+      <details>
+        <summary>
+          Où vérifier les informations importantes ?
+        </summary>
+
+        <p>
+          Pour les sujets administratifs, fiscaux ou juridiques,
+          vérifiez toujours les informations auprès des sources
+          officielles correspondant à votre situation.
+        </p>
+      </details>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter">
+  <div class="container">
+
+    <div class="newsletter-box">
+
+      <div>
+
+        <div class="section-label">
+          Bientôt
+        </div>
+
+        <h2>
+          De nouveaux outils arrivent.
+        </h2>
+
+        <p>
+          La newsletter MicroClair arrivera bientôt.
+          En attendant, retrouvez directement les ressources
+          disponibles sur le site.
+        </p>
+
+      </div>
+
+      <a
+        href="ressources.html"
+        class="btn btn-primary"
+      >
+        Voir les ressources →
+      </a>
+
+    </div>
+
+  </div>
+</section>
+```
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container">
+
+```
+  <div class="footer-grid">
+
+    <div>
+
+      <a
+        href="index.html"
+        class="logo"
+        aria-label="MicroClair — Accueil"
+      >
+        <span class="logo-mark" aria-hidden="true">M</span>
+        MicroClair
+      </a>
+
+      <p class="footer-description">
+        Des outils simples pour aider les micro-entrepreneurs
+        et freelances à mieux comprendre et organiser leur activité.
+      </p>
+
+    </div>
+
+    <div class="footer-column">
+
+      <h3>
+        MicroClair
+      </h3>
+
+      <a href="index.html">
+        Accueil
+      </a>
+
+      <a href="a-propos.html">
+        À propos
+      </a>
+
+      <a href="demarrer.html">
+        Démarrer
+      </a>
+
+      <a href="ressources.html">
+        Ressources
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+    <div class="footer-column">
+
+      <h3>
+        Outils & informations
+      </h3>
+
+      <a href="checklist-90-jours.html">
+        Checklist 90 jours
+      </a>
+
+      <a href="suivi-recettes.html">
+        Suivi des recettes
+      </a>
+
+      <a href="verifier-facture.html">
+        Vérifier une facture
+      </a>
+
+      <a href="mentions-legales.html">
+        Mentions légales
+      </a>
+
+      <a href="confidentialite.html">
+        Confidentialité
+      </a>
+
+      <a href="cookies.html">
+        Cookies
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="copyright">
+
+    <span>
+      © 2026 MicroClair — Axel Penarrubia
+    </span>
+
+    <span>
+      Simplement. Clairement. Utilement.
+    </span>
+
+  </div>
+
+</div>
+```
+
+  </footer>
 
 </body>
 </html>
