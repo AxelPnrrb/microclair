@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez MicroClair, un projet pensé pour rendre l'administratif des micro-entrepreneurs plus simple et compréhensible.">
+  <meta name="theme-color" content="#0F766E">
+  <title>À propos — MicroClair</title>
+
+  <style>
+    :root {
+      --green: #0F766E;
+      --green-dark: #115E59;
+      --text: #17332F;
+      --muted: #667773;
+      --soft: #F3F8F7;
+      --white: #FFFFFF;
+      --border: #DCE8E5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.96);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .back {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .back:hover {
+      color: var(--green);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 75px 20px;
+    }
+
+    .hero {
+      max-width: 760px;
+      margin-bottom: 70px;
+    }
+
+    .label {
+      display: inline-block;
+      color: var(--green);
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 7vw, 64px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 19px;
+      max-width: 680px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-bottom: 65px;
+    }
+
+    .card {
+      background: var(--soft);
+      border-radius: 22px;
+      padding: 32px;
+    }
+
+    .card h2 {
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .story {
+      background: var(--text);
+      color: white;
+      border-radius: 26px;
+      padding: 45px;
+      margin-bottom: 65px;
+    }
+
+    .story h2 {
+      font-size: 30px;
+      margin-bottom: 18px;
+    }
+
+    .story p {
+      color: #DCE8E5;
+      max-width: 720px;
+    }
+
+    .values {
+      margin-bottom: 65px;
+    }
+
+    .values h2 {
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+
+    .value {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .value:last-child {
+      border-bottom: none;
+    }
+
+    .value strong {
+      display: block;
+      font-size: 19px;
+      margin-bottom: 5px;
+    }
+
+    .value span {
+      color: var(--muted);
+    }
+
+    .cta {
+      text-align: center;
+      background: var(--soft);
+      border-radius: 24px;
+      padding: 45px 25px;
+    }
+
+    .cta h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 14px 22px;
+      border-radius: 12px;
+    }
+
+    .button:hover {
+      background: var(--green-dark);
+    }
+
+    footer {
+      background: var(--soft);
+      padding: 35px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-links {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      margin: 0 8px;
+      text-decoration: none;
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        padding: 16px;
+      }
+
+      main {
+        padding: 55px 18px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .story {
+        padding: 30px 24px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .footer-links a {
+        display: inline-block;
+        margin: 4px 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="index.html">MicroClair</a>
+    <a class="back" href="index.html">← Retour à l’accueil</a>
+  </nav>
+</header>
+
+<main>
+
+  <div class="hero">
+    <span class="label">À propos de MicroClair</span>
+
+    <h1>L’administratif ne devrait pas être un obstacle.</h1>
+
+    <p>
+      MicroClair est un projet pensé pour aider les freelances et
+      micro-entrepreneurs à comprendre ce qu’ils doivent faire,
+      au bon moment, sans se perdre dans des explications compliquées.
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h2>Pourquoi MicroClair ?</h2>
+
+      <p>
+        Quand on lance son activité, on veut surtout travailler,
+        trouver ses premiers clients et développer son projet.
+        Pourtant, l’administratif arrive rapidement avec son lot
+        de démarches, de factures et de questions.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Notre approche</h2>
+
+      <p>
+        MicroClair transforme ces sujets en étapes simples,
+        concrètes et faciles à suivre. L’objectif est de savoir
+        quoi faire, pourquoi le faire et où trouver la bonne information.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="story">
+
+    <h2>Simple, utile, sans jargon.</h2>
+
+    <p>
+      MicroClair privilégie les outils pratiques : checklists,
+      guides, suivis et vérifications. Pas besoin d’être expert
+      en comptabilité ou en administration pour commencer à
+      mettre de l’ordre dans son activité.
+    </p>
+
+  </div>
+
+  <div class="values">
+
+    <h2>Ce qui compte pour nous</h2>
+
+    <div class="value">
+      <strong>Clarté</strong>
+      <span>Des explications compréhensibles, avec le moins de jargon possible.</span>
+    </div>
+
+    <div class="value">
+      <strong>Praticité</strong>
+      <span>Des outils conçus pour être utilisés immédiatement.</span>
+    </div>
+
+    <div class="value">
+      <strong>Transparence</strong>
+      <span>Des informations présentées simplement, sans promesse irréaliste.</span>
+    </div>
+
+    <div class="value">
+      <strong>Simplicité</strong>
+      <span>Parce qu’un bon outil doit faire gagner du temps, pas en faire perdre.</span>
+    </div>
+
+  </div>
+
+  <div class="cta">
+
+    <h2>Vous débutez votre activité ?</h2>
+
+    <p>
+      Commencez par les 90 premiers jours et avancez étape par étape.
+    </p>
+
+    <a class="button" href="checklist-90-jours.html">
+      Voir la checklist 90 jours
+    </a>
+
+  </div>
+
+</main>
+
+<footer>
+
+  <div class="footer-links">
+    <a href="index.html">Accueil</a>
+    <a href="ressources.html">Ressources</a>
+    <a href="contact.html">Contact</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="cookies.html">Cookies</a>
+  </div>
+
+  © 2026 MicroClair — Tous droits réservés.
+
+</footer>
+
+</body>
+</html>
+```
