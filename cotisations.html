@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cotisations en micro-entreprise — MicroClair</title>
+  <meta name="description" content="Comprendre les cotisations sociales en micro-entreprise : chiffre d'affaires, déclarations, paiement et bonnes pratiques.">
+  <meta name="theme-color" content="#173F3A">
+
+  <style>
+    :root {
+      --green:#173F3A;
+      --green-2:#245C55;
+      --mint:#DCEDE9;
+      --soft:#F3F8F7;
+      --cream:#FAF9F5;
+      --text:#17302D;
+      --muted:#667875;
+      --white:#fff;
+      --border:#DCE6E3;
+      --shadow:0 18px 45px rgba(23,63,58,.10);
+    }
+
+    * {
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body {
+      font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:var(--cream);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a {
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container {
+      width:min(1050px,calc(100% - 32px));
+      margin:auto;
+    }
+
+    header {
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(250,249,245,.96);
+      border-bottom:1px solid var(--border);
+      backdrop-filter:blur(10px);
+    }
+
+    .nav {
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .logo {
+      display:flex;
+      align-items:center;
+      gap:9px;
+      color:var(--green);
+      font-size:20px;
+      font-weight:800;
+    }
+
+    .logo-mark {
+      width:33px;
+      height:33px;
+      border-radius:10px;
+      background:var(--green);
+      color:white;
+      display:grid;
+      place-items:center;
+      font-size:15px;
+    }
+
+    .back {
+      color:var(--muted);
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .back:hover {
+      color:var(--green);
+    }
+
+    .hero {
+      padding:75px 0 55px;
+      text-align:center;
+    }
+
+    .tag {
+      display:inline-block;
+      padding:7px 11px;
+      margin-bottom:20px;
+      border-radius:999px;
+      background:var(--mint);
+      color:var(--green);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.5px;
+    }
+
+    h1 {
+      font-size:clamp(38px,6vw,58px);
+      line-height:1.05;
+      letter-spacing:-2px;
+      margin-bottom:18px;
+    }
+
+    .hero p {
+      max-width:680px;
+      margin:auto;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    .intro {
+      max-width:850px;
+      margin:0 auto 50px;
+      padding:28px;
+      background:white;
+      border:1px solid var(--border);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .intro strong {
+      display:block;
+      font-size:18px;
+      margin-bottom:8px;
+    }
+
+    .intro p {
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .section {
+      max-width:900px;
+      margin:0 auto 65px;
+    }
+
+    .section h2 {
+      font-size:29px;
+      line-height:1.2;
+      margin-bottom:10px;
+    }
+
+    .section > p {
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:25px;
+    }
+
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:15px;
+    }
+
+    .card {
+      padding:23px;
+      background:white;
+      border:1px solid var(--border);
+      border-radius:17px;
+    }
+
+    .number {
+      display:inline-grid;
+      place-items:center;
+      width:31px;
+      height:31px;
+      margin-bottom:14px;
+      border-radius:9px;
+      background:var(--mint);
+      color:var(--green);
+      font-size:12px;
+      font-weight:900;
+    }
+
+    .card h3 {
+      font-size:17px;
+      margin-bottom:7px;
+    }
+
+    .card p {
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .formula {
+      max-width:900px;
+      margin:0 auto 65px;
+      padding:30px;
+      background:var(--green);
+      color:white;
+      border-radius:20px;
+      text-align:center;
+    }
+
+    .formula-label {
+      color:#BBD1CC;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.7px;
+      margin-bottom:10px;
+    }
+
+    .formula-main {
+      font-size:clamp(22px,4vw,31px);
+      font-weight:800;
+      margin-bottom:10px;
+    }
+
+    .formula p {
+      color:#D0DFDC;
+      font-size:13px;
+    }
+
+    .checklist {
+      display:grid;
+      gap:11px;
+    }
+
+    .check {
+      display:flex;
+      align-items:flex-start;
+      gap:13px;
+      padding:17px 18px;
+      background:var(--soft);
+      border-radius:14px;
+    }
+
+    .check-icon {
+      flex:none;
+      width:24px;
+      height:24px;
+      border-radius:7px;
+      background:var(--green);
+      color:white;
+      display:grid;
+      place-items:center;
+      font-size:12px;
+      font-weight:900;
+    }
+
+    .check strong {
+      display:block;
+      font-size:14px;
+      margin-bottom:2px;
+    }
+
+    .check span {
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .warning {
+      max-width:900px;
+      margin:0 auto 65px;
+      padding:26px;
+      background:#FFF8E9;
+      border:1px solid #F1E3BD;
+      border-radius:18px;
+    }
+
+    .warning h2 {
+      font-size:21px;
+      margin-bottom:8px;
+    }
+
+    .warning p {
+      color:#675B3D;
+      font-size:13px;
+    }
+
+    .cta {
+      max-width:900px;
+      margin:0 auto 80px;
+      padding:35px;
+      background:var(--mint);
+      border-radius:22px;
+      text-align:center;
+    }
+
+    .cta h2 {
+      font-size:27px;
+      margin-bottom:10px;
+    }
+
+    .cta p {
+      max-width:600px;
+      margin:0 auto 22px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .button {
+      display:inline-block;
+      padding:12px 18px;
+      background:var(--green);
+      color:white;
+      border-radius:10px;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    footer {
+      background:#102F2B;
+      color:#AFC6C1;
+      padding:40px 0 25px;
+    }
+
+    .footer-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      padding-bottom:30px;
+    }
+
+    footer .logo {
+      color:white;
+      margin-bottom:12px;
+    }
+
+    footer .logo-mark {
+      background:white;
+      color:var(--green);
+    }
+
+    .footer-description {
+      max-width:350px;
+      font-size:12px;
+    }
+
+    .footer-column h3 {
+      color:white;
+      font-size:13px;
+      margin-bottom:12px;
+    }
+
+    .footer-column a {
+      display:block;
+      font-size:12px;
+      margin-bottom:7px;
+    }
+
+    .footer-column a:hover {
+      color:white;
+    }
+
+    .copyright {
+      border-top:1px solid rgba(255,255,255,.12);
+      padding-top:20px;
+      font-size:11px;
+    }
+
+    @media(max-width:700px) {
+      .cards {
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:600px) {
+      .hero {
+        padding:55px 0 40px;
+      }
+
+      .intro,
+      .card,
+      .formula,
+      .warning,
+      .cta {
+        padding:21px;
+      }
+
+      .footer-grid {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+```
+<a href="index.html" class="logo">
+  <span class="logo-mark">M</span>
+  MicroClair
+</a>
+
+<a href="ressources.html" class="back">
+  ← Retour aux ressources
+</a>
+```
+
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container">
+
+```
+  <span class="tag">COTISATIONS</span>
+
+  <h1>Les cotisations,<br>sans le casse-tête.</h1>
+
+  <p>
+    Comprendre ce que vous déclarez, quand vous le déclarez
+    et pourquoi les cotisations sont liées à votre chiffre d'affaires.
+  </p>
+
+</div>
+```
+
+  </section>
+
+  <section>
+    <div class="container">
+
+```
+  <div class="intro">
+    <strong>Le principe est plus simple qu'il n'y paraît.</strong>
+
+    <p>
+      En micro-entreprise, les cotisations sociales sont généralement
+      calculées à partir du chiffre d'affaires déclaré. Le montant
+      dépend notamment de la nature de l'activité et des règles
+      applicables à votre situation.
+    </p>
+  </div>
+
+  <div class="formula">
+
+    <div class="formula-label">
+      LE PRINCIPE À RETENIR
+    </div>
+
+    <div class="formula-main">
+      Chiffre d'affaires déclaré × taux applicable
+    </div>
+
+    <p>
+      Le taux n'est pas identique pour toutes les activités et peut
+      évoluer. Vérifiez toujours le taux correspondant à votre situation.
+    </p>
+
+  </div>
+
+  <div class="section">
+
+    <h2>Ce qu'il faut comprendre</h2>
+
+    <p>
+      Voici les notions essentielles pour éviter les principales erreurs.
+    </p>
+
+    <div class="cards">
+
+      <article class="card">
+        <span class="number">01</span>
+        <h3>Le chiffre d'affaires encaissé</h3>
+        <p>
+          Pour vos déclarations, la logique repose notamment sur les
+          sommes effectivement encaissées, et non simplement sur les
+          factures encore impayées.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="number">02</span>
+        <h3>Le taux dépend de l'activité</h3>
+        <p>
+          Une activité de vente, une prestation de services ou une
+          activité libérale peuvent relever de règles différentes.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="number">03</span>
+        <h3>La déclaration est indispensable</h3>
+        <p>
+          Vous devez déclarer votre chiffre d'affaires selon la
+          périodicité choisie ou applicable à votre situation.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="number">04</span>
+        <h3>Les cotisations financent votre protection sociale</h3>
+        <p>
+          Elles participent notamment au financement de droits
+          sociaux selon les règles applicables au micro-entrepreneur.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+  <div class="section">
+
+    <h2>Votre routine de déclaration</h2>
+
+    <p>
+      Le plus simple est de transformer la déclaration en petite
+      routine administrative régulière.
+    </p>
+
+    <div class="checklist">
+
+      <div class="check">
+        <div class="check-icon">1</div>
+        <div>
+          <strong>Rassemblez vos recettes</strong>
+          <span>
+            Utilisez votre suivi des encaissements pour retrouver
+            facilement les montants de la période.
+          </span>
+        </div>
+      </div>
+
+      <div class="check">
+        <div class="check-icon">2</div>
+        <div>
+          <strong>Vérifiez vos chiffres</strong>
+          <span>
+            Comparez votre déclaration avec votre propre suivi avant
+            de la valider.
+          </span>
+        </div>
+      </div>
+
+      <div class="check">
+        <div class="check-icon">3</div>
+        <div>
+          <strong>Effectuez votre déclaration</strong>
+          <span>
+            Respectez votre échéance et utilisez les informations
+            correspondant à votre activité.
+          </span>
+        </div>
+      </div>
+
+      <div class="check">
+        <div class="check-icon">4</div>
+        <div>
+          <strong>Effectuez le paiement si nécessaire</strong>
+          <span>
+            Après déclaration, vérifiez le montant à payer et
+            conservez la trace de votre démarche.
+          </span>
+        </div>
+      </div>
+
+      <div class="check">
+        <div class="check-icon">5</div>
+        <div>
+          <strong>Conservez vos justificatifs</strong>
+          <span>
+            Gardez les éléments permettant de retrouver vos
+            déclarations et paiements.
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="warning">
+
+    <h2>⚠️ Et si votre chiffre d'affaires est de 0 € ?</h2>
+
+    <p>
+      Une absence de chiffre d'affaires ne signifie pas nécessairement
+      qu'il n'y a aucune démarche à effectuer. La déclaration reste
+      importante, même lorsqu'aucune recette n'a été encaissée sur
+      la période concernée.
+    </p>
+
+  </div>
+
+  <div class="section">
+
+    <h2>Les erreurs les plus fréquentes</h2>
+
+    <p>
+      Quelques habitudes simples permettent de les éviter.
+    </p>
+
+    <div class="cards">
+
+      <article class="card">
+        <span class="number">01</span>
+        <h3>Attendre le dernier moment</h3>
+        <p>
+          Reconstituer plusieurs mois de recettes en urgence augmente
+          le risque d'erreur.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="number">02</span>
+        <h3>Confondre facturé et encaissé</h3>
+        <p>
+          Une facture envoyée mais non encore réglée ne doit pas être
+          traitée comme une recette déjà encaissée.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="number">03</span>
+        <h3>Utiliser un mauvais taux</h3>
+        <p>
+          Les taux dépendent notamment de l'activité et peuvent
+          évoluer. Vérifiez toujours la règle en vigueur.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="number">04</span>
+        <h3>Oublier une échéance</h3>
+        <p>
+          Ajoutez vos échéances à votre calendrier personnel pour
+          éviter les oublis.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+  <div class="cta">
+
+    <h2>Commencez par suivre vos recettes</h2>
+
+    <p>
+      Un suivi simple vous permet de retrouver rapidement votre
+      chiffre d'affaires et de préparer plus sereinement vos déclarations.
+    </p>
+
+    <a href="suivi-recettes.html" class="button">
+      Ouvrir le suivi des recettes →
+    </a>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+
+```
+<div class="footer-grid">
+
+  <div>
+    <a href="index.html" class="logo">
+      <span class="logo-mark">M</span>
+      MicroClair
+    </a>
+
+    <p class="footer-description">
+      Des outils simples pour aider les micro-entrepreneurs
+      et freelances à mieux organiser leur activité.
+    </p>
+  </div>
+
+  <div class="footer-column">
+    <h3>Informations</h3>
+    <a href="a-propos.html">À propos</a>
+    <a href="demarrer.html">Démarrer</a>
+    <a href="ressources.html">Ressources</a>
+    <a href="contact.html">Contact</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="cookies.html">Cookies</a>
+  </div>
+
+</div>
+
+<div class="copyright">
+  © 2026 MicroClair — Axel Penarrubia
+</div>
+```
+
+  </div>
+</footer>
+
+</body>
+</html>
