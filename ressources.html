@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Ressources — MicroClair</title>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Ressources — MicroClair
+  </title>
 
   <meta
     name="description"
-    content="Guides, checklists et modèles pratiques pour mieux organiser sa micro-entreprise et son activité freelance."
+    content="Découvrez les guides, checklists et outils pratiques de MicroClair pour mieux organiser votre micro-entreprise."
   >
 
-  <meta name="theme-color" content="#102F38">
+  <meta
+    name="theme-color"
+    content="#102F38"
+  >
 
   <style>
 
@@ -20,13 +30,17 @@
        ===================================================== */
 
     :root {
+
       --navy: #102F38;
       --navy-light: #183F49;
+
       --teal: #2A9D8F;
       --teal-light: #E8F5F2;
+
       --yellow: #F4C95D;
 
       --cream: #F8FAF8;
+      --soft: #F3F8F7;
       --white: #FFFFFF;
 
       --text: #183238;
@@ -34,15 +48,20 @@
 
       --border: #E1E9E7;
 
-      --shadow-small: 0 8px 30px rgba(16,47,56,0.06);
-      --shadow-large: 0 25px 70px rgba(16,47,56,0.12);
+      --shadow-small:
+        0 8px 30px rgba(16,47,56,0.06);
+
+      --shadow-large:
+        0 25px 70px rgba(16,47,56,0.12);
 
       --radius: 18px;
       --radius-large: 28px;
     }
 
 
-    /* RESET */
+    /* =====================================================
+       RESET
+       ===================================================== */
 
     * {
       box-sizing: border-box;
@@ -55,6 +74,7 @@
     }
 
     body {
+
       font-family:
         Inter,
         -apple-system,
@@ -64,7 +84,6 @@
         sans-serif;
 
       background: var(--cream);
-
       color: var(--text);
 
       line-height: 1.6;
@@ -76,21 +95,30 @@
       color: inherit;
     }
 
-    button,
-    input {
+    button {
       font: inherit;
     }
 
+    a:focus-visible,
+    button:focus-visible {
 
-    /* GLOBAL */
+      outline: 3px solid var(--yellow);
+      outline-offset: 4px;
+    }
+
+
+    /* =====================================================
+       GLOBAL
+       ===================================================== */
 
     .container {
-      width: min(1160px, 92%);
 
+      width: min(1160px, 92%);
       margin: auto;
     }
 
     .eyebrow {
+
       display: inline-flex;
 
       align-items: center;
@@ -109,13 +137,69 @@
     }
 
     .eyebrow::before {
+
       content: "";
 
       width: 28px;
-
       height: 2px;
 
       background: var(--teal);
+    }
+
+    .button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 14px 21px;
+
+      border-radius: 999px;
+
+      text-decoration: none;
+
+      font-weight: 850;
+
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
+    }
+
+    .button-primary {
+
+      background: var(--navy);
+
+      color: white;
+
+      box-shadow:
+        0 10px 25px rgba(16,47,56,0.15);
+    }
+
+    .button-primary:hover {
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 15px 32px rgba(16,47,56,0.2);
+    }
+
+    .button-secondary {
+
+      background: white;
+
+      border: 1px solid var(--border);
+
+      color: var(--navy);
+    }
+
+    .button-secondary:hover {
+
+      border-color: var(--teal);
+
+      color: var(--teal);
     }
 
 
@@ -124,20 +208,24 @@
        ===================================================== */
 
     header {
+
       position: sticky;
 
       top: 0;
 
       z-index: 100;
 
-      background: rgba(248,250,248,0.94);
+      background:
+        rgba(248,250,248,0.94);
 
       backdrop-filter: blur(16px);
 
-      border-bottom: 1px solid rgba(225,233,231,0.9);
+      border-bottom:
+        1px solid rgba(225,233,231,0.9);
     }
 
     nav {
+
       height: 74px;
 
       display: flex;
@@ -150,6 +238,7 @@
     }
 
     .logo {
+
       text-decoration: none;
 
       font-size: 1.38rem;
@@ -164,6 +253,7 @@
     }
 
     nav ul {
+
       list-style: none;
 
       display: flex;
@@ -174,6 +264,7 @@
     }
 
     nav a {
+
       text-decoration: none;
 
       font-size: 0.92rem;
@@ -188,14 +279,19 @@
     }
 
     .nav-button {
+
       padding: 10px 17px;
 
-      border: 1px solid var(--navy);
+      border:
+        1px solid var(--navy);
 
       border-radius: 999px;
+
+      transition: 0.2s;
     }
 
     .nav-button:hover {
+
       background: var(--navy);
 
       color: white;
@@ -203,386 +299,356 @@
 
 
     /* =====================================================
-       HERO
+       HERO RESSOURCES
        ===================================================== */
 
-    .hero {
+    .resources-hero {
+
       background: white;
 
-      padding: 92px 0 75px;
+      padding: 90px 0 75px;
+
+      border-bottom:
+        1px solid var(--border);
     }
 
-    .hero-content {
-      max-width: 820px;
+    .resources-hero-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 0.72fr;
+
+      gap: 70px;
+
+      align-items: center;
     }
 
-    .hero h1 {
-      margin-top: 18px;
+    h1 {
 
-      font-size: clamp(3rem, 6vw, 5rem);
+      max-width: 780px;
+
+      margin-top: 17px;
+
+      font-size:
+        clamp(3rem, 6vw, 5.2rem);
 
       line-height: 0.99;
 
       letter-spacing: -0.07em;
     }
 
-    .hero p {
-      max-width: 690px;
+    .hero-description {
+
+      max-width: 680px;
 
       margin-top: 25px;
 
       color: var(--muted);
 
-      font-size: 1.17rem;
+      font-size: 1.16rem;
     }
 
+    .hero-actions {
 
-    /* =====================================================
-       CATEGORY NAVIGATION
-       ===================================================== */
-
-    .categories {
-      padding: 22px 0;
-
-      background: white;
-
-      border-top: 1px solid var(--border);
-
-      border-bottom: 1px solid var(--border);
-
-      position: sticky;
-
-      top: 74px;
-
-      z-index: 40;
-    }
-
-    .category-list {
       display: flex;
 
       flex-wrap: wrap;
 
-      gap: 9px;
+      gap: 12px;
 
-      list-style: none;
-    }
-
-    .category-list a {
-      display: inline-block;
-
-      padding: 9px 15px;
-
-      background: var(--cream);
-
-      border: 1px solid var(--border);
-
-      border-radius: 999px;
-
-      color: var(--navy);
-
-      text-decoration: none;
-
-      font-size: 0.84rem;
-
-      font-weight: 800;
-    }
-
-    .category-list a:hover {
-      background: var(--teal-light);
-
-      border-color: var(--teal);
-
-      color: var(--teal);
+      margin-top: 30px;
     }
 
 
     /* =====================================================
-       MAIN CONTENT
+       HERO CARD
        ===================================================== */
 
-    section {
-      padding: 85px 0;
-    }
+    .hero-card {
 
-    .section-title {
-      margin-top: 12px;
-
-      font-size: clamp(2.2rem, 4vw, 3.3rem);
-
-      line-height: 1.06;
-
-      letter-spacing: -0.055em;
-    }
-
-    .section-description {
-      max-width: 690px;
-
-      margin-top: 15px;
-
-      color: var(--muted);
-
-      font-size: 1.05rem;
-    }
-
-
-    /* =====================================================
-       FEATURE RESOURCE
-       ===================================================== */
-
-    .start-section {
-      background: var(--cream);
-    }
-
-    .featured {
-      display: grid;
-
-      grid-template-columns: 1fr 0.75fr;
-
-      gap: 45px;
-
-      align-items: stretch;
-
-      margin-top: 38px;
-
-      padding: 40px;
+      padding: 30px;
 
       background: var(--navy);
 
       color: white;
 
-      border-radius: var(--radius-large);
+      border-radius:
+        var(--radius-large);
 
-      box-shadow: var(--shadow-large);
+      box-shadow:
+        var(--shadow-large);
     }
 
-    .featured-tag {
-      display: inline-block;
+    .hero-card-label {
 
-      padding: 6px 10px;
-
-      border-radius: 999px;
-
-      background: rgba(244,201,93,0.15);
-
-      color: var(--yellow);
+      color: #80D6CA;
 
       font-size: 0.72rem;
 
       font-weight: 900;
 
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
     }
 
-    .featured h3 {
-      margin-top: 20px;
+    .hero-card h2 {
 
-      max-width: 650px;
+      margin-top: 15px;
 
-      font-size: clamp(2rem,4vw,3rem);
+      font-size: 1.75rem;
 
-      line-height: 1.05;
+      line-height: 1.12;
 
-      letter-spacing: -0.05em;
+      letter-spacing: -0.04em;
     }
 
-    .featured p {
-      max-width: 600px;
+    .hero-card p {
 
-      margin-top: 14px;
+      margin-top: 11px;
 
-      color: #C4D0D2;
+      color: #C2D0D2;
+
+      font-size: 0.92rem;
     }
 
-    .featured-list {
-      list-style: none;
+    .hero-card-list {
 
       display: grid;
 
-      gap: 9px;
+      gap: 10px;
 
       margin-top: 23px;
+
+      list-style: none;
     }
 
-    .featured-list li::before {
-      content: "✓";
+    .hero-card-list li {
 
-      margin-right: 9px;
-
-      color: #75D0C3;
-
-      font-weight: 900;
-    }
-
-    .featured-button {
-      display: inline-flex;
-
-      margin-top: 28px;
-
-      padding: 14px 20px;
-
-      border-radius: 999px;
-
-      background: var(--yellow);
-
-      color: var(--navy);
-
-      text-decoration: none;
-
-      font-weight: 900;
-    }
-
-    .featured-button:hover {
-      filter: brightness(0.96);
-
-      transform: translateY(-1px);
-    }
-
-    .featured-visual {
       display: flex;
 
-      align-items: center;
+      gap: 10px;
 
-      justify-content: center;
-    }
+      align-items: flex-start;
 
-    .mini-checklist {
-      width: 100%;
-
-      padding: 25px;
-
-      background: rgba(255,255,255,0.07);
-
-      border: 1px solid rgba(255,255,255,0.1);
-
-      border-radius: 20px;
-    }
-
-    .mini-top {
-      display: flex;
-
-      justify-content: space-between;
-
-      color: #9FB3B7;
-
-      font-size: 0.72rem;
-
-      font-weight: 850;
-    }
-
-    .mini-progress {
-      height: 7px;
-
-      margin: 21px 0;
-
-      background: #38565D;
-
-      border-radius: 99px;
-
-      overflow: hidden;
-    }
-
-    .mini-progress span {
-      display: block;
-
-      width: 68%;
-
-      height: 100%;
-
-      background: var(--yellow);
-    }
-
-    .mini-row {
       padding: 11px;
 
-      margin-top: 8px;
-
-      background: rgba(255,255,255,0.07);
+      background:
+        rgba(255,255,255,0.07);
 
       border-radius: 11px;
 
-      font-size: 0.82rem;
+      font-size: 0.84rem;
     }
 
-    .mini-row::before {
+    .hero-card-list li::before {
+
       content: "✓";
 
-      margin-right: 8px;
-
-      color: #75D0C3;
+      color: var(--yellow);
 
       font-weight: 900;
     }
 
 
     /* =====================================================
-       RESOURCE CARDS
+       FILTERS
        ===================================================== */
 
-    .library {
-      background: white;
+    .filters-section {
+
+      padding: 30px 0 0;
+
+      background: var(--cream);
     }
 
-    .library-grid {
+    .filters {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 9px;
+    }
+
+    .filter {
+
+      padding: 9px 15px;
+
+      background: white;
+
+      color: var(--navy-light);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 999px;
+
+      font-size: 0.82rem;
+
+      font-weight: 800;
+
+      text-decoration: none;
+
+      transition: 0.2s;
+    }
+
+    .filter:hover,
+    .filter.active {
+
+      background: var(--navy);
+
+      border-color: var(--navy);
+
+      color: white;
+    }
+
+
+    /* =====================================================
+       MAIN RESOURCES
+       ===================================================== */
+
+    .resources-section {
+
+      padding: 65px 0 90px;
+    }
+
+    .section-heading {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: flex-end;
+
+      gap: 30px;
+    }
+
+    .section-heading h2 {
+
+      margin-top: 10px;
+
+      font-size:
+        clamp(2rem, 4vw, 3rem);
+
+      line-height: 1.05;
+
+      letter-spacing: -0.055em;
+    }
+
+    .section-heading p {
+
+      max-width: 490px;
+
+      color: var(--muted);
+
+      font-size: 0.96rem;
+    }
+
+
+    /* =====================================================
+       RESOURCE GRID
+       ===================================================== */
+
+    .resource-grid {
+
       display: grid;
 
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns:
+        repeat(3, 1fr);
 
       gap: 18px;
 
-      margin-top: 40px;
+      margin-top: 38px;
     }
 
     .resource-card {
+
       display: flex;
 
       flex-direction: column;
 
-      padding: 28px;
+      min-height: 350px;
 
-      background: var(--cream);
+      padding: 29px;
 
-      border: 1px solid var(--border);
+      background: white;
+
+      border:
+        1px solid var(--border);
 
       border-radius: var(--radius);
 
+      box-shadow: var(--shadow-small);
+
       transition:
-        transform 0.2s,
-        box-shadow 0.2s,
-        border-color 0.2s;
+        transform 0.22s,
+        box-shadow 0.22s,
+        border-color 0.22s;
     }
 
     .resource-card:hover {
+
       transform: translateY(-5px);
 
-      border-color: #CFE1DD;
+      border-color: #C9DFDB;
 
-      box-shadow: var(--shadow-small);
+      box-shadow:
+        0 18px 45px rgba(16,47,56,0.09);
     }
 
-    .resource-category {
+    .resource-top {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 10px;
+    }
+
+    .resource-tag {
+
       color: var(--teal);
 
-      font-size: 0.72rem;
+      font-size: 0.7rem;
 
       font-weight: 900;
 
       letter-spacing: 0.1em;
+    }
 
-      text-transform: uppercase;
+    .resource-badge {
+
+      padding: 5px 9px;
+
+      background: var(--teal-light);
+
+      color: var(--teal);
+
+      border-radius: 999px;
+
+      font-size: 0.67rem;
+
+      font-weight: 850;
     }
 
     .resource-card h3 {
-      margin-top: 13px;
 
-      font-size: 1.35rem;
+      margin-top: 17px;
 
-      line-height: 1.18;
+      font-size: 1.42rem;
 
-      letter-spacing: -0.025em;
+      line-height: 1.16;
+
+      letter-spacing: -0.03em;
     }
 
     .resource-card p {
-      margin-top: 9px;
+
+      margin-top: 11px;
 
       color: var(--muted);
 
@@ -590,41 +656,53 @@
     }
 
     .resource-meta {
-      display: flex;
 
-      gap: 8px;
+      display: flex;
 
       flex-wrap: wrap;
 
-      margin-top: 17px;
+      gap: 12px;
+
+      margin-top: 19px;
+
+      color: #7A898D;
+
+      font-size: 0.76rem;
+
+      font-weight: 700;
     }
 
-    .resource-meta span {
-      padding: 5px 8px;
+    .resource-meta span::before {
 
-      background: white;
+      content: "•";
 
-      border: 1px solid var(--border);
+      margin-right: 6px;
 
-      border-radius: 7px;
+      color: var(--teal);
+    }
 
-      color: var(--muted);
+    .resource-action {
 
-      font-size: 0.7rem;
+      margin-top: auto;
 
-      font-weight: 750;
+      padding-top: 25px;
     }
 
     .resource-link {
-      margin-top: auto;
 
-      padding-top: 23px;
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 7px;
 
       color: var(--navy);
 
+      text-decoration: none;
+
       font-weight: 850;
 
-      text-decoration: none;
+      font-size: 0.9rem;
     }
 
     .resource-link:hover {
@@ -633,64 +711,175 @@
 
 
     /* =====================================================
-       STARTING POINT
+       FEATURED RESOURCE
        ===================================================== */
 
-    .help {
-      background: var(--soft);
+    .featured-section {
+
+      padding: 0 0 90px;
     }
 
-    .help-box {
+    .featured {
+
       display: grid;
 
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns:
+        1fr 0.82fr;
 
       gap: 45px;
 
       align-items: center;
+
+      padding: 48px;
+
+      background: var(--navy);
+
+      color: white;
+
+      border-radius: 30px;
+
+      box-shadow: var(--shadow-large);
     }
 
-    .help h2 {
-      margin-top: 12px;
+    .featured-label {
 
-      font-size: clamp(2.2rem,4vw,3.2rem);
+      color: var(--yellow);
+
+      font-size: 0.72rem;
+
+      font-weight: 900;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+    }
+
+    .featured h2 {
+
+      margin-top: 13px;
+
+      font-size:
+        clamp(2rem, 4vw, 3.2rem);
 
       line-height: 1.05;
 
-      letter-spacing: -0.05em;
+      letter-spacing: -0.055em;
     }
 
-    .help p {
-      margin-top: 15px;
+    .featured p {
 
-      color: var(--muted);
+      max-width: 620px;
+
+      margin-top: 14px;
+
+      color: #C5D1D3;
     }
 
-    .steps {
-      display: grid;
+    .featured-actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
 
       gap: 11px;
+
+      margin-top: 25px;
     }
 
-    .step {
+    .featured .button-primary {
+
+      background: var(--yellow);
+
+      color: var(--navy);
+
+      box-shadow: none;
+    }
+
+    .featured .button-primary:hover {
+
+      box-shadow:
+        0 10px 25px rgba(0,0,0,0.18);
+    }
+
+    .featured-visual {
+
+      padding: 25px;
+
+      background:
+        rgba(255,255,255,0.06);
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      border-radius: 22px;
+    }
+
+    .mini-header {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      color: #9DB3B7;
+
+      font-size: 0.7rem;
+
+      font-weight: 800;
+    }
+
+    .mini-progress {
+
+      height: 7px;
+
+      margin-top: 23px;
+
+      background: #38565D;
+
+      border-radius: 999px;
+
+      overflow: hidden;
+    }
+
+    .mini-progress span {
+
+      display: block;
+
+      width: 72%;
+
+      height: 100%;
+
+      background: var(--yellow);
+
+      border-radius: 999px;
+    }
+
+    .mini-item {
+
       display: flex;
 
       align-items: center;
 
-      gap: 15px;
+      gap: 10px;
 
-      padding: 17px;
+      margin-top: 10px;
 
-      background: white;
+      padding: 12px;
 
-      border: 1px solid var(--border);
+      background:
+        rgba(255,255,255,0.07);
 
-      border-radius: 15px;
+      border-radius: 11px;
+
+      color: #E8F0F0;
+
+      font-size: 0.78rem;
     }
 
-    .step-number {
-      width: 35px;
-      height: 35px;
+    .mini-check {
+
+      width: 20px;
+
+      height: 20px;
 
       display: grid;
 
@@ -698,183 +887,135 @@
 
       flex-shrink: 0;
 
+      background: var(--teal);
+
       border-radius: 50%;
 
-      background: var(--teal-light);
+      color: white;
+
+      font-size: 0.65rem;
+
+      font-weight: 900;
+    }
+
+
+    /* =====================================================
+       WHY
+       ===================================================== */
+
+    .why-section {
+
+      padding: 0 0 90px;
+    }
+
+    .why-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .why-card {
+
+      padding: 27px;
+
+      background: var(--soft);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: var(--radius);
+    }
+
+    .why-icon {
+
+      width: 43px;
+
+      height: 43px;
+
+      display: grid;
+
+      place-items: center;
+
+      background: white;
+
+      border-radius: 50%;
 
       color: var(--teal);
 
       font-weight: 900;
 
-      font-size: 0.8rem;
+      box-shadow:
+        0 4px 15px rgba(16,47,56,0.06);
     }
 
-    .step strong {
-      display: block;
+    .why-card h3 {
+
+      margin-top: 18px;
+
+      font-size: 1.15rem;
     }
 
-    .step small {
+    .why-card p {
+
+      margin-top: 7px;
+
       color: var(--muted);
+
+      font-size: 0.9rem;
     }
 
 
     /* =====================================================
-       TRUST
+       CTA
        ===================================================== */
 
-    .trust {
+    .cta-section {
+
+      padding: 0 0 90px;
+    }
+
+    .cta {
+
+      padding: 50px 35px;
+
       background: white;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 28px;
 
       text-align: center;
     }
 
-    .trust-content {
-      max-width: 760px;
+    .cta h2 {
 
-      margin: auto;
-    }
-
-    .trust h2 {
       margin-top: 12px;
 
-      font-size: clamp(2rem,4vw,3rem);
+      font-size:
+        clamp(2rem, 4vw, 3rem);
 
-      line-height: 1.07;
+      line-height: 1.06;
 
-      letter-spacing: -0.05em;
+      letter-spacing: -0.055em;
     }
 
-    .trust p {
-      margin-top: 15px;
+    .cta p {
+
+      max-width: 610px;
+
+      margin: 13px auto 0;
 
       color: var(--muted);
     }
 
-    .trust-points {
-      display: grid;
+    .cta .button {
 
-      grid-template-columns: repeat(3,1fr);
-
-      gap: 15px;
-
-      margin-top: 35px;
-    }
-
-    .trust-point {
-      padding: 20px;
-
-      background: var(--cream);
-
-      border: 1px solid var(--border);
-
-      border-radius: 15px;
-    }
-
-    .trust-point strong {
-      display: block;
-
-      font-size: 0.95rem;
-    }
-
-    .trust-point span {
-      display: block;
-
-      margin-top: 5px;
-
-      color: var(--muted);
-
-      font-size: 0.82rem;
-    }
-
-
-    /* =====================================================
-       NEWSLETTER
-       ===================================================== */
-
-    .newsletter-section {
-      padding-top: 30px;
-    }
-
-    .newsletter {
-      padding: 55px;
-
-      background: var(--navy);
-
-      color: white;
-
-      border-radius: 30px;
-    }
-
-    .newsletter-grid {
-      display: grid;
-
-      grid-template-columns: 1fr 0.85fr;
-
-      gap: 50px;
-
-      align-items: center;
-    }
-
-    .newsletter h2 {
-      margin-top: 12px;
-
-      font-size: clamp(2rem,4vw,3rem);
-
-      line-height: 1.08;
-
-      letter-spacing: -0.05em;
-    }
-
-    .newsletter p {
-      margin-top: 13px;
-
-      color: #C3D0D2;
-    }
-
-    .newsletter form {
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 9px;
-    }
-
-    .newsletter input {
-      flex: 1;
-
-      min-width: 210px;
-
-      padding: 15px 18px;
-
-      border: 0;
-
-      border-radius: 999px;
-    }
-
-    .newsletter button {
-      padding: 15px 20px;
-
-      border: 0;
-
-      border-radius: 999px;
-
-      background: var(--yellow);
-
-      color: var(--navy);
-
-      font-weight: 900;
-
-      cursor: pointer;
-    }
-
-    .newsletter-small {
-      margin-top: 11px;
-
-      color: #91A7AA !important;
-
-      font-size: 0.7rem;
-
-      line-height: 1.45;
+      margin-top: 24px;
     }
 
 
@@ -883,7 +1024,6 @@
        ===================================================== */
 
     footer {
-      margin-top: 70px;
 
       padding: 40px 0;
 
@@ -893,11 +1033,12 @@
     }
 
     .footer-content {
+
       display: flex;
 
-      align-items: center;
-
       justify-content: space-between;
+
+      align-items: center;
 
       flex-wrap: wrap;
 
@@ -905,7 +1046,10 @@
     }
 
     .footer-brand strong {
+
       color: white;
+
+      font-size: 1.05rem;
     }
 
     .footer-brand small {
@@ -913,6 +1057,7 @@
     }
 
     .footer-links {
+
       display: flex;
 
       flex-wrap: wrap;
@@ -923,6 +1068,7 @@
     }
 
     .footer-links a {
+
       color: white;
 
       text-decoration: none;
@@ -943,43 +1089,99 @@
         display: none;
       }
 
-      .hero {
-        padding: 65px 0 55px;
-      }
-
-      .categories {
-        position: static;
-      }
-
-      .featured,
-      .help-box,
-      .newsletter-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .featured {
-        padding: 27px;
-      }
-
-      .library-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .trust-points {
-        grid-template-columns: 1fr;
-      }
-
-      section {
+      .resources-hero {
         padding: 65px 0;
       }
 
-      .newsletter {
-        padding: 32px 24px;
+      .resources-hero-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
       }
 
+      .resource-grid,
+      .why-grid {
+
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
+      .featured {
+
+        grid-template-columns: 1fr;
+
+        padding: 34px 25px;
+
+        gap: 35px;
+      }
+
+      .resources-section {
+        padding-bottom: 65px;
+      }
+
+      .featured-section,
+      .why-section,
+      .cta-section {
+        padding-bottom: 65px;
+      }
+
+      .footer-content {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+      }
+    }
+
+
+    /* =====================================================
+       SMALL PHONES
+       ===================================================== */
+
+    @media (max-width: 430px) {
+
+      nav {
+        height: 66px;
+      }
+
+      h1 {
+        font-size: 2.85rem;
+      }
+
+      .hero-actions {
+
+        flex-direction: column;
+      }
+
+      .hero-actions .button {
+
+        width: 100%;
+      }
+
+      .resource-card {
+        min-height: 320px;
+      }
+
+      .featured-actions {
+
+        flex-direction: column;
+      }
+
+      .featured-actions .button {
+
+        width: 100%;
+      }
     }
 
   </style>
+
 </head>
 
 
@@ -994,40 +1196,47 @@
 
   <nav class="container">
 
-    <a href="index.html" class="logo">
+
+    <a
+      href="index.html"
+      class="logo"
+      aria-label="MicroClair — Accueil"
+    >
       Micro<span>Clair</span>
     </a>
+
 
     <ul>
 
       <li>
-        <a href="index.html">
-          Accueil
+        <a href="index.html#methode">
+          La méthode
         </a>
       </li>
 
       <li>
-        <a href="#categories">
+        <a href="ressources.html">
           Ressources
         </a>
       </li>
 
       <li>
-        <a href="#confiance">
-          Pourquoi MicroClair
+        <a href="index.html#faq">
+          FAQ
         </a>
       </li>
 
       <li>
         <a
-          href="#newsletter"
+          href="checklist-90-jours.html"
           class="nav-button"
         >
-          Recevoir les ressources
+          Commencer gratuitement
         </a>
       </li>
 
     </ul>
+
 
   </nav>
 
@@ -1042,30 +1251,95 @@
 <main>
 
 
-<section class="hero">
+<section class="resources-hero">
 
-  <div class="container hero-content">
+  <div class="container resources-hero-grid">
 
 
-    <div class="eyebrow">
-      Bibliothèque MicroClair
+    <div>
+
+
+      <div class="eyebrow">
+        Bibliothèque MicroClair
+      </div>
+
+
+      <h1>
+        Moins chercher.
+        Plus avancer.
+      </h1>
+
+
+      <p class="hero-description">
+
+        Des ressources simples pour comprendre
+        votre micro-entreprise, vous organiser
+        et savoir quelle est la prochaine étape.
+
+      </p>
+
+
+      <div class="hero-actions">
+
+        <a
+          href="#bibliotheque"
+          class="button button-primary"
+        >
+          Explorer les ressources →
+        </a>
+
+        <a
+          href="checklist-90-jours.html"
+          class="button button-secondary"
+        >
+          Commencer par la checklist
+        </a>
+
+      </div>
+
+
     </div>
 
 
-    <h1>
-      Les bons outils,
-      au bon moment.
-    </h1>
+
+    <div class="hero-card">
 
 
-    <p>
+      <div class="hero-card-label">
+        Votre point de départ
+      </div>
 
-      Guides courts, checklists et modèles pratiques
-      pour vous aider à mieux organiser votre
-      micro-entreprise — sans passer des heures
-      à chercher quoi faire.
 
-    </p>
+      <h2>
+        Vous ne savez pas par où commencer ?
+      </h2>
+
+
+      <p>
+        Commencez par les 90 premiers jours.
+        Vous avancerez étape par étape, sans
+        essayer de tout retenir.
+      </p>
+
+
+      <ul class="hero-card-list">
+
+        <li>
+          Les premières choses à organiser
+        </li>
+
+        <li>
+          Les habitudes utiles à mettre en place
+        </li>
+
+        <li>
+          Les points à vérifier régulièrement
+        </li>
+
+      </ul>
+
+
+    </div>
 
 
   </div>
@@ -1075,190 +1349,49 @@
 
 
 <!-- =====================================================
-     CATEGORIES
+     FILTERS
      ===================================================== -->
 
-<div
-  id="categories"
-  class="categories"
->
+<section class="filters-section">
 
   <div class="container">
 
-    <ul class="category-list">
+    <div class="filters">
 
-      <li>
-        <a href="#demarrer">
-          🚀 Démarrer
-        </a>
-      </li>
+      <a
+        href="#tous"
+        class="filter active"
+      >
+        Tout
+      </a>
 
-      <li>
-        <a href="#facturer">
-          🧾 Facturer
-        </a>
-      </li>
+      <a
+        href="#demarrage"
+        class="filter"
+      >
+        Démarrage
+      </a>
 
-      <li>
-        <a href="#organiser">
-          📊 Organiser
-        </a>
-      </li>
+      <a
+        href="#organisation"
+        class="filter"
+      >
+        Organisation
+      </a>
 
-      <li>
-        <a href="#echeances">
-          📅 Ne rien oublier
-        </a>
-      </li>
+      <a
+        href="#facturation"
+        class="filter"
+      >
+        Facturation
+      </a>
 
-    </ul>
-
-  </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     COMMENCER ICI
-     ===================================================== -->
-
-<section
-  id="demarrer"
-  class="start-section"
->
-
-  <div class="container">
-
-
-    <div class="eyebrow">
-      Si vous débutez
-    </div>
-
-
-    <h2 class="section-title">
-      Commencez par ici.
-    </h2>
-
-
-    <p class="section-description">
-
-      Si vous venez de vous lancer,
-      inutile de parcourir tout le site.
-      Cette première ressource vous donne
-      une structure simple pour vos 90 premiers jours.
-
-    </p>
-
-
-
-    <div class="featured">
-
-
-      <div>
-
-
-        <div class="featured-tag">
-          GRATUIT · CHECKLIST
-        </div>
-
-
-        <h3>
-          Mes 90 premiers jours
-          en micro-entreprise
-        </h3>
-
-
-        <p>
-
-          Une checklist conçue pour vous aider
-          à mettre en place les bonnes habitudes
-          dès le début : documents, organisation,
-          facturation et suivi.
-
-        </p>
-
-
-        <ul class="featured-list">
-
-          <li>
-            Les actions à réaliser au démarrage
-          </li>
-
-          <li>
-            Les documents à organiser
-          </li>
-
-          <li>
-            Les habitudes à mettre en place
-          </li>
-
-          <li>
-            Les points à vérifier régulièrement
-          </li>
-
-        </ul>
-
-
-        <!--
-          Ce lien sera relié au véritable fichier
-          de la checklist lorsqu'il sera créé.
-        -->
-
-        <a
-          href="#"
-          class="featured-button"
-        >
-          Obtenir la checklist gratuitement →
-        </a>
-
-
-      </div>
-
-
-
-      <div class="featured-visual">
-
-        <div class="mini-checklist">
-
-          <div class="mini-top">
-
-            <span>
-              MICROCLAIR
-            </span>
-
-            <span>
-              90 JOURS
-            </span>
-
-          </div>
-
-
-          <div class="mini-progress">
-            <span></span>
-          </div>
-
-
-          <div class="mini-row">
-            Organiser mes documents
-          </div>
-
-          <div class="mini-row">
-            Préparer mon suivi
-          </div>
-
-          <div class="mini-row">
-            Vérifier mes factures
-          </div>
-
-          <div class="mini-row">
-            Créer ma routine
-          </div>
-
-        </div>
-
-      </div>
-
+      <a
+        href="#checklists"
+        class="filter"
+      >
+        Checklists
+      </a>
 
     </div>
 
@@ -1273,308 +1406,33 @@
      ===================================================== -->
 
 <section
-  id="facturer"
-  class="library"
+  id="bibliotheque"
+  class="resources-section"
 >
 
   <div class="container">
 
 
-    <div class="eyebrow">
-      Explorer les ressources
-    </div>
+    <div class="section-heading">
 
+      <div>
 
-    <h2 class="section-title">
-      Une question ?
-      Commencez par le bon outil.
-    </h2>
-
-
-    <p class="section-description">
-
-      Les ressources sont pensées pour répondre
-      à des problèmes concrets, sans vous demander
-      de devenir expert en administratif.
-
-    </p>
-
-
-
-    <div class="library-grid">
-
-
-      <!-- CARD 1 -->
-
-      <article class="resource-card">
-
-        <div class="resource-category">
-          DÉMARRER
+        <div class="eyebrow">
+          Les ressources
         </div>
 
-        <h3>
-          Comprendre les bases
-          de sa micro-entreprise
-        </h3>
+        <h2>
+          Commencez par ce qui vous concerne.
+        </h2>
 
-        <p>
-
-          Les notions essentielles à comprendre
-          avant de commencer à organiser son activité.
-
-        </p>
-
-        <div class="resource-meta">
-
-          <span>Guide</span>
-
-          <span>Débutant</span>
-
-        </div>
-
-        <a
-          href="#"
-          class="resource-link"
-        >
-          Lire le guide →
-        </a>
-
-      </article>
-
-
-
-      <!-- CARD 2 -->
-
-      <article class="resource-card">
-
-        <div class="resource-category">
-          FACTURER
-        </div>
-
-        <h3>
-          Vérifier une facture
-          avant de l’envoyer
-        </h3>
-
-        <p>
-
-          Une méthode simple pour contrôler
-          les informations importantes d’une facture.
-
-        </p>
-
-        <div class="resource-meta">
-
-          <span>Checklist</span>
-
-          <span>Pratique</span>
-
-        </div>
-
-        <a
-          href="#"
-          class="resource-link"
-        >
-          Voir la checklist →
-        </a>
-
-      </article>
-
-
-
-      <!-- CARD 3 -->
-
-      <article class="resource-card">
-
-        <div class="resource-category">
-          ORGANISER
-        </div>
-
-        <h3>
-          Suivre ses recettes
-          simplement
-        </h3>
-
-        <p>
-
-          Les informations à conserver et une structure
-          simple pour garder une vision claire de son activité.
-
-        </p>
-
-        <div class="resource-meta">
-
-          <span>Modèle</span>
-
-          <span>Organisation</span>
-
-        </div>
-
-        <a
-          href="#"
-          class="resource-link"
-        >
-          Découvrir le modèle →
-        </a>
-
-      </article>
-
-
-
-      <!-- CARD 4 -->
-
-      <article class="resource-card">
-
-        <div class="resource-category">
-          ORGANISER
-        </div>
-
-        <h3>
-          Ranger ses documents
-          sans se compliquer la vie
-        </h3>
-
-        <p>
-
-          Une structure de classement simple
-          pour retrouver rapidement ses documents.
-
-        </p>
-
-        <div class="resource-meta">
-
-          <span>Guide</span>
-
-          <span>Organisation</span>
-
-        </div>
-
-        <a
-          href="#"
-          class="resource-link"
-        >
-          Voir la méthode →
-        </a>
-
-      </article>
-
-
-
-      <!-- CARD 5 -->
-
-      <article
-        id="echeances"
-        class="resource-card"
-      >
-
-        <div class="resource-category">
-          NE RIEN OUBLIER
-        </div>
-
-        <h3>
-          Construire sa routine
-          administrative
-        </h3>
-
-        <p>
-
-          Une routine réaliste pour éviter
-          d’accumuler les tâches et les oublis.
-
-        </p>
-
-        <div class="resource-meta">
-
-          <span>Routine</span>
-
-          <span>Débutant</span>
-
-        </div>
-
-        <a
-          href="#"
-          class="resource-link"
-        >
-          Découvrir la routine →
-        </a>
-
-      </article>
-
-
-
-      <!-- CARD 6 -->
-
-      <article class="resource-card">
-
-        <div class="resource-category">
-          FACTURER
-        </div>
-
-        <h3>
-          Suivre ses factures
-          et ses paiements
-        </h3>
-
-        <p>
-
-          Une organisation simple pour savoir
-          ce qui a été envoyé, payé ou reste à suivre.
-
-        </p>
-
-        <div class="resource-meta">
-
-          <span>Modèle</span>
-
-          <span>Pratique</span>
-
-        </div>
-
-        <a
-          href="#"
-          class="resource-link"
-        >
-          Voir le modèle →
-        </a>
-
-      </article>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     PAR OU COMMENCER
-     ===================================================== -->
-
-<section class="help">
-
-  <div class="container help-box">
-
-
-    <div>
-
-      <div class="eyebrow">
-        Vous ne savez pas quoi choisir ?
       </div>
-
-
-      <h2>
-        Suivez simplement
-        votre situation.
-      </h2>
 
 
       <p>
 
-        Pas besoin de connaître les termes
-        administratifs. Commencez par l’étape
-        qui correspond à votre activité aujourd’hui.
+        Chaque ressource a un objectif simple :
+        vous aider à comprendre un sujet et
+        surtout à savoir quoi faire ensuite.
 
       </p>
 
@@ -1582,98 +1440,393 @@
 
 
 
-    <div class="steps">
+    <div class="resource-grid">
 
 
-      <div class="step">
+      <!-- =================================================
+           RESOURCE 1
+           ================================================= -->
 
-        <div class="step-number">
-          01
-        </div>
+      <article
+        class="resource-card"
+        id="demarrage"
+      >
 
-        <div>
+        <div class="resource-top">
 
-          <strong>
-            Je viens de commencer
-          </strong>
+          <div class="resource-tag">
+            01 · DÉMARRAGE
+          </div>
 
-          <small>
-            → Checklist 90 jours
-          </small>
-
-        </div>
-
-      </div>
-
-
-
-      <div class="step">
-
-        <div class="step-number">
-          02
-        </div>
-
-        <div>
-
-          <strong>
-            Je commence à facturer
-          </strong>
-
-          <small>
-            → Facturation & paiements
-          </small>
+          <div class="resource-badge">
+            Gratuit
+          </div>
 
         </div>
 
-      </div>
+
+        <h3>
+          Mes 90 premiers jours
+        </h3>
 
 
+        <p>
 
-      <div class="step">
+          Un parcours simple pour structurer
+          votre lancement et garder une vue
+          claire sur les premières étapes.
 
-        <div class="step-number">
-          03
-        </div>
-
-        <div>
-
-          <strong>
-            Je veux mieux m’organiser
-          </strong>
-
-          <small>
-            → Organisation & suivi
-          </small>
-
-        </div>
-
-      </div>
+        </p>
 
 
+        <div class="resource-meta">
 
-      <div class="step">
+          <span>
+            Checklist
+          </span>
 
-        <div class="step-number">
-          04
-        </div>
-
-        <div>
-
-          <strong>
-            Je veux éviter les oublis
-          </strong>
-
-          <small>
-            → Routine & échéances
-          </small>
+          <span>
+            Débutant
+          </span>
 
         </div>
 
-      </div>
+
+        <div class="resource-action">
+
+          <a
+            href="checklist-90-jours.html"
+            class="resource-link"
+          >
+            Commencer la checklist →
+          </a>
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- =================================================
+           RESOURCE 2
+           ================================================= -->
+
+      <article
+        class="resource-card"
+        id="organisation"
+      >
+
+        <div class="resource-top">
+
+          <div class="resource-tag">
+            02 · DÉMARRAGE
+          </div>
+
+          <div class="resource-badge">
+            Guide
+          </div>
+
+        </div>
+
+
+        <h3>
+          Les 10 choses à faire après sa création
+        </h3>
+
+
+        <p>
+
+          Vous venez de créer votre activité ?
+          Voici les premières habitudes et
+          vérifications à mettre en place.
+
+        </p>
+
+
+        <div class="resource-meta">
+
+          <span>
+            Guide
+          </span>
+
+          <span>
+            7 min
+          </span>
+
+        </div>
+
+
+        <div class="resource-action">
+
+          <a
+            href="10-choses-apres-creation-micro-entreprise.html"
+            class="resource-link"
+          >
+            Lire le guide →
+          </a>
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- =================================================
+           RESOURCE 3
+           ================================================= -->
+
+      <article
+        class="resource-card"
+        id="facturation"
+      >
+
+        <div class="resource-top">
+
+          <div class="resource-tag">
+            03 · FACTURATION
+          </div>
+
+          <div class="resource-badge">
+            Bientôt
+          </div>
+
+        </div>
+
+
+        <h3>
+          Vérifier une facture avant de l’envoyer
+        </h3>
+
+
+        <p>
+
+          Une méthode de contrôle simple pour
+          éviter les oublis avant d'envoyer
+          une facture à un client.
+
+        </p>
+
+
+        <div class="resource-meta">
+
+          <span>
+            Checklist
+          </span>
+
+          <span>
+            5 min
+          </span>
+
+        </div>
+
+
+        <div class="resource-action">
+
+          <span
+            class="resource-link"
+            style="opacity:.45;cursor:default"
+          >
+            Disponible prochainement
+          </span>
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- =================================================
+           RESOURCE 4
+           ================================================= -->
+
+      <article
+        class="resource-card"
+        id="checklists"
+      >
+
+        <div class="resource-top">
+
+          <div class="resource-tag">
+            04 · ORGANISATION
+          </div>
+
+          <div class="resource-badge">
+            Bientôt
+          </div>
+
+        </div>
+
+
+        <h3>
+          Suivre ses recettes simplement
+        </h3>
+
+
+        <p>
+
+          Une structure claire pour suivre
+          vos factures, paiements et relances
+          sans multiplier les outils.
+
+        </p>
+
+
+        <div class="resource-meta">
+
+          <span>
+            Modèle
+          </span>
+
+          <span>
+            Pratique
+          </span>
+
+        </div>
+
+
+        <div class="resource-action">
+
+          <span
+            class="resource-link"
+            style="opacity:.45;cursor:default"
+          >
+            Disponible prochainement
+          </span>
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- =================================================
+           RESOURCE 5
+           ================================================= -->
+
+      <article class="resource-card">
+
+        <div class="resource-top">
+
+          <div class="resource-tag">
+            05 · ORGANISATION
+          </div>
+
+          <div class="resource-badge">
+            Bientôt
+          </div>
+
+        </div>
+
+
+        <h3>
+          Organiser ses documents
+        </h3>
+
+
+        <p>
+
+          Une méthode simple pour retrouver
+          rapidement vos documents importants
+          sans créer une montagne de dossiers.
+
+        </p>
+
+
+        <div class="resource-meta">
+
+          <span>
+            Méthode
+          </span>
+
+          <span>
+            Débutant
+          </span>
+
+        </div>
+
+
+        <div class="resource-action">
+
+          <span
+            class="resource-link"
+            style="opacity:.45;cursor:default"
+          >
+            Disponible prochainement
+          </span>
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- =================================================
+           RESOURCE 6
+           ================================================= -->
+
+      <article class="resource-card">
+
+        <div class="resource-top">
+
+          <div class="resource-tag">
+            06 · ROUTINE
+          </div>
+
+          <div class="resource-badge">
+            Bientôt
+          </div>
+
+        </div>
+
+
+        <h3>
+          La routine administrative de 30 minutes
+        </h3>
+
+
+        <p>
+
+          Une petite routine régulière pour
+          garder une vision claire de votre
+          activité sans y passer des heures.
+
+        </p>
+
+
+        <div class="resource-meta">
+
+          <span>
+            Checklist
+          </span>
+
+          <span>
+            30 min
+          </span>
+
+        </div>
+
+
+        <div class="resource-action">
+
+          <span
+            class="resource-link"
+            style="opacity:.45;cursor:default"
+          >
+            Disponible prochainement
+          </span>
+
+        </div>
+
+
+      </article>
 
 
     </div>
-
 
   </div>
 
@@ -1682,177 +1835,291 @@
 
 
 <!-- =====================================================
-     CONFIANCE
+     FEATURED
      ===================================================== -->
 
-<section
-  id="confiance"
-  class="trust"
->
-
-  <div class="container trust-content">
-
-
-    <div class="eyebrow">
-      Notre manière de faire
-    </div>
-
-
-    <h2>
-      Utile avant d’être impressionnant.
-    </h2>
-
-
-    <p>
-
-      MicroClair privilégie les explications simples,
-      les actions concrètes et la transparence.
-      Les règles peuvent évoluer : lorsqu’un sujet
-      nécessite une vérification, nous vous le disons.
-
-    </p>
-
-
-
-    <div class="trust-points">
-
-
-      <div class="trust-point">
-
-        <strong>
-          Sans jargon inutile
-        </strong>
-
-        <span>
-          Des explications pensées pour les débutants.
-        </span>
-
-      </div>
-
-
-      <div class="trust-point">
-
-        <strong>
-          Des outils concrets
-        </strong>
-
-        <span>
-          Checklists, exemples et modèles.
-        </span>
-
-      </div>
-
-
-      <div class="trust-point">
-
-        <strong>
-          Transparent
-        </strong>
-
-        <span>
-          Pas de promesse de remplacer un professionnel.
-        </span>
-
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     NEWSLETTER
-     ===================================================== -->
-
-<section
-  id="newsletter"
-  class="newsletter-section"
->
+<section class="featured-section">
 
   <div class="container">
 
 
-    <div class="newsletter">
+    <div class="featured">
 
 
-      <div class="newsletter-grid">
+      <div>
 
 
-        <div>
-
-          <div
-            class="eyebrow"
-            style="color:#F4C95D"
-          >
-            Rester informé
-          </div>
-
-
-          <h2>
-            Les nouvelles ressources,
-            sans remplir votre boîte mail.
-          </h2>
-
-
-          <p>
-
-            Au maximum deux e-mails par mois
-            avec les nouveaux guides, checklists
-            et modèles utiles.
-
-          </p>
-
+        <div class="featured-label">
+          Recommandé pour commencer
         </div>
 
 
+        <h2>
+          Votre activité vient de démarrer ?
+        </h2>
 
-        <div>
+
+        <p>
+
+          Ne cherchez pas à tout apprendre
+          immédiatement. La checklist MicroClair
+          vous aide à avancer progressivement
+          pendant vos 90 premiers jours.
+
+        </p>
 
 
-          <!--
-            À connecter à votre service newsletter
-            avant mise en production.
-          -->
+        <div class="featured-actions">
 
-          <form
-            action="#"
-            method="post"
+          <a
+            href="checklist-90-jours.html"
+            class="button button-primary"
           >
+            Commencer gratuitement →
+          </a>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Votre adresse e-mail"
-              aria-label="Votre adresse e-mail"
-              required
-            >
-
-            <button type="submit">
-              Je m’inscris
-            </button>
-
-          </form>
-
-
-          <p class="newsletter-small">
-
-            Formulaire à connecter à votre service
-            de newsletter avant utilisation réelle.
-
-            Désinscription possible à tout moment.
-
-          </p>
-
+          <a
+            href="index.html"
+            class="button button-secondary"
+          >
+            Retour à l'accueil
+          </a>
 
         </div>
 
 
       </div>
+
+
+
+      <div class="featured-visual">
+
+
+        <div class="mini-header">
+
+          <span>
+            MICROCLAIR · 90 JOURS
+          </span>
+
+          <span>
+            72 %
+          </span>
+
+        </div>
+
+
+        <div class="mini-progress">
+          <span></span>
+        </div>
+
+
+        <div class="mini-item">
+
+          <span class="mini-check">
+            ✓
+          </span>
+
+          Organiser ses documents
+
+        </div>
+
+
+        <div class="mini-item">
+
+          <span class="mini-check">
+            ✓
+          </span>
+
+          Préparer son suivi
+
+        </div>
+
+
+        <div class="mini-item">
+
+          <span class="mini-check">
+            ✓
+          </span>
+
+          Mettre en place sa routine
+
+        </div>
+
+
+        <div class="mini-item">
+
+          <span
+            class="mini-check"
+            style="background:#536A70"
+          >
+            •
+          </span>
+
+          Vérifier les prochaines échéances
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     POURQUOI MICROCLAIR
+     ===================================================== -->
+
+<section class="why-section">
+
+  <div class="container">
+
+
+    <div class="section-heading">
+
+      <div>
+
+        <div class="eyebrow">
+          Pourquoi MicroClair ?
+        </div>
+
+        <h2>
+          Simple par choix.
+        </h2>
+
+      </div>
+
+
+      <p>
+
+        L’objectif n’est pas de vous transformer
+        en expert administratif. L’objectif est
+        de rendre les prochaines étapes évidentes.
+
+      </p>
+
+    </div>
+
+
+
+    <div class="why-grid">
+
+
+      <article class="why-card">
+
+        <div class="why-icon">
+          01
+        </div>
+
+        <h3>
+          Pas de jargon inutile
+        </h3>
+
+        <p>
+
+          Les sujets complexes sont expliqués
+          avec des mots simples et des exemples
+          concrets.
+
+        </p>
+
+      </article>
+
+
+
+      <article class="why-card">
+
+        <div class="why-icon">
+          02
+        </div>
+
+        <h3>
+          Orienté action
+        </h3>
+
+        <p>
+
+          Chaque ressource doit vous permettre
+          de savoir quoi faire après l’avoir lue.
+
+        </p>
+
+      </article>
+
+
+
+      <article class="why-card">
+
+        <div class="why-icon">
+          03
+        </div>
+
+        <h3>
+          Transparent
+        </h3>
+
+        <p>
+
+          MicroClair reste pédagogique et vous
+          encourage à vérifier les informations
+          auprès des sources officielles.
+
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+     ===================================================== -->
+
+<section class="cta-section">
+
+  <div class="container">
+
+
+    <div class="cta">
+
+
+      <div class="eyebrow">
+        Besoin d'un point de départ ?
+      </div>
+
+
+      <h2>
+        Commencez par une seule étape.
+      </h2>
+
+
+      <p>
+
+        La checklist des 90 premiers jours
+        est le meilleur point de départ pour
+        structurer votre activité progressivement.
+
+      </p>
+
+
+      <a
+        href="checklist-90-jours.html"
+        class="button button-primary"
+      >
+        Commencer gratuitement →
+      </a>
+
 
     </div>
 
@@ -1889,12 +2156,7 @@
     </div>
 
 
-
     <div class="footer-links">
-
-      <a href="index.html">
-        Accueil
-      </a>
 
       <a href="mentions-legales.html">
         Mentions légales
