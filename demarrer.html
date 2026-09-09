@@ -4,20 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Démarrez votre activité de micro-entrepreneur avec les premières étapes essentielles, simplement et sans jargon.">
-  <meta name="theme-color" content="#0F766E">
+  <meta
+    name="description"
+    content="Démarrez votre activité de micro-entrepreneur avec les premières étapes essentielles, simplement et sans jargon."
+  >
+  <meta name="theme-color" content="#173F3A">
 
   <title>Démarrer son activité — MicroClair</title>
 
   <style>
     :root {
-      --green: #0F766E;
-      --green-dark: #115E59;
-      --text: #17332F;
-      --muted: #667773;
+      --green: #173F3A;
+      --green-2: #245C55;
+      --mint: #DCEDE9;
       --soft: #F3F8F7;
+      --cream: #FAF9F5;
+      --text: #17302D;
+      --muted: #667875;
       --white: #FFFFFF;
-      --border: #DCE8E5;
+      --border: #DCE6E3;
+      --shadow: 0 18px 45px rgba(23, 63, 58, 0.10);
     }
 
     * {
@@ -26,38 +32,83 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+      background: var(--cream);
       color: var(--text);
-      background: var(--white);
-      line-height: 1.7;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--green-2);
+      outline-offset: 4px;
+      border-radius: 6px;
     }
 
     header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
       border-bottom: 1px solid var(--border);
-      background: rgba(255,255,255,0.96);
+      background: rgba(250, 249, 245, 0.96);
+      backdrop-filter: blur(10px);
     }
 
     .nav {
       max-width: 1100px;
       margin: auto;
-      padding: 20px;
+      padding: 16px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
     }
 
     .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       text-decoration: none;
-      font-size: 24px;
-      font-weight: 800;
       color: var(--green);
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--green);
+      color: var(--white);
+      font-size: 17px;
+      font-weight: 800;
     }
 
     .back {
       text-decoration: none;
       color: var(--muted);
       font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s ease;
     }
 
     .back:hover {
@@ -67,39 +118,41 @@
     main {
       max-width: 1050px;
       margin: auto;
-      padding: 75px 20px;
+      padding: 76px 20px 90px;
     }
 
     .hero {
-      max-width: 760px;
-      margin-bottom: 60px;
+      max-width: 780px;
+      margin-bottom: 58px;
     }
 
     .label {
       display: inline-block;
-      color: var(--green);
-      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--green-2);
       font-size: 13px;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      margin-bottom: 15px;
     }
 
     h1 {
+      margin-bottom: 22px;
+      color: var(--green);
       font-size: clamp(40px, 7vw, 64px);
       line-height: 1.05;
-      margin-bottom: 22px;
+      letter-spacing: -0.04em;
     }
 
     .hero p {
+      max-width: 700px;
       color: var(--muted);
       font-size: 19px;
-      max-width: 680px;
     }
 
     .steps {
       display: grid;
-      gap: 18px;
+      gap: 16px;
       margin-bottom: 65px;
     }
 
@@ -109,16 +162,27 @@
       gap: 20px;
       align-items: start;
       padding: 28px;
+      background: var(--white);
       border: 1px solid var(--border);
       border-radius: 20px;
-      background: var(--white);
+      box-shadow: 0 8px 25px rgba(23, 63, 58, 0.04);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .step:hover {
+      transform: translateY(-2px);
+      border-color: var(--mint);
+      box-shadow: var(--shadow);
     }
 
     .number {
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      background: var(--soft);
+      background: var(--mint);
       color: var(--green);
       display: flex;
       align-items: center;
@@ -128,8 +192,10 @@
     }
 
     .step h2 {
-      font-size: 22px;
       margin-bottom: 8px;
+      color: var(--green);
+      font-size: 22px;
+      line-height: 1.3;
     }
 
     .step p {
@@ -137,32 +203,37 @@
     }
 
     .tip {
-      background: var(--text);
-      color: white;
-      border-radius: 25px;
-      padding: 40px;
       margin-bottom: 65px;
+      padding: 40px;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 25px;
+      box-shadow: var(--shadow);
     }
 
     .tip h2 {
-      font-size: 28px;
       margin-bottom: 12px;
+      font-size: 28px;
+      line-height: 1.3;
     }
 
     .tip p {
-      color: #DCE8E5;
       max-width: 760px;
+      color: #DCEDE9;
     }
 
     .links {
-      background: var(--soft);
-      border-radius: 25px;
       padding: 40px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 25px;
     }
 
     .links h2 {
-      font-size: 28px;
       margin-bottom: 20px;
+      color: var(--green);
+      font-size: 28px;
+      line-height: 1.3;
     }
 
     .link-list {
@@ -172,70 +243,129 @@
 
     .resource {
       display: block;
-      text-decoration: none;
-      color: var(--text);
-      background: white;
+      padding: 18px 20px;
+      background: var(--white);
       border: 1px solid var(--border);
       border-radius: 15px;
-      padding: 18px 20px;
+      color: var(--text);
+      text-decoration: none;
       font-weight: 700;
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .resource:hover {
       transform: translateY(-2px);
-      border-color: var(--green);
+      border-color: var(--green-2);
+      box-shadow: 0 10px 25px rgba(23, 63, 58, 0.07);
     }
 
     .resource span {
       display: block;
+      margin-top: 4px;
       color: var(--muted);
       font-size: 14px;
       font-weight: 400;
-      margin-top: 4px;
     }
 
     .button {
       display: inline-block;
       margin-top: 25px;
+      padding: 14px 22px;
       background: var(--green);
-      color: white;
+      border-radius: 12px;
+      color: var(--white);
       text-decoration: none;
       font-weight: 700;
-      padding: 14px 22px;
-      border-radius: 12px;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
     }
 
     .button:hover {
-      background: var(--green-dark);
+      background: var(--green-2);
+      transform: translateY(-1px);
     }
 
     footer {
-      background: var(--soft);
-      padding: 35px 20px;
-      text-align: center;
-      color: var(--muted);
+      padding: 42px 20px;
+      background: #102F2B;
+      color: #C8D8D5;
       font-size: 13px;
     }
 
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .footer-brand {
+      margin-bottom: 10px;
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .footer-text {
+      margin-bottom: 18px;
+      color: #AFC4C0;
+    }
+
     .footer-links {
-      margin-bottom: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 18px;
+      margin-bottom: 18px;
     }
 
     .footer-links a {
-      margin: 0 8px;
+      color: #DCEDE9;
       text-decoration: none;
-      color: var(--green);
       font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .copyright {
+      color: #8FA9A4;
     }
 
     @media (max-width: 650px) {
       .nav {
-        padding: 16px;
+        padding: 14px 16px;
+      }
+
+      .logo {
+        font-size: 19px;
+      }
+
+      .logo-mark {
+        width: 32px;
+        height: 32px;
+      }
+
+      .back {
+        font-size: 13px;
       }
 
       main {
-        padding: 55px 18px;
+        padding: 55px 18px 70px;
+      }
+
+      .hero {
+        margin-bottom: 45px;
+      }
+
+      h1 {
+        font-size: clamp(38px, 12vw, 52px);
       }
 
       .hero p {
@@ -244,17 +374,27 @@
 
       .step {
         grid-template-columns: 1fr;
+        gap: 14px;
         padding: 24px;
+      }
+
+      .step h2 {
+        font-size: 20px;
       }
 
       .tip,
       .links {
         padding: 28px 22px;
+        border-radius: 20px;
       }
 
-      .footer-links a {
-        display: inline-block;
-        margin: 4px 6px;
+      .tip h2,
+      .links h2 {
+        font-size: 24px;
+      }
+
+      .footer-links {
+        gap: 8px 14px;
       }
     }
   </style>
@@ -263,30 +403,42 @@
 <body>
 
 <header>
-  <nav class="nav">
-    <a class="logo" href="index.html">MicroClair</a>
-    <a class="back" href="index.html">← Retour à l’accueil</a>
+  <nav class="nav" aria-label="Navigation principale">
+
+    <a class="logo" href="index.html" aria-label="MicroClair — Accueil">
+      <span class="logo-mark" aria-hidden="true">M</span>
+      <span>MicroClair</span>
+    </a>
+
+    <a class="back" href="index.html">
+      ← Retour à l’accueil
+    </a>
+
   </nav>
 </header>
 
 <main>
 
-  <div class="hero">
+  <section class="hero" aria-labelledby="page-title">
+
     <span class="label">Bien démarrer</span>
 
-    <h1>Les premières étapes pour lancer votre activité.</h1>
+    <h1 id="page-title">
+      Les premières étapes pour lancer votre activité.
+    </h1>
 
     <p>
       Vous venez de créer votre micro-entreprise ou vous êtes sur le point
       de vous lancer ? Voici les principales choses à mettre en place pour
       partir sur de bonnes bases.
     </p>
-  </div>
 
-  <div class="steps">
+  </section>
 
-    <div class="step">
-      <div class="number">1</div>
+  <section class="steps" aria-label="Les 6 premières étapes">
+
+    <article class="step">
+      <div class="number" aria-hidden="true">1</div>
       <div>
         <h2>Comprendre votre situation</h2>
         <p>
@@ -295,10 +447,10 @@
           s'appliquer à votre situation.
         </p>
       </div>
-    </div>
+    </article>
 
-    <div class="step">
-      <div class="number">2</div>
+    <article class="step">
+      <div class="number" aria-hidden="true">2</div>
       <div>
         <h2>Organiser vos documents</h2>
         <p>
@@ -306,10 +458,10 @@
           justificatifs, déclarations et autres documents importants.
         </p>
       </div>
-    </div>
+    </article>
 
-    <div class="step">
-      <div class="number">3</div>
+    <article class="step">
+      <div class="number" aria-hidden="true">3</div>
       <div>
         <h2>Préparer votre facturation</h2>
         <p>
@@ -317,10 +469,10 @@
           suivre les paiements de vos clients.
         </p>
       </div>
-    </div>
+    </article>
 
-    <div class="step">
-      <div class="number">4</div>
+    <article class="step">
+      <div class="number" aria-hidden="true">4</div>
       <div>
         <h2>Suivre vos recettes</h2>
         <p>
@@ -328,10 +480,10 @@
           une vision claire de votre activité.
         </p>
       </div>
-    </div>
+    </article>
 
-    <div class="step">
-      <div class="number">5</div>
+    <article class="step">
+      <div class="number" aria-hidden="true">5</div>
       <div>
         <h2>Anticiper vos échéances</h2>
         <p>
@@ -339,10 +491,10 @@
           concernent votre activité afin d'éviter les oublis.
         </p>
       </div>
-    </div>
+    </article>
 
-    <div class="step">
-      <div class="number">6</div>
+    <article class="step">
+      <div class="number" aria-hidden="true">6</div>
       <div>
         <h2>Créer une routine</h2>
         <p>
@@ -350,13 +502,15 @@
           mettre à jour votre suivi administratif.
         </p>
       </div>
-    </div>
+    </article>
 
-  </div>
+  </section>
 
-  <div class="tip">
+  <aside class="tip" aria-label="Conseil">
 
-    <h2>Ne cherchez pas à tout faire en une journée.</h2>
+    <h2>
+      Ne cherchez pas à tout faire en une journée.
+    </h2>
 
     <p>
       Le plus important au début est de mettre en place une organisation
@@ -364,32 +518,43 @@
       largement faciliter le suivi de votre activité.
     </p>
 
-  </div>
+  </aside>
 
-  <div class="links">
+  <section class="links" aria-labelledby="resources-title">
 
-    <h2>Pour aller plus loin</h2>
+    <h2 id="resources-title">Pour aller plus loin</h2>
 
     <div class="link-list">
 
       <a class="resource" href="checklist-90-jours.html">
         Checklist des 90 premiers jours
-        <span>Avancez étape par étape avec 12 actions essentielles.</span>
+        <span>
+          Avancez étape par étape avec 12 actions essentielles.
+        </span>
       </a>
 
-      <a class="resource" href="10-choses-apres-creation-micro-entreprise.html">
+      <a
+        class="resource"
+        href="10-choses-apres-creation-micro-entreprise.html"
+      >
         10 choses à faire après la création
-        <span>Un guide pratique pour ne pas oublier les premières démarches.</span>
+        <span>
+          Un guide pratique pour ne pas oublier les premières démarches.
+        </span>
       </a>
 
       <a class="resource" href="suivi-recettes.html">
         Suivre vos recettes
-        <span>Gardez une vision simple de vos encaissements.</span>
+        <span>
+          Gardez une vision simple de vos encaissements.
+        </span>
       </a>
 
       <a class="resource" href="verifier-facture.html">
         Vérifier une facture
-        <span>Une checklist rapide avant d'envoyer votre facture.</span>
+        <span>
+          Une checklist rapide avant d'envoyer votre facture.
+        </span>
       </a>
 
     </div>
@@ -398,26 +563,43 @@
       Voir toutes les ressources
     </a>
 
-  </div>
+  </section>
 
 </main>
 
 <footer>
 
-  <div class="footer-links">
-    <a href="index.html">Accueil</a>
-    <a href="ressources.html">Ressources</a>
-    <a href="a-propos.html">À propos</a>
-    <a href="contact.html">Contact</a>
-    <a href="mentions-legales.html">Mentions légales</a>
-    <a href="confidentialite.html">Confidentialité</a>
-    <a href="cookies.html">Cookies</a>
-  </div>
+  <div class="footer-inner">
 
-  © 2026 MicroClair — Tous droits réservés.
+    <div class="footer-brand">
+      MicroClair
+    </div>
+
+    <p class="footer-text">
+      Des outils simples pour mieux gérer votre micro-entreprise.
+    </p>
+
+    <nav class="footer-links" aria-label="Navigation du pied de page">
+      <a href="index.html">Accueil</a>
+      <a href="demarrer.html">Démarrer</a>
+      <a href="ressources.html">Ressources</a>
+      <a href="checklist-90-jours.html">Checklist 90 jours</a>
+      <a href="suivi-recettes.html">Suivi des recettes</a>
+      <a href="verifier-facture.html">Vérifier une facture</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="cookies.html">Cookies</a>
+    </nav>
+
+    <p class="copyright">
+      © 2026 MicroClair — Axel Penarrubia
+    </p>
+
+  </div>
 
 </footer>
 
 </body>
 </html>
-```
