@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,7 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>MicroClair — L’administratif freelance, enfin compréhensible</title>
-  <meta name="description" content="MicroClair aide les micro-entrepreneurs et freelances à organiser simplement leur administratif grâce à des guides, checklists et outils pratiques.">
+
+  <meta
+    name="description"
+    content="MicroClair aide les micro-entrepreneurs et freelances à organiser simplement leur administratif grâce à des guides, checklists et outils pratiques."
+  >
   <meta name="theme-color" content="#173F3A">
 
   <style>
@@ -33,7 +38,14 @@
     }
 
     body {
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
       background: var(--cream);
       color: var(--text);
       line-height: 1.6;
@@ -102,20 +114,20 @@
       font-weight: 800;
     }
 
-    nav {
+    .main-nav {
       display: flex;
       align-items: center;
       gap: 26px;
     }
 
-    nav a {
+    .main-nav a {
       color: var(--muted);
       font-size: 14px;
       font-weight: 600;
       transition: color 0.2s ease, transform 0.2s ease;
     }
 
-    nav a:hover {
+    .main-nav a:hover {
       color: var(--green);
     }
 
@@ -684,11 +696,11 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      nav {
+      .main-nav {
         gap: 13px;
       }
 
-      nav a:not(.nav-cta) {
+      .main-nav a:not(.nav-cta) {
         display: none;
       }
     }
@@ -711,7 +723,7 @@
         height: 32px;
       }
 
-      nav {
+      .main-nav {
         gap: 8px;
       }
 
@@ -799,12 +811,16 @@
 <header>
   <div class="container nav">
 
-    <a href="index.html" class="logo" aria-label="MicroClair — Accueil">
+    <a
+      href="index.html"
+      class="logo"
+      aria-label="MicroClair — Accueil"
+    >
       <span class="logo-mark" aria-hidden="true">M</span>
       MicroClair
     </a>
 
-    <nav aria-label="Navigation principale">
+    <nav class="main-nav" aria-label="Navigation principale">
       <a href="a-propos.html">À propos</a>
       <a href="demarrer.html">Démarrer</a>
       <a href="ressources.html">Ressources</a>
@@ -821,9 +837,14 @@
     <div class="container hero-grid">
 
       <div>
-        <div class="eyebrow">POUR MICRO-ENTREPRENEURS & FREELANCES</div>
 
-        <h1>L’administratif freelance, enfin compréhensible.</h1>
+        <div class="eyebrow">
+          POUR MICRO-ENTREPRENEURS & FREELANCES
+        </div>
+
+        <h1>
+          L’administratif freelance, enfin compréhensible.
+        </h1>
 
         <p class="hero-text">
           MicroClair vous aide à organiser votre activité simplement,
@@ -840,13 +861,24 @@
             Voir les ressources
           </a>
         </div>
+
       </div>
 
-      <div class="dashboard" aria-label="Aperçu de la checklist MicroClair">
+      <div
+        class="dashboard"
+        aria-label="Aperçu de la checklist MicroClair"
+      >
 
         <div class="dashboard-top">
-          <div class="dashboard-title">MICROCLAIR · 90 JOURS</div>
-          <div class="status">EN BONNE VOIE</div>
+
+          <div class="dashboard-title">
+            MICROCLAIR · 90 JOURS
+          </div>
+
+          <div class="status">
+            EN BONNE VOIE
+          </div>
+
         </div>
 
         <div class="dashboard-main">
@@ -890,7 +922,9 @@
             </div>
 
           </div>
+
         </div>
+
       </div>
 
     </div>
@@ -898,33 +932,54 @@
 
   <div class="trust">
     <div class="container trust-inner">
-      <div class="trust-item">✓ <strong>Simple</strong> à comprendre</div>
-      <div class="trust-item">✓ <strong>Pratique</strong> à utiliser</div>
-      <div class="trust-item">✓ <strong>Sans jargon</strong> inutile</div>
-      <div class="trust-item">✓ <strong>Accessible</strong> gratuitement</div>
+
+      <div class="trust-item">
+        ✓ <strong>Simple</strong> à comprendre
+      </div>
+
+      <div class="trust-item">
+        ✓ <strong>Pratique</strong> à utiliser
+      </div>
+
+      <div class="trust-item">
+        ✓ <strong>Sans jargon</strong> inutile
+      </div>
+
+      <div class="trust-item">
+        ✓ <strong>Accessible</strong> gratuitement
+      </div>
+
     </div>
   </div>
 
-  <section class="method">
+  <section class="method" id="methode">
     <div class="container">
 
       <div class="section-head">
-        <div class="section-label">La méthode MicroClair</div>
 
-        <h2>Comprendre. Agir. Vérifier.</h2>
+        <div class="section-label">
+          La méthode MicroClair
+        </div>
+
+        <h2>
+          Comprendre. Agir. Vérifier.
+        </h2>
 
         <p>
           Pas besoin de devenir expert en administratif.
           L’objectif est simplement de savoir quoi faire,
           dans quel ordre et où vérifier l’information.
         </p>
+
       </div>
 
       <div class="method-grid">
 
         <div class="method-card">
           <div class="number" aria-hidden="true">01</div>
+
           <h3>Comprendre</h3>
+
           <p>
             Des explications claires pour comprendre les démarches
             et savoir ce qui est réellement important.
@@ -933,7 +988,9 @@
 
         <div class="method-card">
           <div class="number" aria-hidden="true">02</div>
+
           <h3>Agir</h3>
+
           <p>
             Des étapes concrètes, des checklists et des outils
             pour passer rapidement de la théorie à l’action.
@@ -942,7 +999,9 @@
 
         <div class="method-card">
           <div class="number" aria-hidden="true">03</div>
+
           <h3>Vérifier</h3>
+
           <p>
             Des points de contrôle pour éviter les oublis
             et garder une activité organisée dans le temps.
@@ -950,6 +1009,7 @@
         </div>
 
       </div>
+
     </div>
   </section>
 
@@ -957,65 +1017,101 @@
     <div class="container">
 
       <div class="section-head">
-        <div class="section-label">Les essentiels</div>
 
-        <h2>Les bons outils, au bon moment.</h2>
+        <div class="section-label">
+          Les essentiels
+        </div>
+
+        <h2>
+          Les bons outils, au bon moment.
+        </h2>
 
         <p>
           Commencez par l’outil qui correspond à votre situation.
           Pas besoin de tout faire en même temps.
         </p>
+
       </div>
 
       <div class="resources-grid">
 
-        <a href="checklist-90-jours.html" class="resource-card">
-          <span class="resource-tag">CHECKLIST</span>
+        <a
+          href="checklist-90-jours.html"
+          class="resource-card"
+        >
+          <span class="resource-tag">
+            CHECKLIST
+          </span>
 
-          <h3>Vos 90 premiers jours</h3>
+          <h3>
+            Vos 90 premiers jours
+          </h3>
 
           <p>
             Les étapes essentielles pour organiser votre début
             d’activité sans vous disperser.
           </p>
 
-          <span class="resource-link">Commencer la checklist →</span>
+          <span class="resource-link">
+            Commencer la checklist →
+          </span>
         </a>
 
-        <a href="suivi-recettes.html" class="resource-card">
-          <span class="resource-tag">OUTIL</span>
+        <a
+          href="suivi-recettes.html"
+          class="resource-card"
+        >
+          <span class="resource-tag">
+            OUTIL
+          </span>
 
-          <h3>Suivre vos recettes</h3>
+          <h3>
+            Suivre vos recettes
+          </h3>
 
           <p>
             Un outil simple pour garder une vision claire
             de vos factures et de vos encaissements.
           </p>
 
-          <span class="resource-link">Ouvrir l’outil →</span>
+          <span class="resource-link">
+            Ouvrir l’outil →
+          </span>
         </a>
 
-        <a href="verifier-facture.html" class="resource-card">
-          <span class="resource-tag">VÉRIFICATION</span>
+        <a
+          href="verifier-facture.html"
+          class="resource-card"
+        >
+          <span class="resource-tag">
+            VÉRIFICATION
+          </span>
 
-          <h3>Vérifier une facture</h3>
+          <h3>
+            Vérifier une facture
+          </h3>
 
           <p>
             Passez en revue les principaux éléments d’une facture
             avant de l’envoyer à votre client.
           </p>
 
-          <span class="resource-link">Vérifier une facture →</span>
+          <span class="resource-link">
+            Vérifier une facture →
+          </span>
         </a>
 
       </div>
+
     </div>
   </section>
 
   <section class="difference">
     <div class="container">
 
-      <div class="section-label">Notre philosophie</div>
+      <div class="section-label">
+        Notre philosophie
+      </div>
 
       <h2>
         Moins de charge mentale.<br>
@@ -1032,24 +1128,32 @@
 
         <div class="principle">
           <strong>Pas de jargon</strong>
-          <span>On explique les choses avec des mots simples.</span>
+          <span>
+            On explique les choses avec des mots simples.
+          </span>
         </div>
 
         <div class="principle">
           <strong>Pas de surcharge</strong>
-          <span>On se concentre sur ce qui est utile maintenant.</span>
+          <span>
+            On se concentre sur ce qui est utile maintenant.
+          </span>
         </div>
 
         <div class="principle">
           <strong>Pas de fausses certitudes</strong>
-          <span>Les informations importantes doivent être vérifiées.</span>
+          <span>
+            Les informations importantes doivent être vérifiées.
+          </span>
         </div>
 
       </div>
+
     </div>
   </section>
 
   <section class="quote">
+
     <div class="container">
 
       <p>
@@ -1057,23 +1161,35 @@
         Vous avez surtout besoin de savoir quoi faire ensuite. »
       </p>
 
-      <span>La philosophie MicroClair</span>
+      <span>
+        La philosophie MicroClair
+      </span>
 
     </div>
+
   </section>
 
-  <section class="faq">
+  <section class="faq" id="faq">
     <div class="container">
 
       <div class="section-head">
-        <div class="section-label">Questions fréquentes</div>
-        <h2>Avant de commencer</h2>
+
+        <div class="section-label">
+          Questions fréquentes
+        </div>
+
+        <h2>
+          Avant de commencer
+        </h2>
+
       </div>
 
       <div class="faq-list">
 
         <details>
-          <summary>MicroClair est-il réservé aux débutants ?</summary>
+          <summary>
+            MicroClair est-il réservé aux débutants ?
+          </summary>
 
           <p>
             MicroClair est particulièrement pensé pour les personnes
@@ -1083,7 +1199,9 @@
         </details>
 
         <details>
-          <summary>Est-ce que MicroClair remplace un professionnel ?</summary>
+          <summary>
+            Est-ce que MicroClair remplace un professionnel ?
+          </summary>
 
           <p>
             Non. Les contenus sont pédagogiques et ne remplacent pas
@@ -1093,7 +1211,9 @@
         </details>
 
         <details>
-          <summary>Les outils sont-ils gratuits ?</summary>
+          <summary>
+            Les outils sont-ils gratuits ?
+          </summary>
 
           <p>
             Les ressources actuellement proposées sur MicroClair sont
@@ -1102,7 +1222,9 @@
         </details>
 
         <details>
-          <summary>Où vérifier les informations importantes ?</summary>
+          <summary>
+            Où vérifier les informations importantes ?
+          </summary>
 
           <p>
             Pour les sujets administratifs, fiscaux ou juridiques,
@@ -1112,6 +1234,7 @@
         </details>
 
       </div>
+
     </div>
   </section>
 
@@ -1121,18 +1244,27 @@
       <div class="newsletter-box">
 
         <div>
-          <div class="section-label">Bientôt</div>
 
-          <h2>Recevez les prochains outils MicroClair.</h2>
+          <div class="section-label">
+            Bientôt
+          </div>
+
+          <h2>
+            Recevez les prochains outils MicroClair.
+          </h2>
 
           <p>
             La newsletter MicroClair arrivera bientôt.
             En attendant, retrouvez directement les ressources
             disponibles sur le site.
           </p>
+
         </div>
 
-        <a href="ressources.html" class="btn btn-primary">
+        <a
+          href="ressources.html"
+          class="btn btn-primary"
+        >
           Voir les ressources →
         </a>
 
@@ -1149,7 +1281,12 @@
     <div class="footer-grid">
 
       <div>
-        <a href="index.html" class="logo" aria-label="MicroClair — Accueil">
+
+        <a
+          href="index.html"
+          class="logo"
+          aria-label="MicroClair — Accueil"
+        >
           <span class="logo-mark" aria-hidden="true">M</span>
           MicroClair
         </a>
@@ -1158,9 +1295,11 @@
           Des outils simples pour aider les micro-entrepreneurs
           et freelances à mieux organiser leur activité.
         </p>
+
       </div>
 
       <div class="footer-column">
+
         <h3>MicroClair</h3>
 
         <a href="index.html">Accueil</a>
@@ -1168,24 +1307,51 @@
         <a href="demarrer.html">Démarrer</a>
         <a href="ressources.html">Ressources</a>
         <a href="contact.html">Contact</a>
+
       </div>
 
       <div class="footer-column">
+
         <h3>Outils & informations</h3>
 
-        <a href="checklist-90-jours.html">Checklist 90 jours</a>
-        <a href="suivi-recettes.html">Suivi des recettes</a>
-        <a href="verifier-facture.html">Vérifier une facture</a>
-        <a href="mentions-legales.html">Mentions légales</a>
-        <a href="confidentialite.html">Confidentialité</a>
-        <a href="cookies.html">Cookies</a>
+        <a href="checklist-90-jours.html">
+          Checklist 90 jours
+        </a>
+
+        <a href="suivi-recettes.html">
+          Suivi des recettes
+        </a>
+
+        <a href="verifier-facture.html">
+          Vérifier une facture
+        </a>
+
+        <a href="mentions-legales.html">
+          Mentions légales
+        </a>
+
+        <a href="confidentialite.html">
+          Confidentialité
+        </a>
+
+        <a href="cookies.html">
+          Cookies
+        </a>
+
       </div>
 
     </div>
 
     <div class="copyright">
-      <span>© 2026 MicroClair — Axel Penarrubia</span>
-      <span>Simplement. Clairement. Utilement.</span>
+
+      <span>
+        © 2026 MicroClair — Axel Penarrubia
+      </span>
+
+      <span>
+        Simplement. Clairement. Utilement.
+      </span>
+
     </div>
 
   </div>
@@ -1193,3 +1359,4 @@
 
 </body>
 </html>
+```
