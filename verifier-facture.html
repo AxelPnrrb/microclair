@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vérifier une facture — MicroClair</title>
+
+  <meta
+    name="description"
+    content="Une checklist simple pour vérifier les informations essentielles d'une facture avant de l'envoyer."
+  >
+
+  <meta name="theme-color" content="#102F38">
+
+  <style>
+
+    :root {
+      --navy: #102F38;
+      --navy-light: #183F49;
+      --teal: #2A9D8F;
+      --teal-light: #E8F5F2;
+      --yellow: #F4C95D;
+
+      --cream: #F8FAF8;
+      --white: #FFFFFF;
+
+      --text: #183238;
+      --muted: #65777C;
+
+      --border: #E1E9E7;
+
+      --shadow-small: 0 8px 30px rgba(16,47,56,0.06);
+      --shadow-large: 0 25px 70px rgba(16,47,56,0.12);
+
+      --radius: 18px;
+      --radius-large: 28px;
+    }
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      background: var(--cream);
+
+      color: var(--text);
+
+      line-height: 1.6;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+
+    a {
+      color: inherit;
+    }
+
+
+    button,
+    input {
+      font: inherit;
+    }
+
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+
+      outline: 3px solid var(--yellow);
+
+      outline-offset: 4px;
+    }
+
+
+    .container {
+
+      width: min(1120px, 92%);
+
+      margin: auto;
+    }
+
+
+    .eyebrow {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      color: var(--teal);
+
+      font-size: .78rem;
+
+      font-weight: 900;
+
+      letter-spacing: .12em;
+
+      text-transform: uppercase;
+    }
+
+
+    .eyebrow::before {
+
+      content: "";
+
+      width: 28px;
+
+      height: 2px;
+
+      background: var(--teal);
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    header {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 100;
+
+      background:
+        rgba(248,250,248,.94);
+
+      backdrop-filter: blur(16px);
+
+      border-bottom:
+        1px solid rgba(225,233,231,.9);
+    }
+
+
+    nav {
+
+      height: 74px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 25px;
+    }
+
+
+    .logo {
+
+      text-decoration: none;
+
+      font-size: 1.38rem;
+
+      font-weight: 900;
+
+      letter-spacing: -.05em;
+    }
+
+
+    .logo span {
+      color: var(--teal);
+    }
+
+
+    nav ul {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 27px;
+
+      list-style: none;
+    }
+
+
+    nav a {
+
+      text-decoration: none;
+
+      color: var(--navy-light);
+
+      font-size: .91rem;
+
+      font-weight: 750;
+    }
+
+
+    nav a:hover {
+      color: var(--teal);
+    }
+
+
+    .nav-button {
+
+      padding: 10px 17px;
+
+      border: 1px solid var(--navy);
+
+      border-radius: 999px;
+    }
+
+
+    .nav-button:hover {
+
+      background: var(--navy);
+
+      color: white;
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+
+      padding: 88px 0 75px;
+
+      background: white;
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+
+    .hero-content {
+
+      max-width: 820px;
+    }
+
+
+    h1 {
+
+      margin-top: 16px;
+
+      font-size:
+        clamp(3rem, 6vw, 5.3rem);
+
+      line-height: .98;
+
+      letter-spacing: -.075em;
+    }
+
+
+    .hero-description {
+
+      max-width: 700px;
+
+      margin-top: 25px;
+
+      color: var(--muted);
+
+      font-size: 1.15rem;
+    }
+
+
+    .hero-actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 11px;
+
+      margin-top: 30px;
+    }
+
+
+    .button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 14px 21px;
+
+      border-radius: 999px;
+
+      text-decoration: none;
+
+      font-weight: 850;
+
+      transition:
+        transform .2s,
+        box-shadow .2s,
+        border-color .2s;
+    }
+
+
+    .button-primary {
+
+      background: var(--navy);
+
+      color: white;
+
+      box-shadow:
+        0 10px 25px rgba(16,47,56,.15);
+    }
+
+
+    .button-primary:hover {
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 15px 32px rgba(16,47,56,.2);
+    }
+
+
+    .button-secondary {
+
+      background: white;
+
+      color: var(--navy);
+
+      border:
+        1px solid var(--border);
+    }
+
+
+    .button-secondary:hover {
+
+      border-color: var(--teal);
+
+      color: var(--teal);
+    }
+
+
+    /* =====================================================
+       CHECKLIST
+       ===================================================== */
+
+    .check-section {
+
+      padding: 85px 0;
+    }
+
+
+    .section-heading {
+
+      max-width: 750px;
+    }
+
+
+    .section-title {
+
+      margin-top: 12px;
+
+      font-size:
+        clamp(2.2rem, 4vw, 3.5rem);
+
+      line-height: 1.05;
+
+      letter-spacing: -.06em;
+    }
+
+
+    .section-intro {
+
+      margin-top: 14px;
+
+      color: var(--muted);
+
+      font-size: 1rem;
+    }
+
+
+    .checklist {
+
+      max-width: 850px;
+
+      margin-top: 40px;
+    }
+
+
+    .check-item {
+
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 17px;
+
+      padding: 22px 23px;
+
+      margin-top: 11px;
+
+      background: white;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 17px;
+
+      cursor: pointer;
+
+      transition:
+        border-color .2s,
+        transform .2s,
+        box-shadow .2s;
+    }
+
+
+    .check-item:hover {
+
+      transform: translateY(-2px);
+
+      border-color: #C8DCD8;
+
+      box-shadow: var(--shadow-small);
+    }
+
+
+    .check-item.checked {
+
+      background: #FBFEFD;
+
+      border-color: #BBDDD7;
+    }
+
+
+    .checkbox {
+
+      position: relative;
+
+      width: 25px;
+
+      height: 25px;
+
+      flex-shrink: 0;
+
+      margin-top: 1px;
+
+      border:
+        2px solid #B9C8C7;
+
+      border-radius: 8px;
+
+      transition: .2s;
+    }
+
+
+    .check-item.checked .checkbox {
+
+      background: var(--teal);
+
+      border-color: var(--teal);
+    }
+
+
+    .checkbox::after {
+
+      content: "✓";
+
+      position: absolute;
+
+      inset: 0;
+
+      display: grid;
+
+      place-items: center;
+
+      color: white;
+
+      font-size: .78rem;
+
+      font-weight: 900;
+
+      opacity: 0;
+
+      transform: scale(.5);
+
+      transition: .2s;
+    }
+
+
+    .check-item.checked .checkbox::after {
+
+      opacity: 1;
+
+      transform: scale(1);
+    }
+
+
+    .check-content {
+      flex: 1;
+    }
+
+
+    .check-content strong {
+
+      display: block;
+
+      font-size: 1rem;
+    }
+
+
+    .check-content p {
+
+      margin-top: 4px;
+
+      color: var(--muted);
+
+      font-size: .82rem;
+    }
+
+
+    .progress-box {
+
+      max-width: 850px;
+
+      margin-top: 25px;
+
+      padding: 23px;
+
+      background: var(--navy);
+
+      color: white;
+
+      border-radius: 20px;
+
+      box-shadow: var(--shadow-large);
+    }
+
+
+    .progress-top {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 15px;
+
+      font-size: .8rem;
+
+      font-weight: 800;
+    }
+
+
+    .progress-number {
+      color: var(--yellow);
+    }
+
+
+    .progress-track {
+
+      height: 8px;
+
+      margin-top: 13px;
+
+      background: #38565D;
+
+      border-radius: 999px;
+
+      overflow: hidden;
+    }
+
+
+    .progress-fill {
+
+      width: 0%;
+
+      height: 100%;
+
+      background: var(--yellow);
+
+      border-radius: 999px;
+
+      transition: width .3s ease;
+    }
+
+
+    /* =====================================================
+       EXPLANATIONS
+       ===================================================== */
+
+    .explanations {
+
+      padding: 85px 0;
+
+      background: white;
+
+      border-top:
+        1px solid var(--border);
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+
+    .explanation-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2,1fr);
+
+      gap: 18px;
+
+      margin-top: 40px;
+    }
+
+
+    .explanation {
+
+      padding: 28px;
+
+      background: var(--cream);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 18px;
+    }
+
+
+    .explanation-number {
+
+      color: var(--teal);
+
+      font-size: .72rem;
+
+      font-weight: 900;
+
+      letter-spacing: .1em;
+    }
+
+
+    .explanation h3 {
+
+      margin-top: 11px;
+
+      font-size: 1.15rem;
+
+      line-height: 1.2;
+    }
+
+
+    .explanation p {
+
+      margin-top: 9px;
+
+      color: var(--muted);
+
+      font-size: .86rem;
+    }
+
+
+    /* =====================================================
+       WARNING
+       ===================================================== */
+
+    .warning {
+
+      margin-top: 40px;
+
+      padding: 25px;
+
+      background: #FFF9E8;
+
+      border:
+        1px solid #F1E3B7;
+
+      border-radius: 18px;
+    }
+
+
+    .warning strong {
+
+      font-size: .9rem;
+    }
+
+
+    .warning p {
+
+      margin-top: 7px;
+
+      color: #756A48;
+
+      font-size: .8rem;
+    }
+
+
+    /* =====================================================
+       CTA
+       ===================================================== */
+
+    .cta-section {
+
+      padding: 80px 0;
+    }
+
+
+    .cta {
+
+      padding: 55px 30px;
+
+      background: var(--navy);
+
+      color: white;
+
+      border-radius: 29px;
+
+      text-align: center;
+
+      box-shadow: var(--shadow-large);
+    }
+
+
+    .cta h2 {
+
+      margin-top: 12px;
+
+      font-size:
+        clamp(2rem,4vw,3.1rem);
+
+      line-height: 1.05;
+
+      letter-spacing: -.055em;
+    }
+
+
+    .cta p {
+
+      max-width: 610px;
+
+      margin: 13px auto 0;
+
+      color: #C3D0D2;
+    }
+
+
+    .cta .button {
+
+      margin-top: 24px;
+
+      background: white;
+
+      color: var(--navy);
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer {
+
+      padding: 40px 0;
+
+      background: #0C272E;
+
+      color: #D9E4E5;
+    }
+
+
+    .footer-content {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 25px;
+    }
+
+
+    .footer-brand strong {
+
+      color: white;
+
+      font-size: 1.05rem;
+    }
+
+
+    .footer-brand small {
+
+      color: #91A7AA;
+    }
+
+
+    .footer-links {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 15px;
+
+      font-size: .83rem;
+    }
+
+
+    .footer-links a {
+
+      color: white;
+
+      text-decoration: none;
+    }
+
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 700px) {
+
+      nav ul {
+        display: none;
+      }
+
+
+      .hero {
+
+        padding: 65px 0;
+      }
+
+
+      h1 {
+        font-size: 3rem;
+      }
+
+
+      .hero-actions {
+
+        flex-direction: column;
+      }
+
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+
+      .check-section,
+      .explanations {
+
+        padding: 65px 0;
+      }
+
+
+      .explanation-grid {
+
+        grid-template-columns: 1fr;
+      }
+
+
+      .check-item {
+
+        padding: 19px;
+      }
+
+
+      .cta-section {
+
+        padding: 65px 0;
+      }
+
+
+      .cta {
+
+        padding: 42px 22px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
+
+<header>
+
+  <nav class="container">
+
+
+    <a
+      href="index.html"
+      class="logo"
+      aria-label="MicroClair — Accueil"
+    >
+      Micro<span>Clair</span>
+    </a>
+
+
+    <ul>
+
+      <li>
+        <a href="index.html#methode">
+          La méthode
+        </a>
+      </li>
+
+      <li>
+        <a href="ressources.html">
+          Ressources
+        </a>
+      </li>
+
+      <li>
+        <a href="index.html#faq">
+          FAQ
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="checklist-90-jours.html"
+          class="nav-button"
+        >
+          Commencer gratuitement
+        </a>
+      </li>
+
+    </ul>
+
+
+  </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<main>
+
+
+<section class="hero">
+
+  <div class="container">
+
+
+    <div class="hero-content">
+
+
+      <div class="eyebrow">
+        Facturation
+      </div>
+
+
+      <h1>
+        Vérifiez votre facture
+        avant de l’envoyer.
+      </h1>
+
+
+      <p class="hero-description">
+
+        Une checklist simple pour repérer
+        les oublis courants avant l’envoi
+        d’une facture à votre client.
+
+      </p>
+
+
+      <div class="hero-actions">
+
+
+        <a
+          href="#checklist"
+          class="button button-primary"
+        >
+          Commencer la vérification →
+        </a>
+
+
+        <a
+          href="ressources.html"
+          class="button button-secondary"
+        >
+          ← Toutes les ressources
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CHECKLIST
+     ===================================================== -->
+
+<section
+  id="checklist"
+  class="check-section"
+>
+
+  <div class="container">
+
+
+    <div class="section-heading">
+
+
+      <div class="eyebrow">
+        Checklist MicroClair
+      </div>
+
+
+      <h2 class="section-title">
+        Les points essentiels à contrôler.
+      </h2>
+
+
+      <p class="section-intro">
+
+        Cochez chaque élément après l’avoir vérifié.
+        L’objectif est de vous donner un dernier
+        contrôle simple avant l’envoi.
+
+      </p>
+
+
+    </div>
+
+
+
+    <div class="progress-box">
+
+
+      <div class="progress-top">
+
+        <span>
+          Progression
+        </span>
+
+        <span
+          id="progressText"
+          class="progress-number"
+        >
+          0 / 8
+        </span>
+
+      </div>
+
+
+      <div class="progress-track">
+
+        <div
+          id="progressFill"
+          class="progress-fill"
+        ></div>
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="checklist">
+
+
+      <div
+        class="check-item"
+        tabindex="0"
+        role="checkbox"
+        aria-checked="false"
+      >
+
+        <div class="checkbox"></div>
+
+        <div class="check-content">
+
+          <strong>
+            Les informations du client sont correctes
+          </strong>
+
+          <p>
+            Vérifiez notamment le nom ou la raison sociale
+            et les informations nécessaires à l’identification
+            du client.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div
+        class="check-item"
+        tabindex="0"
+        role="checkbox"
+        aria-checked="false"
+      >
+
+        <div class="checkbox"></div>
+
+        <div class="check-content">
+
+          <strong>
+            Vos propres informations sont correctes
+          </strong>
+
+          <p>
+            Contrôlez les informations qui doivent figurer
+            sur vos factures selon votre situation.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div
+        class="check-item"
+        tabindex="0"
+        role="checkbox"
+        aria-checked="false"
+      >
+
+        <div class="checkbox"></div>
+
+        <div class="check-content">
+
+          <strong>
+            Le numéro de facture est présent
+          </strong>
+
+          <p>
+            Utilisez une numérotation cohérente et
+            conservez votre logique de classement.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div
+        class="check-item"
+        tabindex="0"
+        role="checkbox"
+        aria-checked="false"
+      >
+
+        <div class="checkbox"></div>
+
+        <div class="check-content">
+
+          <strong>
+            La date de la facture est correcte
+          </strong>
+
+          <p>
+            Vérifiez la date ainsi que les éventuelles
+            dates nécessaires liées à la prestation.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div
+        class="check-item"
+        tabindex="0"
+        role="checkbox"
+        aria-checked="false"
+      >
+
+        <div class="checkbox"></div>
+
+        <div class="check-content">
+
+          <strong>
+            La prestation ou le produit est clairement décrit
+          </strong>
+
+          <p>
+            Votre client doit pouvoir comprendre ce qui
+            est facturé et à quoi correspond le montant.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div
+        class="check-item"
+        tabindex="0"
+        role="checkbox"
+        aria-checked="false"
+      >
+
+        <div class="checkbox"></div>
+
+        <div class="check-content">
+
+          <strong>
+            Les montants ont été vérifiés
+          </strong>
+
+          <p>
+            Contrôlez les quantités, tarifs, éventuelles
+            réductions et montants finaux applicables.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div
+        class="check-item"
+        tabindex="0"
+        role="checkbox"
+        aria-checked="false"
+      >
+
+        <div class="checkbox"></div>
+
+        <div class="check-content">
+
+          <strong>
+            Les conditions de paiement sont indiquées
+          </strong>
+
+          <p>
+            Vérifiez que les informations relatives
+            au paiement sont adaptées à votre situation.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div
+        class="check-item"
+        tabindex="0"
+        role="checkbox"
+        aria-checked="false"
+      >
+
+        <div class="checkbox"></div>
+
+        <div class="check-content">
+
+          <strong>
+            Les mentions applicables à votre situation sont présentes
+          </strong>
+
+          <p>
+            Certaines mentions dépendent notamment
+            de votre régime, de votre activité et
+            de la situation de votre client.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="warning">
+
+      <strong>
+        ⚠️ Important : cette checklist est pédagogique.
+      </strong>
+
+      <p>
+
+        Elle ne constitue pas une vérification juridique,
+        fiscale ou comptable personnalisée et ne garantit
+        pas qu’une facture respecte toutes les obligations
+        applicables à votre situation. Les règles peuvent
+        évoluer : en cas de doute, consultez les sources
+        officielles ou un professionnel.
+
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPLICATIONS
+     ===================================================== -->
+
+<section class="explanations">
+
+  <div class="container">
+
+
+    <div class="section-heading">
+
+
+      <div class="eyebrow">
+        Pourquoi vérifier ?
+      </div>
+
+
+      <h2 class="section-title">
+        Une facture claire,
+        c’est aussi une communication professionnelle.
+      </h2>
+
+
+      <p class="section-intro">
+
+        Une vérification de quelques minutes peut
+        vous aider à éviter des oublis et à présenter
+        une image plus rigoureuse auprès de vos clients.
+
+      </p>
+
+
+    </div>
+
+
+
+    <div class="explanation-grid">
+
+
+      <article class="explanation">
+
+        <div class="explanation-number">
+          01 · CLARTÉ
+        </div>
+
+        <h3>
+          Votre client comprend ce qu’il paie.
+        </h3>
+
+        <p>
+
+          Une description claire de la prestation
+          et un montant lisible facilitent la lecture
+          et réduisent les échanges inutiles.
+
+        </p>
+
+      </article>
+
+
+
+      <article class="explanation">
+
+        <div class="explanation-number">
+          02 · ORGANISATION
+        </div>
+
+        <h3>
+          Vous retrouvez facilement vos factures.
+        </h3>
+
+        <p>
+
+          Une numérotation et un classement cohérents
+          facilitent votre suivi administratif au fil
+          du développement de votre activité.
+
+        </p>
+
+      </article>
+
+
+
+      <article class="explanation">
+
+        <div class="explanation-number">
+          03 · SÉRÉNITÉ
+        </div>
+
+        <h3>
+          Vous envoyez avec davantage de confiance.
+        </h3>
+
+        <p>
+
+          Prendre quelques instants pour relire
+          votre facture permet de limiter les petites
+          erreurs d’attention avant l’envoi.
+
+        </p>
+
+      </article>
+
+
+
+      <article class="explanation">
+
+        <div class="explanation-number">
+          04 · RIGUEUR
+        </div>
+
+        <h3>
+          Vous construisez une bonne habitude.
+        </h3>
+
+        <p>
+
+          Une courte vérification systématique peut
+          devenir une routine simple à appliquer
+          à chaque nouvelle facture.
+
+        </p>
+
+      </article>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+     ===================================================== -->
+
+<section class="cta-section">
+
+  <div class="container">
+
+
+    <div class="cta">
+
+
+      <div
+        class="eyebrow"
+        style="color:#F4C95D"
+      >
+        MicroClair
+      </div>
+
+
+      <h2>
+        Vous voulez aller plus loin
+        dans votre organisation ?
+      </h2>
+
+
+      <p>
+
+        Découvrez les autres ressources gratuites
+        MicroClair pour structurer progressivement
+        votre activité.
+
+      </p>
+
+
+      <a
+        href="ressources.html"
+        class="button"
+      >
+        Voir toutes les ressources →
+
+      </a>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+  <div class="container footer-content">
+
+
+    <div class="footer-brand">
+
+      <strong>
+        MicroClair
+      </strong>
+
+      <br>
+
+      <small>
+        Moins de flou. Plus d’organisation.
+      </small>
+
+    </div>
+
+
+    <div class="footer-links">
+
+      <a href="mentions-legales.html">
+        Mentions légales
+      </a>
+
+      <a href="confidentialite.html">
+        Confidentialité
+      </a>
+
+      <a href="cookies.html">
+        Cookies
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+  </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script>
+
+  const items =
+    document.querySelectorAll(".check-item");
+
+  const progressText =
+    document.getElementById("progressText");
+
+  const progressFill =
+    document.getElementById("progressFill");
+
+
+  function updateProgress() {
+
+    const checked =
+      document.querySelectorAll(
+        ".check-item.checked"
+      ).length;
+
+
+    const total =
+      items.length;
+
+
+    const percentage =
+      (checked / total) * 100;
+
+
+    progressText.textContent =
+      checked + " / " + total;
+
+
+    progressFill.style.width =
+      percentage + "%";
+
+
+    if (checked === total) {
+
+      progressText.textContent =
+        "✓ Checklist terminée";
+
+    }
+
+  }
+
+
+  function toggleItem(item) {
+
+    const checked =
+      item.classList.toggle("checked");
+
+
+    item.setAttribute(
+      "aria-checked",
+      checked ? "true" : "false"
+    );
+
+
+    updateProgress();
+
+  }
+
+
+  items.forEach(function(item) {
+
+
+    item.addEventListener(
+      "click",
+      function() {
+
+        toggleItem(item);
+
+      }
+    );
+
+
+    item.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
+
+          event.preventDefault();
+
+          toggleItem(item);
+
+        }
+
+      }
+    );
+
+
+  });
+
+
+  updateProgress();
+
+</script>
+
+
+</body>
+</html>
+```
