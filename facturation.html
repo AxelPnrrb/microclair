@@ -1,699 +1,953 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Facturation en micro-entreprise — MicroClair</title>
-  <meta name="description" content="Comprendre la facturation en micro-entreprise : mentions, numérotation, paiement et bonnes pratiques pour établir des factures propres et conformes.">
+  <meta name="description" content="Comprendre la facturation en micro-entreprise : mentions, numérotation, paiement et bonnes pratiques pour établir des factures claires et adaptées à votre activité.">
   <meta name="theme-color" content="#173F3A">
 
   <style>
     :root {
-      --green:#173F3A;
-      --green-2:#245C55;
-      --mint:#DCEDE9;
-      --soft:#F3F8F7;
-      --cream:#FAF9F5;
-      --text:#17302D;
-      --muted:#667875;
-      --white:#fff;
-      --border:#DCE6E3;
-      --shadow:0 18px 45px rgba(23,63,58,.10);
+      --green: #173F3A;
+      --green-2: #245C55;
+      --mint: #DCEDE9;
+      --soft: #F3F8F7;
+      --cream: #FAF9F5;
+      --text: #17302D;
+      --muted: #667875;
+      --white: #FFFFFF;
+      --border: #DCE6E3;
+
+      --shadow-small: 0 8px 22px rgba(23, 63, 58, .06);
+      --shadow-medium: 0 16px 38px rgba(23, 63, 58, .09);
+      --shadow-large: 0 22px 55px rgba(23, 63, 58, .12);
+
+      --radius: 16px;
+      --radius-large: 22px;
     }
 
     * {
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      background:var(--cream);
-      color:var(--text);
-      line-height:1.6;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::selection {
+      background: var(--mint);
+      color: var(--green);
     }
 
     a {
-      color:inherit;
-      text-decoration:none;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
     }
 
     .container {
-      width:min(1050px,calc(100% - 32px));
-      margin:auto;
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: -100px;
+      left: 16px;
+      z-index: 100;
+      padding: 10px 14px;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: top .2s ease;
+    }
+
+    .skip-link:focus {
+      top: 16px;
     }
 
     header {
-      position:sticky;
-      top:0;
-      z-index:10;
-      background:rgba(250,249,245,.96);
-      border-bottom:1px solid var(--border);
-      backdrop-filter:blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 249, 245, .94);
+      border-bottom: 1px solid rgba(220, 230, 227, .9);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
 
     .nav {
-      min-height:72px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
     }
 
     .logo {
-      display:flex;
-      align-items:center;
-      gap:9px;
-      color:var(--green);
-      font-size:20px;
-      font-weight:800;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--green);
+      font-size: 20px;
+      font-weight: 850;
+      letter-spacing: -.4px;
+      flex-shrink: 0;
     }
 
     .logo-mark {
-      width:33px;
-      height:33px;
-      border-radius:10px;
-      background:var(--green);
-      color:white;
-      display:grid;
-      place-items:center;
-      font-size:15px;
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--green);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 900;
+      box-shadow: 0 6px 16px rgba(23, 63, 58, .16);
     }
 
     .back {
-      color:var(--muted);
-      font-size:13px;
-      font-weight:700;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+      transition: color .2s ease, transform .2s ease;
     }
 
     .back:hover {
-      color:var(--green);
+      color: var(--green);
+      transform: translateX(-2px);
+    }
+
+    a:focus-visible {
+      outline: 3px solid rgba(36, 92, 85, .35);
+      outline-offset: 4px;
+      border-radius: 8px;
+    }
+
+    main {
+      overflow: hidden;
     }
 
     .hero {
-      padding:75px 0 55px;
-      text-align:center;
+      position: relative;
+      padding: 86px 0 58px;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      top: -220px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(220, 237, 233, .55);
+      border-radius: 50%;
+      filter: blur(2px);
+      pointer-events: none;
+      z-index: -1;
     }
 
     .tag {
-      display:inline-block;
-      padding:7px 11px;
-      margin-bottom:20px;
-      border-radius:999px;
-      background:var(--mint);
-      color:var(--green);
-      font-size:11px;
-      font-weight:800;
-      letter-spacing:.5px;
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(36, 92, 85, .08);
+      border-radius: 999px;
+      background: var(--mint);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: .65px;
     }
 
     h1 {
-      font-size:clamp(38px,6vw,58px);
-      line-height:1.05;
-      letter-spacing:-2px;
-      margin-bottom:18px;
+      max-width: 850px;
+      margin: 0 auto 20px;
+      font-size: clamp(38px, 6vw, 62px);
+      line-height: 1.03;
+      letter-spacing: -2.8px;
+      font-weight: 850;
     }
 
     .hero p {
-      max-width:680px;
-      margin:auto;
-      color:var(--muted);
-      font-size:17px;
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
     }
 
     .intro {
-      max-width:850px;
-      margin:0 auto 50px;
-      padding:28px;
-      background:white;
-      border:1px solid var(--border);
-      border-radius:20px;
-      box-shadow:var(--shadow);
+      max-width: 880px;
+      margin: 0 auto 72px;
+      padding: 30px 32px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-large);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .intro-label {
+      display: inline-block;
+      margin-bottom: 9px;
+      color: var(--green-2);
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: .55px;
+      text-transform: uppercase;
     }
 
     .intro strong {
-      display:block;
-      font-size:18px;
-      margin-bottom:8px;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.3;
+      letter-spacing: -.3px;
     }
 
     .intro p {
-      color:var(--muted);
-      font-size:14px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
     }
 
     .section {
-      max-width:900px;
-      margin:0 auto 65px;
+      max-width: 920px;
+      margin: 0 auto 76px;
+    }
+
+    .section-heading {
+      margin-bottom: 27px;
     }
 
     .section h2 {
-      font-size:29px;
-      line-height:1.2;
-      margin-bottom:10px;
+      margin-bottom: 9px;
+      font-size: clamp(27px, 4vw, 34px);
+      line-height: 1.15;
+      letter-spacing: -.8px;
     }
 
-    .section > p {
-      color:var(--muted);
-      font-size:14px;
-      margin-bottom:25px;
+    .section > .section-heading p {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
     }
 
     .cards {
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:15px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
 
     .card {
-      padding:23px;
-      background:white;
-      border:1px solid var(--border);
-      border-radius:17px;
+      position: relative;
+      padding: 25px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-small);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(36, 92, 85, .18);
+      box-shadow: var(--shadow-medium);
     }
 
     .number {
-      display:inline-grid;
-      place-items:center;
-      width:31px;
-      height:31px;
-      margin-bottom:14px;
-      border-radius:9px;
-      background:var(--mint);
-      color:var(--green);
-      font-size:12px;
-      font-weight:900;
+      display: inline-grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      margin-bottom: 15px;
+      border-radius: 9px;
+      background: var(--mint);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 900;
     }
 
     .card h3 {
-      font-size:17px;
-      margin-bottom:7px;
+      margin-bottom: 7px;
+      font-size: 17px;
+      line-height: 1.3;
+      letter-spacing: -.2px;
     }
 
     .card p {
-      color:var(--muted);
-      font-size:13px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
     }
 
     .checklist {
-      display:grid;
-      gap:11px;
+      display: grid;
+      gap: 11px;
     }
 
     .check {
-      display:flex;
-      align-items:flex-start;
-      gap:13px;
-      padding:17px 18px;
-      background:var(--soft);
-      border-radius:14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 17px 18px;
+      background: var(--soft);
+      border: 1px solid rgba(220, 230, 227, .72);
+      border-radius: 14px;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .check:hover {
+      transform: translateX(2px);
+      background: #EEF6F4;
     }
 
     .check-icon {
-      flex:none;
-      width:24px;
-      height:24px;
-      border-radius:7px;
-      background:var(--green);
-      color:white;
-      display:grid;
-      place-items:center;
-      font-size:12px;
-      font-weight:900;
+      flex: none;
+      width: 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      border-radius: 7px;
+      background: var(--green);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 900;
     }
 
     .check strong {
-      display:block;
-      font-size:14px;
-      margin-bottom:2px;
+      display: block;
+      margin-bottom: 2px;
+      font-size: 14px;
+      line-height: 1.4;
     }
 
     .check span {
-      color:var(--muted);
-      font-size:12px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
     }
 
     .warning {
-      padding:26px;
-      background:#FFF8E9;
-      border:1px solid #F1E3BD;
-      border-radius:18px;
-      margin-bottom:65px;
+      max-width: 920px;
+      margin: 0 auto 76px;
+      padding: 27px 29px;
+      background: #FFF8E9;
+      border: 1px solid #F1E3BD;
+      border-radius: var(--radius);
+    }
+
+    .warning-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .warning-icon {
+      flex: none;
+      font-size: 20px;
+      line-height: 1.2;
     }
 
     .warning h2 {
-      font-size:21px;
-      margin-bottom:8px;
+      font-size: 21px;
+      line-height: 1.3;
+      letter-spacing: -.3px;
     }
 
     .warning p {
-      color:#675B3D;
-      font-size:13px;
+      color: #675B3D;
+      font-size: 13px;
+      line-height: 1.7;
     }
 
     .cta {
-      max-width:900px;
-      margin:0 auto 80px;
-      padding:35px;
-      background:var(--green);
-      color:white;
-      border-radius:22px;
-      text-align:center;
+      max-width: 920px;
+      margin: 0 auto 88px;
+      padding: 42px 34px;
+      background: var(--green);
+      color: var(--white);
+      border-radius: var(--radius-large);
+      text-align: center;
+      box-shadow: var(--shadow-large);
     }
 
     .cta h2 {
-      font-size:28px;
-      margin-bottom:10px;
+      margin-bottom: 10px;
+      font-size: clamp(26px, 4vw, 32px);
+      line-height: 1.2;
+      letter-spacing: -.7px;
     }
 
     .cta p {
-      max-width:600px;
-      margin:0 auto 22px;
-      color:#C9DBD7;
-      font-size:13px;
+      max-width: 610px;
+      margin: 0 auto 24px;
+      color: #C9DBD7;
+      font-size: 13px;
+      line-height: 1.7;
     }
 
     .button {
-      display:inline-block;
-      padding:12px 18px;
-      background:white;
-      color:var(--green);
-      border-radius:10px;
-      font-size:13px;
-      font-weight:800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 12px 19px;
+      background: var(--white);
+      color: var(--green);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 11px;
+      font-size: 13px;
+      font-weight: 850;
+      box-shadow: 0 7px 18px rgba(0,0,0,.10);
+      transition: transform .2s ease, box-shadow .2s ease;
     }
 
     .button:hover {
-      transform:translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(0,0,0,.15);
     }
 
     footer {
-      background:#102F2B;
-      color:#AFC6C1;
-      padding:40px 0 25px;
+      background: #102F2B;
+      color: #AFC6C1;
+      padding: 44px 0 25px;
     }
 
     .footer-grid {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
-      padding-bottom:30px;
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 50px;
+      padding-bottom: 32px;
     }
 
     footer .logo {
-      color:white;
-      margin-bottom:12px;
+      color: var(--white);
+      margin-bottom: 13px;
     }
 
     footer .logo-mark {
-      background:white;
-      color:var(--green);
+      background: var(--white);
+      color: var(--green);
+      box-shadow: none;
     }
 
     .footer-description {
-      max-width:350px;
-      font-size:12px;
+      max-width: 380px;
+      font-size: 12px;
+      line-height: 1.7;
     }
 
     .footer-column h3 {
-      color:white;
-      font-size:13px;
-      margin-bottom:12px;
+      margin-bottom: 13px;
+      color: var(--white);
+      font-size: 13px;
     }
 
     .footer-column a {
-      display:block;
-      font-size:12px;
-      margin-bottom:7px;
+      display: block;
+      width: fit-content;
+      margin-bottom: 8px;
+      font-size: 12px;
+      transition: color .2s ease;
     }
 
     .footer-column a:hover {
-      color:white;
+      color: var(--white);
     }
 
     .copyright {
-      border-top:1px solid rgba(255,255,255,.12);
-      padding-top:20px;
-      font-size:11px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 20px;
+      font-size: 11px;
+      color: #91AAA5;
     }
 
-    @media(max-width:700px) {
-      .cards {
-        grid-template-columns:1fr;
-      }
-    }
-
-    @media(max-width:600px) {
+    @media (max-width: 760px) {
       .hero {
-        padding:55px 0 40px;
+        padding: 68px 0 45px;
       }
 
-      .intro,
-      .card,
-      .warning,
-      .cta {
-        padding:21px;
+      .cards {
+        grid-template-columns: 1fr;
       }
 
       .footer-grid {
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 24px, 1120px);
+      }
+
+      .nav {
+        min-height: 64px;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .logo-mark {
+        width: 32px;
+        height: 32px;
+      }
+
+      .back {
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 55px 0 38px;
+      }
+
+      h1 {
+        font-size: clamp(36px, 11vw, 48px);
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .intro {
+        margin-bottom: 58px;
+        padding: 23px;
+      }
+
+      .section {
+        margin-bottom: 60px;
+      }
+
+      .section h2 {
+        font-size: 27px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .warning {
+        margin-bottom: 60px;
+        padding: 22px;
+      }
+
+      .cta {
+        margin-bottom: 68px;
+        padding: 32px 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
       }
     }
   </style>
-
 </head>
 
 <body>
 
-<header>
-  <div class="container nav">
+  <a href="#contenu" class="skip-link">Aller au contenu</a>
 
-```
-<a href="index.html" class="logo">
-  <span class="logo-mark">M</span>
-  MicroClair
-</a>
+  <header>
+    <div class="container nav">
 
-<a href="ressources.html" class="back">
-  ← Retour aux ressources
-</a>
-```
+      <a href="index.html" class="logo" aria-label="MicroClair — Accueil">
+        <span class="logo-mark" aria-hidden="true">M</span>
+        MicroClair
+      </a>
 
-  </div>
-</header>
+      <a href="ressources.html" class="back">
+        <span aria-hidden="true">←</span>
+        Retour aux ressources
+      </a>
 
-<main>
+    </div>
+  </header>
 
-  <section class="hero">
+  <main id="contenu">
+
+    <section class="hero">
+      <div class="container">
+
+        <span class="tag">FACTURATION</span>
+
+        <h1>Facturer simplement,<br>sans oublier l’essentiel.</h1>
+
+        <p>
+          Les bases pour préparer une facture claire,
+          professionnelle et adaptée à votre activité.
+        </p>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <div class="intro">
+          <span class="intro-label">L'essentiel</span>
+
+          <strong>Une bonne facture doit surtout être claire.</strong>
+
+          <p>
+            En micro-entreprise, la facture sert à formaliser la vente
+            d'un produit ou la réalisation d'une prestation. Elle permet
+            à votre client de savoir précisément ce qu'il paie et vous
+            aide à garder une trace de votre activité.
+          </p>
+        </div>
+
+        <div class="section">
+
+          <div class="section-heading">
+            <h2>Les éléments à retrouver sur une facture</h2>
+
+            <p>
+              Les mentions à faire figurer peuvent varier selon votre
+              situation, votre activité et votre client. Voici les
+              principaux éléments à vérifier.
+            </p>
+          </div>
+
+          <div class="cards">
+
+            <article class="card">
+              <span class="number" aria-hidden="true">01</span>
+
+              <h3>Vos informations</h3>
+
+              <p>
+                Nom ou dénomination utilisée pour l'activité, adresse,
+                numéro SIRET et informations nécessaires à votre
+                identification.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="number" aria-hidden="true">02</span>
+
+              <h3>Les informations du client</h3>
+
+              <p>
+                Identité ou nom de l'entreprise cliente et coordonnées
+                nécessaires à l'établissement de la facture.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="number" aria-hidden="true">03</span>
+
+              <h3>Un numéro de facture</h3>
+
+              <p>
+                Chaque facture doit être identifiée par un numéro unique
+                suivant une séquence cohérente et chronologique.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="number" aria-hidden="true">04</span>
+
+              <h3>La date</h3>
+
+              <p>
+                Indiquez la date d'émission de la facture et, lorsque cela
+                est nécessaire, les informations liées à la prestation.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="number" aria-hidden="true">05</span>
+
+              <h3>Le détail de la prestation</h3>
+
+              <p>
+                Décrivez clairement le produit vendu ou la prestation
+                réalisée, avec les quantités ou éléments nécessaires.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="number" aria-hidden="true">06</span>
+
+              <h3>Le montant à payer</h3>
+
+              <p>
+                Faites apparaître clairement les montants, les éventuelles
+                réductions, la TVA lorsqu'elle s'applique et le total.
+              </p>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="section">
+
+          <div class="section-heading">
+            <h2>Avant d'envoyer votre facture</h2>
+
+            <p>
+              Une vérification de quelques secondes peut éviter beaucoup
+              d'allers-retours avec un client.
+            </p>
+          </div>
+
+          <div class="checklist">
+
+            <div class="check">
+              <div class="check-icon" aria-hidden="true">✓</div>
+
+              <div>
+                <strong>Le numéro est unique</strong>
+
+                <span>
+                  Il respecte votre logique de numérotation habituelle.
+                </span>
+              </div>
+            </div>
+
+            <div class="check">
+              <div class="check-icon" aria-hidden="true">✓</div>
+
+              <div>
+                <strong>Le client est correctement identifié</strong>
+
+                <span>
+                  Vérifiez notamment le nom, l'adresse et les informations
+                  professionnelles lorsqu'elles sont nécessaires.
+                </span>
+              </div>
+            </div>
+
+            <div class="check">
+              <div class="check-icon" aria-hidden="true">✓</div>
+
+              <div>
+                <strong>La prestation est compréhensible</strong>
+
+                <span>
+                  Votre client doit pouvoir comprendre exactement ce qui
+                  lui est facturé.
+                </span>
+              </div>
+            </div>
+
+            <div class="check">
+              <div class="check-icon" aria-hidden="true">✓</div>
+
+              <div>
+                <strong>Le montant est correct</strong>
+
+                <span>
+                  Vérifiez les quantités, tarifs, remises et total à payer.
+                </span>
+              </div>
+            </div>
+
+            <div class="check">
+              <div class="check-icon" aria-hidden="true">✓</div>
+
+              <div>
+                <strong>Les conditions de paiement sont claires</strong>
+
+                <span>
+                  Indiquez les informations nécessaires concernant
+                  l'échéance et les modalités de règlement.
+                </span>
+              </div>
+            </div>
+
+            <div class="check">
+              <div class="check-icon" aria-hidden="true">✓</div>
+
+              <div>
+                <strong>Les mentions adaptées à votre situation sont présentes</strong>
+
+                <span>
+                  Certaines mentions dépendent notamment de la TVA,
+                  de l'activité ou du type de client.
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <aside class="warning" aria-label="Point de vigilance">
+
+          <div class="warning-top">
+            <span class="warning-icon" aria-hidden="true">⚠️</span>
+
+            <h2>Attention aux factures trop vite faites</h2>
+          </div>
+
+          <p>
+            Une facture avec une erreur de numéro, de montant, de client
+            ou de TVA peut créer des complications. Prenez l'habitude de
+            vérifier chaque facture avant son envoi et conservez vos
+            documents professionnels.
+          </p>
+
+        </aside>
+
+        <div class="section">
+
+          <div class="section-heading">
+            <h2>Après l'envoi : ne perdez pas le fil</h2>
+
+            <p>
+              Une facture envoyée n'est pas une affaire terminée. Il faut
+              ensuite suivre son règlement et conserver une trace de ce
+              qui a été encaissé.
+            </p>
+          </div>
+
+          <div class="cards">
+
+            <article class="card">
+              <span class="number" aria-hidden="true">01</span>
+
+              <h3>Suivre le paiement</h3>
+
+              <p>
+                Notez si la facture est en attente, réglée ou fait l'objet
+                d'une relance.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="number" aria-hidden="true">02</span>
+
+              <h3>Enregistrer la recette</h3>
+
+              <p>
+                Gardez votre suivi des recettes à jour afin de faciliter
+                vos futures déclarations.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="number" aria-hidden="true">03</span>
+
+              <h3>Conserver vos documents</h3>
+
+              <p>
+                Gardez vos factures et justificatifs conformément aux
+                règles de conservation applicables à votre activité.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="number" aria-hidden="true">04</span>
+
+              <h3>Relancer si nécessaire</h3>
+
+              <p>
+                Une facture impayée ne doit pas disparaître de votre suivi.
+                Prévoyez une routine simple pour les relances.
+              </p>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="cta">
+
+          <h2>Vous voulez vérifier une facture ?</h2>
+
+          <p>
+            MicroClair vous permet de passer en revue les principaux
+            éléments d'une facture grâce à une checklist simple.
+          </p>
+
+          <a href="verifier-facture.html" class="button">
+            Vérifier ma facture
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
     <div class="container">
 
-```
-  <span class="tag">FACTURATION</span>
+      <div class="footer-grid">
 
-  <h1>Facturer simplement,<br>sans oublier l’essentiel.</h1>
-
-  <p>
-    Les bases pour préparer une facture claire,
-    professionnelle et adaptée à votre activité.
-  </p>
-
-</div>
-```
-
-  </section>
-
-  <section>
-    <div class="container">
-
-```
-  <div class="intro">
-    <strong>Une bonne facture doit surtout être claire.</strong>
-
-    <p>
-      En micro-entreprise, la facture sert à formaliser la vente
-      d'un produit ou la réalisation d'une prestation. Elle permet
-      à votre client de savoir précisément ce qu'il paie et vous
-      aide à garder une trace de votre activité.
-    </p>
-  </div>
-
-  <div class="section">
-
-    <h2>Les éléments à retrouver sur une facture</h2>
-
-    <p>
-      Les mentions obligatoires peuvent varier selon votre situation,
-      votre activité et votre client. Voici les principaux éléments
-      à vérifier.
-    </p>
-
-    <div class="cards">
-
-      <article class="card">
-        <span class="number">01</span>
-        <h3>Vos informations</h3>
-        <p>
-          Nom ou dénomination utilisée pour l'activité, adresse,
-          numéro SIRET et informations nécessaires à votre identification.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="number">02</span>
-        <h3>Les informations du client</h3>
-        <p>
-          Identité ou nom de l'entreprise cliente et coordonnées
-          nécessaires à l'établissement de la facture.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="number">03</span>
-        <h3>Un numéro de facture</h3>
-        <p>
-          Chaque facture doit être identifiée par un numéro unique
-          suivant une séquence cohérente et chronologique.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="number">04</span>
-        <h3>La date</h3>
-        <p>
-          Indiquez la date d'émission de la facture et, lorsque cela
-          est nécessaire, les informations liées à la prestation.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="number">05</span>
-        <h3>Le détail de la prestation</h3>
-        <p>
-          Décrivez clairement le produit vendu ou la prestation
-          réalisée, avec les quantités ou éléments nécessaires.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="number">06</span>
-        <h3>Le montant à payer</h3>
-        <p>
-          Faites apparaître clairement les montants, les éventuelles
-          réductions, la TVA lorsqu'elle s'applique et le total.
-        </p>
-      </article>
-
-    </div>
-
-  </div>
-
-  <div class="section">
-
-    <h2>Avant d'envoyer votre facture</h2>
-
-    <p>
-      Une vérification de quelques secondes peut éviter beaucoup
-      d'allers-retours avec un client.
-    </p>
-
-    <div class="checklist">
-
-      <div class="check">
-        <div class="check-icon">✓</div>
         <div>
-          <strong>Le numéro est unique</strong>
-          <span>
-            Il respecte votre logique de numérotation habituelle.
-          </span>
+          <a href="index.html" class="logo" aria-label="MicroClair — Accueil">
+            <span class="logo-mark" aria-hidden="true">M</span>
+            MicroClair
+          </a>
+
+          <p class="footer-description">
+            Des outils simples pour aider les micro-entrepreneurs
+            et freelances à mieux organiser leur activité.
+          </p>
         </div>
+
+        <div class="footer-column">
+          <h3>Informations</h3>
+
+          <a href="a-propos.html">À propos</a>
+          <a href="demarrer.html">Démarrer</a>
+          <a href="ressources.html">Ressources</a>
+          <a href="contact.html">Contact</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="confidentialite.html">Confidentialité</a>
+          <a href="cookies.html">Cookies</a>
+        </div>
+
       </div>
 
-      <div class="check">
-        <div class="check-icon">✓</div>
-        <div>
-          <strong>Le client est correctement identifié</strong>
-          <span>
-            Vérifiez notamment le nom, l'adresse et les informations
-            professionnelles lorsqu'elles sont nécessaires.
-          </span>
-        </div>
-      </div>
-
-      <div class="check">
-        <div class="check-icon">✓</div>
-        <div>
-          <strong>La prestation est compréhensible</strong>
-          <span>
-            Votre client doit pouvoir comprendre exactement ce qui
-            lui est facturé.
-          </span>
-        </div>
-      </div>
-
-      <div class="check">
-        <div class="check-icon">✓</div>
-        <div>
-          <strong>Le montant est correct</strong>
-          <span>
-            Vérifiez les quantités, tarifs, remises et total à payer.
-          </span>
-        </div>
-      </div>
-
-      <div class="check">
-        <div class="check-icon">✓</div>
-        <div>
-          <strong>Les conditions de paiement sont claires</strong>
-          <span>
-            Indiquez les informations nécessaires concernant
-            l'échéance et les modalités de règlement.
-          </span>
-        </div>
-      </div>
-
-      <div class="check">
-        <div class="check-icon">✓</div>
-        <div>
-          <strong>Les mentions adaptées à votre situation sont présentes</strong>
-          <span>
-            Certaines mentions dépendent notamment de la TVA,
-            de l'activité ou du type de client.
-          </span>
-        </div>
+      <div class="copyright">
+        © 2026 MicroClair — Axel Penarrubia
       </div>
 
     </div>
-
-  </div>
-
-  <div class="warning">
-
-    <h2>⚠️ Attention aux factures trop vite faites</h2>
-
-    <p>
-      Une facture avec une erreur de numéro, de montant, de client
-      ou de TVA peut créer des complications. Prenez l'habitude de
-      vérifier chaque facture avant son envoi et conservez vos
-      documents professionnels.
-    </p>
-
-  </div>
-
-  <div class="section">
-
-    <h2>Après l'envoi : ne perdez pas le fil</h2>
-
-    <p>
-      Une facture envoyée n'est pas une affaire terminée. Il faut
-      ensuite suivre son règlement et conserver une trace de ce qui
-      a été encaissé.
-    </p>
-
-    <div class="cards">
-
-      <article class="card">
-        <span class="number">01</span>
-        <h3>Suivre le paiement</h3>
-        <p>
-          Notez si la facture est en attente, réglée ou fait l'objet
-          d'une relance.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="number">02</span>
-        <h3>Enregistrer la recette</h3>
-        <p>
-          Le suivi de vos recettes doit rester à jour afin de
-          faciliter vos futures déclarations.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="number">03</span>
-        <h3>Conserver vos documents</h3>
-        <p>
-          Gardez vos factures et justificatifs conformément aux
-          règles de conservation applicables à votre activité.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="number">04</span>
-        <h3>Relancer si nécessaire</h3>
-        <p>
-          Une facture impayée ne doit pas disparaître de votre suivi.
-          Prévoyez une routine simple pour les relances.
-        </p>
-      </article>
-
-    </div>
-
-  </div>
-
-  <div class="cta">
-
-    <h2>Vous voulez vérifier une facture ?</h2>
-
-    <p>
-      MicroClair vous permet de passer en revue les principaux
-      éléments d'une facture grâce à une checklist simple.
-    </p>
-
-    <a href="verifier-facture.html" class="button">
-      Vérifier ma facture →
-    </a>
-
-  </div>
-
-</div>
-```
-
-  </section>
-
-</main>
-
-<footer>
-  <div class="container">
-
-```
-<div class="footer-grid">
-
-  <div>
-    <a href="index.html" class="logo">
-      <span class="logo-mark">M</span>
-      MicroClair
-    </a>
-
-    <p class="footer-description">
-      Des outils simples pour aider les micro-entrepreneurs
-      et freelances à mieux organiser leur activité.
-    </p>
-  </div>
-
-  <div class="footer-column">
-    <h3>Informations</h3>
-    <a href="a-propos.html">À propos</a>
-    <a href="demarrer.html">Démarrer</a>
-    <a href="ressources.html">Ressources</a>
-    <a href="contact.html">Contact</a>
-    <a href="mentions-legales.html">Mentions légales</a>
-    <a href="confidentialite.html">Confidentialité</a>
-    <a href="cookies.html">Cookies</a>
-  </div>
-
-</div>
-
-<div class="copyright">
-  © 2026 MicroClair — Axel Penarrubia
-</div>
-```
-
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
