@@ -44,6 +44,18 @@
       text-decoration: none;
     }
 
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid #7BB9AF;
+      outline-offset: 3px;
+    }
+
     .container {
       width: min(1120px, calc(100% - 40px));
       margin: 0 auto;
@@ -55,6 +67,7 @@
       z-index: 100;
       background: rgba(250, 249, 245, 0.94);
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(220, 230, 227, 0.8);
     }
 
@@ -74,6 +87,7 @@
       font-weight: 800;
       letter-spacing: -0.5px;
       color: var(--green);
+      flex-shrink: 0;
     }
 
     .logo-mark {
@@ -98,7 +112,7 @@
       color: var(--muted);
       font-size: 14px;
       font-weight: 600;
-      transition: color 0.2s ease;
+      transition: color 0.2s ease, transform 0.2s ease;
     }
 
     nav a:hover {
@@ -110,6 +124,11 @@
       border-radius: 10px;
       background: var(--green);
       color: white !important;
+    }
+
+    .nav-cta:hover {
+      color: white !important;
+      transform: translateY(-1px);
     }
 
     .hero {
@@ -187,10 +206,18 @@
       box-shadow: 0 10px 25px rgba(23, 63, 58, 0.18);
     }
 
+    .btn-primary:hover {
+      box-shadow: 0 14px 30px rgba(23, 63, 58, 0.22);
+    }
+
     .btn-secondary {
       background: white;
       border: 1px solid var(--border);
       color: var(--green);
+    }
+
+    .btn-secondary:hover {
+      box-shadow: 0 10px 25px rgba(23, 63, 58, 0.08);
     }
 
     .dashboard {
@@ -206,6 +233,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 15px;
       margin-bottom: 24px;
     }
 
@@ -223,6 +251,7 @@
       color: var(--green);
       font-size: 10px;
       font-weight: 800;
+      white-space: nowrap;
     }
 
     .dashboard-main {
@@ -532,6 +561,18 @@
       display: none;
     }
 
+    summary::after {
+      content: "+";
+      float: right;
+      color: var(--green-2);
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
     details p {
       color: var(--muted);
       font-size: 14px;
@@ -661,12 +702,34 @@
         min-height: 68px;
       }
 
+      .logo {
+        font-size: 19px;
+      }
+
+      .logo-mark {
+        width: 32px;
+        height: 32px;
+      }
+
+      nav {
+        gap: 8px;
+      }
+
+      .nav-cta {
+        padding: 10px 13px;
+        font-size: 13px;
+      }
+
       .hero {
         padding: 62px 0 55px;
       }
 
       h1 {
         letter-spacing: -2px;
+      }
+
+      .hero-text {
+        font-size: 16px;
       }
 
       section {
@@ -678,8 +741,31 @@
         border-radius: 18px;
       }
 
+      .dashboard-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .dashboard-main {
+        padding: 18px;
+      }
+
+      .dashboard-main h2 {
+        font-size: 25px;
+      }
+
+      .trust-inner {
+        gap: 14px 22px;
+        justify-content: flex-start;
+      }
+
       .newsletter-box {
         padding: 30px 24px;
+      }
+
+      .newsletter-box h2 {
+        font-size: 28px;
       }
 
       .footer-grid {
@@ -691,6 +777,20 @@
         flex-direction: column;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
   </style>
 </head>
 
@@ -698,18 +798,20 @@
 
 <header>
   <div class="container nav">
-    <a href="index.html" class="logo">
-      <span class="logo-mark">M</span>
+
+    <a href="index.html" class="logo" aria-label="MicroClair — Accueil">
+      <span class="logo-mark" aria-hidden="true">M</span>
       MicroClair
     </a>
 
-    <nav>
+    <nav aria-label="Navigation principale">
       <a href="a-propos.html">À propos</a>
       <a href="demarrer.html">Démarrer</a>
       <a href="ressources.html">Ressources</a>
       <a href="contact.html">Contact</a>
       <a href="demarrer.html" class="nav-cta">Commencer</a>
     </nav>
+
   </div>
 </header>
 
@@ -740,40 +842,53 @@
         </div>
       </div>
 
-      <div class="dashboard">
+      <div class="dashboard" aria-label="Aperçu de la checklist MicroClair">
+
         <div class="dashboard-top">
           <div class="dashboard-title">MICROCLAIR · 90 JOURS</div>
           <div class="status">EN BONNE VOIE</div>
         </div>
 
         <div class="dashboard-main">
+
           <small>Votre progression</small>
+
           <h2>8 étapes sur 12</h2>
 
-          <div class="progress">
-            <span></span>
+          <div
+            class="progress"
+            role="progressbar"
+            aria-label="Progression de la checklist"
+            aria-valuemin="0"
+            aria-valuemax="12"
+            aria-valuenow="8"
+            aria-valuetext="8 étapes sur 12"
+          >
+            <span aria-hidden="true"></span>
           </div>
 
           <div class="dashboard-list">
+
             <div class="dashboard-item">
-              <span class="check">✓</span>
+              <span class="check" aria-hidden="true">✓</span>
               Organiser ses documents
             </div>
 
             <div class="dashboard-item">
-              <span class="check">✓</span>
+              <span class="check" aria-hidden="true">✓</span>
               Préparer ses factures
             </div>
 
             <div class="dashboard-item">
-              <span class="check">✓</span>
+              <span class="check" aria-hidden="true">✓</span>
               Suivre ses recettes
             </div>
 
             <div class="dashboard-item">
-              <span class="check pending">✓</span>
+              <span class="check pending" aria-hidden="true">✓</span>
               Anticiper les prochaines échéances
             </div>
+
           </div>
         </div>
       </div>
@@ -808,7 +923,7 @@
       <div class="method-grid">
 
         <div class="method-card">
-          <div class="number">01</div>
+          <div class="number" aria-hidden="true">01</div>
           <h3>Comprendre</h3>
           <p>
             Des explications claires pour comprendre les démarches
@@ -817,7 +932,7 @@
         </div>
 
         <div class="method-card">
-          <div class="number">02</div>
+          <div class="number" aria-hidden="true">02</div>
           <h3>Agir</h3>
           <p>
             Des étapes concrètes, des checklists et des outils
@@ -826,7 +941,7 @@
         </div>
 
         <div class="method-card">
-          <div class="number">03</div>
+          <div class="number" aria-hidden="true">03</div>
           <h3>Vérifier</h3>
           <p>
             Des points de contrôle pour éviter les oublis
@@ -936,12 +1051,14 @@
 
   <section class="quote">
     <div class="container">
+
       <p>
         « Vous n’avez pas besoin de tout connaître.
         Vous avez surtout besoin de savoir quoi faire ensuite. »
       </p>
 
       <span>La philosophie MicroClair</span>
+
     </div>
   </section>
 
@@ -957,6 +1074,7 @@
 
         <details>
           <summary>MicroClair est-il réservé aux débutants ?</summary>
+
           <p>
             MicroClair est particulièrement pensé pour les personnes
             qui démarrent leur activité ou souhaitent remettre de
@@ -966,6 +1084,7 @@
 
         <details>
           <summary>Est-ce que MicroClair remplace un professionnel ?</summary>
+
           <p>
             Non. Les contenus sont pédagogiques et ne remplacent pas
             les conseils personnalisés d’un professionnel ou les
@@ -975,6 +1094,7 @@
 
         <details>
           <summary>Les outils sont-ils gratuits ?</summary>
+
           <p>
             Les ressources actuellement proposées sur MicroClair sont
             accessibles gratuitement.
@@ -983,6 +1103,7 @@
 
         <details>
           <summary>Où vérifier les informations importantes ?</summary>
+
           <p>
             Pour les sujets administratifs, fiscaux ou juridiques,
             vérifiez toujours les informations auprès des sources
@@ -998,6 +1119,7 @@
     <div class="container">
 
       <div class="newsletter-box">
+
         <div>
           <div class="section-label">Bientôt</div>
 
@@ -1013,6 +1135,7 @@
         <a href="ressources.html" class="btn btn-primary">
           Voir les ressources →
         </a>
+
       </div>
 
     </div>
@@ -1026,8 +1149,8 @@
     <div class="footer-grid">
 
       <div>
-        <a href="index.html" class="logo">
-          <span class="logo-mark">M</span>
+        <a href="index.html" class="logo" aria-label="MicroClair — Accueil">
+          <span class="logo-mark" aria-hidden="true">M</span>
           MicroClair
         </a>
 
@@ -1039,6 +1162,8 @@
 
       <div class="footer-column">
         <h3>MicroClair</h3>
+
+        <a href="index.html">Accueil</a>
         <a href="a-propos.html">À propos</a>
         <a href="demarrer.html">Démarrer</a>
         <a href="ressources.html">Ressources</a>
@@ -1046,7 +1171,11 @@
       </div>
 
       <div class="footer-column">
-        <h3>Informations</h3>
+        <h3>Outils & informations</h3>
+
+        <a href="checklist-90-jours.html">Checklist 90 jours</a>
+        <a href="suivi-recettes.html">Suivi des recettes</a>
+        <a href="verifier-facture.html">Vérifier une facture</a>
         <a href="mentions-legales.html">Mentions légales</a>
         <a href="confidentialite.html">Confidentialité</a>
         <a href="cookies.html">Cookies</a>
@@ -1064,4 +1193,3 @@
 
 </body>
 </html>
-```
