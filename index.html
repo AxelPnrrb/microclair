@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MicroClair — Organiser sa micro-entreprise simplement</title>
+  <meta name="description" content="Guides, checklists et modèles simples pour les freelances débutants en micro-entreprise.">
+
+  <style>
+    :root {
+      --bleu: #123c4a;
+      --turquoise: #2a9d8f;
+      --jaune: #f4c95d;
+      --fond: #fafaf7;
+      --texte: #202124;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--texte);
+      background: var(--fond);
+      line-height: 1.6;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav,
+    section,
+    footer {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    nav {
+      min-height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--bleu);
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 18px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      color: var(--bleu);
+      text-decoration: none;
+    }
+
+    .hero {
+      width: 100%;
+      background: var(--bleu);
+      color: white;
+      padding: 90px 4%;
+    }
+
+    .hero-content {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(2.3rem, 6vw, 4rem);
+      line-height: 1.1;
+      margin: 0 0 20px;
+    }
+
+    h2 {
+      color: var(--bleu);
+      font-size: 2rem;
+    }
+
+    .hero p {
+      max-width: 700px;
+      font-size: 1.2rem;
+    }
+
+    .bouton {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 13px 18px;
+      border-radius: 8px;
+      background: var(--jaune);
+      color: var(--texte);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 65px 0;
+    }
+
+    .cartes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .carte {
+      padding: 24px;
+      background: white;
+      border: 1px solid #dce4e3;
+      border-radius: 12px;
+    }
+
+    .carte h3 {
+      color: var(--bleu);
+    }
+
+    .avertissement {
+      margin-top: 25px;
+      padding: 18px;
+      border-left: 5px solid var(--jaune);
+      background: #fff8df;
+    }
+
+    footer {
+      width: 100%;
+      padding: 30px 4%;
+      background: var(--bleu);
+      color: white;
+    }
+
+    footer a {
+      color: white;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 0;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+      }
+
+      .cartes {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 65px 4%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav aria-label="Navigation principale">
+      <a class="logo" href="index.html">MicroClair</a>
+
+      <ul>
+        <li><a href="#methode">Méthode</a></li>
+        <li><a href="#ressources">Ressources</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p>Ressources pratiques pour freelances débutants</p>
+
+        <h1>Votre micro-entreprise, plus simple à organiser</h1>
+
+        <p>
+          Des guides courts, des checklists et des modèles pour savoir quoi faire,
+          quand le faire et comment suivre votre activité.
+        </p>
+
+        <a class="bouton" href="#ressources">
+          Découvrir les ressources
+        </a>
+      </div>
+    </section>
+
+    <section id="methode">
+      <h2>Une méthode en trois étapes</h2>
+
+      <div class="cartes">
+        <article class="carte">
+          <h3>1. Comprendre</h3>
+          <p>
+            Des explications simples pour mieux comprendre les démarches et
+            l’organisation quotidienne.
+          </p>
+        </article>
+
+        <article class="carte">
+          <h3>2. Agir</h3>
+          <p>
+            Des checklists et des modèles faciles à adapter à votre activité.
+          </p>
+        </article>
+
+        <article class="carte">
+          <h3>3. Vérifier</h3>
+          <p>
+            Des liens vers les sources officielles à consulter avant toute décision.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="ressources">
+      <h2>Commencez gratuitement</h2>
+
+      <div class="cartes">
+        <article class="carte">
+          <h3>Mes 90 premiers jours</h3>
+          <p>
+            Une checklist pour structurer votre lancement et éviter les oublis.
+          </p>
+          <a href="#">Bientôt disponible</a>
+        </article>
+
+        <article class="carte">
+          <h3>Suivre ses recettes</h3>
+          <p>
+            Un tableau simple à reproduire dans Google Sheets.
+          </p>
+          <a href="#">Bientôt disponible</a>
+        </article>
+
+        <article class="carte">
+          <h3>Préparer une facture</h3>
+          <p>
+            Les éléments à vérifier avant d’envoyer une facture à un client.
+          </p>
+          <a href="#">Bientôt disponible</a>
+        </article>
+      </div>
+
+      <div class="avertissement">
+        Les contenus de MicroClair sont pédagogiques. Ils ne remplacent pas
+        les informations officielles ni les conseils d’un professionnel.
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2>Questions fréquentes</h2>
+
+      <details class="carte">
+        <summary><strong>MicroClair donne-t-il des conseils juridiques ?</strong></summary>
+        <p>
+          Non. MicroClair propose des ressources générales d’organisation.
+          Les obligations doivent être vérifiées selon votre situation.
+        </p>
+      </details>
+
+      <br>
+
+      <details class="carte">
+        <summary><strong>Le site est-il gratuit ?</strong></summary>
+        <p>
+          Les premiers guides et modèles seront gratuits. Des ressources plus
+          complètes pourront être proposées ultérieurement.
+        </p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 MicroClair — Ressources pratiques pour indépendants.</p>
+    <p>
+      Les informations publiées sont générales et doivent être vérifiées
+      auprès des sources officielles.
+    </p>
+  </footer>
+</body>
+</html>
