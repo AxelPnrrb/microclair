@@ -56,6 +56,7 @@
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     a {
@@ -63,9 +64,33 @@
       text-decoration: none;
     }
 
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
     :focus-visible {
       outline: 3px solid #7BB9AF;
-      outline-offset: 3px;
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 1000;
+      padding: 10px 14px;
+      background: var(--green);
+      color: white;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      transform: translateY(-150%);
+      transition: transform 0.2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
     }
 
     .container {
@@ -74,7 +99,7 @@
     }
 
     /* =========================
-       LABEL
+       LABELS
        ========================= */
 
     .eyebrow {
@@ -82,9 +107,10 @@
       align-items: center;
       gap: 9px;
       color: var(--green-2);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 900;
       letter-spacing: 0.12em;
+      line-height: 1.2;
       text-transform: uppercase;
     }
 
@@ -92,6 +118,7 @@
       content: "";
       width: 28px;
       height: 2px;
+      flex-shrink: 0;
       background: currentColor;
     }
 
@@ -121,11 +148,11 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
+      flex-shrink: 0;
       color: var(--green);
       font-size: 21px;
       font-weight: 800;
       letter-spacing: -0.5px;
-      flex-shrink: 0;
     }
 
     .logo-mark {
@@ -151,11 +178,19 @@
       color: var(--muted);
       font-size: 14px;
       font-weight: 650;
-      transition: color 0.2s ease, transform 0.2s ease;
+      transition:
+        color 0.2s ease,
+        transform 0.2s ease,
+        background 0.2s ease;
     }
 
     nav a:hover {
       color: var(--green);
+    }
+
+    nav a[aria-current="page"] {
+      color: var(--green);
+      font-weight: 800;
     }
 
     .nav-button {
@@ -168,6 +203,7 @@
     .nav-button:hover {
       color: white !important;
       transform: translateY(-1px);
+      background: var(--green-2);
     }
 
     /* =========================
@@ -201,6 +237,7 @@
       margin-top: 25px;
       color: var(--muted);
       font-size: 1.12rem;
+      line-height: 1.7;
     }
 
     .hero-actions {
@@ -234,6 +271,7 @@
 
     .button-primary:hover {
       transform: translateY(-2px);
+      background: var(--green-2);
       box-shadow: 0 15px 32px rgba(23, 63, 58, 0.22);
     }
 
@@ -259,6 +297,11 @@
       font-weight: 700;
     }
 
+    .hero-trust span {
+      display: inline-flex;
+      align-items: center;
+    }
+
     .hero-trust span::before {
       content: "✓";
       margin-right: 6px;
@@ -278,6 +321,17 @@
       border-radius: 24px;
       box-shadow: var(--shadow-large);
       overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      top: -150px;
+      right: -100px;
+      background: rgba(220, 237, 233, 0.08);
+      border-radius: 50%;
     }
 
     .hero-card::after {
@@ -301,19 +355,23 @@
       color: #B8D1CD;
       font-size: 0.72rem;
       font-weight: 850;
+      letter-spacing: 0.08em;
     }
 
     .free-badge {
       padding: 6px 10px;
       background: rgba(255, 255, 255, 0.10);
       color: #DCEDE9;
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 999px;
       font-size: 0.68rem;
+      letter-spacing: 0.05em;
     }
 
     .hero-card h2 {
       position: relative;
       z-index: 2;
+      max-width: 430px;
       margin-top: 28px;
       font-size: 2rem;
       line-height: 1.08;
@@ -323,6 +381,7 @@
     .hero-card p {
       position: relative;
       z-index: 2;
+      max-width: 430px;
       margin-top: 11px;
       color: #D5E4E1;
       font-size: 0.9rem;
@@ -342,6 +401,7 @@
       gap: 11px;
       padding: 12px;
       background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 12px;
       font-size: 0.8rem;
     }
@@ -383,6 +443,7 @@
       margin-top: 15px;
       color: var(--muted);
       font-size: 1.04rem;
+      line-height: 1.7;
     }
 
     .resource-grid {
@@ -395,6 +456,7 @@
     .resource {
       display: flex;
       flex-direction: column;
+      min-height: 100%;
       padding: 30px;
       background: white;
       border: 1px solid var(--border);
@@ -461,6 +523,7 @@
       margin-top: 10px;
       color: var(--muted);
       font-size: 0.9rem;
+      line-height: 1.65;
     }
 
     .resource-list {
@@ -472,15 +535,25 @@
       font-size: 0.79rem;
     }
 
+    .resource-list li {
+      display: flex;
+      align-items: flex-start;
+    }
+
     .resource-list li::before {
       content: "✓";
+      flex-shrink: 0;
       margin-right: 7px;
       color: var(--green-2);
       font-weight: 900;
     }
 
     .resource-link {
-      margin-top: 25px;
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin-top: auto;
+      padding-top: 25px;
       color: var(--green);
       font-size: 0.86rem;
       font-weight: 900;
@@ -488,6 +561,8 @@
 
     .resource-link:hover {
       color: var(--green-2);
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
     /* =========================
@@ -509,6 +584,7 @@
     }
 
     .how h2 {
+      max-width: 450px;
       margin-top: 12px;
       font-size: clamp(2.2rem, 4vw, 3.4rem);
       line-height: 1.05;
@@ -516,8 +592,10 @@
     }
 
     .how-intro {
+      max-width: 430px;
       margin-top: 15px;
       color: var(--muted);
+      line-height: 1.7;
     }
 
     .steps {
@@ -533,6 +611,7 @@
       border: 1px solid var(--border);
       border-radius: 16px;
       background: white;
+      box-shadow: var(--shadow-small);
     }
 
     .step-number {
@@ -549,12 +628,14 @@
 
     .step h3 {
       font-size: 1rem;
+      line-height: 1.3;
     }
 
     .step p {
       margin-top: 4px;
       color: var(--muted);
       font-size: 0.82rem;
+      line-height: 1.6;
     }
 
     /* =========================
@@ -582,6 +663,7 @@
     }
 
     .trust-box h2 {
+      max-width: 520px;
       margin-top: 11px;
       font-size: clamp(2rem, 4vw, 3rem);
       line-height: 1.05;
@@ -589,9 +671,11 @@
     }
 
     .trust-box p {
+      max-width: 500px;
       margin-top: 13px;
       color: #D5E4E1;
       font-size: 0.9rem;
+      line-height: 1.7;
     }
 
     .trust-list {
@@ -606,13 +690,16 @@
       align-items: flex-start;
       padding: 13px 15px;
       background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 12px;
       color: #E2EAEB;
       font-size: 0.82rem;
+      line-height: 1.55;
     }
 
     .trust-list li::before {
       content: "✓";
+      flex-shrink: 0;
       color: #B8DCD5;
       font-weight: 900;
     }
@@ -635,7 +722,8 @@
     }
 
     .cta h2 {
-      margin-top: 11px;
+      max-width: 700px;
+      margin: 11px auto 0;
       font-size: clamp(2rem, 4vw, 3.1rem);
       line-height: 1.05;
       letter-spacing: -0.055em;
@@ -645,6 +733,7 @@
       max-width: 610px;
       margin: 13px auto 0;
       color: var(--muted);
+      line-height: 1.7;
     }
 
     .cta .button {
@@ -669,8 +758,8 @@
     }
 
     footer .logo {
-      color: white;
       margin-bottom: 15px;
+      color: white;
     }
 
     footer .logo-mark {
@@ -682,19 +771,20 @@
       max-width: 360px;
       color: #AFC6C1;
       font-size: 13px;
+      line-height: 1.65;
     }
 
     .footer-column h3 {
+      margin-bottom: 15px;
       color: white;
       font-size: 13px;
-      margin-bottom: 15px;
     }
 
     .footer-column a {
       display: block;
+      margin-bottom: 9px;
       color: #AFC6C1;
       font-size: 13px;
-      margin-bottom: 9px;
     }
 
     .footer-column a:hover {
@@ -702,14 +792,15 @@
     }
 
     .copyright {
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-      padding-top: 22px;
-      color: #8EA9A4;
-      font-size: 11px;
       display: flex;
       justify-content: space-between;
-      gap: 20px;
       flex-wrap: wrap;
+      gap: 20px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      color: #8EA9A4;
+      font-size: 11px;
+      line-height: 1.5;
     }
 
     /* =========================
@@ -787,6 +878,10 @@
         font-size: 2.9rem;
       }
 
+      .hero-description {
+        font-size: 1rem;
+      }
+
       .hero-actions {
         flex-direction: column;
       }
@@ -798,6 +893,10 @@
       .hero-card {
         padding: 24px;
         border-radius: 20px;
+      }
+
+      .hero-card h2 {
+        font-size: 1.8rem;
       }
 
       .resource {
@@ -845,618 +944,704 @@
 
 <body>
 
-<header>
-  <nav class="container nav" aria-label="Navigation principale">
+  <a href="#contenu" class="skip-link">
+    Aller au contenu
+  </a>
 
-    <a
-      href="index.html"
-      class="logo"
-      aria-label="MicroClair — Accueil"
-    >
-      <span class="logo-mark" aria-hidden="true">M</span>
-      MicroClair
-    </a>
+  <!-- =========================
+       HEADER
+       ========================= -->
 
-    <ul>
-      <li>
-        <a href="a-propos.html">À propos</a>
-      </li>
+  <header>
+    <nav class="container nav" aria-label="Navigation principale">
 
-      <li>
-        <a href="demarrer.html">Démarrer</a>
-      </li>
-
-      <li>
-        <a href="ressources.html" aria-current="page">Ressources</a>
-      </li>
-
-      <li>
-        <a href="contact.html">Contact</a>
-      </li>
-
-      <li>
-        <a
-          href="checklist-90-jours.html"
-          class="nav-button"
-        >
-          Commencer
-        </a>
-      </li>
-    </ul>
-
-  </nav>
-</header>
-
-<main>
-
-  <!-- HERO -->
-
-  <section class="hero">
-    <div class="container hero-grid">
-
-      <div>
-
-        <div class="eyebrow">
-          La bibliothèque MicroClair
-        </div>
-
-        <h1>
-          Les bons outils,
-          au bon moment.
-        </h1>
-
-        <p class="hero-description">
-          Des ressources simples pour vous aider
-          à organiser votre micro-entreprise,
-          comprendre l'essentiel et avancer
-          sans vous perdre dans l'administratif.
-        </p>
-
-        <div class="hero-actions">
-
-          <a
-            href="#ressources"
-            class="button button-primary"
-          >
-            Voir les ressources →
-          </a>
-
-          <a
-            href="index.html"
-            class="button button-secondary"
-          >
-            ← Retour à l'accueil
-          </a>
-
-        </div>
-
-        <div class="hero-trust" aria-label="Points forts">
-          <span>Gratuit pour commencer</span>
-          <span>Sans jargon</span>
-          <span>À votre rythme</span>
-        </div>
-
-      </div>
-
-      <div
-        class="hero-card"
-        aria-label="Présentation de la checklist des 90 premiers jours"
+      <a
+        href="index.html"
+        class="logo"
+        aria-label="MicroClair — Accueil"
       >
+        <span class="logo-mark" aria-hidden="true">M</span>
+        MicroClair
+      </a>
 
-        <div class="hero-card-top">
-          <span>MICROCLAIR</span>
+      <ul>
+        <li>
+          <a href="a-propos.html">
+            À propos
+          </a>
+        </li>
 
-          <span class="free-badge">
-            GRATUIT
-          </span>
-        </div>
+        <li>
+          <a href="demarrer.html">
+            Démarrer
+          </a>
+        </li>
 
-        <h2>
-          Commencez par
-          les 90 premiers jours.
-        </h2>
-
-        <p>
-          Une checklist pour transformer
-          les premières questions en actions.
-        </p>
-
-        <div class="mini-list">
-
-          <div class="mini-item">
-            <span class="mini-check" aria-hidden="true">✓</span>
-            Organiser vos documents
-          </div>
-
-          <div class="mini-item">
-            <span class="mini-check" aria-hidden="true">✓</span>
-            Suivre vos factures
-          </div>
-
-          <div class="mini-item">
-            <span class="mini-check" aria-hidden="true">✓</span>
-            Identifier vos prochaines échéances
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- RESSOURCES -->
-
-  <section
-    id="ressources"
-    class="resources"
-  >
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <div class="eyebrow">
-          Ressources gratuites
-        </div>
-
-        <h2>
-          Commencez simplement.
-        </h2>
-
-        <p>
-          Chaque ressource répond à un besoin précis.
-          Choisissez celle qui correspond à votre situation
-          et avancez étape par étape.
-        </p>
-
-      </div>
-
-      <div class="resource-grid">
-
-        <article class="resource resource-featured">
-
-          <div class="featured-label">
-            POUR COMMENCER
-          </div>
-
-          <div
-            class="resource-icon"
-            aria-hidden="true"
+        <li>
+          <a
+            href="ressources.html"
+            aria-current="page"
           >
-            ✓
-          </div>
+            Ressources
+          </a>
+        </li>
 
-          <div class="resource-tag">
-            01 · CHECKLIST
-          </div>
+        <li>
+          <a href="contact.html">
+            Contact
+          </a>
+        </li>
 
-          <h3>
-            Mes 90 premiers jours
-          </h3>
-
-          <p>
-            Le parcours idéal si vous venez
-            de démarrer et que vous ne savez
-            pas par quoi commencer.
-          </p>
-
-          <ul class="resource-list">
-            <li>12 actions essentielles</li>
-            <li>Organisé en 3 étapes</li>
-            <li>Progression interactive</li>
-            <li>Gratuit et sans inscription</li>
-          </ul>
-
+        <li>
           <a
             href="checklist-90-jours.html"
-            class="resource-link"
+            class="nav-button"
           >
-            Commencer la checklist →
+            Commencer
           </a>
+        </li>
+      </ul>
 
-        </article>
-
-
-        <article class="resource">
-
-          <div
-            class="resource-icon"
-            aria-hidden="true"
-          >
-            €
-          </div>
-
-          <div class="resource-tag">
-            02 · ORGANISATION
-          </div>
-
-          <h3>
-            Suivre ses recettes
-          </h3>
-
-          <p>
-            Un outil simple pour garder
-            une vision claire de vos factures
-            et de vos encaissements.
-          </p>
-
-          <ul class="resource-list">
-            <li>Structure de suivi simple</li>
-            <li>Factures et paiements</li>
-            <li>Vision du total encaissé</li>
-            <li>Adapté aux débutants</li>
-          </ul>
-
-          <a
-            href="suivi-recettes.html"
-            class="resource-link"
-          >
-            Ouvrir l'outil →
-          </a>
-
-        </article>
+    </nav>
+  </header>
 
 
-        <article class="resource">
+  <main id="contenu">
 
-          <div
-            class="resource-icon"
-            aria-hidden="true"
-          >
-            #
-          </div>
+    <!-- =========================
+         HERO
+         ========================= -->
 
-          <div class="resource-tag">
-            03 · FACTURATION
-          </div>
+    <section class="hero">
 
-          <h3>
-            Vérifier une facture
-          </h3>
-
-          <p>
-            Une vérification rapide avant
-            d'envoyer une facture à un client.
-          </p>
-
-          <ul class="resource-list">
-            <li>Informations essentielles</li>
-            <li>Numérotation</li>
-            <li>Prestation et montant</li>
-            <li>Vérifications avant envoi</li>
-          </ul>
-
-          <a
-            href="verifier-facture.html"
-            class="resource-link"
-          >
-            Vérifier une facture →
-          </a>
-
-        </article>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- APPROCHE -->
-
-  <section class="how">
-
-    <div class="container how-grid">
-
-      <div>
-
-        <div class="eyebrow">
-          Notre approche
-        </div>
-
-        <h2>
-          Pas besoin
-          de tout apprendre.
-        </h2>
-
-        <p class="how-intro">
-          MicroClair est conçu pour vous donner
-          l'information dont vous avez besoin
-          au moment où vous en avez besoin.
-        </p>
-
-      </div>
-
-      <div class="steps">
-
-        <article class="step">
-
-          <div
-            class="step-number"
-            aria-hidden="true"
-          >
-            01
-          </div>
-
-          <div>
-            <h3>
-              Choisissez votre sujet
-            </h3>
-
-            <p>
-              Commencez par le problème
-              que vous cherchez à résoudre.
-            </p>
-          </div>
-
-        </article>
-
-
-        <article class="step">
-
-          <div
-            class="step-number"
-            aria-hidden="true"
-          >
-            02
-          </div>
-
-          <div>
-            <h3>
-              Suivez les étapes
-            </h3>
-
-            <p>
-              Utilisez la checklist, le guide
-              ou l'outil correspondant.
-            </p>
-          </div>
-
-        </article>
-
-
-        <article class="step">
-
-          <div
-            class="step-number"
-            aria-hidden="true"
-          >
-            03
-          </div>
-
-          <div>
-            <h3>
-              Vérifiez lorsque c'est nécessaire
-            </h3>
-
-            <p>
-              Pour les règles importantes,
-              revenez toujours aux sources officielles
-              adaptées à votre situation.
-            </p>
-          </div>
-
-        </article>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CONFIANCE -->
-
-  <section class="trust">
-
-    <div class="container">
-
-      <div class="trust-box">
+      <div class="container hero-grid">
 
         <div>
 
           <div class="eyebrow">
-            Confiance & transparence
+            La bibliothèque MicroClair
+          </div>
+
+          <h1>
+            Les bons outils,
+            au bon moment.
+          </h1>
+
+          <p class="hero-description">
+            Des ressources simples pour vous aider
+            à organiser votre micro-entreprise,
+            comprendre l'essentiel et avancer
+            sans vous perdre dans l'administratif.
+          </p>
+
+          <div class="hero-actions">
+
+            <a
+              href="#ressources"
+              class="button button-primary"
+            >
+              Voir les ressources →
+            </a>
+
+            <a
+              href="index.html"
+              class="button button-secondary"
+            >
+              ← Retour à l'accueil
+            </a>
+
+          </div>
+
+          <div
+            class="hero-trust"
+            aria-label="Points forts de MicroClair"
+          >
+            <span>Gratuit pour commencer</span>
+            <span>Sans jargon</span>
+            <span>À votre rythme</span>
+          </div>
+
+        </div>
+
+
+        <div
+          class="hero-card"
+          aria-label="Aperçu de la checklist des 90 premiers jours"
+        >
+
+          <div class="hero-card-top">
+
+            <span>
+              MICROCLAIR
+            </span>
+
+            <span class="free-badge">
+              GRATUIT
+            </span>
+
           </div>
 
           <h2>
-            Simple ne veut pas dire
-            approximatif.
+            Commencez par
+            les 90 premiers jours.
           </h2>
 
           <p>
-            Notre objectif est de rendre
-            l'organisation plus accessible,
-            tout en restant honnêtes sur
-            les limites de chaque ressource.
+            Une checklist simple pour transformer
+            les premières questions en actions
+            concrètes.
+          </p>
+
+          <div class="mini-list">
+
+            <div class="mini-item">
+              <span
+                class="mini-check"
+                aria-hidden="true"
+              >
+                ✓
+              </span>
+              Organiser vos documents
+            </div>
+
+            <div class="mini-item">
+              <span
+                class="mini-check"
+                aria-hidden="true"
+              >
+                ✓
+              </span>
+              Suivre vos factures
+            </div>
+
+            <div class="mini-item">
+              <span
+                class="mini-check"
+                aria-hidden="true"
+              >
+                ✓
+              </span>
+              Identifier vos prochaines échéances
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         RESSOURCES
+         ========================= -->
+
+    <section
+      id="ressources"
+      class="resources"
+      aria-labelledby="ressources-title"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            Ressources gratuites
+          </div>
+
+          <h2 id="ressources-title">
+            Commencez simplement.
+          </h2>
+
+          <p>
+            Chaque ressource répond à un besoin précis.
+            Choisissez celle qui correspond à votre situation
+            et avancez étape par étape.
           </p>
 
         </div>
 
-        <ul class="trust-list">
 
-          <li>
-            Les ressources sont pédagogiques
-            et générales.
-          </li>
+        <div class="resource-grid">
 
-          <li>
-            Les règles peuvent évoluer :
-            vérifiez les informations importantes.
-          </li>
+          <!-- CHECKLIST -->
 
-          <li>
-            Les outils sont à adapter
-            à votre situation.
-          </li>
+          <article class="resource resource-featured">
 
-          <li>
-            Lorsque nécessaire, demandez conseil
-            à un professionnel.
-          </li>
+            <div class="featured-label">
+              POUR COMMENCER
+            </div>
 
-        </ul>
+            <div
+              class="resource-icon"
+              aria-hidden="true"
+            >
+              ✓
+            </div>
+
+            <div class="resource-tag">
+              01 · CHECKLIST
+            </div>
+
+            <h3>
+              Mes 90 premiers jours
+            </h3>
+
+            <p>
+              Le parcours idéal si vous venez
+              de démarrer et que vous ne savez
+              pas par quoi commencer.
+            </p>
+
+            <ul class="resource-list">
+              <li>12 actions essentielles</li>
+              <li>Organisé en 3 étapes</li>
+              <li>Progression interactive</li>
+              <li>Gratuit et sans inscription</li>
+            </ul>
+
+            <a
+              href="checklist-90-jours.html"
+              class="resource-link"
+            >
+              Commencer la checklist →
+            </a>
+
+          </article>
+
+
+          <!-- SUIVI RECETTES -->
+
+          <article class="resource">
+
+            <div
+              class="resource-icon"
+              aria-hidden="true"
+            >
+              €
+            </div>
+
+            <div class="resource-tag">
+              02 · ORGANISATION
+            </div>
+
+            <h3>
+              Suivre ses recettes
+            </h3>
+
+            <p>
+              Un outil simple pour garder
+              une vision claire de vos factures
+              et de vos encaissements.
+            </p>
+
+            <ul class="resource-list">
+              <li>Structure de suivi simple</li>
+              <li>Factures et paiements</li>
+              <li>Vision du total encaissé</li>
+              <li>Adapté aux débutants</li>
+            </ul>
+
+            <a
+              href="suivi-recettes.html"
+              class="resource-link"
+            >
+              Ouvrir l'outil →
+            </a>
+
+          </article>
+
+
+          <!-- VERIFICATION FACTURE -->
+
+          <article class="resource">
+
+            <div
+              class="resource-icon"
+              aria-hidden="true"
+            >
+              #
+            </div>
+
+            <div class="resource-tag">
+              03 · FACTURATION
+            </div>
+
+            <h3>
+              Vérifier une facture
+            </h3>
+
+            <p>
+              Une vérification rapide avant
+              d'envoyer une facture à un client.
+            </p>
+
+            <ul class="resource-list">
+              <li>Informations essentielles</li>
+              <li>Numérotation</li>
+              <li>Prestation et montant</li>
+              <li>Vérifications avant envoi</li>
+            </ul>
+
+            <a
+              href="verifier-facture.html"
+              class="resource-link"
+            >
+              Vérifier une facture →
+            </a>
+
+          </article>
+
+        </div>
 
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- CTA -->
+    <!-- =========================
+         APPROCHE
+         ========================= -->
 
-  <section class="cta-section">
+    <section
+      class="how"
+      aria-labelledby="approche-title"
+    >
+
+      <div class="container how-grid">
+
+        <div>
+
+          <div class="eyebrow">
+            Notre approche
+          </div>
+
+          <h2 id="approche-title">
+            Pas besoin
+            de tout apprendre.
+          </h2>
+
+          <p class="how-intro">
+            MicroClair est conçu pour vous donner
+            l'information dont vous avez besoin,
+            au moment où vous en avez besoin.
+          </p>
+
+        </div>
+
+
+        <div class="steps">
+
+          <article class="step">
+
+            <div
+              class="step-number"
+              aria-hidden="true"
+            >
+              01
+            </div>
+
+            <div>
+
+              <h3>
+                Choisissez votre sujet
+              </h3>
+
+              <p>
+                Commencez par le problème
+                que vous cherchez à résoudre.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="step">
+
+            <div
+              class="step-number"
+              aria-hidden="true"
+            >
+              02
+            </div>
+
+            <div>
+
+              <h3>
+                Suivez les étapes
+              </h3>
+
+              <p>
+                Utilisez la checklist, le guide
+                ou l'outil correspondant.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="step">
+
+            <div
+              class="step-number"
+              aria-hidden="true"
+            >
+              03
+            </div>
+
+            <div>
+
+              <h3>
+                Vérifiez lorsque c'est nécessaire
+              </h3>
+
+              <p>
+                Pour les règles importantes,
+                revenez toujours aux sources officielles
+                adaptées à votre situation.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONFIANCE
+         ========================= -->
+
+    <section
+      class="trust"
+      aria-labelledby="confiance-title"
+    >
+
+      <div class="container">
+
+        <div class="trust-box">
+
+          <div>
+
+            <div class="eyebrow">
+              Confiance & transparence
+            </div>
+
+            <h2 id="confiance-title">
+              Simple ne veut pas dire
+              approximatif.
+            </h2>
+
+            <p>
+              Notre objectif est de rendre
+              l'organisation plus accessible,
+              tout en restant honnêtes sur
+              les limites de chaque ressource.
+            </p>
+
+          </div>
+
+
+          <ul class="trust-list">
+
+            <li>
+              Les ressources sont pédagogiques
+              et générales.
+            </li>
+
+            <li>
+              Les règles peuvent évoluer :
+              vérifiez les informations importantes.
+            </li>
+
+            <li>
+              Les outils sont à adapter
+              à votre situation.
+            </li>
+
+            <li>
+              Lorsque nécessaire, demandez conseil
+              à un professionnel.
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+         ========================= -->
+
+    <section
+      class="cta-section"
+      aria-labelledby="cta-title"
+    >
+
+      <div class="container">
+
+        <div class="cta">
+
+          <div class="eyebrow">
+            Pour commencer
+          </div>
+
+          <h2 id="cta-title">
+            Faites votre première étape
+            aujourd'hui.
+          </h2>
+
+          <p>
+            Pas besoin de tout comprendre.
+            Commencez simplement par la checklist
+            des 90 premiers jours.
+          </p>
+
+          <a
+            href="checklist-90-jours.html"
+            class="button button-primary"
+          >
+            Commencer gratuitement →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer>
 
     <div class="container">
 
-      <div class="cta">
+      <div class="footer-grid">
 
-        <div class="eyebrow">
-          Pour commencer
+        <div>
+
+          <a
+            href="index.html"
+            class="logo"
+            aria-label="MicroClair — Accueil"
+          >
+            <span
+              class="logo-mark"
+              aria-hidden="true"
+            >
+              M
+            </span>
+            MicroClair
+          </a>
+
+          <p class="footer-description">
+            Des outils simples pour aider les
+            micro-entrepreneurs et freelances
+            à mieux organiser leur activité.
+          </p>
+
         </div>
 
-        <h2>
-          Faites votre première étape
-          aujourd'hui.
-        </h2>
 
-        <p>
-          Pas besoin de tout comprendre.
-          Commencez simplement par la checklist
-          des 90 premiers jours.
-        </p>
+        <div class="footer-column">
 
-        <a
-          href="checklist-90-jours.html"
-          class="button button-primary"
-        >
-          Commencer gratuitement →
-        </a>
+          <h3>
+            MicroClair
+          </h3>
 
-      </div>
+          <a href="index.html">
+            Accueil
+          </a>
 
-    </div>
+          <a href="a-propos.html">
+            À propos
+          </a>
 
-  </section>
+          <a href="demarrer.html">
+            Démarrer
+          </a>
 
-</main>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-  <div class="container">
-
-    <div class="footer-grid">
-
-      <div>
-
-        <a
-          href="index.html"
-          class="logo"
-          aria-label="MicroClair — Accueil"
-        >
-          <span
-            class="logo-mark"
-            aria-hidden="true"
+          <a
+            href="ressources.html"
+            aria-current="page"
           >
-            M
-          </span>
-          MicroClair
-        </a>
+            Ressources
+          </a>
 
-        <p class="footer-description">
-          Des outils simples pour aider les
-          micro-entrepreneurs et freelances
-          à mieux organiser leur activité.
-        </p>
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>
+            Outils & informations
+          </h3>
+
+          <a href="checklist-90-jours.html">
+            Checklist 90 jours
+          </a>
+
+          <a href="suivi-recettes.html">
+            Suivi des recettes
+          </a>
+
+          <a href="verifier-facture.html">
+            Vérifier une facture
+          </a>
+
+          <a href="mentions-legales.html">
+            Mentions légales
+          </a>
+
+          <a href="confidentialite.html">
+            Confidentialité
+          </a>
+
+          <a href="cookies.html">
+            Cookies
+          </a>
+
+        </div>
 
       </div>
 
 
-      <div class="footer-column">
+      <div class="copyright">
 
-        <h3>
-          MicroClair
-        </h3>
+        <span>
+          © 2026 MicroClair — Axel Penarrubia
+        </span>
 
-        <a href="index.html">
-          Accueil
-        </a>
-
-        <a href="a-propos.html">
-          À propos
-        </a>
-
-        <a href="demarrer.html">
-          Démarrer
-        </a>
-
-        <a href="ressources.html" aria-current="page">
-          Ressources
-        </a>
-
-        <a href="contact.html">
-          Contact
-        </a>
-
-      </div>
-
-
-      <div class="footer-column">
-
-        <h3>
-          Outils & informations
-        </h3>
-
-        <a href="checklist-90-jours.html">
-          Checklist 90 jours
-        </a>
-
-        <a href="suivi-recettes.html">
-          Suivi des recettes
-        </a>
-
-        <a href="verifier-facture.html">
-          Vérifier une facture
-        </a>
-
-        <a href="mentions-legales.html">
-          Mentions légales
-        </a>
-
-        <a href="confidentialite.html">
-          Confidentialité
-        </a>
-
-        <a href="cookies.html">
-          Cookies
-        </a>
+        <span>
+          Simplement. Clairement. Utilement.
+        </span>
 
       </div>
 
     </div>
 
-
-    <div class="copyright">
-
-      <span>
-        © 2026 MicroClair — Axel Penarrubia
-      </span>
-
-      <span>
-        Simplement. Clairement. Utilement.
-      </span>
-
-    </div>
-
-  </div>
-
-</footer>
+  </footer>
 
 </body>
 </html>
