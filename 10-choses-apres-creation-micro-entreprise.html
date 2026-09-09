@@ -21,7 +21,7 @@ content="Vous venez de créer votre micro-entreprise ? Découvrez 10 actions sim
 
 <meta
 name="theme-color"
-content="#102F38"
+content="#173F3A"
 >
 
 <style>
@@ -32,23 +32,21 @@ content="#102F38"
 
 :root{
 
---navy:#102F38;
---navy-light:#183F49;
+--green:#173F3A;
+--green-2:#245C55;
+--mint:#DCEDE9;
+--soft:#F3F8F7;
+--cream:#FAF9F5;
 
---teal:#2A9D8F;
---teal-light:#E8F5F2;
+--text:#17302D;
+--muted:#667875;
+
+--white:#FFFFFF;
+--border:#DCE6E3;
 
 --yellow:#F4C95D;
 
---cream:#F8FAF8;
---white:#FFFFFF;
-
---text:#183238;
---muted:#65777C;
-
---border:#E1E9E7;
-
---shadow:0 15px 50px rgba(16,47,56,.08);
+--shadow:0 18px 45px rgba(23,63,58,.10);
 
 --radius:18px;
 
@@ -80,6 +78,7 @@ Inter,
 -apple-system,
 BlinkMacSystemFont,
 "Segoe UI",
+Roboto,
 Arial,
 sans-serif;
 
@@ -97,6 +96,17 @@ line-height:1.7;
 a{
 
 color:inherit;
+
+}
+
+
+a:focus-visible{
+
+outline:3px solid var(--yellow);
+
+outline-offset:4px;
+
+border-radius:6px;
 
 }
 
@@ -122,9 +132,11 @@ top:0;
 
 z-index:100;
 
-background:rgba(248,250,248,.95);
+background:rgba(250,249,245,.95);
 
 backdrop-filter:blur(15px);
+
+-webkit-backdrop-filter:blur(15px);
 
 border-bottom:1px solid var(--border);
 
@@ -133,7 +145,7 @@ border-bottom:1px solid var(--border);
 
 nav{
 
-height:74px;
+min-height:74px;
 
 display:flex;
 
@@ -156,12 +168,14 @@ letter-spacing:-.05em;
 
 text-decoration:none;
 
+color:var(--green);
+
 }
 
 
 .logo span{
 
-color:var(--teal);
+color:var(--green-2);
 
 }
 
@@ -174,14 +188,14 @@ font-weight:800;
 
 text-decoration:none;
 
-color:var(--navy);
+color:var(--green);
 
 }
 
 
 .nav-link:hover{
 
-color:var(--teal);
+color:var(--green-2);
 
 }
 
@@ -192,7 +206,7 @@ color:var(--teal);
 
 .article-hero{
 
-background:white;
+background:var(--white);
 
 padding:85px 0 70px;
 
@@ -218,7 +232,7 @@ align-items:center;
 
 gap:9px;
 
-color:var(--teal);
+color:var(--green-2);
 
 font-size:.75rem;
 
@@ -231,7 +245,7 @@ text-transform:uppercase;
 }
 
 
-.eyebrow:before{
+.eyebrow::before{
 
 content:"";
 
@@ -239,7 +253,7 @@ width:28px;
 
 height:2px;
 
-background:var(--teal);
+background:var(--green-2);
 
 }
 
@@ -253,6 +267,8 @@ font-size:clamp(2.7rem,6vw,5rem);
 line-height:1.01;
 
 letter-spacing:-.07em;
+
+color:var(--green);
 
 }
 
@@ -287,7 +303,7 @@ margin-top:23px;
 
 padding:7px 11px;
 
-background:var(--cream);
+background:var(--soft);
 
 border:1px solid var(--border);
 
@@ -336,6 +352,10 @@ line-height:1.15;
 
 letter-spacing:-.04em;
 
+color:var(--green);
+
+scroll-margin-top:105px;
+
 }
 
 
@@ -347,6 +367,8 @@ font-size:1.25rem;
 
 line-height:1.25;
 
+color:var(--green);
+
 }
 
 
@@ -354,7 +376,7 @@ line-height:1.25;
 
 margin-top:15px;
 
-color:#40565B;
+color:#405A56;
 
 font-size:1rem;
 
@@ -365,7 +387,7 @@ font-size:1rem;
 
 margin:18px 0 0 22px;
 
-color:#40565B;
+color:#405A56;
 
 }
 
@@ -386,7 +408,7 @@ color:var(--text);
 
 .article-content a{
 
-color:var(--teal);
+color:var(--green-2);
 
 font-weight:800;
 
@@ -399,9 +421,9 @@ margin:30px 0;
 
 padding:22px 25px;
 
-background:var(--teal-light);
+background:var(--mint);
 
-border-left:4px solid var(--teal);
+border-left:4px solid var(--green-2);
 
 border-radius:0 14px 14px 0;
 
@@ -424,11 +446,13 @@ top:105px;
 
 padding:20px;
 
-background:white;
+background:var(--white);
 
 border:1px solid var(--border);
 
 border-radius:16px;
+
+box-shadow:0 8px 25px rgba(23,63,58,.04);
 
 }
 
@@ -462,14 +486,14 @@ font-weight:750;
 
 text-decoration:none;
 
-color:var(--navy);
+color:var(--green);
 
 }
 
 
 .toc a:hover{
 
-color:var(--teal);
+color:var(--green-2);
 
 }
 
@@ -490,9 +514,9 @@ height:38px;
 
 margin-right:9px;
 
-background:var(--teal-light);
+background:var(--mint);
 
-color:var(--teal);
+color:var(--green-2);
 
 border-radius:50%;
 
@@ -515,11 +539,13 @@ margin-top:50px;
 
 padding:30px;
 
-background:var(--navy);
+background:var(--green);
 
-color:white;
+color:var(--white);
 
 border-radius:22px;
+
+box-shadow:var(--shadow);
 
 }
 
@@ -528,7 +554,7 @@ border-radius:22px;
 
 margin-top:0;
 
-color:white;
+color:var(--white);
 
 font-size:1.8rem;
 
@@ -537,7 +563,7 @@ font-size:1.8rem;
 
 .action-box p{
 
-color:#C3D0D2;
+color:#C9D9D6;
 
 }
 
@@ -546,19 +572,30 @@ color:#C3D0D2;
 
 display:inline-flex;
 
+align-items:center;
+
+justify-content:center;
+
 margin-top:20px;
 
 padding:13px 19px;
 
 background:var(--yellow);
 
-color:var(--navy)!important;
+color:var(--green)!important;
 
 border-radius:999px;
 
 text-decoration:none!important;
 
 font-weight:900!important;
+
+}
+
+
+.action-button:hover{
+
+transform:translateY(-1px);
 
 }
 
@@ -573,7 +610,7 @@ margin-top:55px;
 
 padding:25px;
 
-background:white;
+background:var(--white);
 
 border:1px solid var(--border);
 
@@ -602,6 +639,33 @@ font-size:.86rem;
 
 font-size:.84rem;
 
+margin-top:15px;
+
+}
+
+
+.sources li{
+
+margin-top:7px;
+
+}
+
+
+.sources a{
+
+color:var(--green-2);
+
+font-weight:800;
+
+text-decoration:none;
+
+}
+
+
+.sources a:hover{
+
+text-decoration:underline;
+
 }
 
 
@@ -613,7 +677,7 @@ font-size:.84rem;
 
 padding:70px 0;
 
-background:white;
+background:var(--white);
 
 border-top:1px solid var(--border);
 
@@ -638,6 +702,8 @@ font-size:2rem;
 line-height:1.1;
 
 letter-spacing:-.04em;
+
+color:var(--green);
 
 }
 
@@ -668,7 +734,7 @@ margin-top:30px;
 
 padding:18px;
 
-background:var(--cream);
+background:var(--soft);
 
 border:1px solid var(--border);
 
@@ -682,6 +748,8 @@ border-radius:15px;
 display:block;
 
 font-size:.9rem;
+
+color:var(--green);
 
 }
 
@@ -707,7 +775,7 @@ footer{
 
 padding:40px 0;
 
-background:#0C272E;
+background:#102F2B;
 
 color:#D9E4E5;
 
@@ -722,7 +790,7 @@ align-items:center;
 
 justify-content:space-between;
 
-gap:20px;
+gap:25px;
 
 flex-wrap:wrap;
 
@@ -731,7 +799,7 @@ flex-wrap:wrap;
 
 .footer strong{
 
-color:white;
+color:var(--white);
 
 }
 
@@ -747,7 +815,7 @@ color:#91A7AA;
 
 display:flex;
 
-gap:15px;
+gap:14px;
 
 flex-wrap:wrap;
 
@@ -758,9 +826,16 @@ flex-wrap:wrap;
 
 font-size:.76rem;
 
-color:white;
+color:var(--white);
 
 text-decoration:none;
+
+}
+
+
+.footer-links a:hover{
+
+text-decoration:underline;
 
 }
 
@@ -836,8 +911,61 @@ margin-top:45px;
 
 }
 
+
+.footer{
+
+align-items:flex-start;
+
 }
 
+
+}
+
+
+@media(max-width:500px){
+
+nav{
+
+min-height:68px;
+
+}
+
+
+.nav-link{
+
+font-size:.8rem;
+
+}
+
+
+.article-meta{
+
+gap:7px;
+
+}
+
+
+.article-meta span{
+
+font-size:.68rem;
+
+}
+
+
+.action-box{
+
+padding:25px 20px;
+
+}
+
+
+.footer-links{
+
+gap:10px 14px;
+
+}
+
+}
 
 </style>
 
@@ -858,6 +986,7 @@ margin-top:45px;
 <a
 href="index.html"
 class="logo"
+aria-label="MicroClair — Accueil"
 >
 Micro<span>Clair</span>
 </a>
@@ -927,7 +1056,7 @@ dans l'administratif.
 
 <!-- SOMMAIRE -->
 
-<aside class="toc">
+<aside class="toc" aria-label="Sommaire du guide">
 
 <div class="toc-title">
 Dans ce guide
@@ -1498,11 +1627,43 @@ concernés.
 <ul>
 
 <li>
-MicroClair — outil pédagogique et organisationnel
+<a
+href="https://entreprendre.service-public.fr/"
+target="_blank"
+rel="noopener noreferrer"
+>
+Entreprendre Service-Public.fr
+</a>
 </li>
 
 <li>
-Sources officielles à consulter selon votre situation
+<a
+href="https://www.urssaf.fr/"
+target="_blank"
+rel="noopener noreferrer"
+>
+Urssaf
+</a>
+</li>
+
+<li>
+<a
+href="https://www.impots.gouv.fr/"
+target="_blank"
+rel="noopener noreferrer"
+>
+impots.gouv.fr
+</a>
+</li>
+
+<li>
+<a
+href="https://www.economie.gouv.fr/entreprises"
+target="_blank"
+rel="noopener noreferrer"
+>
+Ministère de l'Économie — Entreprises
+</a>
 </li>
 
 </ul>
@@ -1606,6 +1767,12 @@ MicroClair
 Moins de flou. Plus d'organisation.
 </small>
 
+<br>
+
+<small>
+© 2026 MicroClair — Axel Penarrubia
+</small>
+
 </div>
 
 
@@ -1613,6 +1780,10 @@ Moins de flou. Plus d'organisation.
 
 <a href="index.html">
 Accueil
+</a>
+
+<a href="demarrer.html">
+Démarrer
 </a>
 
 <a href="ressources.html">
@@ -1623,12 +1794,32 @@ Ressources
 Checklist 90 jours
 </a>
 
-<a href="mentions-legales.html">
-Mentions légales
+<a href="suivi-recettes.html">
+Suivi des recettes
+</a>
+
+<a href="verifier-facture.html">
+Vérifier une facture
+</a>
+
+<a href="a-propos.html">
+À propos
 </a>
 
 <a href="contact.html">
 Contact
+</a>
+
+<a href="mentions-legales.html">
+Mentions légales
+</a>
+
+<a href="confidentialite.html">
+Confidentialité
+</a>
+
+<a href="cookies.html">
+Cookies
 </a>
 
 </div>
@@ -1641,4 +1832,3 @@ Contact
 </body>
 
 </html>
-```
