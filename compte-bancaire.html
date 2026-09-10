@@ -18,9 +18,16 @@
       --cream:#FAF9F5;
       --text:#17302D;
       --muted:#667875;
-      --white:#fff;
+      --white:#FFFFFF;
       --border:#DCE6E3;
-      --shadow:0 18px 45px rgba(23,63,58,.10);
+      --warning-bg:#FFF8E9;
+      --warning-border:#F1E3BD;
+      --warning-text:#675B3D;
+      --shadow-small:0 8px 22px rgba(23,63,58,.06);
+      --shadow-medium:0 16px 38px rgba(23,63,58,.09);
+      --shadow-large:0 22px 55px rgba(23,63,58,.12);
+      --radius:16px;
+      --radius-large:22px;
     }
 
     * {
@@ -29,11 +36,17 @@
       padding:0;
     }
 
+    html {
+      scroll-behavior:smooth;
+    }
+
     body {
+      min-height:100vh;
       font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
       background:var(--cream);
       color:var(--text);
       line-height:1.6;
+      -webkit-font-smoothing:antialiased;
     }
 
     a {
@@ -41,15 +54,40 @@
       text-decoration:none;
     }
 
+    a:focus-visible,
+    button:focus-visible {
+      outline:3px solid var(--green-2);
+      outline-offset:4px;
+      border-radius:6px;
+    }
+
     .container {
       width:min(1050px,calc(100% - 32px));
-      margin:auto;
+      margin-inline:auto;
+    }
+
+    .skip-link {
+      position:absolute;
+      top:-60px;
+      left:16px;
+      z-index:100;
+      padding:10px 14px;
+      background:var(--green);
+      color:var(--white);
+      border-radius:9px;
+      font-size:13px;
+      font-weight:800;
+      transition:top .2s ease;
+    }
+
+    .skip-link:focus {
+      top:16px;
     }
 
     header {
       position:sticky;
       top:0;
-      z-index:10;
+      z-index:20;
       background:rgba(250,249,245,.96);
       border-bottom:1px solid var(--border);
       backdrop-filter:blur(10px);
@@ -64,29 +102,33 @@
     }
 
     .logo {
-      display:flex;
+      display:inline-flex;
       align-items:center;
       gap:9px;
       color:var(--green);
       font-size:20px;
       font-weight:800;
+      letter-spacing:-.4px;
     }
 
     .logo-mark {
       width:33px;
       height:33px;
-      border-radius:10px;
-      background:var(--green);
-      color:white;
       display:grid;
       place-items:center;
+      flex:0 0 33px;
+      border-radius:10px;
+      background:var(--green);
+      color:var(--white);
       font-size:15px;
+      font-weight:900;
     }
 
     .back {
       color:var(--muted);
       font-size:13px;
       font-weight:700;
+      transition:color .2s ease;
     }
 
     .back:hover {
@@ -94,50 +136,62 @@
     }
 
     .hero {
-      padding:75px 0 55px;
+      padding:78px 0 58px;
       text-align:center;
     }
 
     .tag {
       display:inline-block;
-      padding:7px 11px;
       margin-bottom:20px;
+      padding:7px 11px;
       border-radius:999px;
       background:var(--mint);
       color:var(--green);
       font-size:11px;
       font-weight:800;
-      letter-spacing:.5px;
+      letter-spacing:.6px;
     }
 
     h1 {
+      max-width:850px;
+      margin:0 auto 18px;
       font-size:clamp(38px,6vw,58px);
       line-height:1.05;
-      letter-spacing:-2px;
-      margin-bottom:18px;
+      letter-spacing:-2.4px;
     }
 
     .hero p {
       max-width:680px;
-      margin:auto;
+      margin-inline:auto;
       color:var(--muted);
       font-size:17px;
     }
 
     .intro {
       max-width:850px;
-      margin:0 auto 50px;
-      padding:28px;
-      background:white;
+      margin:0 auto 42px;
+      padding:30px;
+      background:var(--white);
       border:1px solid var(--border);
-      border-radius:20px;
-      box-shadow:var(--shadow);
+      border-radius:var(--radius-large);
+      box-shadow:var(--shadow-medium);
+    }
+
+    .intro-label {
+      display:block;
+      margin-bottom:8px;
+      color:var(--green-2);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.7px;
+      text-transform:uppercase;
     }
 
     .intro strong {
       display:block;
-      font-size:18px;
       margin-bottom:8px;
+      font-size:19px;
+      line-height:1.4;
     }
 
     .intro p {
@@ -147,19 +201,55 @@
 
     .section {
       max-width:900px;
-      margin:0 auto 65px;
+      margin:0 auto 68px;
     }
 
     .section h2 {
+      margin-bottom:10px;
       font-size:29px;
       line-height:1.2;
-      margin-bottom:10px;
+      letter-spacing:-.7px;
     }
 
     .section > p {
+      margin-bottom:26px;
       color:var(--muted);
       font-size:14px;
-      margin-bottom:25px;
+    }
+
+    .highlight {
+      max-width:900px;
+      margin:0 auto 68px;
+      padding:34px 30px;
+      background:var(--green);
+      color:var(--white);
+      border-radius:var(--radius-large);
+      text-align:center;
+      box-shadow:var(--shadow-large);
+    }
+
+    .highlight-label {
+      display:block;
+      margin-bottom:9px;
+      color:#C9DBD7;
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+    }
+
+    .highlight h2 {
+      margin-bottom:10px;
+      font-size:27px;
+      line-height:1.2;
+      letter-spacing:-.5px;
+    }
+
+    .highlight p {
+      max-width:680px;
+      margin-inline:auto;
+      color:#D0DFDC;
+      font-size:13px;
     }
 
     .cards {
@@ -169,18 +259,25 @@
     }
 
     .card {
-      padding:23px;
-      background:white;
+      padding:24px;
+      background:var(--white);
       border:1px solid var(--border);
-      border-radius:17px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-small);
+      transition:transform .2s ease,box-shadow .2s ease;
+    }
+
+    .card:hover {
+      transform:translateY(-2px);
+      box-shadow:var(--shadow-medium);
     }
 
     .number {
       display:inline-grid;
       place-items:center;
-      width:31px;
-      height:31px;
-      margin-bottom:14px;
+      width:32px;
+      height:32px;
+      margin-bottom:15px;
       border-radius:9px;
       background:var(--mint);
       color:var(--green);
@@ -189,35 +286,15 @@
     }
 
     .card h3 {
-      font-size:17px;
       margin-bottom:7px;
+      font-size:16px;
+      line-height:1.35;
     }
 
     .card p {
       color:var(--muted);
       font-size:13px;
-    }
-
-    .highlight {
-      max-width:900px;
-      margin:0 auto 65px;
-      padding:30px;
-      background:var(--green);
-      color:white;
-      border-radius:20px;
-      text-align:center;
-    }
-
-    .highlight h2 {
-      font-size:26px;
-      margin-bottom:10px;
-    }
-
-    .highlight p {
-      max-width:680px;
-      margin:auto;
-      color:#D0DFDC;
-      font-size:13px;
+      line-height:1.6;
     }
 
     .steps {
@@ -229,89 +306,119 @@
       display:flex;
       align-items:flex-start;
       gap:13px;
-      padding:17px 18px;
+      padding:18px;
       background:var(--soft);
+      border:1px solid rgba(220,230,227,.7);
       border-radius:14px;
     }
 
     .step-icon {
-      flex:none;
-      width:24px;
-      height:24px;
-      border-radius:7px;
-      background:var(--green);
-      color:white;
       display:grid;
       place-items:center;
-      font-size:12px;
+      flex:none;
+      width:25px;
+      height:25px;
+      border-radius:7px;
+      background:var(--green);
+      color:var(--white);
+      font-size:11px;
       font-weight:900;
     }
 
     .step strong {
       display:block;
+      margin-bottom:3px;
       font-size:14px;
-      margin-bottom:2px;
+      line-height:1.4;
     }
 
     .step span {
+      display:block;
       color:var(--muted);
       font-size:12px;
+      line-height:1.55;
     }
 
     .warning {
       max-width:900px;
-      margin:0 auto 65px;
-      padding:26px;
-      background:#FFF8E9;
-      border:1px solid #F1E3BD;
-      border-radius:18px;
+      margin:0 auto 68px;
+      padding:28px;
+      background:var(--warning-bg);
+      border:1px solid var(--warning-border);
+      border-radius:var(--radius);
+    }
+
+    .warning-title {
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      margin-bottom:9px;
+    }
+
+    .warning-icon {
+      flex:0 0 auto;
+      font-size:18px;
+      line-height:1.3;
     }
 
     .warning h2 {
       font-size:21px;
-      margin-bottom:8px;
+      line-height:1.3;
+      letter-spacing:-.3px;
     }
 
     .warning p {
-      color:#675B3D;
+      color:var(--warning-text);
       font-size:13px;
+      line-height:1.65;
     }
 
     .cta {
       max-width:900px;
-      margin:0 auto 80px;
-      padding:35px;
+      margin:0 auto 82px;
+      padding:38px 30px;
       background:var(--mint);
-      border-radius:22px;
+      border-radius:var(--radius-large);
       text-align:center;
     }
 
     .cta h2 {
-      font-size:28px;
       margin-bottom:10px;
+      font-size:28px;
+      line-height:1.2;
+      letter-spacing:-.6px;
     }
 
     .cta p {
       max-width:600px;
-      margin:0 auto 22px;
+      margin:0 auto 23px;
       color:var(--muted);
       font-size:13px;
     }
 
     .button {
-      display:inline-block;
-      padding:12px 18px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:44px;
+      padding:12px 19px;
       background:var(--green);
-      color:white;
+      color:var(--white);
       border-radius:10px;
       font-size:13px;
       font-weight:800;
+      transition:transform .2s ease,background .2s ease;
+    }
+
+    .button:hover {
+      background:var(--green-2);
+      transform:translateY(-1px);
     }
 
     footer {
       background:#102F2B;
       color:#AFC6C1;
-      padding:40px 0 25px;
+      padding:42px 0 25px;
     }
 
     .footer-grid {
@@ -322,63 +429,124 @@
     }
 
     footer .logo {
-      color:white;
-      margin-bottom:12px;
+      margin-bottom:13px;
+      color:var(--white);
     }
 
     footer .logo-mark {
-      background:white;
+      background:var(--white);
       color:var(--green);
     }
 
     .footer-description {
-      max-width:350px;
+      max-width:360px;
       font-size:12px;
+      line-height:1.65;
     }
 
     .footer-column h3 {
-      color:white;
-      font-size:13px;
       margin-bottom:12px;
+      color:var(--white);
+      font-size:13px;
     }
 
     .footer-column a {
       display:block;
-      font-size:12px;
+      width:max-content;
+      max-width:100%;
       margin-bottom:7px;
+      font-size:12px;
+      transition:color .2s ease;
     }
 
     .footer-column a:hover {
-      color:white;
+      color:var(--white);
     }
 
     .copyright {
-      border-top:1px solid rgba(255,255,255,.12);
       padding-top:20px;
+      border-top:1px solid rgba(255,255,255,.12);
       font-size:11px;
     }
 
-    @media(max-width:700px) {
+    @media (max-width:700px) {
       .cards {
         grid-template-columns:1fr;
       }
     }
 
-    @media(max-width:600px) {
+    @media (max-width:600px) {
+      .container {
+        width:min(100% - 24px,1050px);
+      }
+
+      .nav {
+        min-height:66px;
+      }
+
+      .logo {
+        font-size:18px;
+      }
+
+      .logo-mark {
+        width:31px;
+        height:31px;
+        flex-basis:31px;
+      }
+
+      .back {
+        font-size:12px;
+      }
+
       .hero {
-        padding:55px 0 40px;
+        padding:58px 0 42px;
+      }
+
+      h1 {
+        letter-spacing:-1.7px;
+      }
+
+      .hero p {
+        font-size:15px;
       }
 
       .intro,
-      .card,
       .highlight,
+      .card,
+      .step,
       .warning,
       .cta {
         padding:21px;
       }
 
+      .section h2 {
+        font-size:25px;
+      }
+
       .footer-grid {
         grid-template-columns:1fr;
+        gap:30px;
+      }
+
+      .cta {
+        margin-bottom:60px;
+      }
+
+      .cta h2 {
+        font-size:25px;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior:auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition:none !important;
+        animation:none !important;
       }
     }
   </style>
@@ -387,13 +555,15 @@
 
 <body>
 
+<a href="#contenu" class="skip-link">Aller au contenu</a>
+
 <header>
   <div class="container nav">
 
 ```
-<a href="index.html" class="logo">
-  <span class="logo-mark">M</span>
-  MicroClair
+<a href="index.html" class="logo" aria-label="MicroClair — accueil">
+  <span class="logo-mark" aria-hidden="true">M</span>
+  <span>MicroClair</span>
 </a>
 
 <a href="ressources.html" class="back">
@@ -404,7 +574,7 @@
   </div>
 </header>
 
-<main>
+<main id="contenu">
 
   <section class="hero">
     <div class="container">
@@ -429,8 +599,11 @@
 
 ```
   <div class="intro">
+    <span class="intro-label">L'essentiel</span>
 
-    <strong>Le compte dédié n'est pas forcément un compte « professionnel ».</strong>
+    <strong>
+      Le compte dédié n'est pas forcément un compte « professionnel ».
+    </strong>
 
     <p>
       Pour une micro-entreprise, il faut surtout distinguer
@@ -438,24 +611,25 @@
       de l'obligation d'ouvrir un compte bancaire professionnel.
       Ce n'est pas exactement la même chose.
     </p>
-
   </div>
 
   <div class="highlight">
 
-    <h2>Le seuil à retenir</h2>
+    <span class="highlight-label">Le seuil à retenir</span>
+
+    <h2>10 000 € pendant deux années civiles consécutives</h2>
 
     <p>
-      Si votre chiffre d'affaires annuel dépasse 10 000 € pendant
-      deux années civiles consécutives, vous devez disposer d'un
-      compte dédié à votre activité professionnelle.
+      Lorsque votre chiffre d'affaires annuel dépasse ce montant
+      pendant deux années civiles consécutives, vous devez disposer
+      d'un compte dédié à votre activité professionnelle.
     </p>
 
   </div>
 
-  <div class="section">
+  <div class="section" aria-labelledby="compte-dedie">
 
-    <h2>Compte dédié : qu'est-ce que ça veut dire ?</h2>
+    <h2 id="compte-dedie">Compte dédié : qu'est-ce que ça veut dire ?</h2>
 
     <p>
       Le compte dédié sert à séparer clairement les opérations
@@ -465,7 +639,7 @@
     <div class="cards">
 
       <article class="card">
-        <span class="number">01</span>
+        <span class="number" aria-hidden="true">01</span>
         <h3>Vos recettes professionnelles</h3>
         <p>
           Les paiements reçus de vos clients peuvent être suivis
@@ -474,7 +648,7 @@
       </article>
 
       <article class="card">
-        <span class="number">02</span>
+        <span class="number" aria-hidden="true">02</span>
         <h3>Vos dépenses professionnelles</h3>
         <p>
           Les dépenses liées à votre activité sont plus faciles
@@ -483,7 +657,7 @@
       </article>
 
       <article class="card">
-        <span class="number">03</span>
+        <span class="number" aria-hidden="true">03</span>
         <h3>Un suivi plus propre</h3>
         <p>
           Séparer les flux évite de mélanger les opérations
@@ -492,7 +666,7 @@
       </article>
 
       <article class="card">
-        <span class="number">04</span>
+        <span class="number" aria-hidden="true">04</span>
         <h3>Une meilleure organisation</h3>
         <p>
           Un compte séparé peut simplifier le suivi de votre
@@ -504,9 +678,9 @@
 
   </div>
 
-  <div class="section">
+  <div class="section" aria-labelledby="dedie-professionnel">
 
-    <h2>Compte dédié ou compte professionnel ?</h2>
+    <h2 id="dedie-professionnel">Compte dédié ou compte professionnel ?</h2>
 
     <p>
       Le vocabulaire peut prêter à confusion.
@@ -515,7 +689,8 @@
     <div class="steps">
 
       <div class="step">
-        <div class="step-icon">1</div>
+        <div class="step-icon" aria-hidden="true">1</div>
+
         <div>
           <strong>Compte dédié</strong>
           <span>
@@ -526,7 +701,8 @@
       </div>
 
       <div class="step">
-        <div class="step-icon">2</div>
+        <div class="step-icon" aria-hidden="true">2</div>
+
         <div>
           <strong>Compte professionnel</strong>
           <span>
@@ -537,7 +713,8 @@
       </div>
 
       <div class="step">
-        <div class="step-icon">3</div>
+        <div class="step-icon" aria-hidden="true">3</div>
+
         <div>
           <strong>Les deux ne sont pas synonymes</strong>
           <span>
@@ -552,9 +729,9 @@
 
   </div>
 
-  <div class="section">
+  <div class="section" aria-labelledby="quand-ouvrir">
 
-    <h2>Quand ouvrir un compte dédié ?</h2>
+    <h2 id="quand-ouvrir">Quand ouvrir un compte dédié ?</h2>
 
     <p>
       Même lorsque le compte dédié n'est pas encore obligatoire,
@@ -564,7 +741,7 @@
     <div class="cards">
 
       <article class="card">
-        <span class="number">01</span>
+        <span class="number" aria-hidden="true">01</span>
         <h3>Dès le lancement</h3>
         <p>
           Vous pouvez commencer directement avec une séparation
@@ -573,7 +750,7 @@
       </article>
 
       <article class="card">
-        <span class="number">02</span>
+        <span class="number" aria-hidden="true">02</span>
         <h3>Si votre activité grandit</h3>
         <p>
           Plus votre chiffre d'affaires augmente, plus une
@@ -582,7 +759,7 @@
       </article>
 
       <article class="card">
-        <span class="number">03</span>
+        <span class="number" aria-hidden="true">03</span>
         <h3>Pour simplifier vos déclarations</h3>
         <p>
           Un compte séparé facilite le rapprochement entre vos
@@ -591,7 +768,7 @@
       </article>
 
       <article class="card">
-        <span class="number">04</span>
+        <span class="number" aria-hidden="true">04</span>
         <h3>Pour éviter les mélanges</h3>
         <p>
           Les achats personnels et les opérations professionnelles
@@ -603,9 +780,15 @@
 
   </div>
 
-  <div class="warning">
+  <aside class="warning" aria-labelledby="attention-banque">
 
-    <h2>⚠️ Ne choisissez pas une offre bancaire uniquement sur son nom</h2>
+    <div class="warning-title">
+      <span class="warning-icon" aria-hidden="true">⚠️</span>
+
+      <h2 id="attention-banque">
+        Ne choisissez pas une offre bancaire uniquement sur son nom
+      </h2>
+    </div>
 
     <p>
       « Compte pro » ne veut pas forcément dire « obligatoire ».
@@ -614,11 +797,11 @@
       réels de votre activité.
     </p>
 
-  </div>
+  </aside>
 
-  <div class="section">
+  <div class="section" aria-labelledby="bons-reflexes">
 
-    <h2>Les bons réflexes</h2>
+    <h2 id="bons-reflexes">Les bons réflexes</h2>
 
     <p>
       Une gestion simple commence par quelques habitudes.
@@ -627,7 +810,8 @@
     <div class="steps">
 
       <div class="step">
-        <div class="step-icon">✓</div>
+        <div class="step-icon" aria-hidden="true">✓</div>
+
         <div>
           <strong>Suivez votre chiffre d'affaires</strong>
           <span>
@@ -638,7 +822,8 @@
       </div>
 
       <div class="step">
-        <div class="step-icon">✓</div>
+        <div class="step-icon" aria-hidden="true">✓</div>
+
         <div>
           <strong>Évitez les mélanges inutiles</strong>
           <span>
@@ -649,7 +834,8 @@
       </div>
 
       <div class="step">
-        <div class="step-icon">✓</div>
+        <div class="step-icon" aria-hidden="true">✓</div>
+
         <div>
           <strong>Conservez vos justificatifs</strong>
           <span>
@@ -660,7 +846,8 @@
       </div>
 
       <div class="step">
-        <div class="step-icon">✓</div>
+        <div class="step-icon" aria-hidden="true">✓</div>
+
         <div>
           <strong>Comparez les frais bancaires</strong>
           <span>
@@ -674,9 +861,9 @@
 
   </div>
 
-  <div class="cta">
+  <section class="cta" aria-labelledby="cta-title">
 
-    <h2>Gardez aussi un œil sur vos recettes</h2>
+    <h2 id="cta-title">Gardez aussi un œil sur vos recettes</h2>
 
     <p>
       Un suivi régulier vous aide à connaître votre chiffre
@@ -687,7 +874,7 @@
       Suivre mes recettes →
     </a>
 
-  </div>
+  </section>
 
 </div>
 ```
@@ -703,9 +890,9 @@
 <div class="footer-grid">
 
   <div>
-    <a href="index.html" class="logo">
-      <span class="logo-mark">M</span>
-      MicroClair
+    <a href="index.html" class="logo" aria-label="MicroClair — accueil">
+      <span class="logo-mark" aria-hidden="true">M</span>
+      <span>MicroClair</span>
     </a>
 
     <p class="footer-description">
@@ -714,7 +901,7 @@
     </p>
   </div>
 
-  <div class="footer-column">
+  <nav class="footer-column" aria-label="Informations">
     <h3>Informations</h3>
     <a href="a-propos.html">À propos</a>
     <a href="demarrer.html">Démarrer</a>
@@ -723,7 +910,7 @@
     <a href="mentions-legales.html">Mentions légales</a>
     <a href="confidentialite.html">Confidentialité</a>
     <a href="cookies.html">Cookies</a>
-  </div>
+  </nav>
 
 </div>
 
