@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Checklist 90 jours — MicroClair</title>
+  <title>10 choses à faire après la création de votre micro-entreprise — MicroClair</title>
 
   <meta
     name="description"
-    content="Une checklist simple en 12 étapes pour bien organiser vos 90 premiers jours en micro-entreprise."
+    content="Les 10 points à vérifier après la création de votre micro-entreprise pour partir sur de bonnes bases."
   >
 
   <meta name="theme-color" content="#173F3A">
@@ -90,14 +90,12 @@
     }
 
     button,
-    a,
-    input {
+    a {
       -webkit-tap-highlight-color: transparent;
     }
 
     a:focus-visible,
-    button:focus-visible,
-    input:focus-visible {
+    button:focus-visible {
       outline: 3px solid var(--focus);
       outline-offset: 4px;
     }
@@ -242,7 +240,6 @@
       font-weight: 750;
       line-height: 1.2;
       text-decoration: none;
-      cursor: pointer;
       transition:
         transform .2s var(--ease),
         background .2s ease,
@@ -319,295 +316,57 @@
       line-height: 1.62;
     }
 
+    .hero .button-row {
+      margin-top: 30px;
+    }
+
+    .hero-note {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
     /* =========================
-       CHECKLIST APP
+       INTRO
     ========================= */
 
-    .checklist-section {
-      padding: 0 0 110px;
+    .intro {
+      padding: 0 0 100px;
     }
 
-    .checklist-shell {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 300px;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .checklist-main {
-      min-width: 0;
-      padding: 30px;
+    .intro-box {
+      padding: 38px;
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       background: var(--white);
       box-shadow: var(--shadow-xs);
     }
 
-    .progress-area {
-      margin-bottom: 30px;
-      padding-bottom: 25px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .progress-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 11px;
-    }
-
-    .progress-label {
-      color: var(--green-900);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .progress-value {
-      color: var(--green-700);
-      font-size: 13px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .progress-track {
-      height: 8px;
-      overflow: hidden;
-      border-radius: 999px;
-      background: var(--mint-100);
-    }
-
-    .progress-bar {
-      width: 0;
-      height: 100%;
-      border-radius: inherit;
-      background: var(--green-700);
-      transition: width .3s var(--ease);
-    }
-
-    .phase {
-      padding-top: 32px;
-    }
-
-    .phase:first-of-type {
-      padding-top: 0;
-    }
-
-    .phase + .phase {
-      margin-top: 34px;
-      padding-top: 34px;
-      border-top: 1px solid var(--border);
-    }
-
-    .phase-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 17px;
-    }
-
-    .phase-title {
+    .intro-box h2 {
       margin: 0;
       color: var(--green-900);
-      font-size: 21px;
+      font-size: 25px;
       line-height: 1.2;
       letter-spacing: -.025em;
     }
 
-    .phase-period {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 650;
-      white-space: nowrap;
-    }
-
-    .task-list {
-      display: grid;
-      gap: 10px;
-    }
-
-    .task-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 13px;
-      padding: 16px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      background: var(--cream);
-      transition:
-        border-color .2s ease,
-        background .2s ease,
-        box-shadow .2s ease;
-    }
-
-    .task-item:hover {
-      border-color: var(--border-strong);
-      background: var(--white);
-      box-shadow: var(--shadow-xs);
-    }
-
-    .task-item.is-complete {
-      border-color: var(--mint-300);
-      background: var(--mint-100);
-    }
-
-    .task-checkbox {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .task-label {
-      display: grid;
-      grid-template-columns: 25px 1fr;
-      gap: 13px;
-      width: 100%;
-      cursor: pointer;
-    }
-
-    .task-check {
-      width: 25px;
-      height: 25px;
-      margin-top: 1px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--border-strong);
-      border-radius: 8px;
-      background: var(--white);
-      color: transparent;
-      font-size: 13px;
-      font-weight: 900;
-      transition:
-        background .2s ease,
-        border-color .2s ease,
-        color .2s ease;
-    }
-
-    .task-checkbox:checked + .task-label .task-check {
-      border-color: var(--green-700);
-      background: var(--green-700);
-      color: var(--white);
-    }
-
-    .task-content strong {
-      display: block;
-      color: var(--green-900);
-      font-size: 15px;
-      line-height: 1.4;
-    }
-
-    .task-content span {
-      display: block;
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .task-checkbox:checked + .task-label .task-content strong {
-      text-decoration: line-through;
-      text-decoration-thickness: 1px;
-      color: var(--muted);
-    }
-
-    /* =========================
-       SIDE PANEL
-    ========================= */
-
-    .checklist-side {
-      position: sticky;
-      top: calc(var(--header-height) + 24px);
-      padding: 28px;
-      border-radius: var(--radius-lg);
-      background: var(--green-900);
-      color: var(--white);
-    }
-
-    .side-label {
-      margin: 0 0 15px;
-      color: var(--mint-300);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .checklist-side h2 {
-      margin: 0;
-      color: var(--white);
-      font-size: 27px;
-      line-height: 1.15;
-      letter-spacing: -.03em;
-    }
-
-    .checklist-side p {
+    .intro-box p {
+      max-width: 720px;
       margin: 14px 0 0;
-      color: rgba(255,255,255,.74);
-      font-size: 15px;
-      line-height: 1.68;
-    }
-
-    .completion {
-      margin-top: 27px;
-      padding-top: 21px;
-      border-top: 1px solid rgba(255,255,255,.14);
-    }
-
-    .completion strong {
-      display: block;
-      color: var(--white);
-      font-size: 20px;
-      line-height: 1.2;
-    }
-
-    .completion span {
-      display: block;
-      margin-top: 5px;
-      color: rgba(255,255,255,.62);
-      font-size: 13px;
-    }
-
-    .completion-done {
-      display: none;
-      margin-top: 14px;
-      color: var(--mint-300);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .checklist-side.is-finished .completion-done {
-      display: block;
-    }
-
-    .reset-button {
-      width: 100%;
-      margin-top: 24px;
-      min-height: 44px;
-      padding: 10px 14px;
-      border: 1px solid rgba(255,255,255,.22);
-      border-radius: 10px;
-      background: transparent;
-      color: var(--white);
-      font-size: 13px;
-      font-weight: 750;
-      cursor: pointer;
-      transition:
-        background .2s ease,
-        border-color .2s ease;
-    }
-
-    .reset-button:hover {
-      background: rgba(255,255,255,.08);
-      border-color: rgba(255,255,255,.36);
+      color: var(--text-soft);
+      font-size: 16px;
+      line-height: 1.7;
     }
 
     /* =========================
-       INFO SECTION
+       LIST
     ========================= */
 
-    .info-section {
+    .section {
       padding: 110px 0;
+    }
+
+    .section-soft {
       background: var(--mint-100);
     }
 
@@ -643,49 +402,114 @@
       line-height: 1.65;
     }
 
-    .info-grid {
+    .action-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
 
-    .info-card {
-      padding: 30px;
+    .action-card {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 17px;
+      padding: 24px;
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       background: var(--white);
+      box-shadow: var(--shadow-xs);
     }
 
-    .info-number {
-      display: block;
-      margin-bottom: 42px;
-      color: var(--green-700);
-      font-size: 13px;
+    .action-number {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: var(--mint-200);
+      color: var(--green-800);
+      font-size: 12px;
       font-weight: 850;
     }
 
-    .info-card h3 {
-      margin: 0;
+    .action-card h3 {
+      margin: 1px 0 0;
       color: var(--green-900);
-      font-size: 22px;
-      line-height: 1.18;
-      letter-spacing: -.025em;
+      font-size: 19px;
+      line-height: 1.25;
+      letter-spacing: -.02em;
     }
 
-    .info-card p {
-      margin: 11px 0 0;
+    .action-card p {
+      margin: 7px 0 0;
       color: var(--text-soft);
       font-size: 15px;
-      line-height: 1.65;
+      line-height: 1.62;
     }
 
     /* =========================
-       SOURCE
+       PRACTICAL BLOCK
     ========================= */
 
-    .source-section {
-      padding: 110px 0;
+    .practical-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 70px;
+      align-items: start;
     }
+
+    .practical-title {
+      margin: 0;
+      color: var(--green-950);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+    }
+
+    .practical-copy {
+      max-width: 650px;
+    }
+
+    .practical-copy p {
+      margin: 0 0 18px;
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.72;
+    }
+
+    .practical-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .quick-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .quick-item {
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--white);
+    }
+
+    .quick-item strong {
+      display: block;
+      color: var(--green-900);
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .quick-item span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       SOURCES
+    ========================= */
 
     .source-box {
       max-width: 850px;
@@ -826,17 +650,14 @@
        RESPONSIVE
     ========================= */
 
-    @media (max-width: 980px) {
-      .checklist-shell {
+    @media (max-width: 900px) {
+      .action-grid {
         grid-template-columns: 1fr;
       }
 
-      .checklist-side {
-        position: static;
-      }
-
-      .info-grid {
+      .practical-grid {
         grid-template-columns: 1fr;
+        gap: 35px;
       }
 
       .footer-grid {
@@ -859,35 +680,26 @@
       }
 
       .hero {
-        padding: 55px 0 55px;
+        padding: 58px 0 60px;
       }
 
       .hero h1 {
-        max-width: 620px;
-        font-size: clamp(2.65rem, 12vw, 4rem);
-        line-height: 1;
+        font-size: clamp(2.7rem, 12vw, 4rem);
       }
 
       .hero-copy {
         font-size: 16px;
       }
 
-      .checklist-section {
-        padding-bottom: 78px;
+      .intro {
+        padding-bottom: 75px;
       }
 
-      .checklist-main {
-        padding: 22px;
+      .intro-box {
+        padding: 26px;
       }
 
-      .phase-header {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 4px;
-      }
-
-      .info-section,
-      .source-section {
+      .section {
         padding: 78px 0;
       }
 
@@ -900,6 +712,18 @@
       }
 
       .section-heading p {
+        font-size: 16px;
+      }
+
+      .action-card {
+        padding: 22px;
+      }
+
+      .practical-title {
+        font-size: clamp(2rem, 9vw, 2.7rem);
+      }
+
+      .practical-copy p {
         font-size: 16px;
       }
 
@@ -932,38 +756,27 @@
 
     @media (max-width: 480px) {
       .button-row {
-        align-items: stretch;
         flex-direction: column;
+        align-items: stretch;
       }
 
       .button {
         width: 100%;
       }
 
-      .checklist-main {
-        padding: 18px;
+      .action-card {
+        grid-template-columns: 34px 1fr;
+        gap: 13px;
+        padding: 20px;
       }
 
-      .task-item {
-        padding: 14px;
+      .action-number {
+        width: 34px;
+        height: 34px;
       }
 
-      .task-label {
-        grid-template-columns: 23px 1fr;
-        gap: 11px;
-      }
-
-      .task-check {
-        width: 23px;
-        height: 23px;
-      }
-
-      .checklist-side {
-        padding: 24px;
-      }
-
-      .info-card {
-        padding: 24px;
+      .quick-item {
+        padding: 17px;
       }
     }
 
@@ -972,7 +785,8 @@
         scroll-behavior: auto;
       }
 
-      * {
+      *,
+      *::before {
         transition-duration: .01ms !important;
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
@@ -988,6 +802,7 @@
   </a>
 
   <header class="site-header">
+
     <div class="header-inner">
 
       <a
@@ -1011,6 +826,7 @@
         class="main-nav"
         aria-label="Navigation principale"
       >
+
         <a href="demarrer.html">
           Démarrer
         </a>
@@ -1033,9 +849,11 @@
         >
           Commencer
         </a>
+
       </nav>
 
     </div>
+
   </header>
 
 
@@ -1046,670 +864,72 @@
     ========================== -->
 
     <section class="hero">
+
       <div class="container">
 
         <div class="hero-inner">
 
           <p class="eyebrow">
-            90 premiers jours
+            Après la création
           </p>
 
           <h1>
-            Une chose après l'autre,
-            <span>sans rien oublier.</span>
+            Les 10 choses à vérifier
+            <span>après votre création.</span>
           </h1>
 
           <p class="hero-copy">
-            Douze étapes simples pour mettre votre activité sur de bonnes bases
-            et prendre vos habitudes progressivement.
+            Votre micro-entreprise est créée. Voici les principaux points
+            à vérifier pour partir sur de bonnes bases.
+          </p>
+
+          <div class="button-row">
+
+            <a
+              class="button button-primary"
+              href="#les-10-choses"
+            >
+              Voir les 10 points
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="checklist-90-jours.html"
+            >
+              Faire ma checklist
+            </a>
+
+          </div>
+
+          <p class="hero-note">
+            À adapter à votre activité et à votre situation
           </p>
 
         </div>
 
       </div>
+
     </section>
 
 
     <!-- =========================
-         CHECKLIST
+         INTRO
     ========================== -->
 
-    <section class="checklist-section">
+    <section class="intro">
 
       <div class="container">
 
-        <div class="checklist-shell">
-
-          <div class="checklist-main">
-
-            <div
-              class="progress-area"
-              aria-live="polite"
-            >
-
-              <div class="progress-top">
-
-                <span class="progress-label">
-                  Votre progression
-                </span>
-
-                <span
-                  class="progress-value"
-                  id="progressText"
-                >
-                  0 / 12 · 0%
-                </span>
-
-              </div>
-
-              <div
-                class="progress-track"
-                role="progressbar"
-                aria-label="Progression de la checklist"
-                aria-valuemin="0"
-                aria-valuemax="12"
-                aria-valuenow="0"
-                id="progressTrack"
-              >
-                <div
-                  class="progress-bar"
-                  id="progressBar"
-                ></div>
-              </div>
-
-            </div>
-
-
-            <!-- PHASE 1 -->
-
-            <section class="phase" aria-labelledby="phase-1">
-
-              <div class="phase-header">
-
-                <h2
-                  class="phase-title"
-                  id="phase-1"
-                >
-                  Poser les bases
-                </h2>
-
-                <span class="phase-period">
-                  Jours 1 à 30
-                </span>
-
-              </div>
-
-
-              <div class="task-list">
-
-
-                <div class="task-item">
-
-                  <input
-                    class="task-checkbox"
-                    type="checkbox"
-                    id="task-1"
-                    data-task="1"
-                  >
-
-                  <label
-                    class="task-label"
-                    for="task-1"
-                  >
-
-                    <span
-                      class="task-check"
-                      aria-hidden="true"
-                    >
-                      ✓
-                    </span>
-
-                    <span class="task-content">
-
-                      <strong>
-                        Vérifier vos informations
-                      </strong>
-
-                      <span>
-                        Identité, coordonnées et activité.
-                      </span>
-
-                    </span>
-
-                  </label>
-
-                </div>
-
-
-                <div class="task-item">
-
-                  <input
-                    class="task-checkbox"
-                    type="checkbox"
-                    id="task-2"
-                    data-task="2"
-                  >
-
-                  <label
-                    class="task-label"
-                    for="task-2"
-                  >
-
-                    <span
-                      class="task-check"
-                      aria-hidden="true"
-                    >
-                      ✓
-                    </span>
-
-                    <span class="task-content">
-
-                      <strong>
-                        Mettre en place votre suivi des recettes
-                      </strong>
-
-                      <span>
-                        Notez vos encaissements au fur et à mesure.
-                      </span>
-
-                    </span>
-
-                  </label>
-
-                </div>
-
-
-                <div class="task-item">
-
-                  <input
-                    class="task-checkbox"
-                    type="checkbox"
-                    id="task-3"
-                    data-task="3"
-                  >
-
-                  <label
-                    class="task-label"
-                    for="task-3"
-                  >
-
-                    <span
-                      class="task-check"
-                      aria-hidden="true"
-                    >
-                      ✓
-                    </span>
-
-                    <span class="task-content">
-
-                      <strong>
-                        Organiser vos factures
-                      </strong>
-
-                      <span>
-                        Gardez des factures claires et vos justificatifs.
-                      </span>
-
-                    </span>
-
-                  </label>
-
-                </div>
-
-
-                <div class="task-item">
-
-                  <input
-                    class="task-checkbox"
-                    type="checkbox"
-                    id="task-4"
-                    data-task="4"
-                  >
-
-                  <label
-                    class="task-label"
-                    for="task-4"
-                  >
-
-                    <span
-                      class="task-check"
-                      aria-hidden="true"
-                    >
-                      ✓
-                    </span>
-
-                    <span class="task-content">
-
-                      <strong>
-                        Noter vos prochaines échéances
-                      </strong>
-
-                      <span>
-                        Gardez-les dans un calendrier ou un rappel.
-                      </span>
-
-                    </span>
-
-                  </label>
-
-                </div>
-
-              </div>
-
-            </section>
-
-
-            <!-- PHASE 2 -->
-
-            <section class="phase" aria-labelledby="phase-2">
-
-              <div class="phase-header">
-
-                <h2
-                  class="phase-title"
-                  id="phase-2"
-                >
-                  Prendre le rythme
-                </h2>
-
-                <span class="phase-period">
-                  Jours 31 à 60
-                </span>
-
-              </div>
-
-
-              <div class="task-list">
-
-
-                <div class="task-item">
-
-                  <input
-                    class="task-checkbox"
-                    type="checkbox"
-                    id="task-5"
-                    data-task="5"
-                  >
-
-                  <label
-                    class="task-label"
-                    for="task-5"
-                  >
-
-                    <span
-                      class="task-check"
-                      aria-hidden="true"
-                    >
-                      ✓
-                    </span>
-
-                    <span class="task-content">
-
-                      <strong>
-                        Vérifier votre chiffre d'affaires suivi
-                      </strong>
-
-                      <span>
-                        Assurez-vous que vos encaissements sont à jour.
-                      </span>
-
-                    </span>
-
-                  </label>
-
-                </div>
-
-
-                <div class="task-item">
-
-                  <input
-                    class="task-checkbox"
-                    type="checkbox"
-                    id="task-6"
-                    data-task="6"
-                  >
-
-                  <label
-                    class="task-label"
-                    for="task-6"
-                  >
-
-                    <span
-                      class="task-check"
-                      aria-hidden="true"
-                    >
-                      ✓
-                    </span>
-
-                    <span class="task-content">
-
-                      <strong>
-                        Vérifier vos factures récentes
-                      </strong>
-
-                      <span>
-                        Contrôlez les éléments importants avant archivage.
-                      </span>
-
-                    </span>
-
-                  </label>
-
-                </div>
-
-
-                <div class="task-item">
-
-                  <input
-                    class="task-checkbox"
-                    type="checkbox"
-                    id="task-7"
-                    data-task="7"
-                  >
-
-                  <label
-                    class="task-label"
-                    for="task-7"
-                  >
-
-                    <span
-                      class="task-check"
-                      aria-hidden="true"
-                    >
-                      ✓
-                    </span>
-
-                    <span class="task-content">
-
-                      <strong>
-                        Faire un point sur vos obligations
-                      </strong>
-
-                      <span>
-                        Vérifiez les démarches qui concernent votre situation.
-                      </span>
-
-                    </span>
-
-                  </label>
-
-                </div>
-
-
-                <div class="task-item">
-
-                  <input
-                    class="task-checkbox"
-                    type="checkbox"
-                    id="task-8"
-                    data-task="8"
-                  >
-
-                  <label
-                    class="task-label"
-                    for="task-8"
-                  >
-
-                    <span
-                      class="task-check"
-                      aria-hidden="true"
-                    >
-                      ✓
-                    </span>
-
-                    <span class="task-content">
-
-                      <strong>
-                        Mettre à jour votre calendrier
-                      </strong>
-
-                      <span>
-                        Gardez en vue les prochaines échéances.
-                      </span>
-
-                    </span>
-
-                  </label>
-
-                </div>
-
-              </div>
-
-            </section>
-
-
-            <!-- PHASE 3 -->
-
-            <section class="phase" aria-labelledby="phase-3">
-
-              <div class="phase-header">
-
-                <h2
-                  class="phase-title"
-                  id="phase-3"
-                >
-                  Vérifier et anticiper
-                </h2>
-
-                <span class="phase-period">
-                  Jours 61 à 90
-                </span>
-
-              </div>
-
-
-              <div class="task-list">
-
-
-                <div class="task-item">
-
-                  <input
-                    class="task-checkbox"
-                    type="checkbox"
-                    id="task-9"
-                    data-task="9"
-                  >
-
-                  <label
-                    class="task-label"
-                    for="task-9"
-                  >
-
-                    <span
-                      class="task-check"
-                      aria-hidden="true"
-                    >
-                      ✓
-                    </span>
-
-                    <span class="task-content">
-
-                      <strong>
-                        Vérifier votre organisation
-                      </strong>
-
-                      <span>
-                        Gardez uniquement ce qui vous aide vraiment.
-                      </span>
-
-                    </span>
-
-                  </label>
-
-                </div>
-
-
-                <div class="task-item">
-
-                  <input
-                    class="task-checkbox"
-                    type="checkbox"
-                    id="task-10"
-                    data-task="10"
-                  >
-
-                  <label
-                    class="task-label"
-                    for="task-10"
-                  >
-
-                    <span
-                      class="task-check"
-                      aria-hidden="true"
-                    >
-                      ✓
-                    </span>
-
-                    <span class="task-content">
-
-                      <strong>
-                        Faire un point sur vos seuils
-                      </strong>
-
-                      <span>
-                        Vérifiez les plafonds et seuils qui concernent votre activité.
-                      </span>
-
-                    </span>
-
-                  </label>
-
-                </div>
-
-
-                <div class="task-item">
-
-                  <input
-                    class="task-checkbox"
-                    type="checkbox"
-                    id="task-11"
-                    data-task="11"
-                  >
-
-                  <label
-                    class="task-label"
-                    for="task-11"
-                  >
-
-                    <span
-                      class="task-check"
-                      aria-hidden="true"
-                    >
-                      ✓
-                    </span>
-
-                    <span class="task-content">
-
-                      <strong>
-                        Préparer les prochaines échéances
-                      </strong>
-
-                      <span>
-                        Anticipez les déclarations et paiements à venir.
-                      </span>
-
-                    </span>
-
-                  </label>
-
-                </div>
-
-
-                <div class="task-item">
-
-                  <input
-                    class="task-checkbox"
-                    type="checkbox"
-                    id="task-12"
-                    data-task="12"
-                  >
-
-                  <label
-                    class="task-label"
-                    for="task-12"
-                  >
-
-                    <span
-                      class="task-check"
-                      aria-hidden="true"
-                    >
-                      ✓
-                    </span>
-
-                    <span class="task-content">
-
-                      <strong>
-                        Faire votre bilan des 90 jours
-                      </strong>
-
-                      <span>
-                        Identifiez ce qui fonctionne et ce qui doit être amélioré.
-                      </span>
-
-                    </span>
-
-                  </label>
-
-                </div>
-
-              </div>
-
-            </section>
-
-          </div>
-
-
-          <!-- SIDE -->
-
-          <aside
-            class="checklist-side"
-            id="progressSide"
-          >
-
-            <p class="side-label">
-              Votre checklist
-            </p>
-
-            <h2>
-              Avancez à votre rythme.
-            </h2>
-
-            <p>
-              Cochez chaque étape lorsque vous l'avez vérifiée.
-              Votre progression reste enregistrée sur cet appareil.
-            </p>
-
-
-            <div class="completion">
-
-              <strong id="completionCount">
-                0 / 12
-              </strong>
-
-              <span>
-                étapes terminées
-              </span>
-
-              <div
-                class="completion-done"
-                id="completionDone"
-                aria-live="polite"
-              >
-                ✓ Checklist terminée
-              </div>
-
-            </div>
-
-
-            <button
-              type="button"
-              class="reset-button"
-              id="resetChecklist"
-            >
-              Réinitialiser la checklist
-            </button>
-
-          </aside>
+        <div class="intro-box">
+
+          <h2>
+            Vous n'avez pas besoin de tout régler en une journée.
+          </h2>
+
+          <p>
+            L'objectif est simplement de mettre en place les bonnes bases,
+            puis de prendre vos habitudes au fil de votre activité.
+          </p>
 
         </div>
 
@@ -1719,92 +939,263 @@
 
 
     <!-- =========================
-         CONSEILS
-    ========================== -->
+         10 CHOSES
+    ========================= -->
 
-    <section class="info-section">
+    <section
+      class="section section-soft"
+      id="les-10-choses"
+      aria-labelledby="titre-10-choses"
+    >
 
       <div class="container">
 
         <div class="section-heading">
 
           <p class="section-label">
-            Après 90 jours
+            Les 10 points
           </p>
 
-          <h2>
-            Le but n'est pas d'être parfait.
+          <h2 id="titre-10-choses">
+            Commencez par ce qui vous concerne.
           </h2>
 
           <p>
-            L'objectif est surtout d'avoir une organisation que vous
-            pouvez réellement tenir dans le temps.
+            Vous pouvez les parcourir dans cet ordre ou simplement vérifier
+            ceux qui correspondent déjà à votre situation.
           </p>
 
         </div>
 
 
-        <div class="info-grid">
+        <div class="action-grid">
 
-          <article class="info-card">
+          <article class="action-card">
 
             <span
-              class="info-number"
+              class="action-number"
               aria-hidden="true"
             >
               01
             </span>
 
-            <h3>
-              Gardez vos habitudes
-            </h3>
+            <div>
+              <h3>
+                Vérifier vos informations
+              </h3>
 
-            <p>
-              Continuez à suivre vos recettes, vos factures
-              et vos échéances régulièrement.
-            </p>
+              <p>
+                Contrôlez que vos coordonnées et les informations liées
+                à votre activité sont correctes.
+              </p>
+            </div>
 
           </article>
 
 
-          <article class="info-card">
+          <article class="action-card">
 
             <span
-              class="info-number"
+              class="action-number"
               aria-hidden="true"
             >
               02
             </span>
 
-            <h3>
-              Ajustez ce qui ne fonctionne pas
-            </h3>
+            <div>
+              <h3>
+                Vérifier vos accès
+              </h3>
 
-            <p>
-              Votre organisation peut évoluer avec votre activité.
-              Simplifiez ce qui vous fait perdre du temps.
-            </p>
+              <p>
+                Gardez vos identifiants et moyens d'accès aux services
+                utilisés pour gérer votre activité.
+              </p>
+            </div>
 
           </article>
 
 
-          <article class="info-card">
+          <article class="action-card">
 
             <span
-              class="info-number"
+              class="action-number"
               aria-hidden="true"
             >
               03
             </span>
 
-            <h3>
-              Vérifiez quand vous avez un doute
-            </h3>
+            <div>
+              <h3>
+                Mettre en place le suivi des recettes
+              </h3>
 
-            <p>
-              Pour une règle ou une échéance précise,
-              retournez toujours à la source officielle.
-            </p>
+              <p>
+                Notez vos encaissements régulièrement pour garder
+                une vue claire de votre chiffre d'affaires.
+              </p>
+            </div>
+
+          </article>
+
+
+          <article class="action-card">
+
+            <span
+              class="action-number"
+              aria-hidden="true"
+            >
+              04
+            </span>
+
+            <div>
+              <h3>
+                Préparer vos factures
+              </h3>
+
+              <p>
+                Utilisez un modèle cohérent et vérifiez les mentions
+                importantes avant chaque envoi.
+              </p>
+            </div>
+
+          </article>
+
+
+          <article class="action-card">
+
+            <span
+              class="action-number"
+              aria-hidden="true"
+            >
+              05
+            </span>
+
+            <div>
+              <h3>
+                Noter vos prochaines échéances
+              </h3>
+
+              <p>
+                Ajoutez vos déclarations et autres dates importantes
+                dans votre calendrier.
+              </p>
+            </div>
+
+          </article>
+
+
+          <article class="action-card">
+
+            <span
+              class="action-number"
+              aria-hidden="true"
+            >
+              06
+            </span>
+
+            <div>
+              <h3>
+                Comprendre vos cotisations
+              </h3>
+
+              <p>
+                Identifiez ce que vous devez déclarer et les échéances
+                qui concernent votre activité.
+              </p>
+            </div>
+
+          </article>
+
+
+          <article class="action-card">
+
+            <span
+              class="action-number"
+              aria-hidden="true"
+            >
+              07
+            </span>
+
+            <div>
+              <h3>
+                Vérifier si la TVA vous concerne
+              </h3>
+
+              <p>
+                Votre régime micro ne signifie pas automatiquement
+                que vous ne serez jamais concerné par la TVA.
+              </p>
+            </div>
+
+          </article>
+
+
+          <article class="action-card">
+
+            <span
+              class="action-number"
+              aria-hidden="true"
+            >
+              08
+            </span>
+
+            <div>
+              <h3>
+                Vérifier les seuils qui vous concernent
+              </h3>
+
+              <p>
+                Gardez un œil sur les plafonds du régime micro
+                et sur les seuils qui peuvent avoir un impact.
+              </p>
+            </div>
+
+          </article>
+
+
+          <article class="action-card">
+
+            <span
+              class="action-number"
+              aria-hidden="true"
+            >
+              09
+            </span>
+
+            <div>
+              <h3>
+                Organiser vos documents
+              </h3>
+
+              <p>
+                Gardez vos factures, justificatifs et documents utiles
+                dans un endroit simple à retrouver.
+              </p>
+            </div>
+
+          </article>
+
+
+          <article class="action-card">
+
+            <span
+              class="action-number"
+              aria-hidden="true"
+            >
+              10
+            </span>
+
+            <div>
+              <h3>
+                Faire un point après quelques semaines
+              </h3>
+
+              <p>
+                Vérifiez ce qui fonctionne et ce qui doit être simplifié
+                dans votre organisation.
+              </p>
+            </div>
 
           </article>
 
@@ -1816,10 +1207,80 @@
 
 
     <!-- =========================
-         SOURCE
+         ORGANISATION
     ========================== -->
 
-    <section class="source-section">
+    <section class="section">
+
+      <div class="container practical-grid">
+
+        <div>
+
+          <h2 class="practical-title">
+            Le plus important : garder une organisation que vous pouvez tenir.
+          </h2>
+
+        </div>
+
+
+        <div class="practical-copy">
+
+          <p>
+            Vous n'avez pas besoin d'un système compliqué.
+            Quelques habitudes simples suffisent souvent pour éviter
+            que les tâches administratives s'accumulent.
+          </p>
+
+          <p>
+            Le bon système est celui que vous utilisez réellement.
+          </p>
+
+          <div class="quick-list">
+
+            <div class="quick-item">
+              <strong>
+                Suivre vos recettes
+              </strong>
+
+              <span>
+                Faites-le au fur et à mesure des encaissements.
+              </span>
+            </div>
+
+            <div class="quick-item">
+              <strong>
+                Garder vos documents
+              </strong>
+
+              <span>
+                Classez-les au même endroit pour les retrouver facilement.
+              </span>
+            </div>
+
+            <div class="quick-item">
+              <strong>
+                Regarder vos échéances
+              </strong>
+
+              <span>
+                Un rappel régulier vaut mieux qu'une recherche au dernier moment.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SOURCES
+    ========================== -->
+
+    <section class="section section-soft">
 
       <div class="container">
 
@@ -1830,13 +1291,12 @@
           </p>
 
           <h2>
-            Une règle peut dépendre de votre situation.
+            Pour les règles, vérifiez toujours la source.
           </h2>
 
           <p>
-            MicroClair aide à comprendre et à s'organiser.
-            Pour une démarche, un montant ou une échéance précise,
-            vérifiez toujours la source officielle.
+            Certaines démarches, échéances et obligations dépendent
+            de votre situation. Les règles peuvent aussi évoluer.
           </p>
 
         </div>
@@ -1863,15 +1323,15 @@
               rel="noopener noreferrer"
             >
               l'Urssaf
-            </a>
-            et
+            </a>,
             <a
               href="https://www.impots.gouv.fr/"
               target="_blank"
               rel="noopener noreferrer"
             >
               impots.gouv.fr
-            </a>.
+            </a>
+            et, selon votre activité, les organismes compétents.
           </p>
 
         </div>
@@ -1892,28 +1352,28 @@
         <div class="cta-box">
 
           <h2>
-            Une étape à la fois.
+            Vous avez posé les bases.
           </h2>
 
           <p>
-            Une fois vos 90 jours passés, vous aurez surtout
-            les bases nécessaires pour continuer sereinement.
+            Continuez simplement avec la checklist des 90 premiers jours
+            ou revenez aux ressources quand vous en avez besoin.
           </p>
 
           <div class="button-row">
 
             <a
               class="button button-primary"
-              href="ressources.html"
+              href="checklist-90-jours.html"
             >
-              Voir les ressources
+              Faire ma checklist
             </a>
 
             <a
               class="button button-secondary"
-              href="suivi-recettes.html"
+              href="ressources.html"
             >
-              Suivre mes recettes
+              Voir les ressources
             </a>
 
           </div>
@@ -2037,149 +1497,6 @@
     </div>
 
   </footer>
-
-
-  <script>
-    (() => {
-      "use strict";
-
-      const STORAGE_KEY = "microclairChecklist90";
-      const TOTAL_TASKS = 12;
-
-      const checkboxes = Array.from(
-        document.querySelectorAll(".task-checkbox")
-      );
-
-      const progressBar = document.getElementById("progressBar");
-      const progressTrack = document.getElementById("progressTrack");
-      const progressText = document.getElementById("progressText");
-      const completionCount = document.getElementById("completionCount");
-      const progressSide = document.getElementById("progressSide");
-      const resetButton = document.getElementById("resetChecklist");
-
-      function getSavedState() {
-        try {
-          const saved = localStorage.getItem(STORAGE_KEY);
-
-          if (!saved) {
-            return {};
-          }
-
-          const parsed = JSON.parse(saved);
-
-          return parsed && typeof parsed === "object"
-            ? parsed
-            : {};
-        } catch (error) {
-          return {};
-        }
-      }
-
-      function saveState() {
-        const state = {};
-
-        checkboxes.forEach((checkbox) => {
-          state[checkbox.dataset.task] = checkbox.checked;
-        });
-
-        try {
-          localStorage.setItem(
-            STORAGE_KEY,
-            JSON.stringify(state)
-          );
-        } catch (error) {
-          /* Le fonctionnement continue même si le stockage est indisponible. */
-        }
-      }
-
-      function updateTaskVisual(checkbox) {
-        const item = checkbox.closest(".task-item");
-
-        if (!item) {
-          return;
-        }
-
-        item.classList.toggle(
-          "is-complete",
-          checkbox.checked
-        );
-      }
-
-      function updateProgress() {
-        const completed = checkboxes.filter(
-          (checkbox) => checkbox.checked
-        ).length;
-
-        const percentage = Math.round(
-          (completed / TOTAL_TASKS) * 100
-        );
-
-        progressBar.style.width = `${percentage}%`;
-
-        progressTrack.setAttribute(
-          "aria-valuenow",
-          completed
-        );
-
-        progressText.textContent =
-          `${completed} / ${TOTAL_TASKS} · ${percentage}%`;
-
-        completionCount.textContent =
-          `${completed} / ${TOTAL_TASKS}`;
-
-        progressSide.classList.toggle(
-          "is-finished",
-          completed === TOTAL_TASKS
-        );
-      }
-
-      function loadState() {
-        const state = getSavedState();
-
-        checkboxes.forEach((checkbox) => {
-          checkbox.checked =
-            state[checkbox.dataset.task] === true;
-
-          updateTaskVisual(checkbox);
-        });
-
-        updateProgress();
-      }
-
-      checkboxes.forEach((checkbox) => {
-        checkbox.addEventListener("change", () => {
-          updateTaskVisual(checkbox);
-          saveState();
-          updateProgress();
-        });
-      });
-
-      resetButton.addEventListener("click", () => {
-        const shouldReset = window.confirm(
-          "Réinitialiser toute la checklist ?"
-        );
-
-        if (!shouldReset) {
-          return;
-        }
-
-        checkboxes.forEach((checkbox) => {
-          checkbox.checked = false;
-          updateTaskVisual(checkbox);
-        });
-
-        try {
-          localStorage.removeItem(STORAGE_KEY);
-        } catch (error) {
-          /* Rien à faire si le stockage est indisponible. */
-        }
-
-        updateProgress();
-      });
-
-      loadState();
-    })();
-  </script>
 
 </body>
 </html>
