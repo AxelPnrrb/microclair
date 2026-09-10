@@ -1,327 +1,1172 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Contactez MicroClair pour une question, une suggestion ou un retour sur le site."
+  >
+
   <title>Contact — MicroClair</title>
-  <meta name="description" content="Contactez MicroClair pour une question, une remarque ou une suggestion.">
-  <meta name="theme-color" content="#173F3A">
 
   <style>
-    :root{
-      --green:#173F3A;
-      --green2:#245C54;
-      --cream:#F8F6F1;
-      --white:#FFFFFF;
-      --text:#24312F;
-      --muted:#66736F;
-      --line:#DDE5E2;
-      --soft:#F3F8F7;
-      --radius:18px;
+    :root {
+      --green-950: #102F2B;
+      --green-900: #173F3A;
+      --green-800: #245C55;
+      --green-700: #2F6B63;
+
+      --mint-100: #EFF8F5;
+      --mint-200: #DCEDE9;
+      --mint-300: #C9E3DD;
+
+      --cream: #FAF9F5;
+      --white: #FFFFFF;
+
+      --text: #17302D;
+      --text-soft: #48605C;
+      --muted: #667875;
+
+      --border: #DCE6E3;
+      --border-strong: #CBDDD9;
+
+      --focus: #6BAEA3;
+
+      --shadow-xs: 0 4px 14px rgba(23, 63, 58, .045);
+      --shadow-sm: 0 8px 24px rgba(23, 63, 58, .065);
+      --shadow-md: 0 16px 40px rgba(23, 63, 58, .09);
+      --shadow-lg: 0 26px 70px rgba(23, 63, 58, .13);
+
+      --radius-sm: 12px;
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --radius-xl: 30px;
+
+      --container: 1160px;
+      --reading: 680px;
+
+      --header-height: 76px;
+
+      --ease: cubic-bezier(.2, .75, .25, 1);
     }
 
-    *{box-sizing:border-box}
-
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:var(--cream);
-      color:var(--text);
-      line-height:1.6;
+    * {
+      box-sizing: border-box;
     }
 
-    a{color:inherit}
-
-    header{
-      background:var(--white);
-      border-bottom:1px solid var(--line);
+    html {
+      scroll-behavior: smooth;
     }
 
-    .nav{
-      max-width:1120px;
-      margin:auto;
-      padding:20px 24px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:30px;
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    .logo{
-      text-decoration:none;
-      font-weight:800;
-      font-size:21px;
-      letter-spacing:-.5px;
-      color:var(--green);
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    nav{
-      display:flex;
-      gap:24px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
+    button,
+    input,
+    textarea {
+      font: inherit;
     }
 
-    nav a{
-      text-decoration:none;
-      color:var(--muted);
-      font-size:14px;
-      font-weight:600;
+    button {
+      cursor: pointer;
     }
 
-    nav a:hover{color:var(--green)}
-
-    .hero{
-      max-width:850px;
-      margin:auto;
-      padding:90px 24px 55px;
-      text-align:center;
+    textarea {
+      resize: vertical;
     }
 
-    .eyebrow{
-      color:var(--green2);
-      font-size:13px;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:1.2px;
-      margin-bottom:14px;
+    :focus-visible {
+      outline: 3px solid rgba(107, 174, 163, .45);
+      outline-offset: 3px;
     }
 
-    h1{
-      margin:0 0 18px;
-      color:var(--green);
-      font-size:clamp(38px,6vw,58px);
-      line-height:1.05;
-      letter-spacing:-2px;
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
     }
 
-    .hero p{
-      max-width:650px;
-      margin:auto;
-      color:var(--muted);
-      font-size:18px;
+    /* =========================
+       HEADER
+    ========================= */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: var(--header-height);
+      border-bottom: 1px solid rgba(203, 221, 217, .72);
+      background: rgba(250, 249, 245, .88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
     }
 
-    .contact{
-      max-width:760px;
-      margin:0 auto 90px;
-      padding:0 24px;
+    .header-inner {
+      width: min(calc(100% - 40px), var(--container));
+      height: 100%;
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
     }
 
-    .card{
-      background:var(--white);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:38px;
-      box-shadow:0 12px 35px rgba(23,63,58,.06);
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green-900);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      flex-shrink: 0;
     }
 
-    .card h2{
-      margin:0 0 10px;
-      color:var(--green);
-      font-size:25px;
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: var(--green-900);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 800;
     }
 
-    .card p{
-      color:var(--muted);
-      margin:0 0 28px;
+    .brand-name {
+      font-size: 17px;
     }
 
-    .email-box{
-      background:var(--soft);
-      border-radius:14px;
-      padding:24px;
-      text-align:center;
-      margin-bottom:28px;
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
     }
 
-    .email-box span{
-      display:block;
-      color:var(--muted);
-      font-size:14px;
-      margin-bottom:6px;
+    .main-nav a {
+      color: var(--text-soft);
+      font-size: 14px;
+      font-weight: 650;
     }
 
-    .email{
-      color:var(--green);
-      font-size:20px;
-      font-weight:800;
-      text-decoration:none;
-      word-break:break-word;
+    .main-nav a:not(.nav-cta):hover {
+      color: var(--green-900);
     }
 
-    .email:hover{text-decoration:underline}
-
-    .button{
-      display:inline-block;
-      background:var(--green);
-      color:white;
-      padding:13px 22px;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:700;
-      transition:.2s;
+    .nav-cta {
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: var(--green-900);
+      color: var(--white) !important;
     }
 
-    .button:hover{
-      background:var(--green2);
-      transform:translateY(-1px);
+    .nav-cta:hover {
+      background: var(--green-800);
     }
 
-    .note{
-      border-top:1px solid var(--line);
-      padding-top:24px;
-      margin-top:8px;
-      font-size:14px;
-      color:var(--muted);
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      padding: 86px 0 72px;
     }
 
-    footer{
-      border-top:1px solid var(--line);
-      background:var(--white);
-      padding:35px 24px;
+    .hero-inner {
+      max-width: 850px;
     }
 
-    .footer-inner{
-      max-width:1120px;
-      margin:auto;
-      display:flex;
-      justify-content:space-between;
-      gap:25px;
-      flex-wrap:wrap;
+    .eyebrow,
+    .section-label {
+      margin: 0 0 13px;
+      color: var(--green-700);
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
 
-    footer p{
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
+    .hero h1 {
+      max-width: 800px;
+      margin: 0;
+      color: var(--green-950);
+      font-size: clamp(3rem, 5.6vw, 4.45rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+      font-weight: 820;
     }
 
-    .footer-links{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
+    .hero h1 span {
+      color: var(--green-700);
     }
 
-    .footer-links a{
-      color:var(--muted);
-      text-decoration:none;
-      font-size:13px;
+    .hero-copy {
+      max-width: 650px;
+      margin: 25px 0 0;
+      color: var(--text-soft);
+      font-size: clamp(1.05rem, 1.4vw, 1.18rem);
+      line-height: 1.62;
     }
 
-    .footer-links a:hover{color:var(--green)}
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
 
-    @media(max-width:700px){
-      .nav{
-        align-items:flex-start;
-        flex-direction:column;
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .btn {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border: 1px solid transparent;
+      border-radius: 11px;
+      font-size: 15px;
+      line-height: 1.2;
+      font-weight: 750;
+      transition:
+        transform .2s var(--ease),
+        box-shadow .2s ease,
+        background .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--green-900);
+      color: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-primary:hover {
+      background: var(--green-800);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      border-color: var(--border-strong);
+      color: var(--green-900);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .btn-secondary:hover {
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-soft {
+      background: var(--mint-100);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 48px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--green-950);
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -.045em;
+      font-weight: 800;
+    }
+
+    .section-heading p {
+      margin: 16px 0 0;
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    /* =========================
+       CONTACT LAYOUT
+    ========================= */
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .contact-card {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-card h3 {
+      margin: 0;
+      color: var(--green-950);
+      font-size: 22px;
+      line-height: 1.18;
+      letter-spacing: -.025em;
+      font-weight: 800;
+    }
+
+    .contact-card-intro {
+      margin: 9px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .form-group {
+      margin-top: 22px;
+    }
+
+    .form-group:first-of-type {
+      margin-top: 26px;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green-950);
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: 750;
+    }
+
+    .form-label span {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      border: 1px solid var(--border-strong);
+      border-radius: 11px;
+      background: var(--cream);
+      color: var(--text);
+      padding: 12px 14px;
+      font-size: 15px;
+      line-height: 1.5;
+      transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+    }
+
+    .form-input {
+      min-height: 46px;
+    }
+
+    .form-textarea {
+      min-height: 150px;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: #8A9895;
+    }
+
+    .form-input:hover,
+    .form-textarea:hover {
+      border-color: var(--green-700);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: var(--focus);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(107, 174, 163, .13);
+      outline: none;
+    }
+
+    .form-submit {
+      margin-top: 24px;
+    }
+
+    .form-submit .btn {
+      width: 100%;
+    }
+
+    .form-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .contact-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .side-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .side-card.highlight {
+      background: var(--mint-200);
+      border-color: var(--mint-300);
+    }
+
+    .side-card h3 {
+      margin: 0;
+      color: var(--green-950);
+      font-size: 20px;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+      font-weight: 800;
+    }
+
+    .side-card p {
+      margin: 10px 0 0;
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.62;
+    }
+
+    .side-card strong {
+      color: var(--green-900);
+    }
+
+    .contact-link {
+      display: inline-flex;
+      margin-top: 14px;
+      color: var(--green-800);
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .contact-link:hover {
+      color: var(--green-900);
+    }
+
+    /* =========================
+       INFO CARDS
+    ========================= */
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .info-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: var(--white);
+      box-shadow: var(--shadow-xs);
+      transition:
+        transform .22s var(--ease),
+        border-color .22s ease,
+        box-shadow .22s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow-md);
+    }
+
+    .info-number {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 38px;
+      border-radius: 10px;
+      background: var(--mint-200);
+      color: var(--green-800);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .info-card h3 {
+      margin: 0;
+      color: var(--green-950);
+      font-size: 22px;
+      line-height: 1.18;
+      letter-spacing: -.025em;
+      font-weight: 800;
+    }
+
+    .info-card p {
+      margin: 10px 0 0;
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.62;
+    }
+
+    /* =========================
+       DARK STATEMENT
+    ========================= */
+
+    .dark-statement {
+      padding: 105px 0;
+      background: var(--green-950);
+    }
+
+    .dark-inner {
+      max-width: 840px;
+    }
+
+    .dark-statement .section-label {
+      color: var(--mint-300);
+    }
+
+    .dark-statement h2 {
+      margin: 0;
+      color: var(--white);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -.05em;
+      font-weight: 800;
+    }
+
+    .dark-statement p {
+      max-width: 700px;
+      margin: 22px 0 0;
+      color: rgba(255, 255, 255, .72);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta-section {
+      padding: 100px 0;
+    }
+
+    .cta {
+      padding: 58px;
+      border-radius: var(--radius-xl);
+      background: var(--mint-200);
+    }
+
+    .cta-inner {
+      max-width: 760px;
+    }
+
+    .cta h2 {
+      margin: 0;
+      color: var(--green-950);
+      font-size: clamp(2.25rem, 4vw, 3.35rem);
+      line-height: 1.05;
+      letter-spacing: -.045em;
+      font-weight: 800;
+    }
+
+    .cta p {
+      margin: 16px 0 0;
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .cta .hero-actions {
+      margin-top: 25px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 58px 0 28px;
+      background: var(--green-950);
+      color: var(--white);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 48px;
+    }
+
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .footer-brand .brand-mark {
+      background: var(--white);
+      color: var(--green-950);
+    }
+
+    .footer-description {
+      max-width: 330px;
+      margin: 17px 0 0;
+      color: rgba(255, 255, 255, .62);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .footer-column h3 {
+      margin: 0 0 14px;
+      color: rgba(255, 255, 255, .72);
+      font-size: 13px;
+      line-height: 1.3;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .footer-column a {
+      display: block;
+      width: fit-content;
+      margin-top: 9px;
+      color: rgba(255, 255, 255, .72);
+      font-size: 14px;
+    }
+
+    .footer-column a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .45);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 980px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
       }
 
-      nav{
-        justify-content:flex-start;
-        gap:14px;
+      .info-grid {
+        grid-template-columns: 1fr;
       }
 
-      .hero{
-        padding-top:65px;
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container,
+      .header-inner {
+        width: min(calc(100% - 56px), var(--container));
       }
 
-      .card{
-        padding:26px 20px;
+      .main-nav {
+        gap: 14px;
       }
 
-      .footer-inner{
-        flex-direction:column;
+      .main-nav a:not(.nav-cta) {
+        display: none;
+      }
+
+      .hero {
+        padding: 55px 0;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.65rem, 12vw, 4rem);
+      }
+
+      .hero-copy {
+        font-size: 16px;
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .section-heading h2 {
+        font-size: clamp(2rem, 9vw, 2.7rem);
+      }
+
+      .contact-card,
+      .side-card {
+        padding: 24px;
+      }
+
+      .dark-statement {
+        padding: 78px 0;
+      }
+
+      .dark-statement h2 {
+        font-size: clamp(2.3rem, 11vw, 3.3rem);
+      }
+
+      .cta-section {
+        padding: 72px 0;
+      }
+
+      .cta {
+        padding: 34px 25px;
+        border-radius: 22px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container,
+      .header-inner {
+        width: min(calc(100% - 40px), var(--container));
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .contact-card,
+      .side-card {
+        padding: 20px;
+      }
+
+      .cta {
+        padding: 30px 22px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
       }
     }
   </style>
-
 </head>
 
 <body>
 
-<header>
-  <div class="nav">
-    <a class="logo" href="index.html">MICROCLAIR</a>
+  <header class="site-header">
+    <div class="header-inner">
 
-```
-<nav>
-  <a href="a-propos.html">À propos</a>
-  <a href="demarrer.html">Démarrer</a>
-  <a href="ressources.html">Ressources</a>
-  <a href="contact.html">Contact</a>
-</nav>
-```
+      <a class="brand" href="index.html" aria-label="MicroClair — Accueil">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span class="brand-name">MicroClair</span>
+      </a>
 
-  </div>
-</header>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="demarrer.html">Démarrer</a>
+        <a href="ressources.html">Ressources</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a class="nav-cta" href="demarrer.html">Commencer</a>
+      </nav>
 
-<main>
+    </div>
+  </header>
 
-  <section class="hero">
-    <div class="eyebrow">Une question ?</div>
-    <h1>Parlons de votre activité.</h1>
-    <p>
-      Une question sur MicroClair, une remarque ou une suggestion ?
-      Vous pouvez nous écrire directement.
-    </p>
-  </section>
+  <main>
 
-  <section class="contact">
-    <div class="card">
-      <h2>Contactez MicroClair</h2>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
 
-```
-  <p>
-    Pour le moment, le contact se fait simplement par email.
-    Nous vous répondrons dès que possible.
-  </p>
+          <p class="eyebrow">Contact</p>
 
-  <div class="email-box">
-    <span>Email</span>
-    <a class="email" href="mailto:microclair@protonmail.com">
-      microclair@protonmail.com
-    </a>
-  </div>
+          <h1>
+            Une question,
+            <span>une idée ou un retour&nbsp;?</span>
+          </h1>
 
-  <div style="text-align:center;">
-    <a class="button" href="mailto:microclair@protonmail.com">
-      Envoyer un email
-    </a>
-  </div>
+          <p class="hero-copy">
+            Vous avez repéré quelque chose à améliorer, une question sur le site
+            ou une idée de ressource&nbsp;? Écrivez-nous simplement.
+          </p>
 
-  <div class="note">
-    <strong>À savoir :</strong> MicroClair propose des contenus pédagogiques
-    pour aider les indépendants à mieux s'organiser. Les informations
-    publiées ne remplacent pas les conseils d'un professionnel ou les
-    informations officielles de l'administration.
-  </div>
-</div>
-```
+        </div>
+      </div>
+    </section>
 
-  </section>
+    <!-- CONTACT -->
+    <section class="section section-soft">
+      <div class="container">
 
-</main>
+        <div class="section-heading">
+          <p class="section-label">Écrire à MicroClair</p>
 
-<footer>
-  <div class="footer-inner">
-    <p>© 2026 MicroClair — Simplement indépendant.</p>
+          <h2>
+            Un message simple suffit.
+          </h2>
 
-```
-<div class="footer-links">
-  <a href="a-propos.html">À propos</a>
-  <a href="demarrer.html">Démarrer</a>
-  <a href="ressources.html">Ressources</a>
-  <a href="contact.html">Contact</a>
-  <a href="mentions-legales.html">Mentions légales</a>
-  <a href="confidentialite.html">Confidentialité</a>
-  <a href="cookies.html">Cookies</a>
-</div>
-```
+          <p>
+            Utilisez ce formulaire pour nous transmettre votre message.
+            Aucun compte n'est nécessaire.
+          </p>
+        </div>
 
-  </div>
-</footer>
+        <div class="contact-layout">
+
+          <div class="contact-card">
+
+            <h3>Votre message</h3>
+
+            <p class="contact-card-intro">
+              Les champs marqués d'un astérisque sont nécessaires.
+            </p>
+
+            <form id="contactForm">
+
+              <div class="form-group">
+                <label class="form-label" for="name">
+                  Votre nom <span>(facultatif)</span>
+                </label>
+
+                <input
+                  class="form-input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  autocomplete="name"
+                  placeholder="Votre prénom ou nom"
+                >
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="email">
+                  Votre adresse e-mail <span>*</span>
+                </label>
+
+                <input
+                  class="form-input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="vous@exemple.fr"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="message">
+                  Votre message <span>*</span>
+                </label>
+
+                <textarea
+                  class="form-textarea"
+                  id="message"
+                  name="message"
+                  placeholder="Expliquez-nous simplement votre question ou votre idée..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-submit">
+                <button class="btn btn-primary" type="submit">
+                  Préparer mon e-mail
+                </button>
+              </div>
+
+              <p class="form-note" id="formNote">
+                Votre messagerie s'ouvrira pour finaliser l'envoi.
+              </p>
+
+            </form>
+
+          </div>
+
+          <div class="contact-side">
+
+            <div class="side-card highlight">
+
+              <h3>Une idée pour MicroClair&nbsp;?</h3>
+
+              <p>
+                Les retours sont particulièrement utiles lorsqu'ils permettent
+                d'identifier un sujet difficile à comprendre ou un outil
+                qui pourrait simplifier une tâche.
+              </p>
+
+            </div>
+
+            <div class="side-card">
+
+              <h3>Une question sur votre activité&nbsp;?</h3>
+
+              <p>
+                MicroClair propose des contenus pédagogiques.
+                Pour une situation personnelle ou une décision importante,
+                vérifiez toujours les informations officielles correspondant
+                à votre situation.
+              </p>
+
+              <a class="contact-link" href="ressources.html">
+                Voir les ressources →
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- REASONS -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="section-label">Vous pouvez nous écrire pour</p>
+
+          <h2>
+            Tout ce qui peut rendre MicroClair plus utile.
+          </h2>
+        </div>
+
+        <div class="info-grid">
+
+          <article class="info-card">
+
+            <div class="info-number">01</div>
+
+            <h3>Signaler une erreur</h3>
+
+            <p>
+              Une information semble imprécise, un lien ne fonctionne plus
+              ou une page mérite d'être corrigée&nbsp;? Dites-le-nous.
+            </p>
+
+          </article>
+
+          <article class="info-card">
+
+            <div class="info-number">02</div>
+
+            <h3>Proposer un sujet</h3>
+
+            <p>
+              Vous cherchez une explication ou un outil qui n'existe pas encore
+              sur le site&nbsp;? Votre besoin peut devenir une prochaine ressource.
+            </p>
+
+          </article>
+
+          <article class="info-card">
+
+            <div class="info-number">03</div>
+
+            <h3>Donner votre avis</h3>
+
+            <p>
+              Une page vous a aidé ou, au contraire, vous a laissé dans le flou&nbsp;?
+              Un retour concret aide à améliorer le site.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DARK STATEMENT -->
+    <section class="dark-statement">
+      <div class="container">
+
+        <div class="dark-inner">
+
+          <p class="section-label">L'esprit MicroClair</p>
+
+          <h2>
+            Un site utile se construit aussi avec les vraies questions des utilisateurs.
+          </h2>
+
+          <p>
+            Les difficultés que vous rencontrez peuvent révéler les endroits
+            où une explication, un exemple ou un outil manque encore de clarté.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container">
+
+        <div class="cta">
+
+          <div class="cta-inner">
+
+            <h2>
+              Besoin de commencer par l'essentiel&nbsp;?
+            </h2>
+
+            <p>
+              Retrouvez les étapes de départ, les guides et les outils
+              pratiques pour avancer sans vous disperser.
+            </p>
+
+            <div class="hero-actions">
+
+              <a class="btn btn-primary" href="demarrer.html">
+                Bien démarrer
+              </a>
+
+              <a class="btn btn-secondary" href="ressources.html">
+                Explorer les ressources
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <a class="footer-brand" href="index.html" aria-label="MicroClair — Accueil">
+            <span class="brand-mark" aria-hidden="true">M</span>
+            <span>MicroClair</span>
+          </a>
+
+          <p class="footer-description">
+            Des repères simples pour démarrer, organiser et suivre
+            une micro-entreprise avec plus de sérénité.
+          </p>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Explorer</h3>
+
+          <a href="demarrer.html">Démarrer</a>
+          <a href="ressources.html">Ressources</a>
+          <a href="suivi-recettes.html">Suivi des recettes</a>
+          <a href="checklist-90-jours.html">Checklist 90 jours</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>MicroClair</h3>
+
+          <a href="a-propos.html">À propos</a>
+          <a href="contact.html">Contact</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="confidentialite.html">Confidentialité</a>
+          <a href="cookies.html">Cookies</a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <span>© 2026 MicroClair. Tous droits réservés.</span>
+
+        <span>
+          Informations pédagogiques — vérifiez toujours les règles officielles.
+        </span>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const note = document.getElementById("formNote");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!email || !message) {
+        note.textContent = "Veuillez renseigner votre adresse e-mail et votre message.";
+        return;
+      }
+
+      const subject = encodeURIComponent("Message depuis MicroClair");
+      const body = encodeURIComponent(
+        `Bonjour,\n\n` +
+        `${message}\n\n` +
+        `Nom : ${name || "Non renseigné"}\n` +
+        `E-mail : ${email}`
+      );
+
+      /*
+        Remplacez cette adresse par l'adresse e-mail réelle
+        utilisée par MicroClair.
+      */
+      const contactEmail = "contact@microclair.fr";
+
+      window.location.href =
+        `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+
+      note.textContent = "Votre messagerie devrait maintenant s'ouvrir.";
+    });
+  </script>
 
 </body>
 </html>
