@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Plafonds de la micro-entreprise — MicroClair</title>
-  <meta name="description" content="Comprendre les plafonds de chiffre d'affaires de la micro-entreprise : seuils 2026, dépassement et conséquences expliqués simplement.">
+  <meta name="description" content="Comprendre les plafonds de chiffre d'affaires de la micro-entreprise : seuils, dépassement et conséquences expliqués simplement.">
   <meta name="theme-color" content="#173F3A">
 
   <style>
@@ -20,13 +19,24 @@
       --muted:#667875;
       --white:#fff;
       --border:#DCE6E3;
-      --shadow:0 18px 45px rgba(23,63,58,.10);
+      --warning-bg:#FFF8E9;
+      --warning-border:#F1E3BD;
+      --warning-text:#675B3D;
+      --shadow-small:0 8px 22px rgba(23,63,58,.06);
+      --shadow-medium:0 16px 38px rgba(23,63,58,.09);
+      --shadow-large:0 22px 55px rgba(23,63,58,.12);
+      --radius:16px;
+      --radius-large:22px;
     }
 
     * {
       box-sizing:border-box;
       margin:0;
       padding:0;
+    }
+
+    html {
+      scroll-behavior:smooth;
     }
 
     body {
@@ -41,9 +51,33 @@
       text-decoration:none;
     }
 
+    a:focus-visible {
+      outline:3px solid var(--green-2);
+      outline-offset:4px;
+      border-radius:6px;
+    }
+
     .container {
       width:min(1050px,calc(100% - 32px));
-      margin:auto;
+      margin-inline:auto;
+    }
+
+    .skip-link {
+      position:absolute;
+      left:16px;
+      top:-60px;
+      z-index:100;
+      padding:10px 14px;
+      background:var(--green);
+      color:var(--white);
+      border-radius:8px;
+      font-size:13px;
+      font-weight:800;
+      transition:top .2s ease;
+    }
+
+    .skip-link:focus {
+      top:16px;
     }
 
     header {
@@ -77,16 +111,18 @@
       height:33px;
       border-radius:10px;
       background:var(--green);
-      color:white;
+      color:var(--white);
       display:grid;
       place-items:center;
       font-size:15px;
+      font-weight:900;
     }
 
     .back {
       color:var(--muted);
       font-size:13px;
       font-weight:700;
+      transition:color .2s ease;
     }
 
     .back:hover {
@@ -94,7 +130,7 @@
     }
 
     .hero {
-      padding:75px 0 55px;
+      padding:76px 0 56px;
       text-align:center;
     }
 
@@ -127,17 +163,18 @@
     .intro {
       max-width:850px;
       margin:0 auto 50px;
-      padding:28px;
-      background:white;
+      padding:30px;
+      background:var(--white);
       border:1px solid var(--border);
-      border-radius:20px;
-      box-shadow:var(--shadow);
+      border-radius:var(--radius-large);
+      box-shadow:var(--shadow-medium);
     }
 
     .intro strong {
       display:block;
-      font-size:18px;
       margin-bottom:8px;
+      font-size:18px;
+      line-height:1.35;
     }
 
     .intro p {
@@ -151,15 +188,83 @@
     }
 
     .section h2 {
+      margin-bottom:10px;
       font-size:29px;
       line-height:1.2;
-      margin-bottom:10px;
+      letter-spacing:-.5px;
     }
 
     .section > p {
+      margin-bottom:25px;
       color:var(--muted);
       font-size:14px;
-      margin-bottom:25px;
+    }
+
+    .highlight {
+      max-width:900px;
+      margin:0 auto 65px;
+      padding:32px;
+      background:var(--green);
+      color:var(--white);
+      border-radius:var(--radius-large);
+      text-align:center;
+      box-shadow:var(--shadow-large);
+    }
+
+    .highlight h2 {
+      margin-bottom:10px;
+      font-size:27px;
+      line-height:1.2;
+    }
+
+    .highlight p {
+      max-width:720px;
+      margin:auto;
+      color:#D0DFDC;
+      font-size:13px;
+    }
+
+    .threshold {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:15px;
+    }
+
+    .threshold-card {
+      padding:29px;
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:18px;
+      text-align:center;
+      box-shadow:var(--shadow-small);
+    }
+
+    .threshold-card h3 {
+      margin-bottom:12px;
+      font-size:16px;
+    }
+
+    .amount {
+      margin-bottom:8px;
+      color:var(--green);
+      font-size:32px;
+      line-height:1;
+      font-weight:900;
+      letter-spacing:-1px;
+    }
+
+    .amount-label {
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .mini {
+      margin-top:17px;
+      padding-top:15px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.55;
     }
 
     .cards {
@@ -169,10 +274,11 @@
     }
 
     .card {
-      padding:23px;
-      background:white;
+      padding:24px;
+      background:var(--white);
       border:1px solid var(--border);
       border-radius:17px;
+      box-shadow:var(--shadow-small);
     }
 
     .number {
@@ -189,74 +295,13 @@
     }
 
     .card h3 {
-      font-size:17px;
       margin-bottom:7px;
+      font-size:17px;
+      line-height:1.3;
     }
 
     .card p {
       color:var(--muted);
-      font-size:13px;
-    }
-
-    .threshold {
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:15px;
-    }
-
-    .threshold-card {
-      padding:28px;
-      background:white;
-      border:1px solid var(--border);
-      border-radius:18px;
-      text-align:center;
-    }
-
-    .threshold-card h3 {
-      font-size:16px;
-      margin-bottom:12px;
-    }
-
-    .amount {
-      font-size:32px;
-      line-height:1;
-      font-weight:900;
-      color:var(--green);
-      margin-bottom:7px;
-    }
-
-    .amount-label {
-      color:var(--muted);
-      font-size:12px;
-    }
-
-    .mini {
-      margin-top:16px;
-      padding-top:15px;
-      border-top:1px solid var(--border);
-      color:var(--muted);
-      font-size:12px;
-    }
-
-    .highlight {
-      max-width:900px;
-      margin:0 auto 65px;
-      padding:30px;
-      background:var(--green);
-      color:white;
-      border-radius:20px;
-      text-align:center;
-    }
-
-    .highlight h2 {
-      font-size:26px;
-      margin-bottom:10px;
-    }
-
-    .highlight p {
-      max-width:680px;
-      margin:auto;
-      color:#D0DFDC;
       font-size:13px;
     }
 
@@ -269,18 +314,19 @@
       display:flex;
       align-items:flex-start;
       gap:13px;
-      padding:17px 18px;
+      padding:18px;
       background:var(--soft);
+      border:1px solid transparent;
       border-radius:14px;
     }
 
     .step-icon {
       flex:none;
-      width:24px;
-      height:24px;
+      width:25px;
+      height:25px;
       border-radius:7px;
       background:var(--green);
-      color:white;
+      color:var(--white);
       display:grid;
       place-items:center;
       font-size:12px;
@@ -289,50 +335,55 @@
 
     .step strong {
       display:block;
+      margin-bottom:3px;
       font-size:14px;
-      margin-bottom:2px;
+      line-height:1.35;
     }
 
     .step span {
       color:var(--muted);
       font-size:12px;
+      line-height:1.55;
     }
 
     .warning {
       max-width:900px;
       margin:0 auto 65px;
-      padding:26px;
-      background:#FFF8E9;
-      border:1px solid #F1E3BD;
+      padding:27px;
+      background:var(--warning-bg);
+      border:1px solid var(--warning-border);
       border-radius:18px;
     }
 
     .warning h2 {
-      font-size:21px;
       margin-bottom:8px;
+      font-size:21px;
+      line-height:1.3;
     }
 
     .warning p {
-      color:#675B3D;
+      color:var(--warning-text);
       font-size:13px;
     }
 
     .cta {
       max-width:900px;
       margin:0 auto 80px;
-      padding:35px;
+      padding:36px;
       background:var(--mint);
-      border-radius:22px;
+      border-radius:var(--radius-large);
       text-align:center;
     }
 
     .cta h2 {
-      font-size:28px;
       margin-bottom:10px;
+      font-size:28px;
+      line-height:1.2;
+      letter-spacing:-.5px;
     }
 
     .cta p {
-      max-width:600px;
+      max-width:620px;
       margin:0 auto 22px;
       color:var(--muted);
       font-size:13px;
@@ -340,18 +391,39 @@
 
     .button {
       display:inline-block;
-      padding:12px 18px;
+      padding:12px 19px;
       background:var(--green);
-      color:white;
+      color:var(--white);
+      border:1px solid var(--green);
       border-radius:10px;
       font-size:13px;
       font-weight:800;
+      transition:
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .button:hover {
+      background:var(--green-2);
+      box-shadow:var(--shadow-small);
+      transform:translateY(-1px);
     }
 
     footer {
       background:#102F2B;
       color:#AFC6C1;
       padding:40px 0 25px;
+    }
+
+    footer .logo {
+      margin-bottom:12px;
+      color:var(--white);
+    }
+
+    footer .logo-mark {
+      background:var(--white);
+      color:var(--green);
     }
 
     .footer-grid {
@@ -361,35 +433,29 @@
       padding-bottom:30px;
     }
 
-    footer .logo {
-      color:white;
-      margin-bottom:12px;
-    }
-
-    footer .logo-mark {
-      background:white;
-      color:var(--green);
-    }
-
     .footer-description {
       max-width:350px;
       font-size:12px;
+      line-height:1.6;
     }
 
     .footer-column h3 {
-      color:white;
-      font-size:13px;
       margin-bottom:12px;
+      color:var(--white);
+      font-size:13px;
     }
 
     .footer-column a {
       display:block;
-      font-size:12px;
+      width:max-content;
+      max-width:100%;
       margin-bottom:7px;
+      font-size:12px;
+      transition:color .2s ease;
     }
 
     .footer-column a:hover {
-      color:white;
+      color:var(--white);
     }
 
     .copyright {
@@ -398,354 +464,379 @@
       font-size:11px;
     }
 
-    @media(max-width:700px) {
+    @media (max-width:700px) {
       .cards,
       .threshold {
         grid-template-columns:1fr;
       }
     }
 
-    @media(max-width:600px) {
+    @media (max-width:600px) {
+      .container {
+        width:min(100% - 24px,1050px);
+      }
+
+      .nav {
+        min-height:64px;
+        gap:12px;
+      }
+
+      .logo {
+        font-size:18px;
+      }
+
+      .logo-mark {
+        width:31px;
+        height:31px;
+      }
+
+      .back {
+        font-size:12px;
+      }
+
       .hero {
-        padding:55px 0 40px;
+        padding:58px 0 42px;
+      }
+
+      h1 {
+        letter-spacing:-1.5px;
+      }
+
+      .hero p {
+        font-size:15px;
       }
 
       .intro,
-      .card,
       .threshold-card,
+      .card,
       .highlight,
       .warning,
       .cta {
-        padding:21px;
+        padding:22px;
+      }
+
+      .section {
+        margin-bottom:52px;
+      }
+
+      .section h2 {
+        font-size:25px;
+      }
+
+      .amount {
+        font-size:29px;
       }
 
       .footer-grid {
         grid-template-columns:1fr;
+        gap:28px;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior:auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition:none !important;
       }
     }
   </style>
-
 </head>
 
 <body>
 
+<a href="#contenu" class="skip-link">Aller au contenu</a>
+
 <header>
   <div class="container nav">
+    <a href="index.html" class="logo" aria-label="MicroClair — accueil">
+      <span class="logo-mark" aria-hidden="true">M</span>
+      MicroClair
+    </a>
 
-```
-<a href="index.html" class="logo">
-  <span class="logo-mark">M</span>
-  MicroClair
-</a>
-
-<a href="ressources.html" class="back">
-  ← Retour aux ressources
-</a>
-```
-
+    <a href="ressources.html" class="back">
+      ← Retour aux ressources
+    </a>
   </div>
 </header>
 
-<main>
+<main id="contenu">
 
   <section class="hero">
     <div class="container">
+      <span class="tag">PLAFONDS</span>
 
-```
-  <span class="tag">PLAFONDS</span>
+      <h1>Les plafonds<br>sans le casse-tête.</h1>
 
-  <h1>Les plafonds<br>sans le casse-tête.</h1>
-
-  <p>
-    Chiffre d'affaires, seuils et dépassement :
-    les repères essentiels pour comprendre le régime micro.
-  </p>
-
-</div>
-```
-
+      <p>
+        Chiffre d'affaires, seuils et dépassement :
+        les repères essentiels pour comprendre le régime micro.
+      </p>
+    </div>
   </section>
 
   <section>
     <div class="container">
 
-```
-  <div class="intro">
+      <div class="intro">
+        <strong>Le chiffre d'affaires est au cœur du régime micro.</strong>
 
-    <strong>Le chiffre d'affaires est au cœur du régime micro.</strong>
+        <p>
+          Pour rester dans le régime micro, votre chiffre d'affaires
+          doit respecter certains plafonds. Les montants dépendent
+          notamment de la nature de votre activité et des règles
+          applicables à votre situation.
+        </p>
+      </div>
 
-    <p>
-      Pour rester dans le régime micro, votre chiffre d'affaires
-      doit respecter certains plafonds. Les montants dépendent
-      notamment de la nature de votre activité.
-    </p>
+      <div class="highlight">
+        <h2>Repères 2026</h2>
 
-  </div>
+        <p>
+          Les principaux plafonds annuels du régime micro sont de
+          203 100 € pour les activités de vente de marchandises et
+          certaines activités assimilées, et de 83 600 € pour les
+          prestations de services et activités libérales.
+        </p>
+      </div>
 
-  <div class="highlight">
+      <div class="section">
+        <h2>Les principaux plafonds</h2>
 
-    <h2>Repères 2026</h2>
+        <p>
+          Voici les deux grands repères à connaître.
+        </p>
 
-    <p>
-      Pour 2026, les principaux plafonds du régime micro sont de
-      203 100 € pour les activités de vente de marchandises et
-      certaines activités assimilées, et de 83 600 € pour les
-      prestations de services et activités libérales.
-    </p>
+        <div class="threshold">
 
-  </div>
+          <article class="threshold-card">
+            <h3>Vente de marchandises</h3>
 
-  <div class="section">
+            <div class="amount">203 100 €</div>
 
-    <h2>Les principaux plafonds</h2>
+            <div class="amount-label">
+              plafond annuel de chiffre d'affaires
+            </div>
 
-    <p>
-      Voici les deux grands repères à connaître.
-    </p>
+            <div class="mini">
+              Principalement pour les activités de vente de marchandises,
+              objets, fournitures et denrées à emporter ou à consommer
+              sur place.
+            </div>
+          </article>
 
-    <div class="threshold">
+          <article class="threshold-card">
+            <h3>Services & activités libérales</h3>
 
-      <article class="threshold-card">
+            <div class="amount">83 600 €</div>
 
-        <h3>Vente de marchandises</h3>
+            <div class="amount-label">
+              plafond annuel de chiffre d'affaires
+            </div>
 
-        <div class="amount">203 100 €</div>
+            <div class="mini">
+              Principalement pour les prestations de services et
+              certaines activités libérales.
+            </div>
+          </article>
 
-        <div class="amount-label">
-          plafond annuel de chiffre d'affaires
         </div>
+      </div>
 
-        <div class="mini">
-          Principalement pour les activités de vente de marchandises,
-          objets, fournitures et denrées à emporter ou à consommer
-          sur place.
+      <div class="section">
+        <h2>Attention : plafond micro ≠ seuil de TVA</h2>
+
+        <p>
+          C'est l'une des confusions les plus fréquentes chez les
+          débutants.
+        </p>
+
+        <div class="cards">
+
+          <article class="card">
+            <span class="number" aria-hidden="true">01</span>
+            <h3>Plafond du régime micro</h3>
+            <p>
+              Il détermine notamment si votre activité peut continuer
+              à relever du régime micro.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="number" aria-hidden="true">02</span>
+            <h3>Seuil de TVA</h3>
+            <p>
+              Il concerne la franchise en base de TVA et peut être
+              atteint bien avant le plafond du régime micro.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="number" aria-hidden="true">03</span>
+            <h3>Les deux doivent être surveillés</h3>
+            <p>
+              Une activité peut rester en micro-entreprise tout en
+              devenant assujettie à la TVA.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="number" aria-hidden="true">04</span>
+            <h3>Ne regardez pas seulement votre plafond</h3>
+            <p>
+              Le suivi du chiffre d'affaires doit aussi tenir compte
+              des autres seuils applicables à votre situation.
+            </p>
+          </article>
+
         </div>
+      </div>
 
-      </article>
+      <div class="section">
+        <h2>Que se passe-t-il en cas de dépassement ?</h2>
 
-      <article class="threshold-card">
+        <p>
+          Un dépassement ponctuel ne signifie pas forcément que vous
+          perdez immédiatement le régime micro.
+        </p>
 
-        <h3>Services & activités libérales</h3>
+        <div class="steps">
 
-        <div class="amount">83 600 €</div>
+          <div class="step">
+            <div class="step-icon" aria-hidden="true">1</div>
+            <div>
+              <strong>Surveillez votre chiffre d'affaires</strong>
+              <span>
+                Ne découvrez pas votre dépassement au moment de faire
+                votre déclaration annuelle.
+              </span>
+            </div>
+          </div>
 
-        <div class="amount-label">
-          plafond annuel de chiffre d'affaires
+          <div class="step">
+            <div class="step-icon" aria-hidden="true">2</div>
+            <div>
+              <strong>Un dépassement ponctuel peut être différent</strong>
+              <span>
+                Les règles prévoient des mécanismes tenant compte de
+                la durée et du niveau du dépassement.
+              </span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-icon" aria-hidden="true">3</div>
+            <div>
+              <strong>Deux années consécutives sont importantes</strong>
+              <span>
+                Dans de nombreuses situations, le dépassement du seuil
+                sur deux années consécutives entraîne la sortie du
+                régime micro l'année suivante.
+              </span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-icon" aria-hidden="true">4</div>
+            <div>
+              <strong>Vérifiez votre cas précis</strong>
+              <span>
+                Activité mixte, début d'activité ou règles particulières :
+                la situation peut nécessiter un calcul spécifique.
+              </span>
+            </div>
+          </div>
+
         </div>
+      </div>
 
-        <div class="mini">
-          Principalement pour les prestations de services et
-          certaines activités libérales.
+      <div class="warning">
+        <h2>⚠️ Ne confondez pas chiffre d'affaires et bénéfice</h2>
+
+        <p>
+          Le plafond du régime micro porte sur le chiffre d'affaires
+          ou les recettes encaissées selon la nature de l'activité,
+          et non sur ce qu'il vous reste après vos dépenses.
+          Une dépense de 500 € ne réduit donc pas automatiquement
+          votre chiffre d'affaires de 500 €.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Les bons réflexes</h2>
+
+        <p>
+          Quelques habitudes suffisent pour éviter la plupart des
+          mauvaises surprises.
+        </p>
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="step-icon" aria-hidden="true">✓</div>
+            <div>
+              <strong>Suivez votre chiffre d'affaires régulièrement</strong>
+              <span>
+                Un suivi mensuel permet de voir rapidement si votre
+                activité approche d'un seuil.
+              </span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-icon" aria-hidden="true">✓</div>
+            <div>
+              <strong>Identifiez votre catégorie d'activité</strong>
+              <span>
+                Les plafonds ne sont pas identiques selon la nature
+                de votre activité.
+              </span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-icon" aria-hidden="true">✓</div>
+            <div>
+              <strong>Surveillez aussi la TVA</strong>
+              <span>
+                Les seuils de TVA sont différents des plafonds
+                du régime micro.
+              </span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-icon" aria-hidden="true">✓</div>
+            <div>
+              <strong>Anticipez plutôt que subir</strong>
+              <span>
+                Si votre activité se développe fortement, préparez
+                suffisamment tôt la suite de votre organisation.
+              </span>
+            </div>
+          </div>
+
         </div>
+      </div>
 
-      </article>
+      <div class="cta">
+        <h2>Suivez votre chiffre d'affaires simplement</h2>
+
+        <p>
+          Gardez une vision claire de vos encaissements et repérez
+          plus facilement l'approche d'un seuil.
+        </p>
+
+        <a href="suivi-recettes.html" class="button">
+          Suivre mes recettes →
+        </a>
+      </div>
 
     </div>
-
-  </div>
-
-  <div class="section">
-
-    <h2>Attention : plafond micro ≠ seuil de TVA</h2>
-
-    <p>
-      C'est l'une des confusions les plus fréquentes chez les
-      débutants.
-    </p>
-
-    <div class="cards">
-
-      <article class="card">
-        <span class="number">01</span>
-        <h3>Plafond du régime micro</h3>
-        <p>
-          Il détermine notamment si votre activité peut continuer
-          à relever du régime micro.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="number">02</span>
-        <h3>Seuil de TVA</h3>
-        <p>
-          Il concerne la franchise en base de TVA et peut être
-          atteint bien avant le plafond du régime micro.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="number">03</span>
-        <h3>Les deux doivent être surveillés</h3>
-        <p>
-          Une activité peut rester en micro-entreprise tout en
-          devenant assujettie à la TVA.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="number">04</span>
-        <h3>Ne regardez pas seulement votre plafond</h3>
-        <p>
-          Le suivi du chiffre d'affaires doit aussi tenir compte
-          des autres seuils applicables à votre situation.
-        </p>
-      </article>
-
-    </div>
-
-  </div>
-
-  <div class="section">
-
-    <h2>Que se passe-t-il en cas de dépassement ?</h2>
-
-    <p>
-      Un dépassement ponctuel ne signifie pas forcément que vous
-      perdez immédiatement le régime micro.
-    </p>
-
-    <div class="steps">
-
-      <div class="step">
-        <div class="step-icon">1</div>
-        <div>
-          <strong>Surveillez votre chiffre d'affaires</strong>
-          <span>
-            Ne découvrez pas votre dépassement au moment de faire
-            votre déclaration annuelle.
-          </span>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-icon">2</div>
-        <div>
-          <strong>Un dépassement ponctuel peut être différent</strong>
-          <span>
-            Les règles prévoient des mécanismes tenant compte de
-            la durée et du niveau du dépassement.
-          </span>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-icon">3</div>
-        <div>
-          <strong>Deux années consécutives sont importantes</strong>
-          <span>
-            Dans de nombreuses situations, le dépassement du seuil
-            sur deux années consécutives entraîne la sortie du
-            régime micro l'année suivante.
-          </span>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-icon">4</div>
-        <div>
-          <strong>Vérifiez votre cas précis</strong>
-          <span>
-            Activité mixte, début d'activité ou règles particulières :
-            la situation peut nécessiter un calcul spécifique.
-          </span>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="warning">
-
-    <h2>⚠️ Ne confondez pas chiffre d'affaires et bénéfice</h2>
-
-    <p>
-      Le plafond du régime micro porte sur le chiffre d'affaires
-      ou les recettes encaissées selon la nature de l'activité,
-      et non sur ce qu'il vous reste après vos dépenses.
-      Une dépense de 500 € ne réduit donc pas automatiquement
-      votre chiffre d'affaires de 500 €.
-    </p>
-
-  </div>
-
-  <div class="section">
-
-    <h2>Les bons réflexes</h2>
-
-    <p>
-      Quelques habitudes suffisent pour éviter la plupart des
-      mauvaises surprises.
-    </p>
-
-    <div class="steps">
-
-      <div class="step">
-        <div class="step-icon">✓</div>
-        <div>
-          <strong>Suivez votre chiffre d'affaires régulièrement</strong>
-          <span>
-            Un suivi mensuel permet de voir rapidement si votre
-            activité approche d'un seuil.
-          </span>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-icon">✓</div>
-        <div>
-          <strong>Identifiez votre catégorie d'activité</strong>
-          <span>
-            Les plafonds ne sont pas identiques selon la nature
-            de votre activité.
-          </span>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-icon">✓</div>
-        <div>
-          <strong>Surveillez aussi la TVA</strong>
-          <span>
-            Les seuils de TVA sont différents des plafonds
-            du régime micro.
-          </span>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-icon">✓</div>
-        <div>
-          <strong>Anticipez plutôt que subir</strong>
-          <span>
-            Si votre activité se développe fortement, préparez
-            suffisamment tôt la suite de votre organisation.
-          </span>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="cta">
-
-    <h2>Suivez votre chiffre d'affaires simplement</h2>
-
-    <p>
-      Gardez une vision claire de vos encaissements et repérez
-      plus facilement l'approche d'un seuil.
-    </p>
-
-    <a href="suivi-recettes.html" class="button">
-      Suivre mes recettes →
-    </a>
-
-  </div>
-
-</div>
-```
-
   </section>
 
 </main>
@@ -753,38 +844,36 @@
 <footer>
   <div class="container">
 
-```
-<div class="footer-grid">
+    <div class="footer-grid">
 
-  <div>
-    <a href="index.html" class="logo">
-      <span class="logo-mark">M</span>
-      MicroClair
-    </a>
+      <div>
+        <a href="index.html" class="logo" aria-label="MicroClair — accueil">
+          <span class="logo-mark" aria-hidden="true">M</span>
+          MicroClair
+        </a>
 
-    <p class="footer-description">
-      Des outils simples pour aider les micro-entrepreneurs
-      et freelances à mieux organiser leur activité.
-    </p>
-  </div>
+        <p class="footer-description">
+          Des outils simples pour aider les micro-entrepreneurs
+          et freelances à mieux organiser leur activité.
+        </p>
+      </div>
 
-  <div class="footer-column">
-    <h3>Informations</h3>
-    <a href="a-propos.html">À propos</a>
-    <a href="demarrer.html">Démarrer</a>
-    <a href="ressources.html">Ressources</a>
-    <a href="contact.html">Contact</a>
-    <a href="mentions-legales.html">Mentions légales</a>
-    <a href="confidentialite.html">Confidentialité</a>
-    <a href="cookies.html">Cookies</a>
-  </div>
+      <div class="footer-column">
+        <h3>Informations</h3>
+        <a href="a-propos.html">À propos</a>
+        <a href="demarrer.html">Démarrer</a>
+        <a href="ressources.html">Ressources</a>
+        <a href="contact.html">Contact</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
 
-</div>
+    </div>
 
-<div class="copyright">
-  © 2026 MicroClair — Axel Penarrubia
-</div>
-```
+    <div class="copyright">
+      © 2026 MicroClair — Axel Penarrubia
+    </div>
 
   </div>
 </footer>
