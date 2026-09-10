@@ -1,1834 +1,1502 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
->
-
-<title>
-Micro-entrepreneur : 10 choses à faire après la création de son activité — MicroClair
-</title>
-
-<meta
-name="description"
-content="Vous venez de créer votre micro-entreprise ? Découvrez 10 actions simples pour organiser votre activité dès le départ et éviter les oublis."
->
-
-<meta
-name="theme-color"
-content="#173F3A"
->
-
-<style>
-
-/* =====================================================
-   MICROCLAIR — ARTICLE
-   ===================================================== */
-
-:root{
-
---green:#173F3A;
---green-2:#245C55;
---mint:#DCEDE9;
---soft:#F3F8F7;
---cream:#FAF9F5;
-
---text:#17302D;
---muted:#667875;
-
---white:#FFFFFF;
---border:#DCE6E3;
-
---yellow:#F4C95D;
-
---shadow:0 18px 45px rgba(23,63,58,.10);
-
---radius:18px;
-
-}
-
-
-*{
-
-box-sizing:border-box;
-
-margin:0;
-
-padding:0;
-
-}
-
-
-html{
-
-scroll-behavior:smooth;
-
-}
-
-
-body{
-
-font-family:
-Inter,
--apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
-Roboto,
-Arial,
-sans-serif;
-
-background:var(--cream);
-
-color:var(--text);
-
-line-height:1.7;
-
--webkit-font-smoothing:antialiased;
-
-}
-
-
-a{
-
-color:inherit;
-
-}
-
-
-a:focus-visible{
-
-outline:3px solid var(--yellow);
-
-outline-offset:4px;
-
-border-radius:6px;
-
-}
-
-
-.container{
-
-width:min(1100px,92%);
-
-margin:auto;
-
-}
-
-
-/* =====================================================
-   HEADER
-   ===================================================== */
-
-header{
-
-position:sticky;
-
-top:0;
-
-z-index:100;
-
-background:rgba(250,249,245,.95);
-
-backdrop-filter:blur(15px);
-
--webkit-backdrop-filter:blur(15px);
-
-border-bottom:1px solid var(--border);
-
-}
-
-
-nav{
-
-min-height:74px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-gap:20px;
-
-}
-
-
-.logo{
-
-font-size:1.38rem;
-
-font-weight:900;
-
-letter-spacing:-.05em;
-
-text-decoration:none;
-
-color:var(--green);
-
-}
-
-
-.logo span{
-
-color:var(--green-2);
-
-}
-
-
-.nav-link{
-
-font-size:.88rem;
-
-font-weight:800;
-
-text-decoration:none;
-
-color:var(--green);
-
-}
-
-
-.nav-link:hover{
-
-color:var(--green-2);
-
-}
-
-
-/* =====================================================
-   ARTICLE HERO
-   ===================================================== */
-
-.article-hero{
-
-background:var(--white);
-
-padding:85px 0 70px;
-
-border-bottom:1px solid var(--border);
-
-}
-
-
-.article-header{
-
-max-width:850px;
-
-margin:auto;
-
-}
-
-
-.eyebrow{
-
-display:inline-flex;
-
-align-items:center;
-
-gap:9px;
-
-color:var(--green-2);
-
-font-size:.75rem;
-
-font-weight:900;
-
-letter-spacing:.12em;
-
-text-transform:uppercase;
-
-}
-
-
-.eyebrow::before{
-
-content:"";
-
-width:28px;
-
-height:2px;
-
-background:var(--green-2);
-
-}
-
-
-.article-header h1{
-
-margin-top:18px;
-
-font-size:clamp(2.7rem,6vw,5rem);
-
-line-height:1.01;
-
-letter-spacing:-.07em;
-
-color:var(--green);
-
-}
-
-
-.article-intro{
-
-max-width:750px;
-
-margin-top:23px;
-
-font-size:1.15rem;
-
-color:var(--muted);
-
-}
-
-
-.article-meta{
-
-display:flex;
-
-flex-wrap:wrap;
-
-gap:9px;
-
-margin-top:23px;
-
-}
-
-
-.article-meta span{
-
-padding:7px 11px;
-
-background:var(--soft);
-
-border:1px solid var(--border);
-
-border-radius:999px;
-
-font-size:.72rem;
-
-font-weight:800;
-
-}
-
-
-/* =====================================================
-   ARTICLE LAYOUT
-   ===================================================== */
-
-.article-layout{
-
-display:grid;
-
-grid-template-columns:220px minmax(0,700px);
-
-gap:60px;
-
-align-items:start;
-
-padding:65px 0 90px;
-
-}
-
-
-.article-content{
-
-min-width:0;
-
-}
-
-
-.article-content h2{
-
-margin-top:55px;
-
-font-size:2rem;
-
-line-height:1.15;
-
-letter-spacing:-.04em;
-
-color:var(--green);
-
-scroll-margin-top:105px;
-
-}
-
-
-.article-content h3{
-
-margin-top:35px;
-
-font-size:1.25rem;
-
-line-height:1.25;
-
-color:var(--green);
-
-}
-
-
-.article-content p{
-
-margin-top:15px;
-
-color:#405A56;
-
-font-size:1rem;
-
-}
-
-
-.article-content ul{
-
-margin:18px 0 0 22px;
-
-color:#405A56;
-
-}
-
-
-.article-content li{
-
-margin-top:8px;
-
-}
-
-
-.article-content strong{
-
-color:var(--text);
-
-}
-
-
-.article-content a{
-
-color:var(--green-2);
-
-font-weight:800;
-
-}
-
-
-.article-content blockquote{
-
-margin:30px 0;
-
-padding:22px 25px;
-
-background:var(--mint);
-
-border-left:4px solid var(--green-2);
-
-border-radius:0 14px 14px 0;
-
-color:var(--text);
-
-font-weight:700;
-
-}
-
-
-/* =====================================================
-   SOMMAIRE
-   ===================================================== */
-
-.toc{
-
-position:sticky;
-
-top:105px;
-
-padding:20px;
-
-background:var(--white);
-
-border:1px solid var(--border);
-
-border-radius:16px;
-
-box-shadow:0 8px 25px rgba(23,63,58,.04);
-
-}
-
-
-.toc-title{
-
-font-size:.73rem;
-
-font-weight:900;
-
-letter-spacing:.1em;
-
-text-transform:uppercase;
-
-color:var(--muted);
-
-}
-
-
-.toc a{
-
-display:block;
-
-margin-top:11px;
-
-font-size:.79rem;
-
-line-height:1.35;
-
-font-weight:750;
-
-text-decoration:none;
-
-color:var(--green);
-
-}
-
-
-.toc a:hover{
-
-color:var(--green-2);
-
-}
-
-
-/* =====================================================
-   NUMBERS
-   ===================================================== */
-
-.number{
-
-display:inline-grid;
-
-place-items:center;
-
-width:38px;
-
-height:38px;
-
-margin-right:9px;
-
-background:var(--mint);
-
-color:var(--green-2);
-
-border-radius:50%;
-
-font-size:.78rem;
-
-font-weight:900;
-
-vertical-align:middle;
-
-}
-
-
-/* =====================================================
-   ACTION BOX
-   ===================================================== */
-
-.action-box{
-
-margin-top:50px;
-
-padding:30px;
-
-background:var(--green);
-
-color:var(--white);
-
-border-radius:22px;
-
-box-shadow:var(--shadow);
-
-}
-
-
-.action-box h2{
-
-margin-top:0;
-
-color:var(--white);
-
-font-size:1.8rem;
-
-}
-
-
-.action-box p{
-
-color:#C9D9D6;
-
-}
-
-
-.action-button{
-
-display:inline-flex;
-
-align-items:center;
-
-justify-content:center;
-
-margin-top:20px;
-
-padding:13px 19px;
-
-background:var(--yellow);
-
-color:var(--green)!important;
-
-border-radius:999px;
-
-text-decoration:none!important;
-
-font-weight:900!important;
-
-}
-
-
-.action-button:hover{
-
-transform:translateY(-1px);
-
-}
-
-
-/* =====================================================
-   SOURCES / TRANSPARENCY
-   ===================================================== */
-
-.sources{
-
-margin-top:55px;
-
-padding:25px;
-
-background:var(--white);
-
-border:1px solid var(--border);
-
-border-radius:18px;
-
-}
-
-
-.sources h2{
-
-margin-top:0;
-
-font-size:1.35rem;
-
-}
-
-
-.sources p{
-
-font-size:.86rem;
-
-}
-
-
-.sources ul{
-
-font-size:.84rem;
-
-margin-top:15px;
-
-}
-
-
-.sources li{
-
-margin-top:7px;
-
-}
-
-
-.sources a{
-
-color:var(--green-2);
-
-font-weight:800;
-
-text-decoration:none;
-
-}
-
-
-.sources a:hover{
-
-text-decoration:underline;
-
-}
-
-
-/* =====================================================
-   AUTHOR / TRUST
-   ===================================================== */
-
-.trust{
-
-padding:70px 0;
-
-background:var(--white);
-
-border-top:1px solid var(--border);
-
-text-align:center;
-
-}
-
-
-.trust-inner{
-
-max-width:720px;
-
-margin:auto;
-
-}
-
-
-.trust h2{
-
-font-size:2rem;
-
-line-height:1.1;
-
-letter-spacing:-.04em;
-
-color:var(--green);
-
-}
-
-
-.trust p{
-
-margin-top:13px;
-
-color:var(--muted);
-
-}
-
-
-.trust-points{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:14px;
-
-margin-top:30px;
-
-}
-
-
-.trust-point{
-
-padding:18px;
-
-background:var(--soft);
-
-border:1px solid var(--border);
-
-border-radius:15px;
-
-}
-
-
-.trust-point strong{
-
-display:block;
-
-font-size:.9rem;
-
-color:var(--green);
-
-}
-
-
-.trust-point span{
-
-display:block;
-
-margin-top:4px;
-
-color:var(--muted);
-
-font-size:.76rem;
-
-}
-
-
-/* =====================================================
-   FOOTER
-   ===================================================== */
-
-footer{
-
-padding:40px 0;
-
-background:#102F2B;
-
-color:#D9E4E5;
-
-}
-
-
-.footer{
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-gap:25px;
-
-flex-wrap:wrap;
-
-}
-
-
-.footer strong{
-
-color:var(--white);
-
-}
-
-
-.footer small{
-
-color:#91A7AA;
-
-}
-
-
-.footer-links{
-
-display:flex;
-
-gap:14px;
-
-flex-wrap:wrap;
-
-}
-
-
-.footer-links a{
-
-font-size:.76rem;
-
-color:var(--white);
-
-text-decoration:none;
-
-}
-
-
-.footer-links a:hover{
-
-text-decoration:underline;
-
-}
-
-
-/* =====================================================
-   MOBILE
-   ===================================================== */
-
-@media(max-width:800px){
-
-.article-layout{
-
-grid-template-columns:1fr;
-
-gap:30px;
-
-padding-top:45px;
-
-}
-
-
-.toc{
-
-position:static;
-
-order:-1;
-
-}
-
-
-.toc a{
-
-display:inline-block;
-
-margin-right:13px;
-
-}
-
-
-.trust-points{
-
-grid-template-columns:1fr;
-
-}
-
-
-.article-hero{
-
-padding:60px 0 50px;
-
-}
-
-
-.article-header h1{
-
-font-size:clamp(2.6rem,12vw,4rem);
-
-}
-
-
-.article-intro{
-
-font-size:1rem;
-
-}
-
-
-.article-content h2{
-
-font-size:1.7rem;
-
-margin-top:45px;
-
-}
-
-
-.footer{
-
-align-items:flex-start;
-
-}
-
-
-}
-
-
-@media(max-width:500px){
-
-nav{
-
-min-height:68px;
-
-}
-
-
-.nav-link{
-
-font-size:.8rem;
-
-}
-
-
-.article-meta{
-
-gap:7px;
-
-}
-
-
-.article-meta span{
-
-font-size:.68rem;
-
-}
-
-
-.action-box{
-
-padding:25px 20px;
-
-}
-
-
-.footer-links{
-
-gap:10px 14px;
-
-}
-
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>10 choses à faire après la création de votre micro-entreprise — MicroClair</title>
+
+  <meta
+    name="description"
+    content="Les 10 points à vérifier après la création de votre micro-entreprise pour partir sur de bonnes bases."
+  >
+
+  <meta name="theme-color" content="#173F3A">
+
+  <style id="microclair-master">
+    :root {
+      --green-950: #102F2B;
+      --green-900: #173F3A;
+      --green-800: #245C55;
+      --green-700: #2F6B63;
+
+      --mint-100: #EFF8F5;
+      --mint-200: #DCEDE9;
+      --mint-300: #C9E3DD;
+
+      --cream: #FAF9F5;
+      --white: #FFFFFF;
+
+      --text: #17302D;
+      --text-soft: #48605C;
+      --muted: #667875;
+
+      --border: #DCE6E3;
+      --border-strong: #CBDDD9;
+
+      --focus: #6BAEA3;
+
+      --shadow-xs: 0 4px 14px rgba(23, 63, 58, .045);
+      --shadow-sm: 0 8px 24px rgba(23, 63, 58, .065);
+      --shadow-md: 0 16px 40px rgba(23, 63, 58, .09);
+      --shadow-lg: 0 26px 70px rgba(23, 63, 58, .13);
+
+      --radius-sm: 12px;
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --radius-xl: 30px;
+
+      --container: 1160px;
+      --reading: 680px;
+
+      --header-height: 76px;
+
+      --ease: cubic-bezier(.2, .75, .25, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 4px;
+    }
+
+    ::selection {
+      background: var(--mint-300);
+      color: var(--green-950);
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 1000;
+      transform: translateY(-150%);
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--green-950);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform .2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+    }
+
+    .reading {
+      max-width: var(--reading);
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba(203, 221, 217, .72);
+      background: rgba(250, 249, 245, .88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green-900);
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: var(--green-900);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .brand-name {
+      font-size: 17px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .main-nav a {
+      color: var(--text-soft);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 650;
+      transition:
+        color .2s ease,
+        opacity .2s ease;
+    }
+
+    .main-nav a:hover {
+      color: var(--green-900);
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: var(--green-900);
+      color: var(--white) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--green-800);
+    }
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border: 1px solid transparent;
+      border-radius: 11px;
+      font-size: 15px;
+      font-weight: 750;
+      line-height: 1.2;
+      text-decoration: none;
+      transition:
+        transform .2s var(--ease),
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--green-900);
+      color: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .button-primary:hover {
+      background: var(--green-800);
+      box-shadow: var(--shadow-md);
+    }
+
+    .button-secondary {
+      background: var(--white);
+      border-color: var(--border-strong);
+      color: var(--green-900);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--green-700);
+      background: var(--mint-100);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      padding: 86px 0 72px;
+    }
+
+    .hero-inner {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--green-700);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      margin: 0;
+      color: var(--green-950);
+      font-size: clamp(3rem, 5.6vw, 4.45rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+      font-weight: 820;
+    }
+
+    .hero h1 span {
+      color: var(--green-700);
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      margin: 25px 0 0;
+      color: var(--text-soft);
+      font-size: clamp(1.05rem, 1.4vw, 1.18rem);
+      line-height: 1.62;
+    }
+
+    .hero .button-row {
+      margin-top: 30px;
+    }
+
+    .hero-note {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      padding: 0 0 100px;
+    }
+
+    .intro-box {
+      padding: 38px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .intro-box h2 {
+      margin: 0;
+      color: var(--green-900);
+      font-size: 25px;
+      line-height: 1.2;
+      letter-spacing: -.025em;
+    }
+
+    .intro-box p {
+      max-width: 720px;
+      margin: 14px 0 0;
+      color: var(--text-soft);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       LIST
+    ========================= */
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-soft {
+      background: var(--mint-100);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 48px;
+    }
+
+    .section-label {
+      margin: 0 0 13px;
+      color: var(--green-700);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      max-width: 760px;
+      margin: 0;
+      color: var(--green-950);
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -.045em;
+      font-weight: 800;
+    }
+
+    .section-heading p {
+      max-width: 640px;
+      margin: 18px 0 0;
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .action-card {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 17px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .action-number {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: var(--mint-200);
+      color: var(--green-800);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .action-card h3 {
+      margin: 1px 0 0;
+      color: var(--green-900);
+      font-size: 19px;
+      line-height: 1.25;
+      letter-spacing: -.02em;
+    }
+
+    .action-card p {
+      margin: 7px 0 0;
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.62;
+    }
+
+    /* =========================
+       PRACTICAL BLOCK
+    ========================= */
+
+    .practical-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .practical-title {
+      margin: 0;
+      color: var(--green-950);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+    }
+
+    .practical-copy {
+      max-width: 650px;
+    }
+
+    .practical-copy p {
+      margin: 0 0 18px;
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.72;
+    }
+
+    .practical-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .quick-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .quick-item {
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--white);
+    }
+
+    .quick-item strong {
+      display: block;
+      color: var(--green-900);
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .quick-item span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       SOURCES
+    ========================= */
+
+    .source-box {
+      max-width: 850px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .source-box h2 {
+      margin: 0;
+      color: var(--green-900);
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .source-box p {
+      margin: 12px 0 0;
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .source-box a {
+      color: var(--green-700);
+      font-weight: 750;
+      text-underline-offset: 3px;
+    }
+
+    /* =========================
+       FINAL CTA
+    ========================= */
+
+    .final-cta {
+      padding: 100px 0;
+    }
+
+    .cta-box {
+      padding: 58px;
+      border-radius: var(--radius-xl);
+      background: var(--mint-200);
+    }
+
+    .cta-box h2 {
+      max-width: 650px;
+      margin: 0;
+      color: var(--green-950);
+      font-size: clamp(2.25rem, 4vw, 3.35rem);
+      line-height: 1.04;
+      letter-spacing: -.045em;
+    }
+
+    .cta-box p {
+      max-width: 600px;
+      margin: 17px 0 0;
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .cta-box .button-row {
+      margin-top: 27px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 58px 0 28px;
+      background: var(--green-950);
+      color: rgba(255,255,255,.72);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 48px;
+    }
+
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 17px;
+    }
+
+    .footer-brand .brand-mark {
+      background: var(--white);
+      color: var(--green-950);
+    }
+
+    .footer-description {
+      max-width: 390px;
+      margin: 17px 0 0;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .footer-column h3 {
+      margin: 0 0 15px;
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 9px;
+    }
+
+    .footer-links a {
+      width: fit-content;
+      color: rgba(255,255,255,.68);
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer-bottom {
+      padding-top: 23px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      font-size: 12px;
+      color: rgba(255,255,255,.5);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 900px) {
+      .action-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .practical-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --header-height: 68px;
+      }
+
+      .container,
+      .header-inner {
+        width: min(calc(100% - 28px), var(--container));
+      }
+
+      .main-nav a:not(.nav-cta) {
+        display: none;
+      }
+
+      .hero {
+        padding: 58px 0 60px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.7rem, 12vw, 4rem);
+      }
+
+      .hero-copy {
+        font-size: 16px;
+      }
+
+      .intro {
+        padding-bottom: 75px;
+      }
+
+      .intro-box {
+        padding: 26px;
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 34px;
+      }
+
+      .section-heading h2 {
+        font-size: clamp(2rem, 9vw, 2.7rem);
+      }
+
+      .section-heading p {
+        font-size: 16px;
+      }
+
+      .action-card {
+        padding: 22px;
+      }
+
+      .practical-title {
+        font-size: clamp(2rem, 9vw, 2.7rem);
+      }
+
+      .practical-copy p {
+        font-size: 16px;
+      }
+
+      .source-box {
+        padding: 25px;
+      }
+
+      .final-cta {
+        padding: 72px 0;
+      }
+
+      .cta-box {
+        padding: 34px 25px;
+        border-radius: 22px;
+      }
+
+      .cta-box h2 {
+        font-size: clamp(2.1rem, 10vw, 3rem);
+      }
+
+      .cta-box p {
+        font-size: 16px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .button-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .action-card {
+        grid-template-columns: 34px 1fr;
+        gap: 13px;
+        padding: 20px;
+      }
+
+      .action-number {
+        width: 34px;
+        height: 34px;
+      }
+
+      .quick-item {
+        padding: 17px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
+  <a class="skip-link" href="#contenu">
+    Aller au contenu
+  </a>
 
-<!-- =====================================================
-     HEADER
-     ===================================================== -->
+  <header class="site-header">
 
-<header>
+    <div class="header-inner">
 
-<nav class="container">
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="MicroClair — Accueil"
+      >
+        <span
+          class="brand-mark"
+          aria-hidden="true"
+        >
+          M
+        </span>
 
-<a
-href="index.html"
-class="logo"
-aria-label="MicroClair — Accueil"
->
-Micro<span>Clair</span>
-</a>
+        <span class="brand-name">
+          MicroClair
+        </span>
+      </a>
 
-<a
-href="ressources.html"
-class="nav-link"
->
-← Ressources
-</a>
+      <nav
+        class="main-nav"
+        aria-label="Navigation principale"
+      >
 
-</nav>
+        <a href="demarrer.html">
+          Démarrer
+        </a>
 
-</header>
+        <a href="ressources.html">
+          Ressources
+        </a>
 
+        <a href="a-propos.html">
+          À propos
+        </a>
 
+        <a href="contact.html">
+          Contact
+        </a>
 
-<!-- =====================================================
-     HERO
-     ===================================================== -->
+        <a
+          class="nav-cta"
+          href="demarrer.html"
+        >
+          Commencer
+        </a>
 
-<section class="article-hero">
+      </nav>
 
-<div class="container article-header">
+    </div>
 
-<div class="eyebrow">
-Guide MicroClair
-</div>
+  </header>
 
-<h1>
-Micro-entrepreneur :
-10 choses à faire après
-la création de son activité
-</h1>
 
-<p class="article-intro">
+  <main id="contenu">
 
-Vous venez de créer votre micro-entreprise ?
-Voici une feuille de route simple pour organiser
-votre activité dès le départ, sans vous perdre
-dans l'administratif.
+    <!-- =========================
+         HERO
+    ========================== -->
 
-</p>
+    <section class="hero">
 
-<div class="article-meta">
+      <div class="container">
 
-<span>Guide pratique</span>
+        <div class="hero-inner">
 
-<span>Débutant</span>
+          <p class="eyebrow">
+            Après la création
+          </p>
 
-<span>Lecture · 8 min</span>
+          <h1>
+            Les 10 choses à vérifier
+            <span>après votre création.</span>
+          </h1>
 
-</div>
+          <p class="hero-copy">
+            Votre micro-entreprise est créée. Voici les principaux points
+            à vérifier pour partir sur de bonnes bases.
+          </p>
 
-</div>
+          <div class="button-row">
 
-</section>
+            <a
+              class="button button-primary"
+              href="#les-10-choses"
+            >
+              Voir les 10 points
+            </a>
 
+            <a
+              class="button button-secondary"
+              href="checklist-90-jours.html"
+            >
+              Faire ma checklist
+            </a>
 
+          </div>
 
-<!-- =====================================================
-     ARTICLE
-     ===================================================== -->
+          <p class="hero-note">
+            À adapter à votre activité et à votre situation
+          </p>
 
-<main class="container article-layout">
+        </div>
 
+      </div>
 
-<!-- SOMMAIRE -->
+    </section>
 
-<aside class="toc" aria-label="Sommaire du guide">
 
-<div class="toc-title">
-Dans ce guide
-</div>
+    <!-- =========================
+         INTRO
+    ========================== -->
 
-<a href="#organisation">
-1. Organiser ses documents
-</a>
+    <section class="intro">
 
-<a href="#facturation">
-2. Préparer ses factures
-</a>
+      <div class="container">
 
-<a href="#recettes">
-3. Suivre ses recettes
-</a>
+        <div class="intro-box">
 
-<a href="#compte">
-4. Séparer son activité
-</a>
+          <h2>
+            Vous n'avez pas besoin de tout régler en une journée.
+          </h2>
 
-<a href="#echeances">
-5. Identifier ses échéances
-</a>
+          <p>
+            L'objectif est simplement de mettre en place les bonnes bases,
+            puis de prendre vos habitudes au fil de votre activité.
+          </p>
 
-<a href="#routine">
-6. Créer une routine
-</a>
+        </div>
 
-<a href="#verification">
-7. Vérifier les obligations
-</a>
+      </div>
 
-<a href="#clients">
-8. Organiser ses informations clients
-</a>
+    </section>
 
-<a href="#sauvegarde">
-9. Sauvegarder ses documents
-</a>
 
-<a href="#bilan">
-10. Faire un premier bilan
-</a>
+    <!-- =========================
+         10 CHOSES
+    ========================= -->
 
-</aside>
+    <section
+      class="section section-soft"
+      id="les-10-choses"
+      aria-labelledby="titre-10-choses"
+    >
 
+      <div class="container">
 
+        <div class="section-heading">
 
-<!-- CONTENU -->
+          <p class="section-label">
+            Les 10 points
+          </p>
 
-<article class="article-content">
+          <h2 id="titre-10-choses">
+            Commencez par ce qui vous concerne.
+          </h2>
 
+          <p>
+            Vous pouvez les parcourir dans cet ordre ou simplement vérifier
+            ceux qui correspondent déjà à votre situation.
+          </p>
 
-<p>
+        </div>
 
-Créer son activité est une étape importante.
-Mais une fois l'inscription terminée, une autre
-question apparaît rapidement :
 
-<strong>
-« Maintenant, qu'est-ce que je dois faire ? »
-</strong>
+        <div class="action-grid">
 
-</p>
+          <article class="action-card">
 
+            <span
+              class="action-number"
+              aria-hidden="true"
+            >
+              01
+            </span>
 
-<p>
+            <div>
+              <h3>
+                Vérifier vos informations
+              </h3>
 
-La bonne nouvelle : il n'est pas nécessaire de
-tout mettre en place immédiatement.
+              <p>
+                Contrôlez que vos coordonnées et les informations liées
+                à votre activité sont correctes.
+              </p>
+            </div>
 
-Le plus utile est de construire progressivement
-une organisation simple, que vous pourrez conserver
-sur la durée.
+          </article>
 
-</p>
 
+          <article class="action-card">
 
-<blockquote>
+            <span
+              class="action-number"
+              aria-hidden="true"
+            >
+              02
+            </span>
 
-Le but des 90 premiers jours n'est pas d'avoir
-une organisation parfaite. C'est d'avoir une
-organisation que vous arrivez réellement à tenir.
+            <div>
+              <h3>
+                Vérifier vos accès
+              </h3>
 
-</blockquote>
+              <p>
+                Gardez vos identifiants et moyens d'accès aux services
+                utilisés pour gérer votre activité.
+              </p>
+            </div>
 
+          </article>
 
 
-<!-- 1 -->
+          <article class="action-card">
 
-<h2 id="organisation">
+            <span
+              class="action-number"
+              aria-hidden="true"
+            >
+              03
+            </span>
 
-<span class="number">01</span>
+            <div>
+              <h3>
+                Mettre en place le suivi des recettes
+              </h3>
 
-Organiser ses documents
+              <p>
+                Notez vos encaissements régulièrement pour garder
+                une vue claire de votre chiffre d'affaires.
+              </p>
+            </div>
 
-</h2>
+          </article>
 
-<p>
 
-Commencez par créer un endroit clairement identifié
-pour les documents liés à votre activité.
+          <article class="action-card">
 
-</p>
+            <span
+              class="action-number"
+              aria-hidden="true"
+            >
+              04
+            </span>
 
-<p>
+            <div>
+              <h3>
+                Préparer vos factures
+              </h3>
 
-Cela peut être une organisation numérique avec
-plusieurs dossiers, par exemple :
+              <p>
+                Utilisez un modèle cohérent et vérifiez les mentions
+                importantes avant chaque envoi.
+              </p>
+            </div>
 
-</p>
+          </article>
 
-<ul>
 
-<li>Factures</li>
+          <article class="action-card">
 
-<li>Recettes</li>
+            <span
+              class="action-number"
+              aria-hidden="true"
+            >
+              05
+            </span>
 
-<li>Clients</li>
+            <div>
+              <h3>
+                Noter vos prochaines échéances
+              </h3>
 
-<li>Contrats et devis</li>
+              <p>
+                Ajoutez vos déclarations et autres dates importantes
+                dans votre calendrier.
+              </p>
+            </div>
 
-<li>Documents administratifs</li>
+          </article>
 
-<li>Archives</li>
 
-</ul>
+          <article class="action-card">
 
-<p>
+            <span
+              class="action-number"
+              aria-hidden="true"
+            >
+              06
+            </span>
 
-L'objectif n'est pas de créer une architecture
-compliquée. Vous devez simplement pouvoir retrouver
-rapidement un document lorsque vous en avez besoin.
+            <div>
+              <h3>
+                Comprendre vos cotisations
+              </h3>
 
-</p>
+              <p>
+                Identifiez ce que vous devez déclarer et les échéances
+                qui concernent votre activité.
+              </p>
+            </div>
 
+          </article>
 
 
-<!-- 2 -->
+          <article class="action-card">
 
-<h2 id="facturation">
+            <span
+              class="action-number"
+              aria-hidden="true"
+            >
+              07
+            </span>
 
-<span class="number">02</span>
+            <div>
+              <h3>
+                Vérifier si la TVA vous concerne
+              </h3>
 
-Préparer ses factures
+              <p>
+                Votre régime micro ne signifie pas automatiquement
+                que vous ne serez jamais concerné par la TVA.
+              </p>
+            </div>
 
-</h2>
+          </article>
 
-<p>
 
-Ne créez pas votre première facture dans l'urgence.
+          <article class="action-card">
 
-Préparez plutôt un modèle que vous pourrez réutiliser
-et adapter à chaque client.
+            <span
+              class="action-number"
+              aria-hidden="true"
+            >
+              08
+            </span>
 
-</p>
+            <div>
+              <h3>
+                Vérifier les seuils qui vous concernent
+              </h3>
 
-<p>
+              <p>
+                Gardez un œil sur les plafonds du régime micro
+                et sur les seuils qui peuvent avoir un impact.
+              </p>
+            </div>
 
-Avant d'envoyer une facture, prenez l'habitude
-de vérifier les informations qui doivent y figurer
-selon votre situation.
+          </article>
 
-</p>
 
-<p>
+          <article class="action-card">
 
-Une numérotation cohérente et un classement régulier
-vous aideront également à conserver une vue claire
-de votre activité.
+            <span
+              class="action-number"
+              aria-hidden="true"
+            >
+              09
+            </span>
 
-</p>
+            <div>
+              <h3>
+                Organiser vos documents
+              </h3>
 
+              <p>
+                Gardez vos factures, justificatifs et documents utiles
+                dans un endroit simple à retrouver.
+              </p>
+            </div>
 
+          </article>
 
-<!-- 3 -->
 
-<h2 id="recettes">
+          <article class="action-card">
 
-<span class="number">03</span>
+            <span
+              class="action-number"
+              aria-hidden="true"
+            >
+              10
+            </span>
 
-Suivre ses recettes
+            <div>
+              <h3>
+                Faire un point après quelques semaines
+              </h3>
 
-</h2>
+              <p>
+                Vérifiez ce qui fonctionne et ce qui doit être simplifié
+                dans votre organisation.
+              </p>
+            </div>
 
-<p>
+          </article>
 
-Ne vous contentez pas de regarder votre compte
-bancaire pour savoir où vous en êtes.
+        </div>
 
-Mettez en place un suivi dédié à votre activité.
+      </div>
 
-</p>
+    </section>
 
-<p>
 
-Vous pouvez commencer avec un tableau très simple
-contenant notamment :
+    <!-- =========================
+         ORGANISATION
+    ========================== -->
 
-</p>
+    <section class="section">
 
-<ul>
+      <div class="container practical-grid">
 
-<li>La date</li>
+        <div>
 
-<li>Le client</li>
+          <h2 class="practical-title">
+            Le plus important : garder une organisation que vous pouvez tenir.
+          </h2>
 
-<li>La référence de la facture</li>
+        </div>
 
-<li>Le montant</li>
 
-<li>Le statut du paiement</li>
+        <div class="practical-copy">
 
-</ul>
+          <p>
+            Vous n'avez pas besoin d'un système compliqué.
+            Quelques habitudes simples suffisent souvent pour éviter
+            que les tâches administratives s'accumulent.
+          </p>
 
-<p>
+          <p>
+            Le bon système est celui que vous utilisez réellement.
+          </p>
 
-L'objectif est de pouvoir répondre rapidement
-à une question simple :
+          <div class="quick-list">
 
-<strong>
-« Où en est mon activité ? »
-</strong>
+            <div class="quick-item">
+              <strong>
+                Suivre vos recettes
+              </strong>
 
-</p>
+              <span>
+                Faites-le au fur et à mesure des encaissements.
+              </span>
+            </div>
 
+            <div class="quick-item">
+              <strong>
+                Garder vos documents
+              </strong>
 
+              <span>
+                Classez-les au même endroit pour les retrouver facilement.
+              </span>
+            </div>
 
-<!-- 4 -->
+            <div class="quick-item">
+              <strong>
+                Regarder vos échéances
+              </strong>
 
-<h2 id="compte">
+              <span>
+                Un rappel régulier vaut mieux qu'une recherche au dernier moment.
+              </span>
+            </div>
 
-<span class="number">04</span>
+          </div>
 
-Séparer son activité de son quotidien
+        </div>
 
-</h2>
+      </div>
 
-<p>
+    </section>
 
-Selon votre situation et les règles qui vous
-sont applicables, certaines obligations peuvent
-concerner le compte bancaire utilisé pour votre
-activité.
 
-</p>
+    <!-- =========================
+         SOURCES
+    ========================== -->
 
-<p>
+    <section class="section section-soft">
 
-Même lorsqu'une séparation stricte n'est pas
-obligatoire, avoir une organisation distincte
-peut rendre le suivi beaucoup plus simple.
+      <div class="container">
 
-</p>
+        <div class="section-heading">
 
-<p>
+          <p class="section-label">
+            Informations officielles
+          </p>
 
-Avant de prendre une décision, vérifiez toujours
-les règles correspondant à votre situation
-auprès des sources officielles.
+          <h2>
+            Pour les règles, vérifiez toujours la source.
+          </h2>
 
-</p>
+          <p>
+            Certaines démarches, échéances et obligations dépendent
+            de votre situation. Les règles peuvent aussi évoluer.
+          </p>
 
+        </div>
 
 
-<!-- 5 -->
+        <div class="source-box">
 
-<h2 id="echeances">
+          <h2>
+            Les sites officiels restent la référence.
+          </h2>
 
-<span class="number">05</span>
+          <p>
+            Consultez notamment
+            <a
+              href="https://entreprendre.service-public.fr/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Service-Public.fr
+            </a>,
+            <a
+              href="https://www.urssaf.fr/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              l'Urssaf
+            </a>,
+            <a
+              href="https://www.impots.gouv.fr/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              impots.gouv.fr
+            </a>
+            et, selon votre activité, les organismes compétents.
+          </p>
 
-Identifier ses échéances
+        </div>
 
-</h2>
+      </div>
 
-<p>
+    </section>
 
-L'un des meilleurs réflexes à prendre dès le début
-est de savoir quelles déclarations, échéances ou
-démarches peuvent vous concerner.
 
-</p>
+    <!-- =========================
+         CTA
+    ========================== -->
 
-<p>
+    <section class="final-cta">
 
-Notez les dates importantes dans un calendrier
-ou un outil que vous consultez régulièrement.
+      <div class="container">
 
-</p>
+        <div class="cta-box">
 
-<p>
+          <h2>
+            Vous avez posé les bases.
+          </h2>
 
-Attention : les obligations peuvent dépendre
-de nombreux paramètres et évoluer dans le temps.
-Ne vous fiez donc pas uniquement à une ancienne
-liste trouvée sur Internet.
+          <p>
+            Continuez simplement avec la checklist des 90 premiers jours
+            ou revenez aux ressources quand vous en avez besoin.
+          </p>
 
-</p>
+          <div class="button-row">
 
+            <a
+              class="button button-primary"
+              href="checklist-90-jours.html"
+            >
+              Faire ma checklist
+            </a>
 
+            <a
+              class="button button-secondary"
+              href="ressources.html"
+            >
+              Voir les ressources
+            </a>
 
-<!-- 6 -->
+          </div>
 
-<h2 id="routine">
+        </div>
 
-<span class="number">06</span>
+      </div>
 
-Créer une routine administrative
+    </section>
 
-</h2>
+  </main>
 
-<p>
 
-L'administratif devient beaucoup plus lourd
-lorsqu'on le repousse pendant plusieurs mois.
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
-</p>
+  <footer>
 
-<p>
+    <div class="container">
 
-À l'inverse, une petite routine régulière peut
-suffire à garder une activité propre.
+      <div class="footer-grid">
 
-</p>
+        <div>
 
-<p>
+          <a
+            class="footer-brand"
+            href="index.html"
+            aria-label="MicroClair — Accueil"
+          >
 
-Par exemple, vous pouvez réserver chaque semaine
-un court créneau pour :
+            <span
+              class="brand-mark"
+              aria-hidden="true"
+            >
+              M
+            </span>
 
-</p>
+            <span>
+              MicroClair
+            </span>
 
-<ul>
+          </a>
 
-<li>Mettre à jour vos recettes</li>
+          <p class="footer-description">
+            Un espace simple pour comprendre la micro-entreprise,
+            suivre son activité et avancer avec plus de sérénité.
+          </p>
 
-<li>Vérifier vos factures</li>
+        </div>
 
-<li>Classer vos documents</li>
 
-<li>Noter les questions à vérifier</li>
+        <div class="footer-column">
 
-</ul>
+          <h3>
+            Explorer
+          </h3>
 
-<p>
+          <div class="footer-links">
 
-La régularité compte davantage que la durée.
+            <a href="demarrer.html">
+              Démarrer
+            </a>
 
-</p>
+            <a href="ressources.html">
+              Ressources
+            </a>
 
+            <a href="guide-micro-entreprise.html">
+              Guide micro-entreprise
+            </a>
 
+            <a href="calendrier.html">
+              Calendrier
+            </a>
 
-<!-- 7 -->
+          </div>
 
-<h2 id="verification">
+        </div>
 
-<span class="number">07</span>
 
-Vérifier les obligations applicables
+        <div class="footer-column">
 
-</h2>
+          <h3>
+            MicroClair
+          </h3>
 
-<p>
+          <div class="footer-links">
 
-Une erreur fréquente consiste à chercher une
-liste universelle de démarches.
+            <a href="a-propos.html">
+              À propos
+            </a>
 
-En réalité, certaines règles dépendent de votre
-activité, de votre situation et de différents
-seuils ou options.
+            <a href="contact.html">
+              Contact
+            </a>
 
-</p>
+            <a href="mentions-legales.html">
+              Mentions légales
+            </a>
 
-<p>
+            <a href="confidentialite.html">
+              Confidentialité
+            </a>
 
-Utilisez donc les organismes officiels comme
-point de référence lorsque vous devez vérifier
-une obligation.
+            <a href="cookies.html">
+              Cookies
+            </a>
 
-</p>
+          </div>
 
-<p>
+        </div>
 
-MicroClair peut vous aider à comprendre les sujets
-et à vous organiser, mais ne remplace pas une
-source officielle ni un professionnel lorsque
-votre situation nécessite un conseil personnalisé.
+      </div>
 
-</p>
 
+      <div class="footer-bottom">
+        © 2026 MicroClair — Axel Penarrubia
+      </div>
 
+    </div>
 
-<!-- 8 -->
-
-<h2 id="clients">
-
-<span class="number">08</span>
-
-Organiser les informations de ses clients
-
-</h2>
-
-<p>
-
-Dès les premiers clients, prenez l'habitude de
-conserver les informations utiles dans un endroit
-structuré.
-
-</p>
-
-<p>
-
-Vous devez également rester attentif aux règles
-applicables à la protection des données personnelles
-et ne conserver que ce qui est nécessaire.
-
-</p>
-
-<p>
-
-Une organisation simple évite de rechercher les
-mêmes informations dans plusieurs conversations,
-e-mails ou fichiers.
-
-</p>
-
-
-
-<!-- 9 -->
-
-<h2 id="sauvegarde">
-
-<span class="number">09</span>
-
-Sauvegarder ses documents
-
-</h2>
-
-<p>
-
-Une organisation parfaite ne sert à rien si elle
-disparaît avec votre ordinateur.
-
-</p>
-
-<p>
-
-Mettez en place une méthode de sauvegarde adaptée
-à votre situation.
-
-</p>
-
-<p>
-
-Vous pouvez notamment conserver une copie de vos
-documents importants dans un emplacement distinct
-de votre appareil principal.
-
-</p>
-
-
-
-<!-- 10 -->
-
-<h2 id="bilan">
-
-<span class="number">10</span>
-
-Faire un premier bilan après quelques semaines
-
-</h2>
-
-<p>
-
-Après un ou deux mois, prenez quelques minutes
-pour regarder votre organisation avec du recul.
-
-</p>
-
-<p>
-
-Demandez-vous :
-
-</p>
-
-<ul>
-
-<li>Qu'est-ce qui fonctionne bien ?</li>
-
-<li>Qu'est-ce qui me fait perdre du temps ?</li>
-
-<li>Quels documents sont difficiles à retrouver ?</li>
-
-<li>Quelles tâches ai-je tendance à repousser ?</li>
-
-<li>Qu'est-ce que je peux simplifier ?</li>
-
-</ul>
-
-<p>
-
-Votre organisation doit évoluer avec votre activité.
-Ne cherchez pas à construire un système compliqué
-dès le premier jour.
-
-</p>
-
-
-
-<!-- =====================================================
-     CHECKLIST CTA
-     ===================================================== -->
-
-<div class="action-box">
-
-<h2>
-Vous préférez une feuille de route ?
-</h2>
-
-<p>
-
-Nous avons transformé ces premières étapes
-en une checklist interactive de 90 jours,
-avec une progression à suivre directement
-depuis votre navigateur.
-
-</p>
-
-<a
-href="checklist-90-jours.html"
-class="action-button"
->
-Ouvrir la checklist 90 jours →
-</a>
-
-</div>
-
-
-
-<!-- =====================================================
-     SOURCES
-     ===================================================== -->
-
-<div class="sources">
-
-<h2>
-À propos des informations de ce guide
-</h2>
-
-<p>
-
-Ce guide est volontairement général.
-Les obligations d'une micro-entreprise peuvent
-varier selon la situation et évoluer avec le temps.
-
-</p>
-
-<p>
-
-Avant de prendre une décision administrative,
-fiscale, juridique ou comptable, vérifiez les
-informations à jour auprès des organismes officiels
-concernés.
-
-</p>
-
-<ul>
-
-<li>
-<a
-href="https://entreprendre.service-public.fr/"
-target="_blank"
-rel="noopener noreferrer"
->
-Entreprendre Service-Public.fr
-</a>
-</li>
-
-<li>
-<a
-href="https://www.urssaf.fr/"
-target="_blank"
-rel="noopener noreferrer"
->
-Urssaf
-</a>
-</li>
-
-<li>
-<a
-href="https://www.impots.gouv.fr/"
-target="_blank"
-rel="noopener noreferrer"
->
-impots.gouv.fr
-</a>
-</li>
-
-<li>
-<a
-href="https://www.economie.gouv.fr/entreprises"
-target="_blank"
-rel="noopener noreferrer"
->
-Ministère de l'Économie — Entreprises
-</a>
-</li>
-
-</ul>
-
-</div>
-
-
-</article>
-
-</main>
-
-
-
-<!-- =====================================================
-     CONFIANCE
-     ===================================================== -->
-
-<section class="trust">
-
-<div class="container trust-inner">
-
-<h2>
-Simple, utile, transparent.
-</h2>
-
-<p>
-
-MicroClair est conçu pour rendre les sujets
-administratifs plus compréhensibles et aider
-les indépendants à mieux s'organiser.
-
-</p>
-
-<div class="trust-points">
-
-
-<div class="trust-point">
-
-<strong>
-Pas de jargon inutile
-</strong>
-
-<span>
-Des explications pensées pour être comprises.
-</span>
-
-</div>
-
-
-<div class="trust-point">
-
-<strong>
-Des outils concrets
-</strong>
-
-<span>
-Guides, checklists et méthodes pratiques.
-</span>
-
-</div>
-
-
-<div class="trust-point">
-
-<strong>
-Transparent
-</strong>
-
-<span>
-MicroClair ne remplace pas un professionnel.
-</span>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
-
-<footer>
-
-<div class="container footer">
-
-<div>
-
-<strong>
-MicroClair
-</strong>
-
-<br>
-
-<small>
-Moins de flou. Plus d'organisation.
-</small>
-
-<br>
-
-<small>
-© 2026 MicroClair — Axel Penarrubia
-</small>
-
-</div>
-
-
-<div class="footer-links">
-
-<a href="index.html">
-Accueil
-</a>
-
-<a href="demarrer.html">
-Démarrer
-</a>
-
-<a href="ressources.html">
-Ressources
-</a>
-
-<a href="checklist-90-jours.html">
-Checklist 90 jours
-</a>
-
-<a href="suivi-recettes.html">
-Suivi des recettes
-</a>
-
-<a href="verifier-facture.html">
-Vérifier une facture
-</a>
-
-<a href="a-propos.html">
-À propos
-</a>
-
-<a href="contact.html">
-Contact
-</a>
-
-<a href="mentions-legales.html">
-Mentions légales
-</a>
-
-<a href="confidentialite.html">
-Confidentialité
-</a>
-
-<a href="cookies.html">
-Cookies
-</a>
-
-</div>
-
-</div>
-
-</footer>
-
+  </footer>
 
 </body>
-
 </html>
