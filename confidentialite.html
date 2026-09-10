@@ -3,163 +3,711 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Politique de confidentialité du site MicroClair.">
-  <meta name="theme-color" content="#0F766E">
-  <title>Politique de confidentialité — MicroClair</title>
+
+  <meta
+    name="description"
+    content="Politique de confidentialité de MicroClair : informations sur les données personnelles, leur utilisation et les droits des utilisateurs."
+  >
+
+  <title>Confidentialité — MicroClair</title>
 
   <style>
     :root {
-      --green: #0F766E;
-      --text: #17332F;
-      --muted: #667773;
-      --soft: #F3F8F7;
+      --green-950: #102F2B;
+      --green-900: #173F3A;
+      --green-800: #245C55;
+      --green-700: #2F6B63;
+
+      --mint-100: #EFF8F5;
+      --mint-200: #DCEDE9;
+      --mint-300: #C9E3DD;
+
+      --cream: #FAF9F5;
       --white: #FFFFFF;
-      --border: #DCE8E5;
+
+      --text: #17302D;
+      --text-soft: #48605C;
+      --muted: #667875;
+
+      --border: #DCE6E3;
+      --border-strong: #CBDDD9;
+
+      --focus: #6BAEA3;
+
+      --shadow-xs: 0 4px 14px rgba(23, 63, 58, .045);
+      --shadow-sm: 0 8px 24px rgba(23, 63, 58, .065);
+      --shadow-md: 0 16px 40px rgba(23, 63, 58, .09);
+      --shadow-lg: 0 26px 70px rgba(23, 63, 58, .13);
+
+      --radius-sm: 12px;
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --radius-xl: 30px;
+
+      --container: 1160px;
+      --reading: 680px;
+
+      --header-height: 76px;
+
+      --ease: cubic-bezier(.2, .75, .25, 1);
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      background: var(--cream);
       color: var(--text);
-      background: var(--white);
-      line-height: 1.7;
-    }
-
-    header {
-      border-bottom: 1px solid var(--border);
-      background: rgba(255,255,255,0.96);
-    }
-
-    .nav {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      text-decoration: none;
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--green);
-    }
-
-    .back {
-      text-decoration: none;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .back:hover {
-      color: var(--green);
-    }
-
-    main {
-      max-width: 850px;
-      margin: auto;
-      padding: 70px 20px;
-    }
-
-    .label {
-      display: inline-block;
-      color: var(--green);
-      font-weight: 700;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 15px;
-    }
-
-    h1 {
-      font-size: clamp(36px, 6vw, 54px);
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-
-    .intro {
-      color: var(--muted);
-      font-size: 18px;
-      margin-bottom: 55px;
-    }
-
-    section {
-      margin-bottom: 42px;
-      padding-bottom: 35px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    section:last-child {
-      border-bottom: none;
-    }
-
-    h2 {
-      font-size: 24px;
-      margin-bottom: 15px;
-    }
-
-    p {
-      margin-bottom: 12px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     a {
-      color: var(--green);
-      font-weight: 600;
-    }
-
-    .info {
-      background: var(--soft);
-      border-radius: 18px;
-      padding: 25px;
-    }
-
-    footer {
-      background: var(--soft);
-      padding: 35px 20px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .footer-links {
-      margin-bottom: 12px;
-    }
-
-    .footer-links a {
-      margin: 0 8px;
+      color: inherit;
       text-decoration: none;
     }
 
-    @media (max-width: 600px) {
-      .nav {
-        padding: 16px;
+    :focus-visible {
+      outline: 3px solid rgba(107, 174, 163, .45);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: var(--header-height);
+      border-bottom: 1px solid rgba(203, 221, 217, .72);
+      background: rgba(250, 249, 245, .88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 40px), var(--container));
+      height: 100%;
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green-900);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: var(--green-900);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .brand-name {
+      font-size: 17px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .main-nav a {
+      color: var(--text-soft);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .main-nav a:not(.nav-cta):hover {
+      color: var(--green-900);
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: var(--green-900);
+      color: var(--white) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--green-800);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      padding: 86px 0 72px;
+    }
+
+    .hero-inner {
+      max-width: 850px;
+    }
+
+    .eyebrow,
+    .section-label {
+      margin: 0 0 13px;
+      color: var(--green-700);
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      margin: 0;
+      color: var(--green-950);
+      font-size: clamp(3rem, 5.6vw, 4.45rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+      font-weight: 820;
+    }
+
+    .hero h1 span {
+      color: var(--green-700);
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      margin: 25px 0 0;
+      color: var(--text-soft);
+      font-size: clamp(1.05rem, 1.4vw, 1.18rem);
+      line-height: 1.62;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-soft {
+      background: var(--mint-100);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 48px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--green-950);
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -.045em;
+      font-weight: 800;
+    }
+
+    .section-heading p {
+      margin: 16px 0 0;
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    /* =========================
+       LEGAL / PRIVACY CONTENT
+    ========================= */
+
+    .privacy-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .privacy-main {
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .privacy-block + .privacy-block {
+      margin-top: 42px;
+      padding-top: 42px;
+      border-top: 1px solid var(--border);
+    }
+
+    .privacy-block h3 {
+      margin: 0;
+      color: var(--green-950);
+      font-size: 22px;
+      line-height: 1.18;
+      letter-spacing: -.025em;
+      font-weight: 800;
+    }
+
+    .privacy-block p {
+      margin: 12px 0 0;
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .privacy-block p + p {
+      margin-top: 14px;
+    }
+
+    .privacy-block ul {
+      margin: 16px 0 0;
+      padding-left: 21px;
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .privacy-block li + li {
+      margin-top: 8px;
+    }
+
+    .privacy-highlight {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid var(--mint-300);
+      border-radius: 16px;
+      background: var(--mint-100);
+    }
+
+    .privacy-highlight p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .privacy-highlight strong {
+      color: var(--green-900);
+    }
+
+    .privacy-side {
+      display: grid;
+      gap: 18px;
+      position: sticky;
+      top: 98px;
+    }
+
+    .side-card {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .side-card.highlight {
+      background: var(--mint-200);
+      border-color: var(--mint-300);
+    }
+
+    .side-card h3 {
+      margin: 0;
+      color: var(--green-950);
+      font-size: 18px;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    .side-card p {
+      margin: 9px 0 0;
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.62;
+    }
+
+    .side-card a {
+      display: inline-flex;
+      margin-top: 14px;
+      color: var(--green-800);
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    /* =========================
+       INFO CARDS
+    ========================= */
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .info-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: var(--white);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .info-number {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 38px;
+      border-radius: 10px;
+      background: var(--mint-200);
+      color: var(--green-800);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .info-card h3 {
+      margin: 0;
+      color: var(--green-950);
+      font-size: 22px;
+      line-height: 1.18;
+      letter-spacing: -.025em;
+      font-weight: 800;
+    }
+
+    .info-card p {
+      margin: 10px 0 0;
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.62;
+    }
+
+    /* =========================
+       DARK STATEMENT
+    ========================= */
+
+    .dark-statement {
+      padding: 105px 0;
+      background: var(--green-950);
+    }
+
+    .dark-inner {
+      max-width: 840px;
+    }
+
+    .dark-statement .section-label {
+      color: var(--mint-300);
+    }
+
+    .dark-statement h2 {
+      margin: 0;
+      color: var(--white);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -.05em;
+      font-weight: 800;
+    }
+
+    .dark-statement p {
+      max-width: 700px;
+      margin: 22px 0 0;
+      color: rgba(255, 255, 255, .72);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta-section {
+      padding: 100px 0;
+    }
+
+    .cta {
+      padding: 58px;
+      border-radius: var(--radius-xl);
+      background: var(--mint-200);
+    }
+
+    .cta-inner {
+      max-width: 760px;
+    }
+
+    .cta h2 {
+      margin: 0;
+      color: var(--green-950);
+      font-size: clamp(2.25rem, 4vw, 3.35rem);
+      line-height: 1.05;
+      letter-spacing: -.045em;
+      font-weight: 800;
+    }
+
+    .cta p {
+      margin: 16px 0 0;
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .btn {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border: 1px solid transparent;
+      border-radius: 11px;
+      font-size: 15px;
+      line-height: 1.2;
+      font-weight: 750;
+      transition:
+        transform .2s var(--ease),
+        box-shadow .2s ease,
+        background .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--green-900);
+      color: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-primary:hover {
+      background: var(--green-800);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      border-color: var(--border-strong);
+      color: var(--green-900);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .btn-secondary:hover {
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 58px 0 28px;
+      background: var(--green-950);
+      color: var(--white);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 48px;
+    }
+
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .footer-brand .brand-mark {
+      background: var(--white);
+      color: var(--green-950);
+    }
+
+    .footer-description {
+      max-width: 330px;
+      margin: 17px 0 0;
+      color: rgba(255, 255, 255, .62);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .footer-column h3 {
+      margin: 0 0 14px;
+      color: rgba(255, 255, 255, .72);
+      font-size: 13px;
+      line-height: 1.3;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .footer-column a {
+      display: block;
+      width: fit-content;
+      margin-top: 9px;
+      color: rgba(255, 255, 255, .72);
+      font-size: 14px;
+    }
+
+    .footer-column a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .45);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 980px) {
+      .privacy-layout {
+        grid-template-columns: 1fr;
       }
 
-      main {
-        padding: 50px 18px;
+      .privacy-side {
+        position: static;
       }
 
-      .intro {
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container,
+      .header-inner {
+        width: min(calc(100% - 56px), var(--container));
+      }
+
+      .main-nav {
+        gap: 14px;
+      }
+
+      .main-nav a:not(.nav-cta) {
+        display: none;
+      }
+
+      .hero {
+        padding: 55px 0;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.65rem, 12vw, 4rem);
+      }
+
+      .hero-copy {
         font-size: 16px;
       }
 
-      h2 {
-        font-size: 21px;
+      .section {
+        padding: 78px 0;
       }
 
-      .info {
+      .section-heading h2 {
+        font-size: clamp(2rem, 9vw, 2.7rem);
+      }
+
+      .privacy-main {
+        padding: 24px;
+      }
+
+      .privacy-block + .privacy-block {
+        margin-top: 34px;
+        padding-top: 34px;
+      }
+
+      .dark-statement {
+        padding: 78px 0;
+      }
+
+      .dark-statement h2 {
+        font-size: clamp(2.3rem, 11vw, 3.3rem);
+      }
+
+      .cta-section {
+        padding: 72px 0;
+      }
+
+      .cta {
+        padding: 34px 25px;
+        border-radius: 22px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container,
+      .header-inner {
+        width: min(calc(100% - 40px), var(--container));
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .privacy-main {
         padding: 20px;
       }
 
-      .footer-links a {
-        display: inline-block;
-        margin: 4px 6px;
+      .cta {
+        padding: 30px 22px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
       }
     }
   </style>
@@ -167,177 +715,523 @@
 
 <body>
 
-<header>
-  <nav class="nav">
-    <a class="logo" href="index.html">MicroClair</a>
-    <a class="back" href="index.html">← Retour à l’accueil</a>
-  </nav>
-</header>
+  <header class="site-header">
+    <div class="header-inner">
 
-<main>
-
-  <span class="label">Vie privée</span>
-
-  <h1>Politique de confidentialité</h1>
-
-  <p class="intro">
-    MicroClair accorde de l’importance à la protection de vos données
-    personnelles et à la transparence concernant leur utilisation.
-  </p>
-
-  <section>
-    <h2>1. Responsable du traitement</h2>
-
-    <div class="info">
-      <p><strong>Responsable :</strong> Axel Penarrubia</p>
-      <p><strong>Adresse :</strong> 19 Place du Village, 38780 Eyzin-Pinet, France</p>
-      <p><strong>Email :</strong>
-        <a href="mailto:microclair@protonmail.com">
-          microclair@protonmail.com
-        </a>
-      </p>
-    </div>
-  </section>
-
-  <section>
-    <h2>2. Données collectées</h2>
-
-    <p>
-      Le site MicroClair est conçu pour limiter au maximum la collecte
-      de données personnelles.
-    </p>
-
-    <p>
-      Certaines fonctionnalités peuvent permettre à l'utilisateur
-      d'entrer volontairement des informations dans les outils proposés
-      sur le site.
-    </p>
-
-    <p>
-      Lorsque ces informations sont utilisées uniquement par un outil
-      fonctionnant dans le navigateur, elles ne sont pas automatiquement
-      transmises à MicroClair.
-    </p>
-  </section>
-
-  <section>
-    <h2>3. Outils fonctionnant dans le navigateur</h2>
-
-    <p>
-      Certains outils MicroClair peuvent utiliser le stockage local du
-      navigateur (<strong>localStorage</strong>) afin de conserver des
-      informations nécessaires au fonctionnement de l'outil.
-    </p>
-
-    <p>
-      Ces informations restent stockées sur l'appareil de l'utilisateur
-      et peuvent être supprimées en effaçant les données du navigateur.
-    </p>
-  </section>
-
-  <section>
-    <h2>4. Contact par email</h2>
-
-    <p>
-      Si vous contactez MicroClair par email, votre adresse email et le
-      contenu de votre message peuvent être utilisés afin de répondre
-      à votre demande.
-    </p>
-
-    <p>
-      Ces informations ne sont pas vendues ni utilisées à des fins
-      commerciales sans votre accord.
-    </p>
-  </section>
-
-  <section>
-    <h2>5. Cookies</h2>
-
-    <p>
-      MicroClair cherche à limiter l'utilisation de cookies au strict
-      nécessaire.
-    </p>
-
-    <p>
-      Certains services techniques utilisés pour faire fonctionner le
-      site peuvent toutefois déposer des éléments techniques nécessaires
-      à leur fonctionnement.
-    </p>
-
-    <p>
-      Pour plus d'informations, consultez notre
-      <a href="cookies.html">politique relative aux cookies</a>.
-    </p>
-  </section>
-
-  <section>
-    <h2>6. Durée de conservation</h2>
-
-    <p>
-      Les données transmises volontairement par email sont conservées
-      pendant la durée nécessaire au traitement de la demande et
-      peuvent être supprimées lorsqu'elles ne sont plus nécessaires.
-    </p>
-  </section>
-
-  <section>
-    <h2>7. Vos droits</h2>
-
-    <p>
-      Conformément à la réglementation applicable en matière de
-      protection des données, vous disposez notamment de droits
-      d'accès, de rectification, d'effacement et, dans certaines
-      situations, d'opposition ou de limitation du traitement.
-    </p>
-
-    <p>
-      Pour exercer vos droits ou poser une question concernant vos
-      données personnelles, vous pouvez contacter MicroClair :
-    </p>
-
-    <p>
-      <a href="mailto:microclair@protonmail.com">
-        microclair@protonmail.com
+      <a class="brand" href="index.html" aria-label="MicroClair — Accueil">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span class="brand-name">MicroClair</span>
       </a>
-    </p>
-  </section>
 
-  <section>
-    <h2>8. Sécurité</h2>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="demarrer.html">Démarrer</a>
+        <a href="ressources.html">Ressources</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+        <a class="nav-cta" href="demarrer.html">Commencer</a>
+      </nav>
 
-    <p>
-      MicroClair met en œuvre des mesures raisonnables afin de protéger
-      les informations qui lui sont éventuellement transmises.
-    </p>
-  </section>
+    </div>
+  </header>
 
-  <section>
-    <h2>9. Mise à jour</h2>
+  <main>
 
-    <p>
-      Cette politique peut être mise à jour afin de tenir compte de
-      l'évolution du site, de ses fonctionnalités ou de la réglementation.
-    </p>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
 
-    <p>
-      <strong>Dernière mise à jour : septembre 2026</strong>
-    </p>
-  </section>
+          <p class="eyebrow">Confidentialité</p>
 
-</main>
+          <h1>
+            Vos données,
+            <span>sans le flou.</span>
+          </h1>
 
-<footer>
-  <div class="footer-links">
-    <a href="index.html">Accueil</a>
-    <a href="ressources.html">Ressources</a>
-    <a href="contact.html">Contact</a>
-    <a href="mentions-legales.html">Mentions légales</a>
-    <a href="cookies.html">Cookies</a>
-  </div>
+          <p class="hero-copy">
+            Cette page explique simplement quelles données peuvent être utilisées
+            lorsque vous utilisez MicroClair, pourquoi et comment vous pouvez
+            exercer vos droits.
+          </p>
 
-  © 2026 MicroClair — Tous droits réservés.
-</footer>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section class="section section-soft">
+      <div class="container">
+
+        <div class="privacy-layout">
+
+          <article class="privacy-main">
+
+            <div class="privacy-block">
+
+              <h3>1. Qui est responsable du traitement&nbsp;?</h3>
+
+              <p>
+                Le responsable du traitement des données personnelles éventuellement
+                traitées dans le cadre de MicroClair est l'éditeur du site.
+              </p>
+
+              <div class="privacy-highlight">
+                <p>
+                  <strong>Responsable :</strong> [à compléter avec l'identité
+                  réelle de l'éditeur]
+                </p>
+              </div>
+
+            </div>
+
+            <div class="privacy-block">
+
+              <h3>2. Quelles données peuvent être utilisées&nbsp;?</h3>
+
+              <p>
+                MicroClair applique un principe de minimisation : seules les données
+                nécessaires au fonctionnement des services concernés doivent être
+                demandées ou utilisées.
+              </p>
+
+              <p>
+                Dans la configuration actuelle du site, cela peut notamment
+                concerner les informations que vous choisissez de transmettre
+                lorsque vous utilisez la page Contact.
+              </p>
+
+              <ul>
+                <li>adresse e-mail ;</li>
+                <li>nom ou prénom si vous choisissez de le renseigner ;</li>
+                <li>contenu de votre message.</li>
+              </ul>
+
+              <p>
+                Les outils de suivi proposés sur MicroClair peuvent également
+                enregistrer certaines informations directement dans votre navigateur,
+                comme l'état d'une checklist ou les données saisies dans l'outil
+                de suivi des recettes. Ces données locales ne sont pas, par elles-mêmes,
+                transmises au site MicroClair.
+              </p>
+
+            </div>
+
+            <div class="privacy-block">
+
+              <h3>3. Pourquoi ces données sont-elles utilisées&nbsp;?</h3>
+
+              <p>
+                Les données transmises via le contact peuvent être utilisées
+                pour lire votre demande, vous répondre et assurer le suivi
+                de votre échange.
+              </p>
+
+              <p>
+                Les données enregistrées localement dans votre navigateur servent
+                uniquement au fonctionnement pratique des outils concernés,
+                par exemple pour conserver une checklist cochée ou les recettes
+                saisies sur votre appareil.
+              </p>
+
+            </div>
+
+            <div class="privacy-block">
+
+              <h3>4. Quelle est la base juridique&nbsp;?</h3>
+
+              <p>
+                La base juridique dépend de la finalité du traitement concerné.
+                Elle doit être déterminée en fonction du fonctionnement réel
+                du site et de la manière dont les données sont utilisées.
+              </p>
+
+              <p>
+                Pour les demandes de contact, le traitement est lié à la gestion
+                de la demande formulée par l'utilisateur. Pour les autres traitements,
+                leur base légale doit être précisée lorsqu'ils sont effectivement
+                mis en œuvre.
+              </p>
+
+              <div class="privacy-highlight">
+
+                <p>
+                  Cette page devra être mise à jour dès qu'un nouveau service
+                  ou outil impliquant des données personnelles sera ajouté
+                  à MicroClair.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="privacy-block">
+
+              <h3>5. Combien de temps les données sont-elles conservées&nbsp;?</h3>
+
+              <p>
+                Les durées de conservation doivent être définies en fonction
+                de la finalité de chaque traitement et ne doivent pas être
+                conservées indéfiniment.
+              </p>
+
+              <p>
+                Pour les demandes reçues par e-mail, la durée de conservation
+                dépend notamment du besoin de traiter et de conserver l'échange.
+                La durée exacte devra être précisée selon l'organisation réellement
+                mise en place par l'éditeur de MicroClair.
+              </p>
+
+            </div>
+
+            <div class="privacy-block">
+
+              <h3>6. Qui peut accéder aux données&nbsp;?</h3>
+
+              <p>
+                Les données ne doivent être accessibles qu'aux personnes ou
+                prestataires qui en ont besoin pour la finalité concernée.
+              </p>
+
+              <p>
+                Le fonctionnement exact des éventuels prestataires techniques,
+                services d'hébergement, messagerie, statistiques ou autres outils
+                doit être pris en compte dans la version définitive de cette politique.
+              </p>
+
+            </div>
+
+            <div class="privacy-block">
+
+              <h3>7. Les données sont-elles vendues&nbsp;?</h3>
+
+              <p>
+                MicroClair n'a pas vocation à vendre les données personnelles
+                de ses utilisateurs.
+              </p>
+
+              <p>
+                Aucun usage commercial de données personnelles ne doit être ajouté
+                au site sans que l'information correspondante soit clairement
+                présentée aux personnes concernées et que les règles applicables
+                soient respectées.
+              </p>
+
+            </div>
+
+            <div class="privacy-block">
+
+              <h3>8. Quels sont vos droits&nbsp;?</h3>
+
+              <p>
+                Selon la situation et les traitements concernés, vous pouvez
+                notamment disposer de droits d'accès, de rectification,
+                d'effacement, de limitation du traitement, d'opposition
+                ou de portabilité.
+              </p>
+
+              <p>
+                Vous pouvez également introduire une réclamation auprès de
+                la Commission nationale de l'informatique et des libertés (CNIL).
+              </p>
+
+            </div>
+
+            <div class="privacy-block">
+
+              <h3>9. Comment exercer vos droits&nbsp;?</h3>
+
+              <p>
+                Pour toute demande concernant vos données personnelles,
+                vous pouvez contacter l'éditeur de MicroClair à l'adresse :
+              </p>
+
+              <div class="privacy-highlight">
+
+                <p>
+                  <strong>E-mail :</strong> [à compléter]
+                </p>
+
+              </div>
+
+              <p>
+                Pour permettre le traitement de la demande, il peut être nécessaire
+                de fournir suffisamment d'informations pour permettre d'identifier
+                le traitement ou la demande concernée.
+              </p>
+
+            </div>
+
+            <div class="privacy-block">
+
+              <h3>10. Sécurité</h3>
+
+              <p>
+                MicroClair met en œuvre des mesures adaptées à son fonctionnement
+                afin de protéger les données personnelles contre les accès,
+                modifications ou utilisations non autorisés.
+              </p>
+
+              <p>
+                La sécurité dépend également des services techniques effectivement
+                utilisés par le site. Toute évolution importante du fonctionnement
+                devra être prise en compte dans cette politique.
+              </p>
+
+            </div>
+
+            <div class="privacy-block">
+
+              <h3>11. Évolution de cette politique</h3>
+
+              <p>
+                Cette politique de confidentialité peut être mise à jour
+                lorsque le fonctionnement de MicroClair, les services utilisés
+                ou les règles applicables évoluent.
+              </p>
+
+              <div class="privacy-highlight">
+
+                <p>
+                  <strong>Dernière mise à jour :</strong> septembre 2026
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <aside class="privacy-side">
+
+            <div class="side-card highlight">
+
+              <h3>Le principe</h3>
+
+              <p>
+                MicroClair cherche à limiter les données utilisées au strict
+                nécessaire et à expliquer clairement leur rôle.
+              </p>
+
+            </div>
+
+            <div class="side-card">
+
+              <h3>Une donnée saisie dans un outil n'est pas forcément envoyée.</h3>
+
+              <p>
+                Certains outils de MicroClair utilisent le stockage local
+                du navigateur. Les données restent alors sur l'appareil utilisé,
+                dans la mesure où aucun service externe n'est configuré pour
+                les transmettre.
+              </p>
+
+            </div>
+
+            <div class="side-card">
+
+              <h3>Voir les cookies</h3>
+
+              <p>
+                Retrouvez une page distincte sur les cookies et autres traceurs
+                éventuellement utilisés par le site.
+              </p>
+
+              <a href="cookies.html">
+                Consulter les cookies →
+              </a>
+
+            </div>
+
+          </aside>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRINCIPLES -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="section-label">Vos données</p>
+
+          <h2>
+            Trois idées simples à retenir.
+          </h2>
+
+          <p>
+            La protection des données repose notamment sur la clarté,
+            la minimisation et la sécurité.
+          </p>
+
+        </div>
+
+        <div class="info-grid">
+
+          <article class="info-card">
+
+            <div class="info-number">01</div>
+
+            <h3>Le minimum nécessaire</h3>
+
+            <p>
+              Une donnée personnelle ne devrait être demandée que lorsqu'elle
+              est réellement utile à une finalité précise.
+            </p>
+
+          </article>
+
+          <article class="info-card">
+
+            <div class="info-number">02</div>
+
+            <h3>Une finalité claire</h3>
+
+            <p>
+              Vous devez pouvoir comprendre pourquoi une information est utilisée
+              et ce qu'elle permet de faire.
+            </p>
+
+          </article>
+
+          <article class="info-card">
+
+            <div class="info-number">03</div>
+
+            <h3>Une durée maîtrisée</h3>
+
+            <p>
+              Les données personnelles ne doivent pas être conservées
+              plus longtemps que nécessaire au regard de leur utilisation.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DARK STATEMENT -->
+    <section class="dark-statement">
+      <div class="container">
+
+        <div class="dark-inner">
+
+          <p class="section-label">Notre approche</p>
+
+          <h2>
+            La confidentialité doit être compréhensible, pas cachée dans les petits caractères.
+          </h2>
+
+          <p>
+            Cette page est volontairement rédigée dans un langage simple.
+            Lorsqu'un nouveau service impliquant des données personnelles
+            est ajouté, les informations correspondantes doivent être précisées.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container">
+
+        <div class="cta">
+
+          <div class="cta-inner">
+
+            <h2>
+              Une question sur vos données ou sur MicroClair&nbsp;?
+            </h2>
+
+            <p>
+              Utilisez la page Contact pour nous écrire ou retrouvez les
+              informations essentielles dans les autres pages du site.
+            </p>
+
+            <div class="hero-actions">
+
+              <a class="btn btn-primary" href="contact.html">
+                Nous contacter
+              </a>
+
+              <a class="btn btn-secondary" href="mentions-legales.html">
+                Mentions légales
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <a class="footer-brand" href="index.html" aria-label="MicroClair — Accueil">
+            <span class="brand-mark" aria-hidden="true">M</span>
+            <span>MicroClair</span>
+          </a>
+
+          <p class="footer-description">
+            Des repères simples pour démarrer, organiser et suivre
+            une micro-entreprise avec plus de sérénité.
+          </p>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>Explorer</h3>
+
+          <a href="demarrer.html">Démarrer</a>
+          <a href="ressources.html">Ressources</a>
+          <a href="suivi-recettes.html">Suivi des recettes</a>
+          <a href="checklist-90-jours.html">Checklist 90 jours</a>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h3>MicroClair</h3>
+
+          <a href="a-propos.html">À propos</a>
+          <a href="contact.html">Contact</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="confidentialite.html">Confidentialité</a>
+          <a href="cookies.html">Cookies</a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <span>© 2026 MicroClair. Tous droits réservés.</span>
+
+        <span>
+          Informations pédagogiques — vérifiez toujours les règles officielles.
+        </span>
+
+      </div>
+
+    </div>
+  </footer>
 
 </body>
 </html>
-```
