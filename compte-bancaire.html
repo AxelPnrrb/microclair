@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -114,9 +113,9 @@
     .logo-mark {
       width:33px;
       height:33px;
+      flex:0 0 33px;
       display:grid;
       place-items:center;
-      flex:0 0 33px;
       border-radius:10px;
       background:var(--green);
       color:var(--white);
@@ -550,7 +549,6 @@
       }
     }
   </style>
-
 </head>
 
 <body>
@@ -559,18 +557,14 @@
 
 <header>
   <div class="container nav">
+    <a href="index.html" class="logo" aria-label="MicroClair — accueil">
+      <span class="logo-mark" aria-hidden="true">M</span>
+      <span>MicroClair</span>
+    </a>
 
-```
-<a href="index.html" class="logo" aria-label="MicroClair — accueil">
-  <span class="logo-mark" aria-hidden="true">M</span>
-  <span>MicroClair</span>
-</a>
-
-<a href="ressources.html" class="back">
-  ← Retour aux ressources
-</a>
-```
-
+    <a href="ressources.html" class="back">
+      ← Retour aux ressources
+    </a>
   </div>
 </header>
 
@@ -578,307 +572,285 @@
 
   <section class="hero">
     <div class="container">
+      <span class="tag">COMPTE BANCAIRE</span>
 
-```
-  <span class="tag">COMPTE BANCAIRE</span>
+      <h1>Un compte bancaire<br>sans prise de tête.</h1>
 
-  <h1>Un compte bancaire<br>sans prise de tête.</h1>
-
-  <p>
-    Compte dédié, obligations et bonnes pratiques :
-    ce qu'il faut savoir quand on démarre en micro-entreprise.
-  </p>
-
-</div>
-```
-
+      <p>
+        Compte dédié, obligations et bonnes pratiques :
+        ce qu'il faut savoir quand on démarre en micro-entreprise.
+      </p>
+    </div>
   </section>
 
   <section>
     <div class="container">
 
-```
-  <div class="intro">
-    <span class="intro-label">L'essentiel</span>
+      <div class="intro">
+        <span class="intro-label">L'essentiel</span>
 
-    <strong>
-      Le compte dédié n'est pas forcément un compte « professionnel ».
-    </strong>
+        <strong>
+          Le compte dédié n'est pas forcément un compte « professionnel ».
+        </strong>
 
-    <p>
-      Pour une micro-entreprise, il faut surtout distinguer
-      l'obligation d'avoir un compte bancaire dédié à l'activité
-      de l'obligation d'ouvrir un compte bancaire professionnel.
-      Ce n'est pas exactement la même chose.
-    </p>
-  </div>
-
-  <div class="highlight">
-
-    <span class="highlight-label">Le seuil à retenir</span>
-
-    <h2>10 000 € pendant deux années civiles consécutives</h2>
-
-    <p>
-      Lorsque votre chiffre d'affaires annuel dépasse ce montant
-      pendant deux années civiles consécutives, vous devez disposer
-      d'un compte dédié à votre activité professionnelle.
-    </p>
-
-  </div>
-
-  <div class="section" aria-labelledby="compte-dedie">
-
-    <h2 id="compte-dedie">Compte dédié : qu'est-ce que ça veut dire ?</h2>
-
-    <p>
-      Le compte dédié sert à séparer clairement les opérations
-      liées à votre activité de vos dépenses personnelles.
-    </p>
-
-    <div class="cards">
-
-      <article class="card">
-        <span class="number" aria-hidden="true">01</span>
-        <h3>Vos recettes professionnelles</h3>
         <p>
-          Les paiements reçus de vos clients peuvent être suivis
-          plus facilement lorsqu'ils passent par un compte dédié.
+          Pour une micro-entreprise, il faut surtout distinguer
+          l'obligation d'avoir un compte bancaire dédié à l'activité
+          de l'obligation d'ouvrir un compte bancaire professionnel.
+          Ce n'est pas exactement la même chose.
         </p>
-      </article>
+      </div>
 
-      <article class="card">
-        <span class="number" aria-hidden="true">02</span>
-        <h3>Vos dépenses professionnelles</h3>
-        <p>
-          Les dépenses liées à votre activité sont plus faciles
-          à identifier et à suivre.
-        </p>
-      </article>
+      <div class="highlight">
+        <span class="highlight-label">Le seuil à retenir</span>
 
-      <article class="card">
-        <span class="number" aria-hidden="true">03</span>
-        <h3>Un suivi plus propre</h3>
-        <p>
-          Séparer les flux évite de mélanger les opérations
-          personnelles et professionnelles.
-        </p>
-      </article>
+        <h2>10 000 € pendant deux années civiles consécutives</h2>
 
-      <article class="card">
-        <span class="number" aria-hidden="true">04</span>
-        <h3>Une meilleure organisation</h3>
         <p>
-          Un compte séparé peut simplifier le suivi de votre
-          trésorerie et de vos recettes.
+          Lorsque votre chiffre d'affaires annuel dépasse ce montant
+          pendant deux années civiles consécutives, vous devez disposer
+          d'un compte dédié à votre activité professionnelle.
         </p>
-      </article>
+      </div>
+
+      <div class="section" aria-labelledby="compte-dedie">
+        <h2 id="compte-dedie">Compte dédié : qu'est-ce que ça veut dire ?</h2>
+
+        <p>
+          Le compte dédié sert à séparer clairement les opérations
+          liées à votre activité de vos dépenses personnelles.
+        </p>
+
+        <div class="cards">
+
+          <article class="card">
+            <span class="number" aria-hidden="true">01</span>
+            <h3>Vos recettes professionnelles</h3>
+            <p>
+              Les paiements reçus de vos clients peuvent être suivis
+              plus facilement lorsqu'ils passent par un compte dédié.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="number" aria-hidden="true">02</span>
+            <h3>Vos dépenses professionnelles</h3>
+            <p>
+              Les dépenses liées à votre activité sont plus faciles
+              à identifier et à suivre.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="number" aria-hidden="true">03</span>
+            <h3>Un suivi plus propre</h3>
+            <p>
+              Séparer les flux évite de mélanger les opérations
+              personnelles et professionnelles.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="number" aria-hidden="true">04</span>
+            <h3>Une meilleure organisation</h3>
+            <p>
+              Un compte séparé peut simplifier le suivi de votre
+              trésorerie et de vos recettes.
+            </p>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="section" aria-labelledby="dedie-professionnel">
+        <h2 id="dedie-professionnel">Compte dédié ou compte professionnel ?</h2>
+
+        <p>
+          Le vocabulaire peut prêter à confusion.
+        </p>
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="step-icon" aria-hidden="true">1</div>
+
+            <div>
+              <strong>Compte dédié</strong>
+              <span>
+                Il sert à isoler les opérations de votre activité
+                professionnelle.
+              </span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-icon" aria-hidden="true">2</div>
+
+            <div>
+              <strong>Compte professionnel</strong>
+              <span>
+                Il s'agit d'une offre bancaire professionnelle,
+                généralement avec des services et tarifs spécifiques.
+              </span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-icon" aria-hidden="true">3</div>
+
+            <div>
+              <strong>Les deux ne sont pas synonymes</strong>
+              <span>
+                L'obligation de compte dédié ne signifie pas
+                automatiquement qu'il faut souscrire une offre
+                bancaire professionnelle.
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="section" aria-labelledby="quand-ouvrir">
+        <h2 id="quand-ouvrir">Quand ouvrir un compte dédié ?</h2>
+
+        <p>
+          Même lorsque le compte dédié n'est pas encore obligatoire,
+          l'ouvrir dès le début peut être une bonne habitude.
+        </p>
+
+        <div class="cards">
+
+          <article class="card">
+            <span class="number" aria-hidden="true">01</span>
+            <h3>Dès le lancement</h3>
+            <p>
+              Vous pouvez commencer directement avec une séparation
+              claire entre votre activité et votre vie personnelle.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="number" aria-hidden="true">02</span>
+            <h3>Si votre activité grandit</h3>
+            <p>
+              Plus votre chiffre d'affaires augmente, plus une
+              séparation nette devient pratique.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="number" aria-hidden="true">03</span>
+            <h3>Pour simplifier vos déclarations</h3>
+            <p>
+              Un compte séparé facilite le rapprochement entre vos
+              encaissements et votre suivi des recettes.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="number" aria-hidden="true">04</span>
+            <h3>Pour éviter les mélanges</h3>
+            <p>
+              Les achats personnels et les opérations professionnelles
+              sont plus faciles à distinguer.
+            </p>
+          </article>
+
+        </div>
+      </div>
+
+      <aside class="warning" aria-labelledby="attention-banque">
+        <div class="warning-title">
+          <span class="warning-icon" aria-hidden="true">⚠️</span>
+
+          <h2 id="attention-banque">
+            Ne choisissez pas une offre bancaire uniquement sur son nom
+          </h2>
+        </div>
+
+        <p>
+          « Compte pro » ne veut pas forcément dire « obligatoire ».
+          Avant de souscrire, regardez surtout les frais, les moyens
+          de paiement proposés, les conditions du compte et les besoins
+          réels de votre activité.
+        </p>
+      </aside>
+
+      <div class="section" aria-labelledby="bons-reflexes">
+        <h2 id="bons-reflexes">Les bons réflexes</h2>
+
+        <p>
+          Une gestion simple commence par quelques habitudes.
+        </p>
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="step-icon" aria-hidden="true">✓</div>
+
+            <div>
+              <strong>Suivez votre chiffre d'affaires</strong>
+              <span>
+                Gardez un œil sur votre niveau de recettes et sur
+                l'évolution de votre activité.
+              </span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-icon" aria-hidden="true">✓</div>
+
+            <div>
+              <strong>Évitez les mélanges inutiles</strong>
+              <span>
+                Une séparation claire rend votre suivi beaucoup plus
+                lisible.
+              </span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-icon" aria-hidden="true">✓</div>
+
+            <div>
+              <strong>Conservez vos justificatifs</strong>
+              <span>
+                Gardez les factures et documents liés aux opérations
+                professionnelles.
+              </span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-icon" aria-hidden="true">✓</div>
+
+            <div>
+              <strong>Comparez les frais bancaires</strong>
+              <span>
+                Une solution adaptée à votre activité n'est pas
+                nécessairement la plus chère.
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <section class="cta" aria-labelledby="cta-title">
+        <h2 id="cta-title">Gardez aussi un œil sur vos recettes</h2>
+
+        <p>
+          Un suivi régulier vous aide à connaître votre chiffre
+          d'affaires et à mieux piloter votre activité.
+        </p>
+
+        <a href="suivi-recettes.html" class="button">
+          Suivre mes recettes →
+        </a>
+      </section>
 
     </div>
-
-  </div>
-
-  <div class="section" aria-labelledby="dedie-professionnel">
-
-    <h2 id="dedie-professionnel">Compte dédié ou compte professionnel ?</h2>
-
-    <p>
-      Le vocabulaire peut prêter à confusion.
-    </p>
-
-    <div class="steps">
-
-      <div class="step">
-        <div class="step-icon" aria-hidden="true">1</div>
-
-        <div>
-          <strong>Compte dédié</strong>
-          <span>
-            Il sert à isoler les opérations de votre activité
-            professionnelle.
-          </span>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-icon" aria-hidden="true">2</div>
-
-        <div>
-          <strong>Compte professionnel</strong>
-          <span>
-            Il s'agit d'une offre bancaire professionnelle,
-            généralement avec des services et tarifs spécifiques.
-          </span>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-icon" aria-hidden="true">3</div>
-
-        <div>
-          <strong>Les deux ne sont pas synonymes</strong>
-          <span>
-            L'obligation de compte dédié ne signifie pas
-            automatiquement qu'il faut souscrire une offre
-            bancaire professionnelle.
-          </span>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="section" aria-labelledby="quand-ouvrir">
-
-    <h2 id="quand-ouvrir">Quand ouvrir un compte dédié ?</h2>
-
-    <p>
-      Même lorsque le compte dédié n'est pas encore obligatoire,
-      l'ouvrir dès le début peut être une bonne habitude.
-    </p>
-
-    <div class="cards">
-
-      <article class="card">
-        <span class="number" aria-hidden="true">01</span>
-        <h3>Dès le lancement</h3>
-        <p>
-          Vous pouvez commencer directement avec une séparation
-          claire entre votre activité et votre vie personnelle.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="number" aria-hidden="true">02</span>
-        <h3>Si votre activité grandit</h3>
-        <p>
-          Plus votre chiffre d'affaires augmente, plus une
-          séparation nette devient pratique.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="number" aria-hidden="true">03</span>
-        <h3>Pour simplifier vos déclarations</h3>
-        <p>
-          Un compte séparé facilite le rapprochement entre vos
-          encaissements et votre suivi des recettes.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="number" aria-hidden="true">04</span>
-        <h3>Pour éviter les mélanges</h3>
-        <p>
-          Les achats personnels et les opérations professionnelles
-          sont plus faciles à distinguer.
-        </p>
-      </article>
-
-    </div>
-
-  </div>
-
-  <aside class="warning" aria-labelledby="attention-banque">
-
-    <div class="warning-title">
-      <span class="warning-icon" aria-hidden="true">⚠️</span>
-
-      <h2 id="attention-banque">
-        Ne choisissez pas une offre bancaire uniquement sur son nom
-      </h2>
-    </div>
-
-    <p>
-      « Compte pro » ne veut pas forcément dire « obligatoire ».
-      Avant de souscrire, regardez surtout les frais, les moyens
-      de paiement proposés, les conditions du compte et les besoins
-      réels de votre activité.
-    </p>
-
-  </aside>
-
-  <div class="section" aria-labelledby="bons-reflexes">
-
-    <h2 id="bons-reflexes">Les bons réflexes</h2>
-
-    <p>
-      Une gestion simple commence par quelques habitudes.
-    </p>
-
-    <div class="steps">
-
-      <div class="step">
-        <div class="step-icon" aria-hidden="true">✓</div>
-
-        <div>
-          <strong>Suivez votre chiffre d'affaires</strong>
-          <span>
-            Gardez un œil sur votre niveau de recettes et sur
-            l'évolution de votre activité.
-          </span>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-icon" aria-hidden="true">✓</div>
-
-        <div>
-          <strong>Évitez les mélanges inutiles</strong>
-          <span>
-            Une séparation claire rend votre suivi beaucoup plus
-            lisible.
-          </span>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-icon" aria-hidden="true">✓</div>
-
-        <div>
-          <strong>Conservez vos justificatifs</strong>
-          <span>
-            Gardez les factures et documents liés aux opérations
-            professionnelles.
-          </span>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-icon" aria-hidden="true">✓</div>
-
-        <div>
-          <strong>Comparez les frais bancaires</strong>
-          <span>
-            Une solution adaptée à votre activité n'est pas
-            nécessairement la plus chère.
-          </span>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-  <section class="cta" aria-labelledby="cta-title">
-
-    <h2 id="cta-title">Gardez aussi un œil sur vos recettes</h2>
-
-    <p>
-      Un suivi régulier vous aide à connaître votre chiffre
-      d'affaires et à mieux piloter votre activité.
-    </p>
-
-    <a href="suivi-recettes.html" class="button">
-      Suivre mes recettes →
-    </a>
-
-  </section>
-
-</div>
-```
-
   </section>
 
 </main>
@@ -886,38 +858,36 @@
 <footer>
   <div class="container">
 
-```
-<div class="footer-grid">
+    <div class="footer-grid">
 
-  <div>
-    <a href="index.html" class="logo" aria-label="MicroClair — accueil">
-      <span class="logo-mark" aria-hidden="true">M</span>
-      <span>MicroClair</span>
-    </a>
+      <div>
+        <a href="index.html" class="logo" aria-label="MicroClair — accueil">
+          <span class="logo-mark" aria-hidden="true">M</span>
+          <span>MicroClair</span>
+        </a>
 
-    <p class="footer-description">
-      Des outils simples pour aider les micro-entrepreneurs
-      et freelances à mieux organiser leur activité.
-    </p>
-  </div>
+        <p class="footer-description">
+          Des outils simples pour aider les micro-entrepreneurs
+          et freelances à mieux organiser leur activité.
+        </p>
+      </div>
 
-  <nav class="footer-column" aria-label="Informations">
-    <h3>Informations</h3>
-    <a href="a-propos.html">À propos</a>
-    <a href="demarrer.html">Démarrer</a>
-    <a href="ressources.html">Ressources</a>
-    <a href="contact.html">Contact</a>
-    <a href="mentions-legales.html">Mentions légales</a>
-    <a href="confidentialite.html">Confidentialité</a>
-    <a href="cookies.html">Cookies</a>
-  </nav>
+      <nav class="footer-column" aria-label="Informations">
+        <h3>Informations</h3>
+        <a href="a-propos.html">À propos</a>
+        <a href="demarrer.html">Démarrer</a>
+        <a href="ressources.html">Ressources</a>
+        <a href="contact.html">Contact</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="cookies.html">Cookies</a>
+      </nav>
 
-</div>
+    </div>
 
-<div class="copyright">
-  © 2026 MicroClair — Axel Penarrubia
-</div>
-```
+    <div class="copyright">
+      © 2026 MicroClair — Axel Penarrubia
+    </div>
 
   </div>
 </footer>
